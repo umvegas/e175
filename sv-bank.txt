@@ -1,0 +1,1563 @@
+E175 SYSTEMS VALIDATION QUESTION BANK
+V5.0 (05/26/2022)
+MEMORY ITEMS
+1. The runway cleared width for takeoff is _____ feet, and for landing, in the state of
+Alaska only, is _____ feet.
+A: 100, 60
+2. The maximum landing weight for aircraft placarded 89,000 lbs. is _____.
+A: 75,177 pounds
+3. True or False: In the event of a landing below -40 degrees C, the aircraft may not
+takeoff without further maintenance analysis / inspection.
+A: True
+4. What is the minimum battery temperature?
+A: -20&deg;C
+5. What is the maximum altitude for flap extension?
+A: 20,000 feet
+6. What is VLO (landing gear operation speed) for retraction?
+A: 250 knots
+7. What is VLO (landing gear operation speed) for extension?
+A: 250 knots
+8. What is VLE (landing gear extended speed)?
+A: 250 knots
+9. What is the maximum speed to open the direct vision window?
+A: 160 knots
+10. What is the turbulent air penetration target speed maximum below 10,000 ft.?
+A: 250 knots
+11. What is the turbulent air penetration target speed maximum at or above 10,000 ft.?
+A: 270 knots or 0.76M, whichever is slower
+12. What is VFE (maximum flaps extended speed) for Flaps 1?
+A: 230 knots
+13. What is VFE (maximum flaps extended speed) for Flaps 2?
+A: 215 knots
+14. What is VFE (maximum flaps extended speed) for Flaps 3?
+A: 200 knots
+15. What is VFE (maximum flaps extended speed) for Flaps 4 and Flaps 5?
+A: 180 knots
+16. What is VFE (maximum flaps extended speed) for Flaps Full?
+A: 165 knots
+17. What is the maximum tire ground speed?
+A: 195 knots
+18. What is the maximum windshield wiper operating speed?
+A: 250 knots
+19. What is the maximum takeoff and landing tailwind component?
+A: 15 knots
+20. The maximum crosswind limit for braking action "Good" and a RwyCC value of 6
+(dry) is _____.
+A: 38 knots
+21. What is the maximum N1 allowed with brakes applied and tailwinds greater than
+10 kts.?
+A: 60%
+22. What is the maximum permitted imbalance between fuel tanks?
+A: 794 pounds
+23. What is the minimum fuel tank temperature?
+A: -37&deg;C
+24. True or False: The Crossfeed selector knob isn't required to be set to OFF during
+takeoff and landing.
+A: False
+25. The maximum altitude allowed for starting the APU is _____ feet.
+A: 30,000
+26. The maximum altitude allowed for operating the APU is _____ feet, including with
+the generator in operation.
+A: 33,000
+27. The maximum altitude allowed for operating the APU bleed air is _____ feet.
+A: 15,000
+28. The maximum altitude allowed for APU air start assist is _____ feet.
+A: 21,000
+29. The cooling periods after each APU start attempt are _____ for the first and
+second attempts and _____ for the third attempt.
+A: 60 seconds, 5 minutes
+30. Due to the potential of drained batteries caused by an unexpected APU shutdown
+and the lack of automatic fire protection, the APU shall not be left unattended for
+longer than _____ minutes.
+A: 5
+31. What is the minimum oil temperature for engine start?
+A: -40&deg;C
+32. Dry motoring duty cycle limits are _____ seconds for the first motoring and _____
+seconds for the 2nd through 5th motorings.
+A: 90, 30
+33. With regard to starting duty cycle limits (NOT dry motoring limits), the first and
+second motorings are limited to _____ on the ground and _____ in flight, with a
+_____ cooldown.
+A: 90 seconds, 120 seconds, 10 second
+34. With regard to starting duty cycle limits (NOT dry motoring limits), the third through
+fifth motorings are limited to _____ on the ground and _____ in flight, with a _____
+cooldown.
+A: 90 seconds, 120 seconds, 5 minutes
+35. What is the maximum differential pressure?
+A: 8.4 PSI
+36. What is the maximum differential overpressure?
+A: 8.8 PSI
+37. What is the maximum differential negative pressure?
+A: -0.5 PSI
+38. What is the maximum differential pressure for takeoff and landing?
+A: 0.2 PSI
+39. True or False: There is no temperature limitation for automatic operation of the
+anti-icing system.
+A: True
+40. On the ground, the TO DATASET MENU on the MCDU must be set to ENG when
+OAT is between _____ degrees if there is a possibility of encountering visible
+moisture up to 1,700 ft. AFE and when operating on ramps, taxiways, or runways
+where surface snow, ice, standing water, or slush may be ingested by the engines,
+or freeze on the engines, nacelles, or engine sensor probes.
+A: 5 and 10
+41. On the ground, the TO DATASET MENU on the MCDU must be set to ALL when
+OAT is below _____ degrees if there is a possibility of encountering visible
+moisture up to 1,700 ft. AFE and when operating on ramps, taxiways, or runways
+where surface snow, ice, standing water, or slush may be ingested by the engines,
+or freeze on the engines, nacelles, or engine sensor probes.
+A: 5
+42. With regard to operating in icing conditions, the engine and wing anti-ice systems
+operate automatically when the ice protection mode selector is in the _____
+position, and if either one or both ice detectors have failed, the crew must set the
+mode selector to ON when icing conditions exist or are anticipated below _____
+with visible moisture.
+A: AUTO, 10&deg;C TAT
+43. The autopilot’s minimum engagement height is _____ feet and minimum use
+height is _____ feet.
+A: 400, 50
+44. Which of the following are limitations of the aircraft's WiFi system?
+A: Flight attendant on board and part of the crew
+45. Which of the following are limitations of flightdeck power?
+A: Prohibited during critical phase of flight, limited to company devices and personal
+cellphones, must not block controls or emergency egress
+46. Which of the following is a correct statement regarding the use flightdeck power
+and phase of flight?
+A: Prohibited during critical phase of flight
+47. True or False: When using flightdeck power, do not position cord as to impede the
+movement of any flight control or restrict emergency egress paths.
+A: True
+48. Autoland operation shall be performed with flaps _____.
+A: 5
+49. Maximum wind component speeds for Autoland operations is _____ kts. headwind
+and _____ kts. crosswind.
+A: 25, 15
+50. The maximum tailwind component for Autoland operations is _____ kts.
+A: 10
+AIRCRAFT FAMILIARIZATION
+51. Regarding turning radius, what is the minimum pavement width for a 180-degree
+turn?
+A: 60 feet
+52. Where is the ELT located?
+A: Just forward of the vertical stab
+53. What is the maximum ramp weight of the aircraft (placarded 89,000 lbs.)?
+A: 89,352
+54. True or False: There is only one cargo compartment on the aircraft.
+A: False. 2.
+55. The 2 SPDAs are located where?
+A: Forward and center ebay
+56. The maximum fuel quantity (in pounds), including unusable, is _____.
+A: 20,935
+57. How many display units (DUs) are in the flight deck?
+A: 5
+58. The flight deck is designed under which of the following concepts?
+A: 12 o'clock, dark and quiet
+59. In flight, when all aircraft systems are operating normally, you should expect which
+of the following?
+A: 12 o'clock, dark and quiet
+60. The engines are considered “high bypass turbofans”, which makes them extremely
+efficient. Approximately what percent of air is actually being bypassed around the
+core?
+A: 80%
+61. True or False: Both the Captain's and First Officer's side consoles have a
+nosewheel steering tiller.
+A: False. Captain only.
+62. Each engine produces up to _____ lbs. of thrust.
+A: 14,500
+63. This aircraft is equipped with General Electric _____ engines.
+A: CF34-8E
+64. True or False: If one stick shaker activates inadvertently (stick shaker failure),
+nothing can be done in-flight. You must be on the ground to activate the shaker
+cutout feature.
+A: False
+65. True or False: A white striped bar illuminates in a button when that button is not in
+the normal position.
+A: True
+66. The master WARN and master CAUT switchlights are located on the _____.
+A: Glareshield
+67. The EICAS provides the flight crew with a ____-level alert messaging system.
+A: 4. Warning, Caution, Advisory, Status
+68. True or False: The rudder pedals are in a fixed position and cannot be adjusted.
+A: False
+69. True or False: Failure of an SPDA would be indicated via an EICAS message.
+A: True. Advisory.
+70. What does EICAS stand for?
+A: Engine Instrumentation and Crew Alerting System
+71. True or False: The aircraft has overwing emergency exits for evacuation purposes.
+A: False
+72. Which of the following is true with regard to a "ramp horn"?
+73. The aircraft is equipped with _______ passenger and _______ service plug-type
+doors that operate in an identical manner.
+A: 2, 2
+74. True or False: The forward passenger door is the main boarding door, while the aft
+passenger door can be used as an emergency exit and for galley servicing.
+A: True
+AIR CONDITIONING
+75. True or False: The air conditioning system is controlled using the AIR
+COND/PNEUMATIC panel located on the overhead panel.
+A: True
+76. Under normal conditions, air from which pack is delivered directly to the flight
+deck?
+A: 1
+77. True or False: The air conditioning packs are located in the wing to fuselage
+fairings.
+A: True
+78. What is the purpose of the air conditioning packs?
+A: Cool bleed air before it goes to the mixing manifold
+79. True or False: During single engine operations, a single engine will not be able to
+supply both packs with bleed air.
+A: False
+80. True or False: A single pack can supply sufficient conditioned air for the entire
+aircraft.
+A: True
+81. When a single pack fails, which of the following will be the result?
+A: EICAS message, Single remaining pack supplies the entire system
+82. In order to set the target temperature from the overhead panel for the air
+conditioning, you would do what?
+A: Adjust temperature control knobs
+83. Where is the pack status displayed?
+A: MFD ECS synoptic page
+84. During cruise, how much time should be allowed in between corrections of the
+temperature control knobs?
+A: 10 minutes
+85. Which part of the air conditioning system is responsible for making sure that all
+areas receive conditioned air even if a pack is disabled?
+A: AMS controller
+86. How many recirculation fans are there?
+A: 2
+87. At which temperature will the gasper shutoff valve open?
+A: 35 C
+88. Manually selected temperatures for the air conditioning system are displayed
+where?
+A: MFD ECS synoptic page, left side of the temperature display, in blue
+89. How can the PAX cabin temperature control be transferred from the flightdeck to
+the cabin?
+A: Turn PAX knob to ATTND
+90. Where are the fans drawing air from in order to cool the FWD E-BAY?
+A: Cockpit
+91. How does the forward E-BAY air cooling system monitor its temperature?
+A: Flow sensors
+92. What will occur if the forward E-BAY fans fail?
+A: EICAS message
+93. The flightdeck Ram Air Valve is commanded to open when _____.
+A: 1. Both packs off or failed 2. below 25,000 feet
+94. True or False: During normal operations, air from Pack 1 is delivered directly to the
+flight deck.
+A: True
+95. True or False: There are two fans installed in the aft electronic bays for cooling.
+A: False. None.
+96. Which of the following apply during a smoke removal situation?
+A: Both packs off, ram air valve open
+97. The gasper air distribution system provides air to _______.
+A: Passenger and pilot positions
+98. True or False: A single bleed air consumer can receive bleed air from multiple
+sources at the same time.
+A: False
+PRESSURIZATION
+99. Where is the position of the outflow valve displayed?
+A: MFD, ECS synoptic
+100. The CPCS can operate in which modes?
+A: Auto, manual
+101. Which of the following are components of the CPCS?
+A: Cabin pressure controller, static pressure port, cabin outflow valve, negative press relief, positive press relief
+102. The pressurization panel is found where?
+A: Overhead panel
+103. True or False: The basic function of the CPC is to modulate the outflow valve in
+order to maintain proper cabin pressure.
+A: True
+104. True or False: The CPC modulates the outflow valve based on information
+received from various aircraft sensors and systems.
+A: True
+105. True or False: The CPC is a quad channel controller.
+A: Dual, alternating each flight
+106. True or False: If a CPC channel should fail, an EICAS message will be displayed.
+A: True. PRESS AUTO FAULT
+107. The outflow valve _______ to increase cabin pressure and _______ to decrease
+cabin pressure.
+A: closes, opens
+108. True or False: Normally, the outflow valve is modulated automatically by the CPC.
+A: True
+109. What is the proper way to increase cabin pressure while operating in the manual
+mode?
+A: Mode selector to manual, rotate cabin alt knob to DOWN
+110. The Negative Pressure Relief Valve serves which purpose?
+A: Prevent damage due to negative pressurization
+111. The Negative Pressure Relief Valve is operated how?
+A: Automatically and without any power source
+112. At which point will the Negative Pressure Relief Valve open?
+A: -0.5psi
+113. True or False: The Negative Pressure Relief Valve requires no electricity to
+operate.
+A: True
+114. The Positive Pressure Relief Valve is operated how?
+A: Automatically, via mechanical signal from the static port
+115. True or False: The Positive Pressure Relief Valve opens when the pressure
+differential exceeds 8.6 PSI.
+A: True
+116. True or False: The Positive Pressure Relief Valve is connected to its own static
+port.
+A: True
+117. True or False: The Positive Pressure Relief Valve is installed to prevent damage to
+the aircraft structure due to excessive positive overpressure.
+A: True
+118. True or False: The Positive Pressure Relief Valve's static port is not electrically
+heated, due to the fact that it does not protrude from the fuselage.
+A: False
+119. At which point would the Positive Pressure Relief Valve activate?
+A: 8.6psi
+120. True or False: The Positive Pressure Relief Valve is located in the aft section of the
+aircraft (aft pressure dome).
+A: True
+121. True or False: DUMP cannot be used in the automatic mode to relieve pressure if
+needed. This is only done through manual mode.
+A: False
+122. What information does the CPCS take into account when scheduling a target cabin
+altitude and cabin pressure variation?
+A: N2, landing gear, FADEC, ADC, FMS
+123. True or False: The Negative Pressure Relief Valve only works if the Positive
+Pressure Relief Valve is operational.
+A: False
+124. What is the default Landing Field Elevation (LFE) value used by the CPCS if no
+pilot input is made with the LFE knob when FMS field elevation is not available?
+A: 8000
+125. True or False: When cruise altitude is not available from the FMS, the cabin
+pressure schedule is based on ambient pressure.
+A: True
+126. True or False: The Negative Pressure Relief Valve works independently from the
+normal Outflow Valve.
+A: True
+127. In regard to the CPCS, what are the special procedures for high altitude
+operations?
+A: There are none.
+128. How is the DUMP function activated for the CPCS?
+A: Push the (guarded) button
+129. What happens when the DUMP function is activated?
+A: Packs and recirc fan off, 2000fpm to 12,400, close the valve and leak.
+130. True or False: When the CPCS is in manual mode, no pilot input is necessary to
+adjust cabin pressurization.
+A: False
+131. What will occur if the cabin altitude reaches 9,700 ft.?
+A: EICAS message: CABIN ALT HI, aural alert: "Cabin!"
+132. Automatic mode for the CPCS has which of the following modes?
+A: Ground, taxi, takeoff, climb, cruise, descent, abort
+133. True or False: When the CPCS is in GROUND mode, the outflow valve is in the
+fully open position.
+A: True
+134. True or False: There is a pressurization ABORT mode in the event a return to field
+after takeoff is necessary.
+A: True
+135. What happens when the DUMP button is activated?
+A: Packs and recirc fan off, 2000fpm to 12,400, close the valve and leak.
+136. The outflow valve is manually modulated by _______.
+A: Cabin alt knob on the overhead panel
+137. True or False: The Negative Pressure Relief Valve works with a static port in order
+for it to function properly.
+A: False
+138. True or False: Cruise altitude entered in the MCDU has no effect on CPC
+pressurization calculations.
+A: False
+AUTOFLIGHT
+139. What does AFCS stand for?
+A: Autoflight control system
+140. AFCS includes which of the following components?
+A: Flight director, autopilot, yaw damper
+141. What is the purpose of the AP/FD TCS button?
+A: Update the flight director command
+142. The flight guidance panel provides which of the following?
+A: lateral, vertical, and speed commands and AFCS management controls
+143. True or False: The Flight Guidance Panel has one independent channel.
+A: False, 2
+144. The lateral control area on the AFCS panel is used for which of the following?
+A: NAV, HDG
+145. What is the purpose of the vertical control area on the AFCS panel?
+A: Choose between FLCH, VNAV, ALT, VS, and FPA modes
+146. What is the purpose of the speed and mode control area on the AFCS panel?
+A: Choose between manual or FMS speed selection
+147. How would you get approach annunciations to display on the FMA?
+A: press APPR on the guidance panel
+148. The flight directors are automatically displayed on the PFDs if which of the
+following occurs?
+A: TOGA, any vertical or lateral mode manually selected, AP on, windshear
+149. True or False: When the autopilot is disengaged, pressing either FD button
+removes the Flight Director from both displays.
+A: False (onside only)
+150. The aircraft is equipped with a _____ channel autopilot?
+A: dual (3-axis)
+151. The autopilot has a servo for which of the following?
+A: pitch, roll, yaw
+152. True or False: Yaw, pitch, and roll have their own autopilot servo.
+A: True
+153. How is the AP engaged in flight?
+A: Push the AP button
+154. True or False: Autopilot engagement is possible on the ground.
+A: False
+155. Pressing the AP/TRIM DISC once accomplishes what?
+A: turns off the autopilot and stops all trims
+156. True or False: Pressing the AP/TRIM DISC a second time cancels the
+AUTOPILOT aural warning and cancels FMA "AP" annunciation.
+A: True
+157. The AP will disengage if which of the following occurs?
+A: Normal: AP button pushed, man pitch trim, stick shaker, windshear.
+Abnormal: fly-by-wire reverts to direct, aileron or elevator disconnect, manual control inputs counter to the AP, internal monitor failure
+158. What does pressing the BANK Button on the Guidance Panel accomplish?
+A: Limits bank to 17 degrees when in heading mode
+159. When is 1/2 bank automatically enabled?
+A: Autoland
+160. What does pressing the APP button on the Guidance Panel accomplish?
+A: show approach indications on the FMA, arms highest capability approach guidance
+161. What does FPA stand for?
+A: Flight path angle
+162. What does Flight Path Angle (FPA) accomplish?
+A: displays flight path reference line, cause the airplane to fly an angle between -9.9 and 9.9 degrees
+163. True or False: If performing a holding pattern at the FAF, the VGP mode should be
+armed only after exiting the hold; otherwise, the mode may intercept the final
+approach descent path during the hold.
+A: True
+164. True or False: If the glide path is below the current aircraft altitude and the APP
+button is pressed, the VGP mode will not engage and will require a manual
+descent to intercept the final approach path.
+A: False
+165. True or False: The transition to VFLCH from VPATH automatically occurs if the
+landing gear/flap speed is exceeded by more than 10 kts.
+A: True
+166. The normal method of disengaging the autopilot is _______.
+A: AP/TRIM DISC button
+167. The yaw damper is automatically engaged _______.
+A: when either hyd 1 or 3 powers up
+168. The color _______ indicates an FMS-commanded engaged mode in the FMA.
+A: magenta
+169. The color _______ indicates a non-FMS-commanded engaged mode on the FMA.
+A: green
+170. In the takeoff and go-around modes, pitch is limited to a minimum of _______
+degrees and a maximum of _______ degrees.
+A: 8, 18
+171. The requirements to engage APPR 1 are _______.
+A: RA/BARO set to BARO, LOC tuned, V/L or PREV pushed
+172. True or False: Disengaging the autopilot will always automatically disengage the
+autothrottles.
+A: False
+COMMUNICATIONS
+173. How many VHF communication radios is the aircraft equipped with?
+A: 3
+174. True or False: The VHF communication radios cannot be operated simultaneously.
+A: False
+175. True or False: VHF communication radios 2 and 3 are exclusively used for voice
+communication and VHF1 is normally dedicated to ACARS.
+A: False
+176. To select a frequency using the CCD, what action should be taken?
+A: Select PFD, rotate to com or nav, rotate to tune
+177. True or False: The BACKUP RADIO page appears automatically on MCDU 2 for
+some failure conditions.
+A: True
+178. How many identical Audio Control Panels are there in the flightdeck?
+A: 3
+179. There are three options for transmitting on the com radios. Which of the following
+is not one of those options?
+180. True or False: There is only one Flight Attendant Cabin Annunciator Panel (aka,
+Rainbow Light Panel) in the cabin, located at mid-cabin.
+A: False
+181. What does ACARS stand for?
+A: Aircraft Communications Addressing and Recording System
+182. If an incoming ACARS message (MSG) appears, a notification will be displayed on
+the _______.
+A: PFD
+183. Which of the following is not a function of ACARS downlink and uplink?
+184. Radio page 1 on the MCDU is used for which of the following?
+185. The BKUP RADIO page can be accessed from which MCDU?
+A: 2
+186. True or False: The oxygen mask microphone and flightdeck speakers are
+automatically activated as soon as the oxygen mask stowage box doors are
+opened.
+A: True
+187. Which radio is dedicated to ACARS data?
+A: VHF 3
+188. The interphone systems _______.
+189. True or False: There is an external interphone station at the rear of the aircraft so
+the ground crew can communicate with the flightdeck.
+A: True
+190. True or False: Announcements from the cabin take priority and override all other
+announcements.
+A: False
+ELECTRICAL
+191. The electrical system on this aircraft consists of a _____ V AC system and a _____
+V DC system.
+A: 115, 28
+192. Which of the following is not a part of the DC system?
+193. Which of the following is not a part of the DC system?
+194. Which of the following is not a part of the DC system?
+195. Which of the following is not a part of the AC system?
+196. Which of the following is not a part of the AC system?
+197. Which of the following is not a part of the AC system?
+198. True or False: Four (4) Integrated Control Centers and two (2) Secondary Power
+Distribution Assemblies provide control and power distribution or electrical power.
+A: True
+199. True or False: The output of the APU-driven generator is more power than output
+by the IDGs.
+A: False. Equal.
+200. True or False: The APU-driven generator can be used on the ground and in flight.
+A: True
+201. True or False: Once the APU is started and the generator comes on line, external
+power must be manually deselected before the APU generator can power all AC
+buses.
+A: False
+202. True or False: When the APU generator and AC external power is available, both
+will supply power to the aircraft at the same time.
+A: False, external automatically disconnected
+203. True or False: When the aircraft is parked, AC external power can supply power to
+the entire electrical system.
+A: True
+204. After AC power has been restored following a total AC power loss in flight, when
+will the RAT retract?
+A: It won't
+205. How long does the RAT take to provide power to the AC and DC ESS BUSES after
+it has been deployed?
+A: 8 seconds
+206. True or False: In the event of a total loss of AC power, the Ram Air Turbine must
+be manually deployed.
+A: False, should auto deploy, but may be manually deployed
+207. If the aircraft slows to a speed below _______ kts., the RAT may only supply
+power to the AC ESS BUS and the batteries power the DC ESS BUSES and STANDBY AC BUS.
+A: 130
+208. Inflight, what is the altitude restriction for RAT deployment?
+A: None
+209. The static inverter converts _______ power to _______ power.
+A: DC, AC
+210. Which TRU normally provides power to the DC Ground Service Bus?
+A: TRU 1
+211. What does TRU ESS provide power to?
+A: DC ESS 3
+212. Which of the following is displayed on the Electrical synoptic when a TRU has
+failed?
+213. During an electrical emergency, when the RAT is not fully deployed or the stall
+speed is reached, the batteries are capable of supplying essential electrical loads
+for _______ minutes.
+A: 10
+214. True or False: The aircraft is equipped with two SPDAs, located in the forward and
+aft EBAYS.
+A: False (1 forward, 1 center)
+215. The aircraft is equipped with which of the following types of circuit breakers?
+A: Thermal in the ICCs (and cockpit), electronic in the SPDAs
+216. Which classification of circuit breakers are found in the flight deck?
+A: Thermal
+217. True or False: The SPDA’s contain electronic circuit breakers that are accessible
+from the MCDU.
+A: True
+218. Sources of AC power include _______.
+A: IDG, APG, GPU, RAT, inverter
+219. True or False: Once disconnected, whether manually or automatically, an IDG
+cannot be reconnected in flight.
+A: True
+220. The APU generator can perform which of the following?
+221. True or False: In the event of a loss of AC power, the Ram Air Turbine (RAT) must
+be manually deployed using the RAT MANUAL DEPLOY handle.
+A: False (MAY be manually deployed)
+222. Under normal operating conditions, DC power is provided by _______ Transformer
+Rectifier Units and _______ batteries.
+A: 3, 2
+223. True or False: TRU ESS provides AC power to DC ESS BUS 3.
+A: False (DC power)
+224. True or False: BATT 2 will also power the APU START BUS if needed.
+A: False (exclusively)
+225. System logic provides electrical power for the aircraft according to which of the
+following source priorities?
+A: Onside IDG, APU, GPU, Opposite IDG
+226. Which of the following is NOT on the AC Essential Bus?
+EMERGENCY EQUIPMENT
+227. To open the window in the flight deck in an emergency, you must _______.
+228. True or False: Operation of the two passenger doors and the two service doors is
+identical.
+A: True
+229. True or False: There is a portable halon fire extinguisher in the flight deck.
+A: True
+230. What is a PBE?
+A: Protective Breathing Equipment
+231. What must be located within 3 feet of each fire extinguisher?
+A: PBE
+232. When donned properly, a PBE should provide oxygen for approximately how many
+minutes?
+A: 15
+233. True or False: For Flight Attendant mobility when a pressurization problem occurs,
+there are portable oxygen bottles in the cabin.
+A: True (also used for first aid)
+234. True or False: When the ELT has been activated, the ELT alert light flashes to alert
+the flight crew.
+A: True
+235. Which of the following is NOT part of the emergency equipment in the flight deck?
+236. True or False: The flightdeck has two crash axes, one for each pilot.
+A: False
+237. The ELT transmits on what standard frequency?
+A: 121.5 (243, 406)
+238. True or False: The aircraft is equipped with only one ELT.
+A: False (portable stowed in aft overhead bin)
+239. How many escape ropes are in the flightdeck?
+A: 2
+240. The portable ELT is located where?
+A: In an overhead near the back of the cabin
+FIRE PROTECTION
+241. How many smoke detectors are located in the forward cargo compartment?
+A: 3
+242. How many smoke detectors are located in the aft cargo compartment?
+A: 2
+243. True or False: The cargo compartment smoke detectors are monitored by the
+MAU.
+A: True (BIT)
+244. Where is the lavatory fire extinguisher bottle located?
+A: Above the garbage
+245. True or False: Due to the fact that both lavatories are continuously monitored by
+the flight attendants, neither lavatory has a smoke detector.
+A: False
+246. The Engine fire protection system provides _______.
+A: Dectection, extinguishing, fault detection
+247. Where are the engine fire bottles located?
+A: Right hand wing fuselage fairing
+248. How could the aural warning be silenced in the event of an engine fire?
+A: Press master warning light
+249. If an engine fire is detected, which of the following will occur?
+A: Fire handle lights up, fire bell, master warning, EICAS message
+250. By pulling an engine Fire Handle, which of the following will occur?
+A: Fuel, hydraulics, and bleed shutoff valves close
+251. The APU fire protection system provides which of the following?
+A: Dectection, extinguishing, fault detection
+252. True or False: In the event of an APU fire, pressing either master WARN
+switchlight silences the master WARN aural alert.
+A: True
+253. If an APU fire is detected, which of the following will occur?
+A: Fire bell, red bar on emergency stop button, master warning, EICAS warning: APU FIRE
+254. True or False: When the fire detectors no longer sense a fire in the APU, the APU
+fire extinguisher button will still be illuminated.
+A: False, the light goes out
+255. True or False: The cargo compartments are continuously being monitored for
+smoke.
+A: True
+256. If smoke is detected in the forward cargo compartment by a single smoke detector,
+which of the following will occur?
+A: Fan off, outflow valve closed
+257. If a smoke condition is sensed in either cargo compartment, which of the following
+will occur?
+A: Fire bell, master warning, EICAS message, extinguish button illuminates, high rate bottle arms
+258. To extinguish a fire in the forward cargo compartment, pilots must _______.
+A: Push the lit button
+259. In flight, the low rate fire bottle will discharge automatically after one minute,
+providing protection from re-ignition for _______ minutes.
+A: 75
+260. True or False: On the ground, the cargo compartment low-rate extinguisher fire
+bottle will automatically discharge.
+A: False (can be manually discharged)
+261. True or False: The cargo fire extinguishing system CANNOT be used in the
+absence of an alarm condition.
+A: False
+262. In the event that there is an absence of a fire alarm condition, which of the
+following is true about the forward and aft cargo compartments?
+263. True or False: The forward and aft lavatories do not have any fire protection
+installed.
+A: False
+264. True or False: The fire extinguishers that are installed in each lavatory will only
+extinguish a fire located in the lavatory waste bin.
+A: True
+265. True or False: The lavatory fire extinguishing system has flight deck controls.
+A: False
+266. At what temperature will the lavatory fire extinguisher automatically discharge?
+A: 172F, 78C
+267. Lavatory fire extinguishing is accomplished how?
+A: automatically
+268. The fire detection system TEST button in the flightdeck is used to test all the
+following systems EXCEPT _______.
+A: Lav (DOES test engine, APU, cargo)
+269. There are a total of _______ bottles available to extinguish an engine fire and
+_______ bottles available to extinguish an APU fire.
+A: 2, 1
+270. True or False: During normal operations, both engine overheat detector loops must
+detect a fire before a warning is generated.
+A: True
+271. Which of the following statements best describes the operation of the cargo fire
+extinguisher system?
+272. On the ground, the APU will shut down automatically _______ seconds after a fire
+condition is detected.
+A: 10
+273. What are the flight deck and cabin indications that the lavatory waste bin
+extinguisher has discharged?
+A: None
+FLIGHT CONTROLS
+274. Fly-By-Wire technology electronically controls which of the following?
+A: All flight controls EXCEPT ailerons
+275. Secondary flight controls, elevators, rudder, and multi-function spoilers are
+controlled by _______.
+A: Fly-by-wire
+276. Which of the following answers is the most inclusive of Fly-By-Wire components.
+A: All flight controls EXCEPT ailerons
+277. True or False: The Ailerons are fly-by-wire.
+A: False
+278. True or False: Wheel speed signals are provided to the spoiler ACE for ground
+spoiler deployment.
+A: True
+279. This system provides the aircraft attitude and acceleration information to FCMs
+used for AOA limiting function calculations.
+A: IRS
+280. This system provides TLA to the FCMs used for elevator thrust compensation.
+A: FADEC
+281. This system provides wheel speed signals used for ground spoiler deployment.
+A: Brake Conrtol Module
+282. This system provides autopilot commands to the fly-by-wire system for aircraft
+control.
+A: AFCS
+283. Which two modes of operation does the flight control system have?
+A: Normal, Direct
+284. True or False: In Direct mode, the FCM provides software-based airspeed gain
+schedules and control limits to the P-ACE units.
+A: False (that's Normal mode)
+285. True or False: In Normal mode, the FCM provides software-based airspeed gain
+schedules and control limits to the P-ACE units.
+A: True
+286. The following high-level functions are available in normal mode EXCEPT _______.
+A: Pitch and yaw limiting ARE available in Normal mode.
+287. True or False: For the rudder, elevator, and stabilizer control surfaces, the flight
+control system has a function called "Odd-Even Day Engage" configuration to
+select which set of channels and hydraulic system is active on a particular day.
+A: True
+288. If a jam occurs in the aileron control system, what can be done?
+A: Aileron disconnect
+289. The ROLL scale displays aileron trim indications on the _______.
+A: EICAS (lower right)
+290. If a hydraulic system that powers an active elevator PCU loses pressure, which of
+the following occurs?
+A: Standby PCU activates
+291. Yaw control of the aircraft is provided by the rudder. It is hydraulically powered by
+_______ PCUs and receives signals from the aircraft's FBW system.
+A: 2
+292. The PCUs operate in an _______ / _______ mode with the active PCU alternating
+every time the system is powered up.
+A: active/standby
+293. True or False: If the rudder is in Direct Mode, the amount of rudder deflections is
+based on flap/slat settings.
+A: True
+294. If the rudder is in Direct Mode and the slats/flaps are retracted, the rudder is
+allowed _______.
+A: minimum travel
+295. The yaw scale displays rudder trim on the _______.
+A: EICAS (lower right)
+296. The aircraft is equipped with a total of _______ leading edge slats and _______
+double-slotted trailing edge flaps.
+A: 8, 4 (4 and 2 each wing)
+297. True or False: During extension, the slats move to the selected position followed
+by the flaps; this sequence is reversed during retraction.
+A: True
+298. Slat and flap position is displayed on the _______.
+A: EICAS
+299. True or False: If the "FLAP FAIL" message appears in flight, the slats will still
+operate.
+A: True
+300. If the RAT is the only power source available, only one SLAT/FLAP channel will be
+powered and the slats and flaps will operate at _______ speed.
+A: 1/2
+301. The spoiler control system consists of a total of _______ spoiler panels.
+A: 10 (5 each wing)
+302. The multi-function spoilers have the following functions.
+A: Roll control, speed brake, ground spoiler for landing
+303. True or False: Hydraulic pressure powers the spoiler system.
+A: True
+304. Ground spoiler extension occurs when which of the following conditions are met?
+A: WOW, wheel speed above 45 or airspeed above 60, TLA below 26 degrees
+305. After rollout, spoilers will automatically retract when the wheel speed is below
+_______ kts. for at least _______ seconds.
+A: 45, 5
+306. If in ground spoiler mode, the spoilers will automatically retract if the thrust levers
+are moved beyond a TLA of _______ degrees.
+A: 35
+307. The aircraft is equipped with how many P-ACE unit(s)?
+A: 3
+308. True or False: The flight control modes available on the aircraft include Alternate
+and Direct.
+A: False (Normal and Direct)
+309. True or False: The roll control system includes multi-function spoilers to assist the
+ailerons.
+A: True
+310. True or False: When the elevator control system is in Direct mode, the autopilot is
+unavailable.
+A: True
+311. When using the YAW selector knob, trim commands are limited to _______ seconds.
+A: 3
+312. True or False: During slat and flap extension, the flaps move to the selected
+position followed by the slats.
+A: False
+313. True or False: If the spoiler system is in Direct mode, ground spoilers are not
+available.
+A: True
+314. Which flight controls do NOT disconnect in the event of a control jam?
+A: All EXCEPT ailerons and elevators
+315. Which of the following trimmable surfaces has an aural warning if it is engaged
+longer than 3 seconds?
+A: Pitch trim (horizontal stabilizer)
+FUEL
+316. A fuel quantity indication that is in the cautionary operating range displays a
+_______ color.
+A: Amber
+317. True or False: If a fuel pump fails, it will show that on the Fuel synoptic page.
+A: True
+318. The fuel system consists of _______.
+A: Storage, distribution, indication
+319. Each wing tank holds _______ US gallons of fuel.
+A: 1536
+320. True or False: Each fuel tank is equipped with a dedicated fuel low level sensor
+located in the collector bay.
+A: True
+321. Which type of fuel pump is NOT part of the fuel system?
+322. True or False: The aircraft's fuel system incorporates both a fuel transfer system
+and fuel crossfeed system.
+A: False (only crossfeed)
+323. Each engine is equipped with _______.
+A: Engine driven pump, fuel shutoff valve?
+324. True or False: The primary ejector pump in the collector bay is operated from the
+motive flow return from the engine.
+A: True
+325. When LOW 1 or LOW 2 is selected, _______.
+A: Opposite-side AC pump feeds both engines
+326. When selected ON, the electric AC fuel pumps run _______.
+A: continuously
+327. How many scavenge ejector pumps per tank maintain the fuel level in the collector
+tank?
+A: 3
+328. A DC electric Fuel pump is installed in the _______.
+A: Right wing collector bay
+329. What is one possible purpose of the DC electric fuel pump?
+A: Provide pressurized fuel for normal APU start, and for engine start when AC pump not available
+330. If LOW 1 or LOW 2 is selected, _______.
+331. True or False: The engine fuel shutoff valves can be closed by pulling the
+respective engine fire handle.
+A: True
+332. The _______ are powered by engine motive flow.
+A: primary ejector pumps
+333. True or False: The fuel crossfeed valve automatically opens when a fuel imbalance
+of 800 lbs. occurs.
+A: False (EICAS message)
+334. How many magnetic level indicators are located under each wing?
+A: 3
+335. True or False: The collector tank keeps the fuel pumps submerged, ensuring a
+constant fuel flow to respective engine.
+A: True
+336. The main purpose of the surge bay is _____.
+A: collect fuel that enters the vent system
+HYDRAULICS
+337. Hydraulic System #1 receives pressure from which engine?
+A: Left
+338. Hydraulic System #3 provides hydraulic pressure to _______.
+A: Ailerons, Right Elevator, Rudder
+339. True or False: Hydraulic System #3 is normally pressurized by ACMP 1B.
+A: False, 3A
+340. True or False: There is only one way to close the hydraulic shutoff valves in each
+engine.
+A: False (Fire handle AND button on overhead panel)
+341. True or False: Both Hydraulic System #1 and #2 main pumps are driven by their
+respective engine’s accessory gear box.
+A: True
+342. Nominal hydraulic system pressure is _______ PSI.
+A: 3000
+343. When a hydraulic EDP fails, what color "X" is displayed on the hydraulic synoptic
+page?
+A: Amber (gray circle)
+344. There are a total of _______ AC electrically-driven hydraulic pumps (ACMPs).
+A: 4
+345. True or False: All three hydraulic systems have an EDP and an ACMP.
+A: False (#3 has no EDP)
+346. Hydraulic System #1 can be pressurized by _______.
+A: EDP, ACMP 1B
+347. Which hydraulic ACMP pump can be powered by the RAT in the event of an AC
+power failure?
+A: 3A
+348. True or False: Engine #1 and #2 hydraulic shutoff valves can be closed by pulling
+the respective engine’s fire handle.
+A: True
+349. Which of the following statements is true regarding the accumulators in the three
+hydraulic systems?
+A: maintain constart pressure during periods of transient flow demands,
+also keeps residual pressure in the reservoir to avoid pump cavitation
+350. True or False: The hydraulic SOVs automatically close when fluid temperature
+reaches 125 degrees C.
+A: True
+351. The EDPs normally deliver hydraulic fluid at _______ PSI to the associated
+system's consumers.
+A: 3000
+352. The AC powered pumps in the hydraulic system include _______.
+A: 1B, 2B, 3A, 3B
+353. The ACMPs for Hydraulic System #1 and Hydraulic System #2 are normally left in
+the _______ position.
+A: AUTO
+354. True or False: The PTU is used to assist in landing gear operation should the left
+engine or left EDP fail.
+A: False (uses left side for power if right side fails)
+355. True or False: The PTU allows for fluid transfer between all 3 hydraulic systems.
+A: False
+356. The PTU is associated with hydraulic systems _____ and _____.
+A: 1, 2
+ICE AND RAIN PROTECTION
+357. The aircraft has a total of _______ ice detector probes.
+A: 2
+358. The ice detector system uses _______ to detect ice.
+A: 2 probes vibrating at a high frequency
+359. The leading edge slats are heated by _______.
+A: engine bleed air
+360. True or False: Engine performance during takeoff is affected by the anti-ice
+system.
+A: True
+361. Each windshield consists of _______ sensor(s) and one (1) element.
+A: 3
+362. The following areas are anti-iced EXCEPT _______.
+363. True or False: When the wing anti-ice system is no longer needed, it must be
+manually shut off.
+A: False (automatically off after 2 min of no ice detected)
+364. How long does the anti-ice protection system test last?
+A: 60 seconds
+365. In the event that an electrical signal is lost, the valve for the engine bleed air anti-
+ice system will _______.
+A: failsafe open
+366. True or False: The ADSPs and the Total Air Temperature probes located on the
+nose of the aircraft are heated to ensure they deliver correct information to the Air
+Data system.
+A: True
+367. When the selector knob is in the LOW position, the wipers will operate at _______
+cycles per minute.
+A: 80
+368. When the selector knob is in the HIGH position, the wipers will operate at _______
+cycles per minute.
+A: 125
+369. When the selector knob is in the TIMER position, the wipers will operate
+intermittently every _______ seconds.
+A: 8
+370. True or False: The wipers will automatically stop when operating on a dry
+windshield.
+A: True
+371. The aircraft's electrical system is NOT used to heat which of the following
+components?
+372. Which of the following statements is correct regarding the engine anti-ice system?
+373. True or False: The message "ICE CONDITION" will display on EICAS and the Anti-ice
+synoptic page whenever the wing anti-ice system is activated.
+A: False (message means ice detected, not anti-ice activated)
+374. True or False: If both ice detectors fail, the ice protection system will become
+completely inoperative.
+A: False
+375. True or False: If the left engine's anti-ice system fails, the cross bleed valve may
+be opened to supply air from the right engine's anti-ice system.
+A: False
+376. When in flight with a single AC electrical source available, which of the following
+will be true regarding windshield heat?
+A: Only left one is heated
+377. True or False: The wing anti-ice system performs its own self-test.
+A: True
+378. When does the wing anti-ice system perform its self-test?
+A: The first of 10000 AGL or 10 minutes (lasts max of 60 seconds)
+FLIGHT INSTRUMENTS
+379. What does MFD stand for?
+380. The aircraft is equipped with _______ independent Air Data Systems (ADSs).
+A: 5
+381. During normal operations, Air Data System (ADS) _______ provides information to
+the left PFD and ADS system _______ provides information to the right PFD.
+A: 1, 2
+382. True or False: The EICAS has a "declutter" feature in which certain information
+normally disappears shortly after takeoff.
+A: True
+383. On initial power-up with BATT 1 and BATT 2 on only, how many displays should
+be on?
+A: 2
+384. There are _______ TAT probes on the nose of the aircraft.
+A: 2
+385. The aircraft is equipped with _______ Air Data Smart Probes (ADSPs).
+A: 4
+386. The PFD indications related to the autoflight system include _______.
+A: FMA, FD
+387. Normally, system synoptic pages are displayed on the _____.
+A: MFD
+388. ADS components include _______.
+A: multi-function probe and air data computer
+389. True or False: The aircraft is equipped with 5 Air Data Smart Probes (ADSPs).
+A: False (4)
+390. The Captain and First Officer can manually select the desired display on the
+______ with the DISPLAYS selector knob on the REVERSIONARY PANEL.
+A: MFD
+391. The color of the selected airspeed when set by the FMS on the PFD is _______.
+A: Magenta
+392. Before takeoff, when all parameters are entered into the MCDU, the TOGA button
+is pressed and the takeoff mode becomes active. What appears on the PFD?
+A: takeoff crossbars
+393. The ALT MISCOMPARE annunciation is generated when the miscompare is
+greater than _______ feet.
+A: 200
+394. The next waypoint on the MFD is indicated by which of the following colors?
+A: Magenta
+395. True or False: The IESS is powered as soon as battery 1 is selected to ON and
+battery 2 is selected to AUTO.
+A: True
+396. The radar altimeter maximum operating height is _______.
+A: 2500 (min is -20)
+397. Which of the following WINDSHEAR advisories will appear on the displays?
+A: red or amber WSHEAR, guidance cue
+398. True or False: After takeoff, once the EICAS declutters, there is no way to
+repopulate the EICAS information until after the aircraft has landed.
+A: False
+LANDING GEAR, BRAKES, NOSEWHEEL STEERING
+399. How many Proximity Sensor Electronic Modules (PSEM) process signals from weight on
+wheel sensors to determine WOW status?
+A: 2
+400. How many WOW sensors are installed on each gear?
+A: 2
+401. There are a total of _______ WOW sensors on the aircraft.
+A: 6
+402. Hydraulic pressure for the landing gear system is delivered by Hydraulic System
+#_______.
+A: 2
+403. The landing gear indication will be displayed in _______ when the gear is down
+and locked.
+A: green
+404. True or False: In the event of dual radio altimeter failure, the landing gear warning
+inhibition button silences the aural warning only if the SLAT/FLAP lever is in the
+0,1,2,3,4 position.
+A: False (inhibits regardless of flap selector position)
+405. The nosewheel steering system is powered by Hydraulic System #_______.
+A: 2
+406. The nosewheel steering system is electronically controlled and powered by
+Hydraulic System #_______.
+A: 2
+407. The maximum nosewheel deflection when using the steering tiller is _______
+degrees.
+A: 76
+408. True or False: From 0-10 kts., maximum steering deflection is 56 degrees from
+center.
+A: False (76)
+409. True or False: Generally, the faster the speed on the ground, the LESS steering is
+available from the tiller.
+A: True
+410. Maximum steering deflection available above 100 kts. is _______ degrees.
+A: 7
+411. True or False: The brake system automatically applies the brakes upon gear
+retraction to stop the wheels from spinning as they retract.
+A: True
+412. True or False: The braking system is a "brake by wire" system.
+A: True
+413. If a wheel's speed is _______ below its paired wheel, the BCM commands zero
+pressure to the brake of the slower wheel.
+A: 33%
+414. Anti-skid protection is deactivated at speeds below _______ kts.
+A: 10
+415. True or False: Anti-skid protection is available when using the emergency brake.
+A: False
+416. The touchdown protection system, which prevents operation of the main landing
+gear brakes during touchdown, will inhibit braking until _______.
+A: 3 seconds after WOW, or above 50 kts wheel speed
+417. When in the normal operating range, the brake temperature pointer and digital
+brake temperature values are displayed with which color?
+A: Green
+418. When brake temperature has reached the cautionary range or no takeoff range, it
+is displayed with which color?
+A: Amber
+419. True or False: In terms of brake temperature, if a value is invalid, the pointer
+disappears from the display and the digital display changes to amber dashes.
+A: True
+420. Autobrakes are provided for _______.
+A: Landing, RTO
+421. _______ is the selected autobrake mode for takeoff, providing maximum
+deceleration rate.
+A: RTO
+422. The Emergency/Parking brake can be used to slow the aircraft when the normal
+braking system has failed and is powered by Hydraulic System #_______ and
+#_______.
+A: 1, 2
+423. Which of the following is the correct statement regarding alternate gear extension?
+424. The Main Landing Gear (MLG) is held in the up and locked position by _______.
+A: uplocks
+425. The nosewheel steering system is _______ controlled & _______ actuated steer-
+by-wire system.
+A: electrically, hydraulically
+426. The brakes are powered by Hydraulic System #_______.
+A: 1 and 2
+427. _______ prevents tire skidding and ensures maximum braking efficiency.
+A: Anti-skid
+428. True or False: There is anti-skid protection when using the emergency brake.
+A: False
+429. The landing and RTO Autobrake modes will be disarmed if which of the following
+conditions occurs?
+A: Knob changes, WOW indicates in-flight, faults detected, toe brakes applied, TLA above idle
+430. Which hydraulic pump(s) can run when the RAT is deployed?
+A: 3A
+LIGHTING
+431. The aircraft has _______ landing lights.
+A: 3
+432. True or False: Two red beacon lights are installed in the aircraft, one on top and
+one on the bottom of the fuselage.
+A: True
+433. The aircraft is equipped with _______ landing lights and _______ taxi lights.
+A: 3/3
+434. True or False: Because there are LED navigation lights installed, there is NO
+backup bulb installed.
+A: True
+435. On the flight attendant cabin annunciator panels in (aka, rainbow lights), a flashing
+_______ light illuminates when the flight crew makes an emergency call to the
+flight attendant from the flight deck.
+A: Red
+436. True or False: In the event of DC power loss, the emergency lights have their own
+batteries to supply power to the lights.
+A: True
+437. Batteries supply power to all emergency lights for approximately _______ minutes.
+A: 10
+438. The position lights display _____ on the left wing and _____ on the right wing.
+A: Red, green
+439. Upon entering the aircraft with NO power, selecting the COURTESY LIGHTS
+switch on the forward FA panel to AUTO gives you lighting for _____ minutes.
+A: 5
+440. Where are there controls for the emergency lights?
+A: Cockpit and FA control panels
+NAVIGATION
+441. True or False: Vertical navigation is an FMS function that calculates a vertical
+profile based on what data is entered.
+A: True
+442. The MCDU display can be divided into three basic areas, not including which of the
+following?
+A: Anything except title, data, scratchpad
+443. True or False: The scratchpad on the MCDU is located on the top line of the
+display screen.
+A: False (bottom)
+444. True or False: The PERF key brings pilots to the performance page, which
+includes performance initialization for climb and cruise only.
+A: False
+445. True or False: The FMS can be set to auto-tune VHF/NAV frequencies.
+A: True
+446. Which of the following cannot be viewed on the MCDU RADIO page?
+A: GPS?
+447. Aircraft navigation is controlled by what four systems?
+A: IRS, GPS, FMS, Radio navigation
+448. In order to have RAIM, The GPS must have a minimum of _______ satellite
+signals.
+A: 5
+449. True or False: It is not possible to tune the NAV radios using the identifier.
+A: False
+WARNING SYSTEMS
+450. What does EGPWS stand for?
+451. What does TCAS stand for?
+452. The colors associated with the EICAS 4-level alert messaging system are:
+A: Red, amber, cyan, white
+453. True or False: The ELT is located in the Forward EBAY.
+A: False
+454. A root message on the EICAS is indicated by a _____ to the left of the message.
+A: chevron
+455. True or False: A single failure can only generate one EICAS message.
+A: False
+456. True or False: The takeoff configuration warning system provides an aural and
+visual warning when the aircraft is not in a suitable takeoff configuration.
+A: True
+457. True or False: The Forward Looking Terrain Awareness function looks ahead of
+the aircraft to detect terrain or obstacle conflicts with greater alerting time.
+A: True
+458. Ground Proximity Warning Function has _______ modes and compares aircraft
+position with a terrain database to provide aural alerts and displays.
+A: 7
+459. The Terrain Clearance floor function provides an increasing terrain clearance
+protection envelope around the airport runway. It is based on the aircraft's
+_______ position, nearest runway, and radio altitude.
+A: present
+460. Terrain mapping is provided by EGWPS and is displayed on the MFD navigation
+map display selected. __________ means pilots are approximately 30 seconds
+from impact.
+A: Red
+461. Terrain mapping is provided by EGWPS and is displayed on the MFD navigation
+map display selected. __________ means pilots are approximately 60 seconds
+from impact.
+A: Yellow
+462. Terrain mapping displayed on the MFD is displaying Solid Green. This means
+_______.
+A: Highest terrain is not within 500 feet, or 250 feet on with landing gear down
+463. If the EGPWS or _______ are unavailable, windshear conditions will not be
+detected.
+A: radio altimeter
+464. The windshear detection system monitors for windshear between 10 and _______
+feet radio altitude.
+A: 1500
+465. True or False: If either the EGPWS or radar altimeter are unavailable, windshear
+conditions will not be detected.
+A: True
+466. When a windshear caution is issued, the following does NOT occur.
+A: Red WSHEAR, guidance cue (caution causes amber message, and aural alert)
+467. The windshear escape guidance system is provided through _______.
+A: Flight Director
+468. During a windshear caution or warning, any flex or de-rated thrust mode is
+cancelled by moving thrust levers go to the _______ position.
+A: MAX
+469. True or False: TCAS setup and selections are normally made via the CCD and the
+EICAS.
+A: False (MFD)
+470. TCAS traffic detected within 2,700 feet vertically and beyond 6.5 nm laterally of the
+aircraft is displayed as a hollow diamond and is categorized as _______ traffic.
+A: other
+471. A traffic target that is shown on the TCAS with "-26" associated with it means
+_______.
+472. A traffic target that is shown on the TCAS with "+19" associated with it means
+_______.
+473. Normally, TCAS TA and RA information is displayed on the _______.
+A: MFD
+474. A TCAS TA is displayed as a _______ circle on TCAS.
+A: amber
+475. A TCAS RA is displayed as a _______ square on the TCAS.
+A: red
+476. Which of the following colors is NOT associated with the EICAS 4-level message
+priority indicating?
+477. True or False: A takeoff configuration warning is activated if the aircraft is on the
+ground, thrust is applied, and any spoiler panel is deployed.
+A: True
+478. True or False: A takeoff configuration warning is activated if the aircraft is on the
+ground and thrust is applied while the pitch trim is out of the green range.
+A: True (shown on EICAS)
+479. True or False: A takeoff configuration warning is activated if the aircraft is on the
+ground, thrust is applied, and the parking brake is applied.
+A: True
+480. True or False: A takeoff configuration warning is activated if the aircraft is on
+the ground, thrust is applied, and the flap position does not match the position set
+on FMS TAKEOFF INIT 2/2.
+A: True
+481. True or False: A takeoff configuration warning is activated if the aircraft is on the
+ground, thrust is applied, and the flaps are not in the takeoff position.
+A: True
+482. The EGWPS database consists of all hard surface runways greater than _______
+feet in length.
+A: 3500
+483. Which of the following is NOT an EGPWS windshear alert mode?
+484. A solid red display with regards to EGPWS indicates which of the following?
+A: 30 seconds from impact
+485. True or False: Windshear warnings are triggered when decreasing headwinds or
+increasing tailwinds and down draft conditions are detected.
+A: True
+486. True or False: Windshear conditions that occur above 1,500 feet radio altitude
+trigger a windshear alert.
+A: False
+487. When the TCAS is set to NORMAL, targets that are shown are within _______ feet
+above or below the current altitude.
+A: 2700
+488. The DVDR records the last _____ minutes of audio information.
+A: 120
+489. The DVDR records the last _____ hours of flight data.
+A: 25
+490. How many minutes after power-down does the DVDR system record?
+A: 10
+OXYGEN
+491. The fight deck oxygen mask system consists of _______.
+A: 3 masks, storage boxes, oxygen cylinder, refill port
+492. Oxygen permits a decent from 41,000 ft. to 10,000 ft. for up to 22 minutes and then
+a continuation at 10,000 ft. for _______ minutes.
+A: 98
+493. The oxygen mask regulator has _______ positions.
+A: 3
+494. The oxygen pressure is continuously monitored and is displayed on the _______.
+A: MFD synoptic page
+495. _______ dashes indicate invalid crew oxygen information or a value out of the
+valid range.
+A: Amber
+496. In order to reset the oxygen mask and communications back to normal after the
+oxygen masks have been removed, pilots must accomplish which of the following?
+A: stow and push test/reset
+497. What produces oxygen for passengers if pressurization is lost?
+A: chemical generators
+498. True or False: A PAX OXY NOT DEPLOYED caution message will display on the
+EICAS if the masks did not deploy after an automatic or manual command.
+A: True
+499. True or False: The passenger oxygen masks will only deploy if manually
+commanded.
+A: False
+500. Passenger oxygen supplies _______ minutes of flow.
+A: 12
+501. True or False: Oxygen is available in the lavatories in the event of a pressurization
+loss.
+A: True
+502. True or False: There is no way to determine crew oxygen pressure from the flight
+deck. It can only be done at the bottle.
+A: False
+503. True or False: The passenger oxygen masks provide smoke protection.
+A: False
+504. Each passenger overhead oxygen compartment is equipped with a storage door
+that is normally held closed by an electrical latching mechanism. This automatically
+releases when the cabin altitude reaches approximately _______.
+A: 14,000 feet
+505. True or False: Each passenger overhead oxygen compartment is equipped with a
+storage door that is normally held closed by an electrical latching mechanism. This
+automatically releases when the cabin altitude reaches approximately 10,000 ft.
+A: False
+506. Portable oxygen is located _______ for walk-around or portable use in the cabin.
+A: near each FA station
+507. The PBE can supply oxygen for approximately_______ minutes.
+A: 15
+508. True or False: The PBE does not protect against smoke.
+A: False
+509. True or False: Only the Captain's and First Officer's seat positions have a
+microphone built in to the oxygen mask.
+A: False (observer's mask is the same as the others)
+510. True or False: If the passenger overhead oxygen compartment doors did not open
+automatically during a pressurization failure, there is no way for the pilots to
+manually deploy the masks.
+A: False
+511. When the crew fixed oxygen system is charged enough for three crewmembers,
+the oxygen pressure is displayed with which color?
+A: Green
+512. Which color is the oxygen pressure displayed in when there is only sufficient
+supply for two crew members?
+A: Cyan
+513. Once activated, each chemical generator can provide approximately _______
+minutes of oxygen.
+A: 12
+514. The NORMAL position on the crew oxygen mask accomplishes what?
+A: O2 concentration depends on altitude
+515. Which selection on the oxygen mask supplies oxygen under pressure to remove
+smoke or fumes from the mask?
+A: EMER
+PNEUMATICS
+516. The AMS automatically controls which of the following?
+A: Bleed air and pressurization
+517. The AMS controller is a _______ channel controller.
+A: Dual
+518. True or False: During normal operations, the left engine would supply bleed air
+Pack 1 while the right engine would supply bleed air to Pack 2.
+A: True
+519. True or False: During high power settings, bleed air is usually supplied by the low
+stage port.
+A: True
+520. Engine bleed air is provided by _______ compressor ports on each engine.
+A: 2
+521. What determines when the high pressure bleed port opens and closes?
+A: AMS
+522. The engine bleed valve located in the _______ regulates pressure from the engine
+bleed system.
+A: nacelle
+523. True or False: Engine fan air can be used on the ground to cool the hot bleed air
+when sufficient RAM air is not available.
+A: True
+524. Prior to entering the bleed supply lines, bleed air temperature is cooled by
+_______.
+A: a precooler
+525. The BLEED 1 button controls the bleed air for_______.
+A: the left engine
+526. True or False: The APU can only be used for bleed air while on the ground.
+A: False
+527. Bleed air from the APU may be used for which of the following?
+A: Air conditioning and engine start
+528. The XBLEED valve allows:
+A: bleed air from one side to supply the other side
+529. True or False: The aircraft has separate external pneumatic ground ports for
+engine starting and pre-conditioned air.
+A: True
+530. The APU can be used as a source of bleed air for which of the following?
+531. True or False: The XBLEED open/close auto-logic is handled by the AMS
+controller as long as the XBLEED switch on the overhead panel is selected out
+(black and white striped advisory light in the switch is illuminated).
+A: False
+532. True or False: Engine Bleed 1 will be commanded closed if the crossbleed fails
+OPEN and the other bleed source is the #2 Engine.
+A: True
+533. Which of the following areas is NOT monitored by the Overheat Detection System
+(ODS)?
+534. True or False: Engine bleed air is supplied from the 2nd and 4th stage bleed ports.
+A: False (6th, 10th)
+535. True or False: With both loops operational, both loops must detect a bleed air leak
+before an EICAS message is displayed.
+A: True
+536. If one channel of the AMS controller fails, which of the following occurs?
+A: Other channel automatically takes over (cyan EICAS message)
+APU
+537. True or False: A dedicated FADEC controls the APU.
+A: True
+538. What power sources can be used to start the APU?
+A: Batt 2, DC GPU
+539. Fuel for the APU can be provided by the _______ tank through the crossfeed valve.
+A: Left
+540. Which fuel tank usually provides the APU with fuel during normal operations?
+A: Right
+541. The _______ provides control of the APU bleed air operations.
+A: AMS
+542. The APU can provide AC electrical power up to __________ ft.
+A: 33,000
+543. True or False: APU bleed control is located on the APU control panel.
+A: False
+544. True or False: The APU will auto shutdown while airborne for a high oil
+temperature condition.
+A: False (on ground, it will)
+545. The APU cooldown period prior to shutdown is _____.
+A: 1 minute
+546. True or False: The APU will auto shutdown on the ground for a low oil pressure
+condition.
+A: True
+547. After the spool-down period of the APU is over, the EICAS message APU
+SHUTTING DOWN will _______.
+A: be removed
+548. True or False: Selecting the APU control knob to OFF shuts down the APU.
+A: True
+549. True or False: The APU can be shut down using the emergency shutdown button,
+but will take 1 minute to cool down.
+A: False
+550. True or False: The APU is controlled by the left engine's FADEC.
+A: False
+551. If OFF is selected while the APU is running, the shutdown sequence _______.
+A: initiates
+552. True or False: The APU must be shut down before every takeoff.
+A: False
+553. When are electrical and pneumatic loading available during an APU start?
+A: 3 seconds after 95% speed
+554. True or False: During the normal shutdown sequence, APU bleed air is
+immediately stopped and electrical power is removed after a 1-minute cooldown
+period, followed by a spool-down period.
+A: True
+555. In flight, the APU automatically shuts down for which of the following conditions?
+A: Overspeed, underspeed, fault
+556. True or False: If BATT 2 is below temperature limits, AC external power can be
+used to start the APU.
+A: False
+557. During an APU fire, what will occur if the APU fire extinguisher button is pressed
+without first pressing the APU EMER STOP button?
+A: Discharges fire bottle, FADEC shuts down APU, fuel valve closes, amber EICAS message
+DOORS AND WINDOWS
+558. The flightdeck door is equipped with _______ blowout panels in the event of a
+rapid depressurization.
+A: 2
+559. True or False: In an emergency, a quick release pin can be removed to unlock the
+flight deck door.
+A: True
+560. True or False: The flightdeck door is equipped with a ballistic-resistant peephole.
+A: True
+561. True or False: The flightdeck door cannot be manually operated by means of a
+mechanical handle.
+A: False
+562. In regard to the flight deck door, the INHIB button will keep the door locked for
+_______ seconds when pressed.
+A: 500
+563. True or False: The normal way a Flight Attendant opens a locked flight deck door
+is with a key.
+A: False
+564. True or False: The passenger cabin control panel for the flightdeck door is located
+near the forward galley.
+A: True
+565. A _______ light on the flightdeck door control panel in the cabin indicates that the
+flightdeck door is unlocked.
+A: green
+566. A _______ light on the flightdeck door control panel in the cabin indicates that the
+INHIB button was pressed.
+A: red
+567. True or False: In regard to the flight deck door, the manual override button installed
+in the electro-mechanical latch can also be used to manually unlock the door.
+A: True
+568. True or False: The four cabin doors and the two cargo doors are the only access
+doors that have indications on the DOORS area of the status page on the MFD.
+A: False
+569. True or False: The main cabin door is the only door with an evacuation slide.
+A: False
+570. A _______ indication in the bottom of the door indicates the girt bar is connected to
+the aircraft.
+A: red
+571. True or False: The escape slide is automatically disarmed when the door is
+opened from the outside.
+A: True
+572. True or False: The two service doors operate differently than the two passenger
+doors.
+A: False
+573. True or False: The rear fuselage doors cannot be monitored on the Status synoptic
+page.
+A: False
+574. The Captain's and First Officer's side windows can be opened _______.
+A: for visibility or emergency exit
+575. True or False: On the Status synoptic page, a GREEN passenger door indicates
+the door is locked and the escape slide is armed.
+A: False (slide arming is not indicated)
+576. True or False: There is an EICAS message displayed if one of the flightdeck side
+windows are open,
+A: False
+ENGINES
+577. Engine shutdown can only be completed if the thrust lever is _______ degrees or
+less above idle position.
+A: 5
+578. Which of the following air sources can be used to start the engines?
+A: APU, XBLEED, ground cart, windmilling
+579. During a normal engine start, fuel is introduced at approximately _____% N2.
+A: 20
+580. True or False: Each engine's FADEC is a tri-channel microprocessor.
+A: False (Dual)
+581. True or False: If in flight, the FADEC disregards an OFF selection of the ignition
+switches.
+A: True
+582. Placing the thrust levers in _______ selects takeoff, maximum continuous, or go-
+around mode settings.
+A: TO/GA
+583. When the thrust levers are placed to IDLE, the following idle modes are available:
+A: Flight idle, approach idle, final approach idle, ground idle
+584. The wing anti-ice cyan line on the N1 gauge appears when in icing conditions
+during final approach, gear or flaps are extended, and the radio altimeter altitude is
+below _____ feet.
+A: 1200
+585. Which of the following statements regarding FADEC electrical power is most
+accurate?
+586. True or False: In flight, the ATTCS is automatically armed any time the GA thrust
+mode is selected.
+A: True
+587. Approach idle is activated when:
+A: in flight below 15000 feet, flaps or gear extended
+588. True or False: Approach idle is activated at any altitude when Flaps 1 or greater is
+selected and the landing gear is down.
+A: False (depends on altitude)
+589. Final approach idle is activated when the aircraft is in flight, altitude is less than
+_____ ft. AGL, landing flaps are selected and gear is down.
+A: 1200
+590. True or False: "High Altitude Idle" is one of the idle thrust modes available when
+the thrust levers are set to IDLE and the aircraft is between FL350 and FL410.
+A: False
+591. True or False: If two consecutive overspeed detection events occur within 30
+seconds of each other, the FADEC will not relight the engine.
+A: False (3)
+592. Engine oil is cooled by _______ before it flows to various components of the
+engine.
+A: fuel-oil heat exchanger
+593. Thrust reverser 1 is powered by Hydraulic System #_______ and thrust reverser 2
+is powered by Hydraulic System #_______.
+A: 1, 2
+594. Thrust reversers that are fully deployed are displayed as REV with which color?
+A: Green
+595. Thrust reversers that are in transition are displayed as REV with which color?
+A: Amber
+596. Thrust reversers that are failed between selected and actual reverser positions are
+displayed as REV with which color?
+A: Red
+597. True or False: This aircraft is equipped with Pratt & Whitney high-bypass turbofan
+engines.
+A: False. GE CF34-8E
+598. True or False: Each engine can produce up to 17,500 lbs. of thrust with the
+activation of the ATTCS system.
+A: False. 14,500 lbs.
+599. The N1 rotor consists of _______.
+A: Fan, low pressure turbine.
+600. FADEC automatically controls the ignition system if it's in the _______ position.
+A: AUTO
+601. Primary engine indications are primarily displayed on the _______.
+A: EICAS
+602. Engine oil levels are displayed on the _______.
+A: MFD
+603. What does ATTCS stand for?
+A: Automatic Takeoff Thrust Control System
+604. A FLEX take-off is achieved by entering what into the MCDU?
+A: T/O Dataset Menu (higher temperature)
+605. True or False: If ATTCS is NOT selected for takeoff, the equivalent ATTCS thrust
+can be manually achieved by selecting the thrust levers to the MAX position.
+A: True
+606. True or False: The thrust reverser system is electronically actuated.
+A: False (hydraulically)
+607. If the active FADEC channel fails on an engine, what is the result?
+A: The other channel takes over
+608. Which of the following would NOT trigger an ATTCS command from the FADEC?
+609. True or False: During the starting process, the FADEC closes the SCV when the
+starter cutout speed is reached.
+A: True
+610. During ground start, ignition is initiated by the FADEC at approximately _______%
+N2.
+A: 7
+611. Approach Idle mode allows for which of the following?
+A: Rapid acceleration to GA thrust
+612. True or False: The autothrottles can be engaged in flight at any time and under any
+circumstances.
+A: False
+613. When can the autothrottle be engaged in flight?
+A: no failures, AT button pressed, above 400 AGL, thrust levers aligned
+614. When can the autothrottle be engaged on the ground?
+A: no failures, AT button pressed, thrust levers above 50 degrees
+615. The autothrottle disengages when the difference in the TLA is greater than _____
+degrees.
+A: 8
+616. True or False: Autothrottle disengagement can be accomplished by pressing either
+the A/T DISC button on the thrust levers or by pressing the AT button on the
+Guidance Panel.
+A: True
