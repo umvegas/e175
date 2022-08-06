@@ -270,13 +270,32 @@ var flows = [{
           ['li', 'Notify ATC if in RVSM airspace and difference is &gt; 200 ft']],
          [25.51,46.32,32.03,56.82]]],
 }, {
-    name : "PM Descent",
+    name : "PF Descent",
     stops : [
         ['Flight Instruments',
          ['ul',
-          ['li', 'RA/BARO pre-select radios and courses'],
-          ['li', 'Conduct approach briefing']],
-         [25.51,46.32,32.03,56.82]]],
+          ['li', 'RA/BARO pre-select radios and courses']],
+         [36.24,40.45,61.51,42.70]],
+        ['Approach briefing',
+         'Complete',
+         [55.13,25.07,61.69,29.68]]],
+}, {
+    name : "PM Descent",
+    stops : [
+        ['MCDU: ATIS',
+         ['ul',
+          ['li', 'Request ATIS'],
+          ['li', 'DLK &rarr; ATS MENU &rarr; ATIS REQ']],
+         [40.92,58.77,47.12,63.66]],
+        ['Flight Instruments',
+         ['ul',
+          ['li', 'RA/BARO pre-select radios and courses']],
+         [36.24,40.45,61.51,42.70]],
+        ['MCDU: Landing Data',
+         ['ul',
+          ['li', 'Request landing data'],
+          ['li', 'DLK &rarr; PERFORMANCE &rarr; LANDING CONDITIONS']],
+         [41.02,63.66,46.94,67.78]]],
 }, {
     name : "PM 18,000, Descending",
     stops : [
@@ -375,8 +394,8 @@ function nbAlert(message, hint, onDismiss) {
         ['padding', '2em'],
         ['borderRadius', '1em'],
         ['position', 'absolute'],
-        ['top', (window.scrollY + 50) + 'px'],
-        ['left', '50px']],
+        ['top', (window.scrollY + 0) + 'px'],
+        ['left', '0px']],
        ['with', div => {
            bye = () => {
                div.remove();
@@ -420,6 +439,7 @@ function useFlow(flow) {
         errors = [],
         areas,
         stopTimer,
+        finished,
         hideHinter,
         ndxMap = {};
     function pickAnother() {
@@ -496,6 +516,7 @@ function useFlow(flow) {
             }
             stopTimer = () => {
                 clearTimeout(toid);
+                finished = true;
                 return totalMS;
             };
             update();
@@ -505,9 +526,13 @@ function useFlow(flow) {
         return M([
             'area',
             ['on', ['click', e => {
-                const correctSequence = ndx === nextStopNdx;
+                const correctSequence = ndx === nextStopNdx,
+                      repeatedStop = ndx === nextStopNdx - 1;
+                if (finished) { return; }
                 dropLastMessage = dropLastMessage && dropLastMessage();
-                if (correctSequence) {
+                if (repeatedStop) {
+                    console.log('repeated stop');
+                } else if (correctSequence) {
                     addChecked(stop.name, stop.description);
                     if (stop.description.join) {
                         dropLastMessage =
