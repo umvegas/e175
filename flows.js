@@ -3,9 +3,6 @@ var h, w, theMap;
 var flows = [{
     name : "Originating",
     stops : [
-        //['Overhead Panel',
-        // 'Check (see expanded overhead flow)',
-        // [35,0.37,64.83,17.47]],
         ['Flightdeck general',
          ['ul',
           ['li', 'Emergency equipment: check'],
@@ -77,11 +74,7 @@ var flows = [{
           ['li', 'Check VOR if needed']],
          [41.02,58.77,46.95,67.70]],
         ['MCDU 2',
-         ['ul',
-          ['li', 'Set'],
-          ['li', 'Check CB status'],
-          ['li', 'Check Nav Database'],
-          ['li', 'Check VOR if needed']],
+         'Check Nav Database',
          [52.80,58.77,58.81,67.70]],
         ['Flight Controls Mode Panel',
          'Guarded and dark',
