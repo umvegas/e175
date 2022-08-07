@@ -216,10 +216,10 @@ var flows = [{
          [56.10,80.99,58.31,87.49]],
         ['Air Conditioning and Pressurization',
          'Check',
-         [58.90,7.34,64.66,14.87]],
+         [50.34,53.19,53.31,54.76]],
         ['APU',
          'OFF or as required by MEL',
-         [47.71,5.76,50.00,7.99]]],
+         [50.34,52.63,53.39,53.28]]],
 }, {
     name : "PM 10,000, Climbing",
     stops : [
