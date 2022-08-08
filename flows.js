@@ -204,6 +204,26 @@ var flows = [{
           ['li', 'Call "Below the line"']],
          [53.31,10.87,55.08,12.73]]],
 }, {
+    name : "CA After Start",
+    stops : [
+        ['Flight Controls',
+         ['div',
+          ['div', 'When hydraulic PBIT complete (~1 minute):'],
+          ['ul',
+           ['li', 'Press STEERING DISENGAGE'],
+           ['li', 'Check controls with smooth and continuous movement'],
+           ['li', 'Check elevator, aileron, and rudder']]],
+         [17.46,56.99,37.29,66.02]],
+        ['MFD',
+         'Select MAP',
+         [33.64,45.43,41.53,57.43]],
+        ['STEERING',
+         'Press on',
+         [3.9,64.47,7.97,67.33]],
+        ['APU',
+         'State "APU (on/off), After Start Checklist"',
+         [50.34,52.63,53.39,53.28]]],
+}, {
     name : "PM After Takeoff",
     stops : [
         ['SLAT/FLAP Lever',
