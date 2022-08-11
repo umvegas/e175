@@ -5,11 +5,11 @@ LIMITATIONS
 1. What is the airplane Maximum Landing Weight? 
 A: 75,177lbs 
 
-2. What is required in the event of a landing below -40°C? 
+2. What is required in the event of a landing below -40&deg;C? 
 A: Maintenance inspection 
 
 3. What is the Minimum Battery Temperature? 
-A: -20C 
+A: -20&deg;C 
 
 4. What is the maximum operating altitude? 
 A: FL410 
@@ -17,31 +17,30 @@ A: FL410
 5. What is the maximum Altitude for Flap Extension? 
 A: 20,000' MSL 
 
-6. What is the maximum speed for Landing Gear Operation°? 
+6. What is the maximum speed for Landing Gear Operation? 
 A: 250 KIAS 
 
 7. What is the maximum speed to open the Direct Vision Windows? 
 A: 160 KIAS 
 
 8. What are the Turbulent Air Penetration target speeds? 
-A: 250 KIAS below 10,000’ MSL 
+A: 250 KIAS below 10,000' MSL 
 
-270 KIAS or 0.76M above 10,000’ MSL 
+270 KIAS or 0.76M above 10,000' MSL 
 
 9. What are the flap extended speeds? 
-A: Flaps 1 – 230 KIAS 
-Flaps 2 -215 KIAS 
-Flaps 3 – 200 KIAS 
-Flaps 4 – 180 KIAS 
-Flaps 5 – 180 KIAS 
-Flaps Full – 165 KIAS 
+A: Flaps 1 - 230 KIAS 
+Flaps 2 - 215 KIAS 
+Flaps 3 - 200 KIAS 
+Flaps 4 - 180 KIAS 
+Flaps 5 - 180 KIAS 
+Flaps Full - 165 KIAS 
 
 10.What is the Max Tire Groundspeed? 
 A: 195 KIAS 
 
 11.What is the maximum tailwind takeoff and landing component? 
 A: 15 knots 
-
 
 12.What is the max crosswind for a Rwy CC 6? 
 A: 38kts 
@@ -53,13 +52,13 @@ A: 60% with greater than 10kts tailwind
 A: 794 lbs. 
 
 15.What is the minimum fuel tank temperature? 
-A: -37�C 
+A: -37&deg;C 
 
 16.Can we takeoff with the x-feed selector on? 
 A: No 
 
 17.Minimum oil temperature for engine start? 
-A: -40�C 
+A: -40&deg;C 
 
 18.What is the maximum cabin differential pressure? 
 A: 8.4 psi 
@@ -74,11 +73,11 @@ A: -0.5 psi
 A: 0.2 psi 
 
 22.When does engine anti-ice need to be selected on the T.O. data set menu? 
-A: 5�C - 10�C and: visible moisture, up to 1700' AFE 
+A: 5&deg;C - 10&deg;C and: visible moisture, up to 1700' AFE 
 Ground operations with snow, ice, standing water/slush 
 
 23.When does T.O. data set menu need to be set to ALL? 
-A: Less than 5�C: visible moisture, up to 1700 AFE 
+A: Less than 5&deg;C: visible moisture, up to 1700 AFE 
 Ground operations with snow, ice, standing water/slush 
 
 24.What is the maximum airspeed for windshield wiper operation? 
@@ -96,7 +95,7 @@ A: 50' AFE
 28.What are the Autoland wind limitations? 
 A: Headwind - 25 knots 
 Tailwind - 10 knots 
-Crosswind – 15 knots 
+Crosswind - 15 knots 
 
 29.What flap setting is required for Autoland? 
 A: Flaps 5
@@ -150,7 +149,7 @@ A: Pilot Flying:
 Upon receiving EPGWS Warning:
 Disengage Autopilot. 
 Simultaneously advance thrust levers to MAX 
-and pitch to 20�or PLI, whichever is lower. 
+and pitch to 20&deg; or PLI, whichever is lower. 
 Maintain the present airplane configuration 
 (gear/flaps) until terrain separation is achieved. 
 Climb to the MSA or MORA. 
@@ -203,11 +202,11 @@ AIRCRAFT GENERAL
 43.What is the wing span? 
 A: A: 93' 11"
 
-44.What is the minimum pavement width to make a 180°turn? 
+44.What is the minimum pavement width to make a 180&deg;turn? 
 A: 59' 2"
 
 45.What is the maximum nosewheel steering angle when using the handwheel steering? 
-A: 76� (below 10 knots) 
+A: 76&deg; (below 10 knots) 
 
 46.How long will the Emergency Lights be powered? 
 A: 10 minutes 
@@ -216,7 +215,7 @@ A: 10 minutes
 A: Yes, from the FA control panel 
 
 48.If the electric rudder pedal adjustment is inoperative, can the rudder pedals be adjusted? 
-A: Yes, but it’s a MTX procedure 
+A: Yes, but it's a MTX procedure 
 
 49.When will the flight deck unlock button flash? 
 A: When the EMERG ENTRY push button on the passenger cabin control panel is pushed. 
@@ -264,7 +263,7 @@ A: Opens the IDG contactor isolating the IDG from the AC BUS.
 A: Mechanically disconnects the IDG. (cannot be reconnected in flight) 
 
 63.How are the DC ESS Busses powered in the event of a complete AC power loss and prior to RAT deployment? 
-A: Aircraft batteries via the Hot BATT busses 1&2 
+A: Aircraft batteries via the Hot BATT busses 1 and 2
 
 64.What is the minimum speed if the RAT is deployed? 
 A: 130 KIAS 
@@ -303,7 +302,7 @@ Opposite IDG (cross-side)
 A: Converts AC power to DC 
 
 75.What do you expect to happen if the Parking Brake is released with the GPU connected? 
-A: EICAS caution message and a “GPU CONNECTED”. 
+A: EICAS caution message and a "GPU CONNECTED". 
 
 76.Can the aircraft be powered using the DC GPU? 
 A: No 
@@ -332,7 +331,7 @@ A: Deactivates the ignition system and inhibits fuel flow on the ground.
 A: Enables FADEC to continuously activate both exciters when the engine is running. 
 
 84.When is the cyan line displayed on the N1 gauge? 
-A: During icing conditions on final approach below 1200’ with gear or flaps down. 
+A: During icing conditions on final approach below 1200' with gear or flaps down. 
 
 85.What does the cyan line on the N1 gauge mean? 
 A: Minimum thrust level to meet bleed requirements for icing conditions. 
@@ -377,12 +376,12 @@ A: Yes, by moving the thrust levers to the MAX position.
 A: When N2 reaches 102% FADEC shuts engine down. If overspeed is detected 3 times in 30 seconds 
 FADEC will not relight the engine. 
 
-96.What bus powers the “A” ignitors? 
+96.What bus powers the A ignitors? 
 A: AC stby bus. (in case of dual engine failure) 
 
 97.What powers FADEC above/below 50% N2? 
-A: Above 50% – PMA (Permanent Magnetic Alternator) 
-Below 50% – Aircraft Electrical Source 
+A: Above 50% - PMA (Permanent Magnetic Alternator) 
+Below 50% - Aircraft Electrical Source 
 
 98.What does the Green Bug on the N1 gauge mean? 
 A: Maximum possible power for current conditions. 
@@ -418,7 +417,7 @@ A: Acceleration and Deceleration rate along the flight path.
 A: No indication, the only indication will be for a test failure. 
 
 108. What do high density red dots indicate on the EGPWS? 
-A: The terrain is more than 2000’ above the aircraft altitude. 
+A: The terrain is more than 2000' above the aircraft altitude. 
 
 109. If IRS 1 fails does it automatically revert to IRS 2? 
 A: No, it must be manually selected. 
@@ -473,7 +472,7 @@ A: No, only from tank to engine.
 124. What is the maximum fuel imbalance? 
 A: 794 lbs (Fuel Imbalance EICAS message at 800lbs) 
 
-125. What does an EICAS FUEL EQUAL – XFEED OPEN message mean? 
+125. What does an EICAS FUEL EQUAL - XFEED OPEN message mean? 
 A: Fuel imbalance <100lbs with the cross feed valve open. 
 
 HYDRAULICS
@@ -482,7 +481,7 @@ HYDRAULICS
 A: No 
 
 127. What Bus powers ACMP 1? 
-A: AC BUS 2 (ACMP’s are cross wired) 
+A: AC BUS 2 (ACMP's are cross wired) 
 
 128. What happens when engine 1 is running and the parking brake is released? 
 A: ACMP 2B is activated 
@@ -534,13 +533,13 @@ Brake pedal application
 Either thrust reverser advanced beyond idle during auto brake application. 
 
 142. What is the fastest speed which max nosewheel deflection is available? 
-A: 10 knots (76 degrees of travel) 
+A: 10 knots (76&deg; of travel)
 
 143. At what speed is auto brake armed on takeoff with RTO selected? 
 A: 60 knots 
 
-144. Can the Nose Wheel Steering be turned off from the FO’s side? 
-A: Yes via the steering disengage switch on the FO’s yoke. 
+144. Can the Nose Wheel Steering be turned off from the FO's side? 
+A: Yes via the steering disengage switch on the FO's yoke. 
 
 145. How do you get the green light on the nose wheel to illuminate? 
 A: Steering off 
@@ -571,7 +570,7 @@ A: Green for three, blue for two, amber no dispatch.
 (Values displayed are automatically temp compensated) 
 
 151. When do the passenger masks auto deploy? 
-A: Cabin altitude between 14,000 – 14,750 ft. 
+A: Cabin altitude between 14,000 - 14,750 ft. 
 
 152. How long do the passenger masks provide oxygen? 
 A: 12 minutes. 
@@ -612,13 +611,13 @@ ADVERSE WX
 A: 5nm, 3nm (FOM) 
 
 163. How far shall thunderstorms be avoided in flight? 
-A: 5nm if below 23,000' and temp is >0c 
-10nm if below 23,000' and temp is <0c 
+A: 5nm if below 23,000' and temp is &gt; 0&deg;C
+10nm if below 23,000' and temp is &lt; 0&deg;C
 20nm if above 23,000' 
 over: clear by 5,000' (FOM) 
 
 164. What is the maximum ground wind speed for operations? 
-A: 50kts-steady state, 65kts-gusts (FOM) 
+A: 50kts (steady state), 65kts (gusts)
 
 165. When shall intersection departures not be used? 
 A: Windshear-use the longest runway (FOM) 
@@ -633,7 +632,7 @@ FOM, NORMAL PROCEDURES
 167. When receiving an aircraft directly from another crew, must an originating checklist be completed?
 A: Yes
 
-168. What must the Captain’s pre-departure briefing to FAs cover? 
+168. What must the Captain's pre-departure briefing to FAs cover? 
 A: Aircraft assignment, projected passenger loads, originating or through flight, forecast turbulence, 
 related weather conditions, pertinent MEL items, Flight Plan estimated time enroute, and any additional 
 items Captain deems necessary. (FOM) 
@@ -697,7 +696,7 @@ than one dot deviation from course or glidepath.
 - 1,000 feet AFE and below: 
 -Configured for landing as defined in the AOM Vol 1. 
 -Rate of descent as necessary to maintain the published glidepath, or if in none available, not in excess of 1,000 fpm. 
--Bank angle 15°or less. 
+-Bank angle 15&deg;or less. 
 -The airplane on profile speed within -5/+10 knots of target speed. 
 
 Above 500' AFE 
@@ -706,7 +705,7 @@ Above 500' AFE
 Below 500' AFE 
 
 -If the approach is not stabilized or if a successful landing in the touchdown zone becomes 
-uncertain, either pilot shall call “Missed Approach” and the missed approach shall be executed. 
+uncertain, either pilot shall call "Missed Approach" and the missed approach shall be executed. 
 
 175. When is a takeoff alternate required? 
 A: Reported departure weather is below landing minimums for that airport.  (FOM) 
@@ -716,13 +715,13 @@ A: Yes. (FOM)
 
 177. What other conditions restrict them from making the takeoff or landing? 
 A: Contaminated runway 
-Braking action less than “good” 
+Braking action less than "good" 
 Crosswind greater than 15 knots 
 Windshear reported at the airport 
 Visibility less than 4000 RVR or ¾ mile 
 any other condition the Captain deems appropriate. 
 
-Also landings only with runways less than 7000’ with First Officers with less than 500 hours 
+Also landings only with runways less than 7000' with First Officers with less than 500 hours 
 
 178. What is a "Special airport" and how do you know if you are flying into one?
 A: FOM and Airport INFO charts. (FOM) 
@@ -768,7 +767,7 @@ A: No (FOM)
 A: Attempt to visually acquire traffic. (FOM) 
 
 192. What if any communication is required when changing nav sources? 
-A: State the change to other crewmember “number one nav on FMS”. (FOM) 
+A: State the change to other crewmember "number one nav on FMS". (FOM) 
 
 193. Define Critical Phase of Flight 
 A: Takeoff: Beginning with brake release and ending when:
@@ -853,7 +852,7 @@ A: The Captain shall make all takeoffs and landings when:
 (FOM) 
 
 210. What is the minimum runway width? 
-A: Minimum runway width is 100’ take off, 60 for landing (FOM) 
+A: Minimum runway width is 100' take off, 60 for landing (FOM) 
 
 211. How much fuel reserve is required if no alternate is listed on release? 
 A: 55 minutes at normal cruising fuel consumption. (FOM) 
@@ -898,7 +897,7 @@ A: Pilots shall arrive at the aircraft 30 minutes (40 min for Star Flight) befor
 223. When must pilots be on the flightdeck? 
 A: Pilots shall be on the flightdeck 20 minutes prior to scheduled departure time. (FOM) 
 
-224. Can you take an “other airline pilot” in the jump seat to Canada or Mexico? 
+224. Can you take another airline pilot in the jump seat to Canada or Mexico? 
 A: No (FOMB) 
 
 225. What are two things that a Captain is required to do following a Takeoff Abort? 
@@ -907,10 +906,10 @@ A: The Captain shall submit a PIR and contact dispatch. (FOM)
 226. Must the Flight Director be used on an RNAV-1 SID? 
 A: Yes, RNAV-1 SIDs require the use of the Flight Director. (FOM) 
 
-227. What is the max rate of descent from 2000’ AGL to 1000’ AGL? 
+227. What is the max rate of descent from 2000' AGL to 1000' AGL? 
 A: 2000 fpm (FOM) 
 
-228. What is max bank angle below 500’ on approach? 
+228. What is max bank angle below 500' on approach? 
 A: 15 degrees (FOM) 
 
 229. Established on the final approach segment, you receive a report that the weather is now below landing minimums, can you continue? 
@@ -940,7 +939,7 @@ A: Reviewing the Aircraft Maintenance log
 Ensuring a preflight inspection has been accomplished (FOM) 
 
 237. On preflight, how can a pilot determine if an abnormality has been previously identified? 
-A: Previously identified damage is marked by maintenance with ¼“ yellow dots. (FOM) 
+A: Previously identified damage is marked by maintenance with ¼ yellow dots. (FOM) 
 
 238. Define Block Out for maintenance purposes? 
 A: Aircraft movement under its own power. (FOM) 
@@ -1000,7 +999,7 @@ A: Land as soon as possible. (FOM)
 253. Where can you find a list of mandatory PIR reportable items? 
 A: FOM 
 
-254. When would you make a “Min fuel” declaration? 
+254. When would you make a Min fuel declaration? 
 A: When less than 45 minutes fuel remaining at destination (FOM) 
 
 255. When would you declare a low fuel emergency? 
@@ -1018,7 +1017,7 @@ A: The Captain shall secure the flightdeck. (FOM)
 259. What is the Hijacking transponder code? 
 A: 7500. (FOM) 
 
-260. What is the speed limit in Canada within 10 miles of the airport below 3000’? 
+260. What is the speed limit in Canada within 10 miles of the airport below 3000'? 
 A: 200 Knots (FOM) 
 
 261. Can you taxi across illuminated stop bars if you have a clearance? 
