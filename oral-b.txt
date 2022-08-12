@@ -167,35 +167,33 @@ action and indicate when obstacle(s) have been
 cleared. 
 
 42. Windshear Escape Maneuver 
-A: Pilot Flying Pilot Monitoring 
-
-43. Pilot First Recognizing Windshear Call Windshear
-A: Thrust Levers ... MAX 
+A: Pilot First Recognizing Windshear, Call "Windshear"
+Pilot Flying:
+Thrust Levers ... MAX 
 TOGA button ... Push 
 Flight Director Escape Guidance Cue ... Follow 
 until 1500 AGL and terrain clearance assured.
 (if no EGPWS Windshear announcement
 Pitch to 20 degrees or PLI whichever is lower) 
+Pilot Monitoring:
 Assure MAX Thrust set 
 Monitor Vertical Speed and radar altimeter 
 Advise ATC of windshear encounter 
 
 44. Stall Recovery 
-A: Announce: Stall
-(Pilot first noticing the stall situation/indication) 
+A: Announce: "Stall" (Pilot first noticing the stall situation/indication) 
 Pilot Flying:
-Disengage Autothrottle. 
-Apply nose down and level the wings until out 
-of stall. 
-Apply thrust as required. 
-Accelerate the airplane to a safe speed. 
-Retract speed brakes. 
-After recovery, return to the normal flight path. 
+- Disengage Autothrottle. 
+- Apply nose down and level the wings until out of stall. 
+- Apply thrust as required. 
+- Accelerate the airplane to a safe speed. 
+- Retract speed brakes. 
+- After recovery, return to the normal flight path. 
 Pilot Monitoring:
-Check Auto Throttle and Autopilot disengaged. 
-Monitor altitude and speed. 
-Perform any necessary callout(s). 
-Reconfigure the airplane as commanded. 
+- Check Auto Throttle and Autopilot disengaged. 
+- Monitor altitude and speed. 
+- Perform any necessary callout(s). 
+- Reconfigure the airplane as commanded. 
 
 AIRCRAFT GENERAL
 
@@ -353,8 +351,10 @@ APU
 A: Closes the APU shutoff valve, shutting off the APU with no cool down period. 
 
 85. What happens when the APU switch is selected to OFF? 
-A: Pneumatics are immediately removed and after a 1 minute cool down period the electrical power is 
-removed and the APU is shutdown. 
+A: Pneumatics are immediately removed
+After a 1 minute cool down period:
+- the electrical power is removed
+- the APU is shutdown
 
 86. The APU shall not be unattended for longer than how many minutes? 
 A: 5 minutes (M) 
@@ -602,9 +602,15 @@ completed?
 A: Yes 
 
 156. What must the Captain's pre-departure briefing to FAs cover?
-A: Aircraft assignment, projected passenger loads, originating or through flight, forecast turbulence, 
-related weather conditions, pertinent MEL items, Flight Plan estimated time enroute, and any additional 
-items Captain deems necessary. (FOM) 
+A: Aircraft assignment
+Projected passenger loads
+Originating or through flight
+Forecast turbulence
+Related weather conditions
+Pertinent MEL items
+Flight Plan estimated time enroute
+Any additional items Captain deems necessary
+(FOM) 
 
 157. When do the emergency systems and equipment on the flight deck have to be visually 
 checked? 
@@ -891,9 +897,8 @@ A: 15 degrees (FOM)
 219. Established on the final approach segment, you receive a report that the weather is now below landing minimums, can you continue?
 A: Yes, except Cat III Autoland (FOM) 
 
-220. Can you continue below DH with only approach lights in sight? 
-A: Descent below DH utilizing the approach light system as the only visual
-reference is not authorized unless a Captain Monitored or Autopilot coupled. 
+220. Can you descend below DH with only approach lights in sight? 
+A: Only if on a Captain Monitored or Autopilot coupled approach
 
 221. Can If planning a straight in visual approach at an uncontrolled airport, by what distance 
 shall the aircraft be established on final? 
@@ -931,7 +936,7 @@ A: No (FOM)
 A: The Captain after entering a discrepancy in the logbook. (FOM) 
 
 232. Can you takeoff or land if the braking action is reported as Nil? 
-A: Takeoff or landings not authorized with braking action of Nil. (FOM) 
+A: No (FOM) 
 
 233. When landing on a slippery runway, should you pump the brakes? 
 A: No. Apply brakes smoothly and symmetrically with moderate to firm pressure and hold until a safe taxi 
