@@ -167,35 +167,33 @@ action and indicate when obstacle(s) have been
 cleared. 
 
 41.Windshear Escape Maneuver 
-A: Pilot Flying Pilot Monitoring 
-43. Pilot First Recognizing Windshear Call Windshear
-A: A: Thrust Levers ... MAX 
+A: Pilot First Recognizing Windshear Call Windshear
+Pilot Flying:
+Thrust Levers ... MAX 
 TOGA button ... Push 
 Flight Director Escape Guidance Cue ... Follow 
 until 1500 AGL and terrain clearance assured.
 (if no EGPWS Windshear announcement
 Pitch to 20 degrees or PLI whichever is lower) 
+Pilot Monitoring:
 Assure MAX Thrust set 
 Monitor Vertical Speed and radar altimeter 
 Advise ATC of windshear encounter 
 
 42.Stall Recovery 
-A: Announce: Stall
-(Pilot first noticing the stall situation/indication) 
+A: Announce: "Stall" (Pilot first noticing the stall situation/indication) 
 Pilot Flying:
-Disengage Autothrottle. 
-Apply nose down and level the wings until out 
-of stall. 
-Apply thrust as required. 
-Accelerate the airplane to a safe speed. 
-Retract speed brakes. 
-After recovery, return to the normal flight path. 
+- Disengage Autothrottle. 
+- Apply nose down and level the wings until out of stall. 
+- Apply thrust as required. 
+- Accelerate the airplane to a safe speed. 
+- Retract speed brakes. 
+- After recovery, return to the normal flight path. 
 Pilot Monitoring:
-Check Auto Throttle and Autopilot disengaged. 
-Monitor altitude and speed. 
-Perform any necessary callout(s). 
-Reconfigure the airplane as commanded. 
-
+- Check Auto Throttle and Autopilot disengaged. 
+- Monitor altitude and speed. 
+- Perform any necessary callout(s). 
+- Reconfigure the airplane as commanded. 
 
 AIRCRAFT GENERAL
 
