@@ -68,7 +68,6 @@ var flows = [{
          [56.44,56.04,57.63,57.34]],
         ['MCDU 1',
          ['ul',
-          ['li', 'Set'],
           ['li', 'Check CB status'],
           ['li', 'Check Nav Database'],
           ['li', 'Check VOR if needed']],
@@ -119,7 +118,10 @@ var flows = [{
          'ON',
          [44.83,15.89,45.93,17.01]],
         ['Paperwork',
-         'Verify tail number, review AML, review and sign release',
+         ['ul',
+          ['li', 'Verify tail number'],
+          ['li', 'Review AML'],
+          ['li', 'Review and sign release']],
          [12.63,25.48,22.54,32.41]],
         ['Captain Oxygen Mask',
          'Test, 100%',
@@ -158,7 +160,14 @@ var flows = [{
          'Set',
          [43.98,80.15,49.75,83.77]],
         ['MCDU 1',
-         'Takeoff/departure briefing, review perf-init',
+         ['ul',
+          ['li', 'Takeoff/departure briefing'],
+          ['li', 'Review perf-init',
+           ['ul',
+            ['li', 'Cruise altitude'],
+            ['li', 'Speed schedule'],
+            ['li', 'DEP LIMIT'],
+            ['li', 'Other considerations']]]],
          [41.02,58.77,46.95,67.70]]],
 }, {
     name : "CA Before Start, Below the Line",
@@ -191,7 +200,7 @@ var flows = [{
          ['ul',
           ['li', 'Check door indications'],
           ['li', 'Flightdeck door closed and locked']],
-         [34.41,46.28,40.85,56.32]],
+         [58.81,45.80,66.27,55.16]],
         ['Sterile',
          'ON',
          [41.86,15.80,42.97,17.29]],
@@ -327,6 +336,15 @@ var flows = [{
           ['li', 'LANDING (unless it causes a distraction)']],
          [46.95,10.97,52.80,17.38]]],
 }, {
+    name : "PM 10,000 AFE, Descending",
+    stops : [
+        ['Sterile',
+         'ON',
+         [41.86,15.80,42.97,17.29]],
+        ['Altimeters',
+         'Verify set to landing field altimeter setting',
+         [36.19,40.19,37.46,41.95]]],
+}, {
     name : "CA After Landing",
     stops : [
         ['External Lights',
@@ -359,9 +377,15 @@ var flows = [{
         ['APU (Gen)',
          'ON if needed',
          [47.03,5.39,50.00,7.90]],
+        ['Vertical Profile',
+         'Check for flight completion',
+         [34.24,52.63,40.85,56.33]],
         ['START/STOP Selectors',
          'STOP',
          [47.12,63.38,52.46,65.61]],
+        ['N1 gauges',
+         'OFF',
+         [46.78,46.41,50.34,48.62]],
         ['HYD 3A PUMP',
          'OFF',
          [53.31,10.87,55.08,12.73]],
@@ -431,15 +455,20 @@ function nbAlert(message, hint, onDismiss) {
     return bye;
 }
 function processFlows() {
+    function scaleCoord(coord, cx) {
+        return Math.round(cx % 2 ? h * coord / 100 : w * coord / 100);
+    }
     flows.forEach(flow => {
-        flow.stops = flow.stops.map(([name, description, coords]) => {
+        flow.stops = flow.stops.map(([name, description, coords, alternateCoords]) => {
+            if (alternateCoords) {
+                console.log({ alternateCoords, name });
+            }
             return {
                 name,
                 description,
-                coords : coords.map((coord, cx) => {
-                    return Math.round(cx % 2 ? h * coord / 100 : w * coord / 100);
-                }),
+                coords : coords.map(scaleCoord),
                 coordsPct : coords,
+                alternateCoords,
             };
         });
     });
@@ -450,13 +479,14 @@ function useFlow(flow) {
         dropChecked,
         nextStopNdx = 0,
         errors = [],
-        areas,
+        areas = [],
         stopTimer,
         finished,
         hideHinter,
         ndxMap = {};
     function pickAnother() {
         areas.forEach(area => area.remove());
+        areas = [];
         flowPicker();
     }
     function saveScoreFlow(errors, elapsedMS) {
@@ -534,70 +564,70 @@ function useFlow(flow) {
             };
             update();
         }]]], document.body);
-    areas = flow.stops.map((stop, ndx) => {
+    flow.stops.forEach((stop, ndx) => {
         ndxMap[stop.name] = ndx;
-        return M([
-            'area',
-            ['on', ['click', e => {
-                const correctSequence = ndx === nextStopNdx,
-                      repeatedStop = ndx === nextStopNdx - 1;
-                if (finished) { return; }
-                dropLastMessage = dropLastMessage && dropLastMessage();
-                if (repeatedStop) {
-                    console.log('repeated stop');
-                } else if (correctSequence) {
-                    addChecked(stop.name, stop.description);
-                    if (stop.description.join) {
-                        dropLastMessage =
-                            nbAlert(['div',
-                                     ['div', stop.name],
-                                     stop.description]);
-                    } else {
-                        dropLastMessage =
-                            nbAlert(stop.name + ' . . . ' + stop.description);
-                    }
-                    nextStopNdx += 1;
-                    if (nextStopNdx >= flow.stops.length) {
-                        let mSecs = stopTimer();
-                        saveScoreFlow(errors.length, mSecs);
-                        nextStopNdx = 0;
-                        hideHinter();
-                        setTimeout(function () {
-                            dropLastMessage = dropLastMessage && dropLastMessage();
-                            nbAlert(['div',
-                                     ['on', ['click', e => {
-                                         dropChecked();
-                                     }]],
-                                     ['div', flow.name + " Flow complete!",
-                                      ['style', ['fontWeight', 'bold']]],
-                                     ['div', "Errors: " + errors.length,
-                                      ['ul',
-                                       ['with', errorsUL => {
-                                           errors.forEach(error => {
-                                               M(['li', '"' + error.wrong + '" instead of "' + error.right + '"'], errorsUL);
-                                           });
-                                       }]]],
-                                     ['div', 'Tap here to restart or pick another flow.']],
-                                    undefined, pickAnother);
-                        }, 2100);
-                    }
-                } else {
-                    errors.push({
-                        wrong : stop.name,
-                        right : flow.stops[nextStopNdx].name,
-                    });
-                    dropLastMessage =
-                        nbAlert(['div', "Incorrect:",
-                                 ['style', ['background', '#f55'],
-                                  ['padding', '.5em']]],
-                                flow.stops[nextStopNdx].name);
-                }
-            }]],
-            ['style', ['cursor', 'pointer']],
-            ['attr',
-             ['title', stop.name],
-             ['shape', stop.coords.length > 4 ? 'poly' : 'rect'],
-             ['coords', stop.coords.join(',')]]], theMap);
+        M(['area',
+           ['style', ['cursor', 'pointer']],
+           ['attr',
+            ['title', stop.name],
+            ['shape', stop.coords.length > 4 ? 'poly' : 'rect'],
+            ['coords', stop.coords.join(',')]],
+           ['with', a => areas.push(a)],
+           ['on', ['click', e => {
+               const correctSequence = ndx === nextStopNdx,
+                     repeatedStop = ndx === nextStopNdx - 1;
+               if (finished) { return; }
+               dropLastMessage = dropLastMessage && dropLastMessage();
+               if (repeatedStop) {
+                   console.log('repeated stop');
+               } else if (correctSequence) {
+                   addChecked(stop.name, stop.description);
+                   if (stop.description.join) {
+                       dropLastMessage =
+                           nbAlert(['div',
+                                    ['div', stop.name],
+                                    stop.description]);
+                   } else {
+                       dropLastMessage =
+                           nbAlert(stop.name + ' . . . ' + stop.description);
+                   }
+                   nextStopNdx += 1;
+                   if (nextStopNdx >= flow.stops.length) {
+                       let mSecs = stopTimer();
+                       saveScoreFlow(errors.length, mSecs);
+                       nextStopNdx = 0;
+                       hideHinter();
+                       setTimeout(function () {
+                           dropLastMessage = dropLastMessage && dropLastMessage();
+                           nbAlert(['div',
+                                    ['on', ['click', e => {
+                                        dropChecked();
+                                    }]],
+                                    ['div', flow.name + " Flow complete!",
+                                     ['style', ['fontWeight', 'bold']]],
+                                    ['div', "Errors: " + errors.length,
+                                     ['ul',
+                                      ['with', errorsUL => {
+                                          errors.forEach(error => {
+                                              M(['li', '"' + error.wrong + '" instead of "' + error.right + '"'], errorsUL);
+                                          });
+                                      }]]],
+                                    ['div', 'Tap here to restart or pick another flow.']],
+                                   undefined, pickAnother);
+                       }, 2100);
+                   }
+               } else {
+                   errors.push({
+                       wrong : stop.name,
+                       right : flow.stops[nextStopNdx].name,
+                   });
+                   dropLastMessage =
+                       nbAlert(['div', "Incorrect:",
+                                ['style', ['background', '#f55'],
+                                 ['padding', '.5em']]],
+                               flow.stops[nextStopNdx].name);
+               }
+           }]]], theMap);
     });
 }
 function flowPicker() {
@@ -653,7 +683,6 @@ M(['map',
 M(['img',
    ['style', ['width', '100%']],
    ['attr',
-    //['src', 'cockpit-images/full.PNG'],
     ['src', 'cockpit-images/full-zoom-composite.png'],
     ['usemap', '#full']],
    ['on', ['click', e => {
