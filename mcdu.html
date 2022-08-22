@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <link rel="icon" type="image/ico" href="favicon.ico"/>
+    <meta name="viewport" content="width=device-width">
+    <title>FMS Simulator</title>
+    <style>
+      * {
+          box-sizing : border-box;
+      }
+      body {
+          margin : 0;
+          line-height : 0.9;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+        if (location.hostname === 'www.slooshi.com' ||
+            location.hostname === 'slooshi.com') {
+            if (location.protocol !== 'https:') {
+                location.href = location.href.replace(/http/, 'https');
+            }
+        }
+    </script>
+    <script src="../a2n/a2nbase.js"></script>
+    <script src="mcdu.js"></script>
+  </body>
+</html>
