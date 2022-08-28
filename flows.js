@@ -317,7 +317,10 @@ var flows = [{
          ['ul',
           ['li', 'Request landing data'],
           ['li', 'DLK &rarr; PERFORMANCE &rarr; LANDING CONDITIONS']],
-         [41.02,63.66,46.94,67.78]]],
+         [41.02,63.66,46.94,67.78]],
+        ['Autobrake',
+         'As required (not OFF if &lt; 7000 feet of runway)',
+         [42.63,50.74,44.92,54.55]]],
 }, {
     name : "PM 18,000, Descending",
     stops : [
