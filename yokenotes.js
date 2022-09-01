@@ -1,73 +1,81 @@
 function form() {
-    function row(titles, fillers = []) {
-        function tdFill(filler = '&nbsp;') {
-            return ['td', filler,
-                    ['style', ['textAlign', 'center'],
-                     ['fontFamily', 'monospace'],
-                     ['fontSize', '16px'],
-                     ['padding', '6px 0'],
-                     ['color', '#fff']]];
-        }
-        function th(title) {
-            return ['th', title,
-                    ['style', ['fontSize', '14px']]];
-        }
-        return ['table',
-                ['attr', ['width', '100%'],
-                 ['border', '1'], ['cellspacing', '0'], ['cellpadding', '0']],
-                ['style', ['marginBottom', '5px']],
-                ['tr'].concat(titles.map(th)),
-                ['tr'].concat(fillers.map(tdFill))];
-    }
-    function faBrief() {
-        return [row,
-                ['ETE', 'TURB', 'MEL'],
-                ['----', '------------', '------------']];
-    }
-    function aboveTheLine() {
-        return [row,
-                ['RQ', 'LP', 'OB', 'MEL'],
-                ['--', '--', '--', '-----------------']];
-    }
-    function belowTheLine() {
-        return [row,
-                ['MTOW', 'LIMIT', 'PTOW', 'ATOW'],
-                ['-----', '-----', '-----', '-----']];
-    }
-    function beforeTakeoff() {
-        return [row,
-                ['Min Fuel', 'SE Turn'],
-                ['-----', 'via&nbsp; rch -or&nbsp; turn&nbsp; fra']];
-    }
-    function enroute() {
-        return [row,
-                ['Terrain/Driftdown', 'Fuel', 'FL/AS'],
-                ['xxxrrr/dd div wgt alt<br>xxxrrr/dd div wgt alt', 'dest<br>alt&nbsp;', '---<br>---']];
-    }
-    function arrival() {
-        return [row,
-                ['Flt#', 'LDW', 'Bingo', 'SOB'],
-                ['-----', '-----', '--', '--']];
-    }
-    return ['div',
-            faBrief,
-            aboveTheLine,
-            belowTheLine,
-            beforeTakeoff,
-            enroute,
-            arrival];
+    return [
+        'div',
+        ['style',
+         ['width', '4in'],
+         ['height', '5.2in'],
+         ['margin', '.1in'],
+         ['display', 'inline-block'],
+         ['border', '1px solid black']],
+        ['table',
+         ['style', ['width', '100%'], ['borderBottom', '1px solid gray']],
+         ['tr',
+          ['th', 'ETE',
+           ['style',
+            ['width', '12%'],
+            ['borderBottom', '1px solid lightgray']]],
+          ['th', 'Turb', ['style', ['borderBottom', '1px solid lightgray']]],
+          ['th', 'MEL', ['style', ['borderBottom', '1px solid lightgray']]]],
+         ['tr',
+          ['td', '&nbsp;'],
+          ['td', '&nbsp;'],
+          ['td', '&nbsp;']]],
+        ['table',
+         ['style', ['width', '100%'], ['borderBottom', '1px solid gray']],
+         ['tr',
+          ['td', 'Min', ['style', ['width', '10%']]],
+          ['td', '&nbsp;', ['style', ['borderRight', '1px solid black']]],
+          ['td', 'MTOW', ['style', ['width', '10%']]],
+          ['td', '&nbsp;', ['style', ['borderRight', '1px solid black']]],
+          ['td', 'ENR', ['style', ['width', '10%']]],
+          ['td', '&nbsp;']],
+         ['tr',
+          ['td', 'Req', ['style', ['width', '10%']]],
+          ['td', '&nbsp;', ['style', ['borderRight', '1px solid black']]],
+          ['td', 'PTOW', ['style', ['width', '10%']]],
+          ['td', '&nbsp;', ['style', ['borderRight', '1px solid black']]],
+          ['td', 'AL1', ['style', ['width', '10%']]],
+          ['td', '&nbsp;']],
+         ['tr',
+          ['td', 'LP', ['style', ['width', '10%']]],
+          ['td', '&nbsp;', ['style', ['borderRight', '1px solid black']]],
+          ['td', 'ATOW', ['style', ['width', '10%']]],
+          ['td', '&nbsp;', ['style', ['borderRight', '1px solid black']]],
+          ['td', 'DL', ['style', ['width', '10%']]],
+          ['td', '&nbsp;']],
+         ['tr',
+          ['td', 'OB', ['style', ['width', '10%']]],
+          ['td', '&nbsp;', ['style', ['borderRight', '1px solid black']]],
+          ['td', 'LDW', ['style', ['width', '10%']]],
+          ['td', '&nbsp;', ['style', ['borderRight', '1px solid black']]],
+          ['td', 'RES', ['style', ['width', '10%']]],
+          ['td', '&nbsp;']]],
+        ['table',
+         ['style', ['width', '100%'], ['borderBottom', '1px solid gray']],
+         ['tr',
+          ['td', 'Flt #', ['style', ['width', '10%']]],
+          ['td', '&nbsp;', ['style', ['borderRight', '1px solid black']]],
+          ['td', 'SOB', ['style', ['width', '10%']]],
+          ['td', '&nbsp;', ['style', ['width', '15%'], ['borderRight', '1px solid black']]],
+          ['td', 'Bingo', ['style', ['width', '10%']]],
+          ['td', '&nbsp;']]],
+        ['table',
+         ['style', ['width', '100%'], ['borderBottom', '1px solid gray']],
+         ['tr',
+          ['td', 'D-up', ['style', ['width', '5%']]],
+          ['td', '&nbsp;'],
+          ['td', 'Out', ['style', ['width', '5%']]],
+          ['td', '&nbsp;'],
+          ['td', 'Off', ['style', ['width', '5%']]],
+          ['td', '&nbsp;'],
+          ['td', 'On', ['style', ['width', '5%']]],
+          ['td', '&nbsp;'],
+          ['td', 'In', ['style', ['width', '5%']]],
+          ['td', '&nbsp;']]]];
 }
-function frame() {
-    function formCell() {
-        return ['td', form,
-                ['style', ['height', '5.35in'], ['width', '4.1in'],
-                 ['verticalAlign', 'top'],
-                 ['border', '2px solid black']]];
-    }
-    return ['table',
-            ['attr',
-             ['border', '0'], ['cellspacing', '8'], ['cellpadding', '0']],
-            ['tr', formCell, formCell],
-            ['tr', formCell, formCell]];
-}
-M(frame, document.body);
+M(['div',
+   ['style', ['width', '8.5in']],
+   form,
+   form,
+   form,
+   form], document.body);
