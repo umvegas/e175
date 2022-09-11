@@ -74,13 +74,28 @@ function form() {
         ['table',
          ['style', ['width', '100%'], ['borderBottom', '1px solid gray']],
          ['tr',
-          ['td', 'Crz kts', ['style', ['width', '15%']]],
+          ['td', 'Spd', ['style', ['width', '5%']]],
+          ['td', '&nbsp;', ['style', ['borderRight', '1px solid black']]],
+          ['td', 'FL', ['style', ['width', '8%']]],
+          ['td',
+           '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
+           '&middot;' +
+           '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
+           '&middot;',
+           ['style', ['width', '35%'], ['borderRight', '1px solid black']]],
+          ['td', '&deg;&uarr;&darr;', ['style', ['width', '6%']]],
+          ['td', '&nbsp;']]],
+        ['table',
+         ['style', ['width', '100%'], ['borderBottom', '1px solid gray'],
+          ['fontSize', '.8em']],
+         ['tr',
+          ['td', 'via', ['style', ['width', '5%']]],
           ['td', '&nbsp;'],
-          ['td', 'FL', ['style', ['width', '5%']]],
+          ['td', 'at', ['style', ['width', '5%']]],
           ['td', '&nbsp;'],
-          ['td', '1.5g', ['style', ['width', '5%']]],
+          ['td', 'turn', ['style', ['width', '5%']]],
           ['td', '&nbsp;'],
-          ['td', '1.3g', ['style', ['width', '5%']]],
+          ['td', 'FRA', ['style', ['width', '5%']]],
           ['td', '&nbsp;']]]];
 }
 M(['div',
