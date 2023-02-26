@@ -303,7 +303,7 @@ function condensedTable(condensedLookup) {
                          } else {
                              setTimeout(() => {
                                  ask2show(flapSetting);
-                             }, 1000);
+                             }, 100);
                          }
                      }
                      if (flapSetting === 2) {
@@ -324,7 +324,7 @@ function condensedTable(condensedLookup) {
                          } else {
                              setTimeout(() => {
                                  ask2show(cg);
-                             }, 1000);
+                             }, 100);
                          }
                      }
                      show = cg => {
@@ -391,52 +391,3 @@ function condensedTable(condensedLookup) {
 }
 ///////////////////////////////////////////////////////////////
 M([condensedTable, condenseLookup(generateFullTable())], document.body);
-/*
-//const lookup = generateFullTable();
-var params = {},
-    answer;
-function pick(o) {
-    if (o.cg) { params.cg = o.cg; }
-    if (o.flaps) { params.flaps = o.flaps; }
-    if (params.cg && params.flaps) {
-        answer(lookup[params.flaps][params.cg]);
-    }
-}
-*/
-///////////////////////////////////////////////////////////////
-/*
-M(['div',
-   ['style', ['fontSize', '2em'], ['margin', '1em']],
-   ['with', div => {
-       answer = cg => {
-           div.innerHTML = cg + ' UP';
-       };
-   }]], document.body);
-M(['label', 'Flaps: '], document.body);
-M(['select',
-   ['style', ['marginRight', '.3em'], ['fontSize', '.8em']],
-   ['option', 1],
-   ['option', 2],
-   ['option', 4],
-   ['with', sel => {
-       M(['on',
-          ['input', e => {
-              pick({ flaps : sel.value });
-          }]], sel);
-       sel.selectedIndex = 1;
-       pick({ flaps : sel.value });
-   }]], document.body);
-M(['label', 'CG: '], document.body);
-M(['select',
-   ['style', ['fontSize', '.8em']],
-   ['with', sel => {
-       allCGs.forEach(cg => {
-           M(['option', cg], sel);
-       });
-       sel.selectedIndex = 80;
-       pick({ cg : sel.value });
-       M(['on', ['input', e => {
-           pick({ cg : sel.value });
-       }]], sel);
-   }]], document.body);
-*/
