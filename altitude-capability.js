@@ -674,7 +674,8 @@ var tableData = {
     },
 };
 function printTable(speed) {
-    var data = tableData[speed],
+    var bye,
+        data = tableData[speed],
         weights = Object.keys(data),
         temperatures = (function () {
             var map = {};
@@ -689,12 +690,21 @@ function printTable(speed) {
             });
         }());
     M(['table',
+       ['with', table => {
+           bye = () => table.remove();
+       }],
        ['attr', ['cellspacing', 0]],
        ['tr',
         ['th', speed,
-         ['style', ['border', '1px solid black']],
+         ['style', ['border', '1px solid black'],
+          ['cursor', 'pointer']],
          ['attr',
-          ['colspan', 1 + temperatures.length]]]],
+          ['colspan', 1 + temperatures.length]],
+         ['on',
+          ['click', e => {
+              if (!confirm("Really drop " + speed + "?")) { return; }
+              bye();
+          }]]]],
        ['tr',
         ['th', 'weight/temp', ['style', ['border', '1px solid black']]],
         ['with', tempRow => {
@@ -790,7 +800,13 @@ const speeds = findSpeeds();
 const weights = findWeights();
 const temperatures = [20, 15, 10, 5, 0, -5, -10, -15, -20];
 const altitudes = [290, 300, 310, 320, 330, 340, 350, 360, 370, 380, 390, 400, 410];
-var showResult, showNoData;
+var showResult, showNoData, limitDivFuns = [];
+function runLimitDivFuns(params) {
+    limitDivFuns.forEach(f => f(params));
+}
+function registerLimitDivFun(f) {
+    limitDivFuns.push(f);
+}
 var lookup = (function () {
     var altitude, speed, weight, temperature;
     return function look_up(o = {}) {
@@ -823,6 +839,7 @@ var lookup = (function () {
             } else {
                 showNoData();
             }
+            runLimitDivFuns({ temperature, weight });
         } else {
             setTimeout(look_up, 1000);
         }
@@ -840,7 +857,15 @@ function speedButtons() {
                  speeds.forEach(speed => {
                      var machNumber = speed.match(/LRC/) ? speed :
                                       speed.match(/\.\d\d/)[0];
-                     M(['div', machNumber,
+                     M(['div',
+                        ['div', machNumber],
+                        ['div',
+                         ['with', limitDiv => {
+                             registerLimitDivFun(({ temperature, weight }) => {
+                                 //limitDiv.innerHTML = temperature + "&deg;C, " + weight + "lbs";
+                                 limitDiv.innerHTML = tableData[speed][weight][temperature].join('/');
+                             });
+                         }]],
                         ['style',
                          ['display', 'inline-block'],
                          ['borderRadius', '5px'],
@@ -866,19 +891,6 @@ function speedButtons() {
                         }]], btnRow);
                  });
              }]]];
-    return ['select',
-            ['style', ['fontSize', '16pt'],
-             ['marginLeft', '1em']],
-            ['on', ['input', e => {
-                lookup({ speed : e.target.value });
-            }]],
-            ['with', sel => {
-                speeds.forEach(speed => {
-                    M(['option', speed], sel);
-                });
-                sel.selectedIndex = 2;
-                lookup({ speed : sel.value });
-            }]];
 }
 //////////////////////////////////////////////////////////////////////////
 interpolate();
@@ -915,3 +927,4 @@ slider(0, 5, temperatures, 'temperature', 'Temp: ');
 slider(350, 10, altitudes, 'altitude', 'FL');
 slider(76000, 2000, weights, 'weight', 'Weight: ');
 M(speedButtons, document.body);
+lookup();
