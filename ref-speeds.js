@@ -1,44 +1,60 @@
-const weights = [
+// input: list of numbers
+// output : list of numbers expanded by
+//          inserting a number between each pair in the input
+// example: [1, 3, 5, 8] -> [1, 2, 3, 4, 5, 7, 8]
+function interpolate(list) {
+    var i, out = [];
+    for (i = 1; i < list.length; i++) {
+        let a = list[i - 1],
+            c = list[i],
+            b = Math.round((a + c) / 2);
+        out.push(a);
+        out.push(b);
+    }
+    out.push(list[i - 1]);
+    return out;
+}
+const weights = interpolate([
     50000, 52000, 54000, 56000, 58000,
     60000, 62000, 64000, 66000, 68000,
     70000, 72000, 74000, 76000, 78000,
     80000, 82000, 84000, 86000, 88000,
     90000,
-];
+]);
 const vRef = {
-    5 : [
+    5 : interpolate([
         109, 112, 114, 116, 118, 120, 122, 124, 126, 128,
         130, 131, 133, 135, 137, 139, 140, 142, 144, 145, 147,
-    ],
-    full : [
+    ]),
+    full : interpolate([
         103, 105, 107, 109, 111, 113, 115, 116, 118, 120,
         122, 123, 125, 126, 127, 128, 129, 130, 132, 134, 135,
-    ],
+    ]),
 };    
 const vRefIce = {
-    5 : [
+    5 : interpolate([
         118, 121, 123, 125, 128, 130, 132, 134, 136, 138,
         140, 142, 144, 146, 148, 150, 152, 154, 156, 157, 159,
-    ],
-    full : [
+    ]),
+    full : interpolate([
         109, 111, 113, 115, 117, 119, 121, 123, 125, 126,
         128, 130, 132, 133, 134, 135, 136, 136, 137, 139, 140,
-    ],
+    ]),
 };    
 const vAC = {
-    2 : [
+    2 : interpolate([
         130, 133, 135, 138, 140, 143, 145, 147, 150, 152,
         154, 156, 158, 161, 163, 165, 167, 169, 171, 173, 175,
-    ],
-    4 : [
+    ]),
+    4 : interpolate([
         115, 117, 119, 121, 124, 126, 128, 130, 132, 134,
         136, 138, 140, 142, 143, 145, 147, 149, 151, 152, 154,
-    ],
+    ]),
 };
-const vFS = [
+const vFS = interpolate([
     158, 161, 164, 167, 170, 173, 176, 179, 181, 184,
     187, 190, 192, 195, 197, 200, 202, 205, 207, 210, 212,
-];
+]);
 const distances = [
     // flaps 5, no ice, sea level, calm wind
     { distance : 2036, weight : 50000 , flaps : 5, ice : false, altitude : 0, wind : 0 },
@@ -492,7 +508,7 @@ function weightPicker() {
                 ['type', 'range'],
                 ['min', Math.min(...weights)],
                 ['max', Math.max(...weights)],
-                ['step', 2000],
+                ['step', 1000],
                 ['value', defaulWeight],
                 ['orient', 'vertical']],
                ['style',
