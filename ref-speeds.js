@@ -447,178 +447,228 @@ function getDistance({ weight, flaps, ice = false, altitude, wind = 0 }) {
 function weightPicker() {
     const defaulWeight = 72000,
           defaultAltitude = 1000;
-    var showWeight, reshow, ice, flapsFull,
-        altitude, setAltitude, showDistance, weight;
+    var showWeight, showAutoBrake, reshow, ice, flapsFull,
+        altitude, weight, factor,
+        setAltitude, showDistance, setHeadwind, setFactor;
+    function slider(label, min, max, step, value, inputFun) {
+        var updateLabel;
+        return ['div',
+                ['style',
+                 ['borderTop', '1px solid gray'],
+                 ['padding', '5px 0']],
+                ['div',
+                 ['with', n => {
+                     updateLabel = v => {
+                         n.innerHTML = label + ' ' + v;
+                     };
+                     updateLabel(value);
+                 }]],
+                ['input',
+                 ['style',
+                  ['width', '99%']],
+                 ['attr',
+                  ['class', 'slider'],
+                  ['type', 'range'],
+                  ['min', min],
+                  ['max', max],
+                  ['step', step],
+                  ['value', value]],
+                 ['on',
+                  ['input', e => {
+                      var v = e.target.value;
+                      inputFun(v);
+                      updateLabel(v);
+                  }]]]];
+    }
+    function speedDisplay() {
+        return ['div',
+                ['style',
+                 ['display', 'inline-block'],
+                 ['borderRight', '1px solid black'],
+                 ['verticalAlign', 'top'],
+                 ['textAlign', 'center']],
+                ['div',
+                 ['style',
+                  ['textAlign', 'left']],
+                 ['with', n => {
+                     function attemptCallAutobrake(ref) {
+                         if (showAutoBrake) {
+                             return showAutoBrake({ ref });
+                         }
+                         setTimeout(() => attemptCallAutobrake(ref), 100);
+                     }
+                     function reportSpeeds(ref, ac) {
+                         M(['div', 'Vref: ' + ref], n);
+                         M(['div', '&nbsp;Vac: ' + ac], n);
+                         attemptCallAutobrake(ref);
+                     }
+                     function five(dx) {
+                         if (flapsFull || ice) { return; }
+                         reportSpeeds(vRef[5][dx], vAC[2][dx]);
+                         return true;
+                     }
+                     function fiveIce(dx) {
+                         if (flapsFull || !ice) { return; }
+                         reportSpeeds(vRefIce[5][dx], vAC[2][dx]);
+                         return true;
+                     }
+                     function full(dx) {
+                         if (!flapsFull || ice) { return; }
+                         reportSpeeds(vRef.full[dx], vAC[4][dx]);
+                         return true;
+                     }
+                     function fullIce(dx) {
+                         if (!flapsFull || !ice) { return; }
+                         reportSpeeds(vRefIce.full[dx], vAC[4][dx]);
+                         return true;
+                     }
+                     showWeight = w => {
+                         const dx = weights.indexOf(+w);
+                         weight = +w;
+                         n.innerHTML = '';
+                         five(dx) || fiveIce(dx) || full(dx) || fullIce(dx);
+                         M(['div', '&nbsp;Vfs: ' + vFS[dx]], n);
+                         reshow = () => showWeight(w);
+                     };
+                     showWeight(defaulWeight);
+                 }]],
+                ['div',
+                 ['style',
+                  ['borderTop', '1px solid black'],
+                  ['marginTop', '5px'],
+                  ['paddingTop', '5px']],
+                 ['div', 'Flaps'],
+                 ['span', '&nbsp;&nbsp;5',
+                  ['style', ['marginRight', '5px'], ['fontSize', '.8em']]],
+                 ['input',
+                  ['attr',
+                   ['class', 'slider'],
+                   ['type', 'range'],
+                   ['min', 0],
+                   ['max', 1],
+                   ['value', 0],
+                   ['step', 1]],
+                  ['style',
+                   ['width', '70px']],
+                  ['on',
+                   ['input', e => {
+                       flapsFull = !!(+e.target.value);
+                       reshow();
+                       showDistance();
+                   }]]],
+                 ['span', 'Full',
+                  ['style', ['marginLeft', '5px'], ['fontSize', '.8em']]]],
+                ['div',
+                 ['style',
+                  ['borderTop', '1px solid black'],
+                  ['marginTop', '5px'],
+                  ['paddingTop', '5px']],
+                 ['div', 'Ice/Autoland'],
+                 ['span', 'No',
+                  ['style', ['marginRight', '5px'], ['fontSize', '.8em']]],
+                 ['input',
+                  ['attr',
+                   ['class', 'slider'],
+                   ['type', 'range'],
+                   ['min', 0],
+                   ['max', 1],
+                   ['value', 0],
+                   ['step', 1]],
+                  ['style',
+                   ['width', '70px']],
+                  ['on',
+                   ['input', e => {
+                       ice = !!(+e.target.value);
+                       reshow();
+                       showDistance();
+                   }]]],
+                 ['span', 'Yes',
+                  ['style', ['marginLeft', '5px'], ['fontSize', '.8em']]]],
+        ];
+    }
+    function distanceDisplay() {
+        return ['div',
+                ['style',
+                 ['width', '45%'],
+                 ['textAlign', 'center'],
+                 ['display', 'inline-block']],
+                ['div',
+                 ['with', n => {
+                     var ref, headwind;
+                     function knots2fps(knots) {
+                         return knots * 1.6878;
+                     }
+                     function calc(acc, fudge) {
+                         var gs = knots2fps(ref - headwind); // groundspeed
+                         return Math.round(gs * gs / acc / 2 + fudge);
+                     }
+                     showAutoBrake = (o) => {
+                         if (o.ref !== undefined) { ref = o.ref; }
+                         if (o.headwind !== undefined) { headwind = o.headwind; }
+                         if (ref === undefined) { return; }
+                         if (headwind === undefined) { return; }
+                         n.innerHTML = '';
+                         M(['div', '&nbsp;&nbsp;lo: ' + calc(4, 1640)], n);
+                         M(['div', '&nbsp;med: ' + calc(8, 2100)], n);
+                         M(['div', '&nbsp;&nbsp;hi: ' + calc(13, 2300)], n);
+                     };
+                 }]],
+                ['div',
+                 ['with', n => {
+                     showDistance = () => {
+                         const ufld = getDistance({
+                             weight : corral(weight),
+                             altitude,
+                             ice,
+                             flaps : flapsFull ? 'full' : 5,
+                         });
+                         n.innerHTML = '';
+                         M(['div', 'ufld: ' + ufld], n);
+                         M(['div', 'fact: ' + Math.round(ufld * factor)], n);
+                     };
+                 }]],
+                ['div',
+                 ['with', n => {
+                     setAltitude = a => {
+                         altitude = +a;
+                         //n.innerHTML = 'Elev ' + Math.round(altitude / 1000) + 'k';
+                         showDistance();
+                     };
+                     setAltitude(defaultAltitude);
+                 }]],
+                ['div',
+                 //['style', ['borderTop', '1px solid black']],
+                 ['div',
+                  ['with', n => {
+                      setFactor = f => {
+                          factor = +f;
+                          //n.innerHTML = 'Factor: ' + factor.toFixed(2);
+                          showDistance();
+                      };
+                      setFactor(1.0);
+                  }]],
+                 ['div',
+                  ['with', n => {
+                      setHeadwind = w => {
+                          var pad1 = '&nbsp;', pad2 = '&nbsp;';
+                          headwind = +w;
+                          if (headwind > 9) { pad2 = ''; }
+                          else if (headwind < -9) { pad1 = pad2 = ''; }
+                          else if (headwind < 0) { pad2 = ''; }
+                          //n.innerHTML = 'Headwind:' + pad1 + pad2 + headwind;
+                          showDistance();
+                          showAutoBrake({ headwind });
+                      };
+                      setHeadwind(0);
+                  }]]]];
+    }
     return ['div',
-            ['div',
-             ['style',
-              ['display', 'inline-block'],
-              ['verticalAlign', 'top'],
-              ['textAlign', 'center']],
-             ['div',
-              ['style',
-               ['textAlign', 'right']],
-              ['with', n => {
-                  function five(dx) {
-                      if (flapsFull || ice) { return; }
-                      M(['div', 'Vref: ' + vRef[5][dx]], n);
-                      M(['div', 'Vac: ' + vAC[2][dx]], n);
-                      return true;
-                  }
-                  function fiveIce(dx) {
-                      if (flapsFull || !ice) { return; }
-                      M(['div', 'Vref: ' + vRefIce[5][dx]], n);
-                      M(['div', 'Vac: ' + vAC[2][dx]], n);
-                      return true;
-                  }
-                  function full(dx) {
-                      if (!flapsFull || ice) { return; }
-                      M(['div', 'Vref: ' + vRef.full[dx]], n);
-                      M(['div', 'Vac: ' + vAC[4][dx]], n);
-                      return true;
-                  }
-                  function fullIce(dx) {
-                      if (!flapsFull || !ice) { return; }
-                      M(['div', 'Vref: ' + vRefIce.full[dx]], n);
-                      M(['div', 'Vac: ' + vAC[4][dx]], n);
-                      return true;
-                  }
-                  showWeight = w => {
-                      const dx = weights.indexOf(+w);
-                      weight = +w;
-                      n.innerHTML = '';
-                      five(dx) || fiveIce(dx) || full(dx) || fullIce(dx);
-                      M(['div', 'Vfs: ' + vFS[dx]], n);
-                      M(['div', 'LDW: ' + w,
-                         ['style',
-                          ['background',
-                           w > 75177 ? 'red' :
-                           w > 72000 ? 'yellow' : 'none'],
-                          ['borderTop', '1px solid black'],
-                          ['marginTop', '5px'],
-                          ['paddingTop', '5px']]], n);
-                      reshow = () => showWeight(w);
-                  };
-                  showWeight(defaulWeight);
-              }]],
-             ['div',
-              ['input',
-               ['attr',
-                ['class', 'slider'],
-                ['type', 'range'],
-                ['min', Math.min(...weights)],
-                ['max', Math.max(...weights)],
-                ['step', 1000],
-                ['value', defaulWeight],
-                ['orient', 'vertical']],
-               ['style',
-                ['height', '300px'],
-                ['-moz-orient', 'vertical'],
-                ['-webkit-appearance', 'slider-vertical']],
-               ['on',
-                ['input', e => {
-                    showWeight(e.target.value);
-                    showDistance();
-                }]]]],
-             ['div',
-              ['style',
-               ['borderTop', '1px solid black'],
-               ['marginTop', '5px'],
-               ['paddingTop', '5px']],
-              ['div', 'Flaps'],
-              ['span', '&nbsp;&nbsp;5',
-               ['style', ['marginRight', '5px'], ['fontSize', '.8em']]],
-              ['input',
-               ['attr',
-                ['class', 'slider'],
-                ['type', 'range'],
-                ['min', 0],
-                ['max', 1],
-                ['value', 0],
-                ['step', 1]],
-               ['style',
-                ['width', '70px']],
-               ['on',
-                ['input', e => {
-                    flapsFull = !!(+e.target.value);
-                    reshow();
-                    showDistance();
-                }]]],
-              ['span', 'Full',
-               ['style', ['marginLeft', '5px'], ['fontSize', '.8em']]]],
-             ['div',
-              ['style',
-               ['borderTop', '1px solid black'],
-               ['marginTop', '5px'],
-               ['paddingTop', '5px']],
-              ['div', 'Ice / Autoland'],
-              ['span', 'No',
-               ['style', ['marginRight', '5px'], ['fontSize', '.8em']]],
-              ['input',
-               ['attr',
-                ['class', 'slider'],
-                ['type', 'range'],
-                ['min', 0],
-                ['max', 1],
-                ['value', 0],
-                ['step', 1]],
-               ['style',
-                ['width', '70px']],
-               ['on',
-                ['input', e => {
-                    ice = !!(+e.target.value);
-                    reshow();
-                    showDistance();
-                }]]],
-              ['span', 'Yes',
-               ['style', ['marginLeft', '5px'], ['fontSize', '.8em']]]]],
-            ['div',
-             ['style',
-              ['width', '45%'],
-              ['textAlign', 'center'],
-              ['display', 'inline-block']],
-             ['div', 'Unfactored'],
-             ['div',
-              ['with', n => {
-                  showDistance = () => {
-                      n.innerHTML = getDistance({
-                          weight : corral(weight),
-                          altitude,
-                          ice,
-                          flaps : flapsFull ? 'full' : 5,
-                      });
-                  };
-              }]],
-             ['div', 'Altitude',
-              ['style',
-               ['borderTop', '1px solid black'],
-               ['marginTop', '43px'],
-               ['paddingTop', '5px']]],
-             ['div',
-              ['with', n => {
-                  setAltitude = a => {
-                      altitude = +a;
-                      n.innerHTML = a;
-                      showDistance();
-                  };
-                  setAltitude(defaultAltitude);
-              }]],
-             ['input',
-              ['attr',
-               ['class', 'slider'],
-               ['type', 'range'],
-               ['min', 0],
-               ['max', 8000],
-               ['step', 1000],
-               ['value', defaultAltitude],
-               ['orient', 'vertical']],
-              ['style',
-               ['height', '260px'],
-               ['-moz-orient', 'vertical'],
-               ['-webkit-appearance', 'slider-vertical']],
-              ['on',
-               ['input', e => {
-                   setAltitude(e.target.value);
-               }]]]]];
+            speedDisplay,
+            distanceDisplay,
+            [slider, 'Weight', 50000, 90000, 1000, 72000, v => showWeight(v)],
+            [slider, 'Elevation', 0, 8000, 1000, 1000, v => setAltitude(v)],
+            [slider, 'Headwind', -15, 50, 1, 0, v => setHeadwind(v)],
+            [slider, 'Factor', 1, 2.7, 0.05, 1, v => setFactor(v)]];
 }
+///////////////////////////////////////////////////////
 M(weightPicker, document.body);
