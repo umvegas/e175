@@ -450,7 +450,7 @@ function weightPicker() {
     var showWeight, showAutoBrake, reshow, ice, flapsFull,
         altitude, weight, factor,
         setAltitude, showDistance, setHeadwind, setFactor;
-    function slider(label, min, max, step, value, inputFun) {
+    function slider(label, min, max, step, value, inputFun, colorizer) {
         var updateLabel;
         return ['div',
                 ['style',
@@ -458,8 +458,11 @@ function weightPicker() {
                  ['padding', '5px 0']],
                 ['div',
                  ['with', n => {
-                     updateLabel = v => {
+                     updateLabel = (v, c) => {
                          n.innerHTML = label + ' ' + v;
+                         if (c) {
+                             n.style.background = c;
+                         }
                      };
                      updateLabel(value);
                  }]],
@@ -477,7 +480,7 @@ function weightPicker() {
                   ['input', e => {
                       var v = e.target.value;
                       inputFun(v);
-                      updateLabel(v);
+                      updateLabel(v, colorizer && colorizer(v));
                   }]]]];
     }
     function speedDisplay() {
@@ -665,7 +668,7 @@ function weightPicker() {
     return ['div',
             speedDisplay,
             distanceDisplay,
-            [slider, 'Weight', 50000, 90000, 1000, 72000, v => showWeight(v)],
+            [slider, 'Weight', 50000, 90000, 1000, 72000, v => showWeight(v), v => v > 75177 ? 'red' : v > 72000 ? 'yellow' : 'none'],
             [slider, 'Elevation', 0, 8000, 1000, 1000, v => setAltitude(v)],
             [slider, 'Headwind', -15, 50, 1, 0, v => setHeadwind(v)],
             [slider, 'Factor', 1, 2.7, 0.05, 1, v => setFactor(v)]];
