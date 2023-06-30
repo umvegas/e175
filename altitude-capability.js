@@ -778,7 +778,7 @@ function slider(startingValue, step, values, name, label) {
         ['borderRadius', '8px']],
        ['div', label + startingValue,
         ['style', ['textAlign', 'center'],
-         ['margin', '.5em 0']],
+         ['margin', '.3em 0']],
         ['with', n => {
             showValue = v => {
                 n.innerHTML = label + v;
@@ -861,11 +861,11 @@ function speedButtons() {
                      var machNumber = speed.match(/LRC/) ? speed :
                                       speed.match(/\.\d\d/)[0];
                      M(['div',
+                        ['style', ['fontSize', '.7em']],
                         ['div', machNumber],
                         ['div',
                          ['with', limitDiv => {
                              registerLimitDivFun(({ temperature, weight }) => {
-                                 //limitDiv.innerHTML = temperature + "&deg;C, " + weight + "lbs";
                                  limitDiv.innerHTML = tableData[speed][weight][temperature].join('/');
                              });
                          }]],
@@ -908,7 +908,6 @@ M(['div',
            M(['div',
               ['div', '1.3g: FL' + limit13,
                ['style',
-                ['fontSize', '36px'],
                 ['textAlign', 'center'],
                 ['padding', '.5em'],
                 ['margin', '.5em'],
@@ -917,7 +916,6 @@ M(['div',
                  ok13 < 0 ? 'red' : 'yellow']]],
               ['div', '1.5g: FL' + limit15,
                ['style',
-                ['fontSize', '36px'],
                 ['textAlign', 'center'],
                 ['padding', '.5em'],
                 ['margin', '.5em'],
