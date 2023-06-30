@@ -307,8 +307,8 @@ function condensedTable(condensedLookup) {
                      show(defaultValue);
                  }]],
                 ['input',
-                 ['style', ['width', '90%']],
                  ['attr',
+                  ['class', 'slider'],
                   ['type', 'range'],
                   ['min', '11'],
                   ['max', '31'],
