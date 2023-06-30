@@ -282,40 +282,13 @@ function condenseLookup(fullTable) {
 }
 function condensedTable(condensedLookup) {
     var showFlapTable;
-    function btn(flapSetting) {
-        return ['div',
-                ['style',
-                 ['display', 'inline-block'],
-                 ['marginLeft', '1em']],
-                ['label', flapSetting],
-                ['input',
-                 ['attr',
-                  ['type', 'radio'],
-                  ['name', 'flapSetting']],
-                 ['on',
-                  ['click', e => {
-                      showFlapTable({ flapSetting });
-                  }]],
-                 ['with', radio => {
-                     function ask2show(flapSetting) {
-                         if (showFlapTable) {
-                             showFlapTable({ flapSetting });
-                         } else {
-                             setTimeout(() => {
-                                 ask2show(flapSetting);
-                             }, 100);
-                         }
-                     }
-                     if (flapSetting === 2) {
-                         radio.checked = true;
-                         ask2show(flapSetting);
-                     }
-                 }]]];
-    }
     function cgSlider() {
         const defaultValue = 19;
         var show;
         return ['div',
+                ['style',
+                 ['marginTop', '1em'],
+                 ['textAlign', 'center']],
                 ['div',
                  ['with', n => {
                      function ask2show(cg) {
@@ -334,7 +307,7 @@ function condensedTable(condensedLookup) {
                      show(defaultValue);
                  }]],
                 ['input',
-                 ['style', ['width', '100%']],
+                 ['style', ['width', '90%']],
                  ['attr',
                   ['type', 'range'],
                   ['min', '11'],
@@ -346,48 +319,86 @@ function condensedTable(condensedLookup) {
                       show(cg);
                   }]]]];
     }
+    function flapButtons() {
+        var dim;
+        function flapButton(flapSetting, selected) {
+            var lite;
+            return ['div', flapSetting,
+                    ['style',
+                     ['border', '2px solid gray'],
+                     ['display', 'inline-block'],
+                     ['cursor', 'pointer'],
+                     ['padding', '5px 1em'],
+                     ['margin', '5px .5em'],
+                     ['borderRadius', '8px']],
+                    ['on', ['click', e => {
+                        lite();
+                    }]],
+                    ['with', btn => {
+                        function ask2show() {
+                            if (!showFlapTable) {
+                                setTimeout(ask2show, 100);
+                            }
+                            showFlapTable({ flapSetting });
+                        }
+                        lite = () => {
+                            dim && dim();
+                            dim = () => {
+                                btn.style.background = 'none';
+                            };
+                            btn.style.background = 'lightgreen';
+                            ask2show();
+                        };
+                        selected && lite();
+                    }]];
+        }
+        return ['div', 'Flaps',
+                ['style', ['textAlign', 'center']],
+                ['div',
+                 [flapButton, 1],
+                 [flapButton, 2, true],
+                 [flapButton, 4]]];
+    }
     return ['div',
-            ['style', ['display', 'inline-block']],
-            ['div', 'Flaps:'],
             ['div',
-             [btn, 1],
-             [btn, 2],
-             [btn, 4]],
-            cgSlider,
-            ['table',
-             ['attr',
-              ['border', 1]],
-             ['tbody',
-              ['with', tbody => {
-                  var flapSetting, cg;
-                  showFlapTable = inputs => {
-                      var dataList;
-                      if (inputs.flapSetting) {
-                          flapSetting = inputs.flapSetting;
-                      }
-                      if (inputs.cg) {
-                          cg = inputs.cg;
-                      }
-                      if (!flapSetting || !cg) { return; }
-                      dataList = Object.entries(condensedLookup[flapSetting]);
-                      tbody.innerHTML = '';
-                      M(['tr',
-                         ['th', 'Flaps ' + flapSetting,
-                          ['attr',
-                           ['colspan', 3]]]], tbody);
-                      dataList.forEach(([trim, { lo, hi }]) => {
-                          function td(s) {
-                              return ['td', s, ['style', ['padding', '0 0.7em']]];
-                          }
-                          if (cg < Math.floor(lo)) { return; }
-                          if (cg > Math.floor(hi)) { return; }
-                          M(['tr',
-                             [td, lo],
-                             [td, hi],
-                             [td, trim]], tbody);
-                      });
-                  };
-              }]]]];
+             ['style', ['minHeight', '230px']],
+             ['table',
+              ['style', ['width', '100%']],
+              ['attr',
+               ['border', 1]],
+              ['tbody',
+               ['with', tbody => {
+                   var flapSetting, cg;
+                   showFlapTable = inputs => {
+                       var dataList;
+                       if (inputs.flapSetting) {
+                           flapSetting = inputs.flapSetting;
+                       }
+                       if (inputs.cg) {
+                           cg = inputs.cg;
+                       }
+                       if (!flapSetting || !cg) { return; }
+                       dataList = Object.entries(condensedLookup[flapSetting]);
+                       tbody.innerHTML = '';
+                       M(['tr',
+                          ['th', 'from'],
+                          ['th', 'to'],
+                          ['th', 'trim']], tbody);
+                       dataList.forEach(([trim, { lo, hi }]) => {
+                           function td(s) {
+                               return ['td', s, ['style', ['padding', '0 0.7em']]];
+                           }
+                           if (cg < Math.floor(lo)) { return; }
+                           if (cg > Math.floor(hi)) { return; }
+                           M(['tr',
+                              [td, lo],
+                              [td, hi],
+                              [td, trim]], tbody);
+                       });
+                   };
+               }]]]],
+            flapButtons,
+            cgSlider];
 }
 ///////////////////////////////////////////////////////////////
 M([condensedTable, condenseLookup(generateFullTable())], document.body);
