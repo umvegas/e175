@@ -455,7 +455,7 @@ function weightPicker() {
         return ['div',
                 ['style',
                  ['borderTop', '1px solid gray'],
-                 ['padding', '5px 0']],
+                 ['padding', '15px 0']],
                 ['div',
                  ['with', n => {
                      updateLabel = (v, c) => {
@@ -467,8 +467,6 @@ function weightPicker() {
                      updateLabel(value);
                  }]],
                 ['input',
-                 ['style',
-                  ['width', '99%']],
                  ['attr',
                   ['class', 'slider'],
                   ['type', 'range'],
@@ -487,9 +485,9 @@ function weightPicker() {
         return ['div',
                 ['style',
                  ['display', 'inline-block'],
-                 ['borderRight', '1px solid black'],
                  ['verticalAlign', 'top'],
-                 ['textAlign', 'center']],
+                 ['paddingRight', '2em'],
+                 ['textAlign', 'right']],
                 ['div',
                  ['style',
                   ['textAlign', 'left']],
@@ -535,65 +533,14 @@ function weightPicker() {
                      };
                      showWeight(defaulWeight);
                  }]],
-                ['div',
-                 ['style',
-                  ['borderTop', '1px solid black'],
-                  ['marginTop', '5px'],
-                  ['paddingTop', '5px']],
-                 ['div', 'Flaps'],
-                 ['span', '&nbsp;&nbsp;5',
-                  ['style', ['marginRight', '5px'], ['fontSize', '.8em']]],
-                 ['input',
-                  ['attr',
-                   ['class', 'slider'],
-                   ['type', 'range'],
-                   ['min', 0],
-                   ['max', 1],
-                   ['value', 0],
-                   ['step', 1]],
-                  ['style',
-                   ['width', '70px']],
-                  ['on',
-                   ['input', e => {
-                       flapsFull = !!(+e.target.value);
-                       reshow();
-                       showDistance();
-                   }]]],
-                 ['span', 'Full',
-                  ['style', ['marginLeft', '5px'], ['fontSize', '.8em']]]],
-                ['div',
-                 ['style',
-                  ['borderTop', '1px solid black'],
-                  ['marginTop', '5px'],
-                  ['paddingTop', '5px']],
-                 ['div', 'Ice/Autoland'],
-                 ['span', 'No',
-                  ['style', ['marginRight', '5px'], ['fontSize', '.8em']]],
-                 ['input',
-                  ['attr',
-                   ['class', 'slider'],
-                   ['type', 'range'],
-                   ['min', 0],
-                   ['max', 1],
-                   ['value', 0],
-                   ['step', 1]],
-                  ['style',
-                   ['width', '70px']],
-                  ['on',
-                   ['input', e => {
-                       ice = !!(+e.target.value);
-                       reshow();
-                       showDistance();
-                   }]]],
-                 ['span', 'Yes',
-                  ['style', ['marginLeft', '5px'], ['fontSize', '.8em']]]],
+                ,
         ];
     }
     function distanceDisplay() {
         return ['div',
                 ['style',
                  ['width', '45%'],
-                 ['textAlign', 'center'],
+                 ['textAlign', 'right'],
                  ['display', 'inline-block']],
                 ['div',
                  ['with', n => {
@@ -665,9 +612,71 @@ function weightPicker() {
                       setHeadwind(0);
                   }]]]];
     }
+    function flapsAndIce() {
+        return ['div',
+                ['style', ['textAlign', 'center'],
+                 ['verticalAlign', 'top'],
+                 ['borderTop', '1px solid black']],
+                ['div',
+                 ['style',
+                  ['borderRight', '1px solid black'],
+                  ['display', 'inline-block'],
+                  ['verticalAlign', 'top'],
+                  ['marginTop', '5px'],
+                  ['padding', '10px']],
+                 ['div', 'Flaps'],
+                 ['span', '5',
+                  ['style', ['marginRight', '5px'], ['fontSize', '.8em']]],
+                 ['input',
+                  ['attr',
+                   ['class', 'slider'],
+                   ['type', 'range'],
+                   ['min', 0],
+                   ['max', 1],
+                   ['value', 0],
+                   ['step', 1]],
+                  ['style',
+                   ['width', '70px']],
+                  ['on',
+                   ['input', e => {
+                       flapsFull = !!(+e.target.value);
+                       reshow();
+                       showDistance();
+                   }]]],
+                 ['span', 'Full',
+                  ['style', ['marginLeft', '5px'], ['fontSize', '.8em']]]],
+                ['div',
+                 ['style',
+                  ['marginTop', '5px'],
+                  ['display', 'inline-block'],
+                  ['verticalAlign', 'top'],
+                  ['padding', '10px 0 10px 5px']],
+                 ['div', 'Ice/Autoland'],
+                 ['span', 'No',
+                  ['style', ['marginRight', '5px'], ['fontSize', '.8em']]],
+                 ['input',
+                  ['attr',
+                   ['class', 'slider'],
+                   ['type', 'range'],
+                   ['min', 0],
+                   ['max', 1],
+                   ['value', 0],
+                   ['step', 1]],
+                  ['style',
+                   ['width', '70px']],
+                  ['on',
+                   ['input', e => {
+                       ice = !!(+e.target.value);
+                       reshow();
+                       showDistance();
+                   }]]],
+                 ['span', 'Yes',
+                  ['style', ['marginLeft', '5px'], ['fontSize', '.8em']]]]];
+    }
     return ['div',
             speedDisplay,
             distanceDisplay,
+            flapsAndIce,
             [slider, 'Weight', 50000, 90000, 1000, 72000, v => showWeight(v), v => v > 75177 ? 'red' : v > 72000 ? 'yellow' : 'none'],
             [slider, 'Elevation', 0, 8000, 1000, 1000, v => setAltitude(v)],
             [slider, 'Headwind', -15, 50, 1, 0, v => setHeadwind(v)],

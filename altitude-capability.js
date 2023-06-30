@@ -769,9 +769,11 @@ function slider(startingValue, step, values, name, label) {
     }
     M(['div',
        ['style',
+        ['textAlign', 'center'],
         ['width', '100%'],
         ['margin', '.5em 0'],
         ['display', 'inline-block'],
+        ['padding', '5px 0'],
         ['border', '2px solid lightgray'],
         ['borderRadius', '8px']],
        ['div', label + startingValue,
@@ -784,8 +786,8 @@ function slider(startingValue, step, values, name, label) {
             set(startingValue);
         }]],
        ['input',
-        ['style', ['width', '95%']],
         ['attr',
+         ['class', 'slider'],
          ['type', 'range'],
          ['step', step],
          ['min', Math.min(...values)],

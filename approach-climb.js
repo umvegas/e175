@@ -849,6 +849,7 @@ function slider(label, min, max, step, value, inputFun, makeReflector) {
              }]],
             ['input',
              ['attr',
+              ['class', 'slider'],
               ['type', 'range'],
               ['min', min],
               ['max', max],
