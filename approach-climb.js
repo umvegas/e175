@@ -38,7 +38,7 @@ const Vac = {
 const gradientWeights = [
     55000, 57000, 59000,
     61000, 63000, 65000, 67000, 69000,
-    71000, 73000, 75000].reverse();
+    71000, 73000, 75000];
 const gradients = {
     2 : { // flaps
         0 : { // altitude
@@ -726,6 +726,7 @@ function getVS({ flaps, weight, icing, altitude, temperature, climbRequired }) {
           weightNdx = gradientWeights.indexOf(+weight),
           tempOutOfRange = gradients[flaps][altitude + (icing ? 'ice' : '')][temperature] === undefined,
           gradient = tempOutOfRange ? 0 : gradients[flaps][altitude + (icing ? 'ice' : '')][temperature][weightNdx],
+          gradientRequired = (climbRequired * 100 / 6076),
           feetPerNM = Math.ceil(60.26 * gradient),
           feetPerMinute = Math.ceil(feetPerNM * vac / 60),
           vsRequired = Math.ceil(vac * climbRequired / 60),
@@ -733,7 +734,7 @@ function getVS({ flaps, weight, icing, altitude, temperature, climbRequired }) {
     return {
         tempOutOfRange,
         feetPerNM, feetPerMinute,
-        vac, gradient,
+        vac, gradient, gradientRequired,
         weight, flaps, icing, altitude, temperature,
         weightNdx, altitudeParameter : altitude + (icing ? 'ice' : ''),
         climbRequired, vsRequired, adequateClimb,
@@ -759,7 +760,6 @@ M(['div',
            if (data.icing !== undefined) { icing = data.icing; }
            if (data.flaps !== undefined) { flaps = data.flaps; }
            if (data.climbRequired !== undefined) { climbRequired = data.climbRequired; }
-           console.log({ temperature, altitude, icing, flaps, weight });
            if (temperature === undefined) { return; }
            if (altitude === undefined) { return; }
            if (weight === undefined) { return; }
@@ -783,7 +783,8 @@ M(['div',
                      toggleDetails();
                  }]]],
                 ['th', 'Feet/NM'],
-                ['th', 'Feet/Minute']],
+                ['th', 'Feet/Minute'],
+                ['th', 'Gradient%']],
                ['tr',
                 ['th', 'Expected'],
                 ['th', result.feetPerNM,
@@ -791,11 +792,15 @@ M(['div',
                   ['background', result.adequateClimb ? 'lightgreen' : 'red']]],
                 ['th', result.feetPerMinute,
                  ['style',
+                  ['background', result.adequateClimb ? 'lightgreen' : 'red']]],
+                ['th', result.gradient,
+                 ['style',
                   ['background', result.adequateClimb ? 'lightgreen' : 'red']]]],
                ['tr',
                 ['th', 'Required'],
                 ['th', climbRequired],
-                ['th', result.vsRequired]]]], answerDiv);
+                ['th', result.vsRequired],
+                ['th', result.gradientRequired.toFixed(2)]]]], answerDiv);
            M(['div',
               ['style', ['display', 'none'], ['verticalAlign', 'top']],
               ['with', detailsDiv => {
@@ -836,7 +841,7 @@ M(['select',
    ['style', ['marginRight', '1em']],
    ['with', sel => {
        var count = 0;
-       gradientWeights.forEach(weight => {
+       gradientWeights.concat().reverse().forEach(weight => {
            M(['option', weight], sel);
            count += 1;
        });
