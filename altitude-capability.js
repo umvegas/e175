@@ -803,7 +803,7 @@ const speeds = findSpeeds();
 const weights = findWeights();
 const temperatures = [20, 15, 10, 5, 0, -5, -10, -15, -20];
 const altitudes = [290, 300, 310, 320, 330, 340, 350, 360, 370, 380, 390, 400, 410];
-var showResult, showNoData, limitDivFuns = [];
+var limitDivFuns = [];
 function runLimitDivFuns(params) {
     limitDivFuns.forEach(f => f(params));
 }
@@ -833,26 +833,25 @@ var lookup = (function () {
         if (temperature === undefined) { return; }
         if (weight === undefined) { return; }
         if (speed === undefined) { return; }
-        if (showResult) {
+        if (limitDivFuns.length) {
             let result = tableData[speed][weight] &&
                          tableData[speed][weight][temperature];
             let isOK = result && result.map(limit => limit - altitude);
-            if (isOK) {
-                showResult(result.concat(isOK));
-            } else {
-                showNoData();
-            }
-            runLimitDivFuns({ temperature, weight });
+            runLimitDivFuns({ temperature, weight, altitude, isOK });
         } else {
             setTimeout(look_up, 1000);
+            console.log('waiting @ ' + (+new Date()));
         }
     };
 }());
 function speedButtons() {
     var dim;
     return ['div',
-            ['div', 'Speed',
-             ['style', ['textAlign', 'center'], ['margin', '.5em 0']]],
+            ['div', 'Altitude Capability',
+             ['style',
+              ['textAlign', 'center'],
+              ['fontSize', '1.3em'],
+              ['margin', '.5em 0']]],
             ['div',
              ['style',
               ['textAlign', 'center']],
@@ -865,8 +864,17 @@ function speedButtons() {
                         ['div', machNumber],
                         ['div',
                          ['with', limitDiv => {
-                             registerLimitDivFun(({ temperature, weight }) => {
-                                 limitDiv.innerHTML = tableData[speed][weight][temperature].join('/');
+                             registerLimitDivFun(({ isOK, temperature, weight, altitude }) => {
+                                 var alt1_3, alt1_5;
+                                 if (isOK) {
+                                     [alt1_3, alt1_5] = tableData[speed][weight][temperature];
+                                     limitDiv.innerHTML = alt1_3 + '/' + alt1_5;
+                                     limitDiv.parentNode.style.background =
+                                         altitude > alt1_3 ? 'red' :
+                                         altitude > alt1_5 ? 'yellow' : 'lightgreen';
+                                 } else {
+                                     limitDiv.innerHTML = 'N/A';
+                                 }
                              });
                          }]],
                         ['style',
@@ -882,9 +890,9 @@ function speedButtons() {
                             function lite() {
                                 lookup({ speed });
                                 dim && dim();
-                                btn.style.background = 'lightgreen';
+                                btn.style.border = '2px solid black';
                                 dim = () => {
-                                    btn.style.background = 'none';
+                                    btn.style.border = '2px solid lightgray';
                                 };
                             }
                             M(['on', ['click', lite]], btn);
@@ -897,35 +905,8 @@ function speedButtons() {
 }
 //////////////////////////////////////////////////////////////////////////
 interpolate();
-M(['div',
-   ['style', ['maxWidth', '600px']],
-   ['with', div => {
-       showNoData = () => {
-           div.innerHTML = 'no data available for these parameters';
-       };
-       showResult = ([limit13, limit15, ok13, ok15]) => {
-           div.innerHTML = '';
-           M(['div',
-              ['div', '1.3g: FL' + limit13,
-               ['style',
-                ['textAlign', 'center'],
-                ['padding', '.5em'],
-                ['margin', '.5em'],
-                ['background',
-                 ok13 > 0 ? 'lightgreen' :
-                 ok13 < 0 ? 'red' : 'yellow']]],
-              ['div', '1.5g: FL' + limit15,
-               ['style',
-                ['textAlign', 'center'],
-                ['padding', '.5em'],
-                ['margin', '.5em'],
-                ['background',
-                 ok15 > 0 ? 'lightgreen' :
-                 ok15 < 0 ? 'red' : 'yellow']]]], div);
-       };
-   }]], document.body);
+M(speedButtons, document.body);
 slider(0, 5, temperatures, 'temperature', 'Temp: ');
 slider(350, 10, altitudes, 'altitude', 'FL');
 slider(76000, 2000, weights, 'weight', 'Weight: ');
-M(speedButtons, document.body);
 lookup();
