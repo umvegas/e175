@@ -809,29 +809,32 @@ M(['div',
               ['pre', JSON.stringify(result, null, 2)]], answerDiv);
        };
    }]], document.body);
-M(['div',
-   ['style', ['margin', '1em 0']],
-   ['select',
-    ['with', sel => {
-        var approachAltitudes = [];
-        M(['on', ['change', e => {
-            var alt = approachAltitudes[sel.selectedIndex];
-            reflectAltitude(alt);
-            lookup({ climbRequired : e.target.value });
-        }]], sel);
-        Object.entries(airports).forEach(([code, runways]) => {
-            Object.entries(runways).forEach(([runwayName, approaches]) => {
-                Object.entries(approaches).forEach(([approachName, climbRequired]) => {
-                    var alt = airportsAltitudes[code];
-                    approachAltitudes.push(alt);
-                    M(['option', [code, runwayName, approachName].join(' '),
-                       ['attr',
-                        ['value', climbRequired]]], sel);
-                });
-            });
-        });
-        lookup({ climbRequired : sel.value });
-    }]]], document.body);
+function approachPicker() {
+    return ['div',
+            ['style', ['margin', '2em 0 0 1em']],
+            ['select',
+             ['style', ['fontSize', '1em']],
+             ['with', sel => {
+                 var approachAltitudes = [];
+                 M(['on', ['change', e => {
+                     var alt = approachAltitudes[sel.selectedIndex];
+                     reflectAltitude(alt);
+                     lookup({ climbRequired : e.target.value });
+                 }]], sel);
+                 Object.entries(airports).forEach(([code, runways]) => {
+                     Object.entries(runways).forEach(([runwayName, approaches]) => {
+                         Object.entries(approaches).forEach(([approachName, climbRequired]) => {
+                             var alt = airportsAltitudes[code];
+                             approachAltitudes.push(alt);
+                             M(['option', [code, runwayName, approachName].join(' '),
+                                ['attr',
+                                 ['value', climbRequired]]], sel);
+                         });
+                     });
+                 });
+                 lookup({ climbRequired : sel.value });
+             }]]];
+}
 function slider(label, min, max, step, value, inputFun, makeReflector) {
     var updateLabel;
     return ['div',
@@ -870,11 +873,7 @@ function slider(label, min, max, step, value, inputFun, makeReflector) {
                   inputFun(e.target.value);
               }]]]];
 }
-M([slider, 'Weight', 55000, 75000, 2000, 69000, v => lookup({ weight : v })], document.body);
-M([slider, 'Temp', -8, 50, 2, 14, v => lookup({ temperature : v })], document.body);
-M([slider, 'Alt', 0, 5000, 1000, 1000, v => lookup({ altitude : v }),
-   f => reflectAltitude = f], document.body);
-(function flap_buttons() {
+function flapButtons() {
     var dim, pick = [];
     function flapButton(setting) {
         return ['div', 'Flaps ' + setting,
@@ -900,7 +899,13 @@ M([slider, 'Alt', 0, 5000, 1000, 1000, v => lookup({ altitude : v }),
     M([flapButton, 2], document.body);
     M([flapButton, 4], document.body);
     pick[2]();
-}());
+}
+////////////////////////////////////////////////////////////////////////////////
+M([slider, 'Weight', 55000, 75000, 2000, 69000, v => lookup({ weight : v })], document.body);
+M([slider, 'Temp', -8, 50, 2, 14, v => lookup({ temperature : v })], document.body);
+M([slider, 'Alt', 0, 5000, 1000, 1000, v => lookup({ altitude : v }),
+   f => reflectAltitude = f], document.body);
+flapButtons();
 M(['div', 'Icing',
    ['style',
     ['display', 'inline-block'],
@@ -917,3 +922,4 @@ M(['div', 'Icing',
        }]], btn);
        lookup({ icing : on });
    }]], document.body);
+M(approachPicker, document.body);
