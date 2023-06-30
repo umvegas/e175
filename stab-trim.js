@@ -385,15 +385,22 @@ function condensedTable(condensedLookup) {
                           ['th', 'to'],
                           ['th', 'trim']], tbody);
                        dataList.forEach(([trim, { lo, hi }]) => {
-                           function td(s) {
-                               return ['td', s, ['style', ['padding', '0 0.7em']]];
+                           function percentSign() {
+                               return ['span', '%',
+                                       ['style', ['fontSize', '.6em'],
+                                        ['verticalAlign', 'top']]];
+                           }
+                           function td(s, l) {
+                               return ['td', s, l,
+                                       ['style', ['padding', '0 0.7em'],
+                                        ['textAlign', 'center']]];
                            }
                            if (cg < Math.floor(lo)) { return; }
                            if (cg > Math.floor(hi)) { return; }
                            M(['tr',
-                              [td, lo],
-                              [td, hi],
-                              [td, trim]], tbody);
+                              [td, ['span', lo], percentSign],
+                              [td, ['span', hi], percentSign],
+                              [td, trim + '&deg;']], tbody);
                        });
                    };
                }]]]],
