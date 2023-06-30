@@ -767,10 +767,6 @@ M(['div',
            if (flaps === undefined) { return; }
            if (climbRequired === undefined) { return; }
            result = getVS({ temperature, altitude, icing, flaps, weight, climbRequired });
-           if (result.tempOutOfRange) {
-               answerDiv.innerHTML = 'No data for a temperature of ' + temperature + '&deg; C';
-               return;
-           }
            answerDiv.innerHTML = '';
            M(['div',
               ['style', ['display', 'inline-block'], ['verticalAlign', 'top']],
@@ -787,13 +783,13 @@ M(['div',
                 ['th', 'Gradient%']],
                ['tr',
                 ['th', 'Expected'],
-                ['th', result.feetPerNM,
+                ['th', result.feetPerNM || 'N/A',
                  ['style',
                   ['background', result.adequateClimb ? 'lightgreen' : 'red']]],
-                ['th', result.feetPerMinute,
+                ['th', result.feetPerMinute || 'N/A',
                  ['style',
                   ['background', result.adequateClimb ? 'lightgreen' : 'red']]],
-                ['th', result.gradient,
+                ['th', result.gradient || 'N/A',
                  ['style',
                   ['background', result.adequateClimb ? 'lightgreen' : 'red']]]],
                ['tr',
@@ -836,74 +832,88 @@ M(['div',
         });
         lookup({ climbRequired : sel.value });
     }]]], document.body);
-M(['label', 'Weight: '], document.body);
-M(['select',
-   ['style', ['marginRight', '1em']],
-   ['with', sel => {
-       var count = 0;
-       gradientWeights.concat().reverse().forEach(weight => {
-           M(['option', weight], sel);
-           count += 1;
-       });
-       sel.selectedIndex = 3;
-       lookup({ weight : sel.value });
-   }],
-   ['on', ['input', e => {
-       lookup({ weight : e.target.value });
-   }]]], document.body);
-M(['label', 'Altitude: '], document.body);
-M(['select',
-   ['style', ['marginRight', '1em']],
-   ['with', sel => {
-       var count = 0;
-       altitudes.forEach(altitude => {
-           M(['option', altitude], sel);
-           count += 1;
-       });
-       sel.selectedIndex = 1;
-       lookup({ altitude : sel.value });
-       reflectAltitude = alt => {
-           var newNdx = Math.round(alt / 1000);
-           sel.selectedIndex = newNdx;
-           lookup({ altitude : alt });
-       };
-   }],
-   ['on',
-    ['change', e => {
-        lookup({ altitude : e.target.value });
-    }]]], document.body);
-M(['label', 'Temperature: '], document.body);
-M(['select',
-   ['style', ['marginRight', '1em']],
-   ['with', sel => {
-       var count = 0;
-       temperatures.forEach(temperature => {
-           M(['option', temperature], sel);
-           count += 1;
-       });
-       sel.selectedIndex = 18;
-       lookup({ temperature : sel.value });
-   }],
-   ['on', ['input', e => {
-       lookup({ temperature : e.target.value });
-   }]]], document.body);
-M(['label', 'Flaps: '], document.body);
-M(['select',
-   ['style', ['marginRight', '1em']],
-   ['option', 2],
-   ['option', 4],
-   ['on', ['input', e => {
-       lookup({ flaps : e.target.value });
-   }]],
-   ['with', sel => {
-       lookup({ flaps : sel.value });
-   }]], document.body);
-M(['label', 'Icing: '], document.body);
-M(['input',
-   ['attr', ['type', 'checkbox']],
-   ['on', ['input', e => {
-       lookup({ icing : e.target.checked });
-   }]],
-   ['with', inp => {
-       lookup({ icing : inp.checked });
+function slider(label, min, max, step, value, inputFun, makeReflector) {
+    var updateLabel;
+    return ['div',
+            ['style', ['margin', '2em 0']],
+            ['div',
+             ['style',
+              ['textAlign', 'center']],
+             ['with', valueDisplay => {
+                 updateLabel = t => {
+                     valueDisplay.innerHTML = label + ': ' + t;
+                 };
+             }]],
+            ['input',
+             ['attr',
+              ['type', 'range'],
+              ['min', min],
+              ['max', max],
+              ['step', step],
+              ['value', value]],
+             ['style',
+              ['width', '100%']],
+             ['with', s => {
+                 updateLabel(value);
+                 inputFun(value);
+                 if (makeReflector) {
+                     makeReflector(reflectedValue => {
+                         s.value = reflectedValue;
+                         updateLabel(reflectedValue);
+                         inputFun(reflectedValue);
+                     });
+                 }
+             }],
+             ['on',
+              ['input', e => {
+                  updateLabel(e.target.value);
+                  inputFun(e.target.value);
+              }]]]];
+}
+M([slider, 'Weight', 55000, 75000, 2000, 69000, v => lookup({ weight : v })], document.body);
+M([slider, 'Temp', -8, 50, 2, 14, v => lookup({ temperature : v })], document.body);
+M([slider, 'Alt', 0, 5000, 1000, 1000, v => lookup({ altitude : v }),
+   f => reflectAltitude = f], document.body);
+(function flap_buttons() {
+    var dim, pick = [];
+    function flapButton(setting) {
+        return ['div', 'Flaps ' + setting,
+                ['style',
+                 ['display', 'inline-block'],
+                 ['border', '2px solid gray'],
+                 ['padding', '.6em 1em'],
+                 ['marginLeft', '1em'],
+                 ['borderRadius', '8px']],
+                ['with', btn => {
+                    function pickMe() {
+                        dim && dim();
+                        btn.style.background = 'lightgreen';
+                        dim = () => btn.style.background = 'none';
+                        lookup({ flaps : setting });
+                    }
+                    pick[setting] = pickMe;
+                    M(['on', ['click', e => {
+                        pickMe();
+                    }]], btn);
+                }]];
+    }
+    M([flapButton, 2], document.body);
+    M([flapButton, 4], document.body);
+    pick[2]();
+}());
+M(['div', 'Icing',
+   ['style',
+    ['display', 'inline-block'],
+    ['border', '2px solid gray'],
+    ['padding', '.6em 1em'],
+    ['marginLeft', '4em'],
+    ['borderRadius', '8px']],
+   ['with', btn => {
+       var on = false;
+       M(['on', ['click', e => {
+           on = !on;
+           btn.style.background = on ? 'lightgreen' : 'none';
+           lookup({ icing : on });
+       }]], btn);
+       lookup({ icing : on });
    }]], document.body);
