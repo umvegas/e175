@@ -447,9 +447,9 @@ function getDistance({ weight, flaps, ice = false, altitude, wind = 0 }) {
 function weightPicker() {
     const defaulWeight = 72000,
           defaultAltitude = 1000;
-    var showWeight, showAutoBrake, reshow, ice, flapsFull,
+    var setWeight, setGust, showAutoBrake, reshow, ice, flapsFull,
         altitude, weight, factor,
-        setAltitude, showDistance, setHeadwind, setFactor;
+        setAltitude, showDistance, setHeadwind, getHeadwind, setFactor;
     function slider(label, min, max, step, value, inputFun, colorizer) {
         var updateLabel;
         return ['div',
@@ -492,6 +492,11 @@ function weightPicker() {
                  ['style',
                   ['textAlign', 'left']],
                  ['with', n => {
+                     var gust = 0;
+                     setGust = g => {
+                         gust = g;
+                         reshow();
+                     };
                      function attemptCallAutobrake(ref) {
                          if (showAutoBrake) {
                              return showAutoBrake({ ref });
@@ -499,7 +504,10 @@ function weightPicker() {
                          setTimeout(() => attemptCallAutobrake(ref), 100);
                      }
                      function reportSpeeds(ref, ac) {
+                         const halfHeadwind = getHeadwind ? Math.max(0, Math.round(getHeadwind() / 2)) : 0;
+                         const vapp = Math.min(+ref + 20, +ref + +gust + halfHeadwind);
                          M(['div', 'Vref: ' + ref], n);
+                         M(['div', 'Vapp: ' + vapp], n);
                          M(['div', '&nbsp;Vac: ' + ac], n);
                          attemptCallAutobrake(ref);
                      }
@@ -523,15 +531,15 @@ function weightPicker() {
                          reportSpeeds(vRefIce.full[dx], vAC[4][dx]);
                          return true;
                      }
-                     showWeight = w => {
+                     setWeight = w => {
                          const dx = weights.indexOf(+w);
                          weight = +w;
                          n.innerHTML = '';
                          five(dx) || fiveIce(dx) || full(dx) || fullIce(dx);
                          M(['div', '&nbsp;Vfs: ' + vFS[dx]], n);
-                         reshow = () => showWeight(w);
+                         reshow = () => setWeight(w);
                      };
-                     showWeight(defaulWeight);
+                     setWeight(defaulWeight);
                  }]],
                 ,
         ];
@@ -552,6 +560,7 @@ function weightPicker() {
                          var gs = knots2fps(ref - headwind); // groundspeed
                          return Math.round(gs * gs / acc / 2 + fudge);
                      }
+                     getHeadwind = () => { return +headwind; };
                      showAutoBrake = (o) => {
                          if (o.ref !== undefined) { ref = o.ref; }
                          if (o.headwind !== undefined) { headwind = o.headwind; }
@@ -608,6 +617,7 @@ function weightPicker() {
                           //n.innerHTML = 'Headwind:' + pad1 + pad2 + headwind;
                           showDistance();
                           showAutoBrake({ headwind });
+                          reshow();
                       };
                       setHeadwind(0);
                   }]]]];
@@ -677,10 +687,11 @@ function weightPicker() {
             speedDisplay,
             distanceDisplay,
             flapsAndIce,
-            [slider, 'Weight', 50000, 90000, 1000, 72000, v => showWeight(v), v => v > 75177 ? 'red' : v > 72000 ? 'yellow' : 'none'],
+            [slider, 'Weight', 50000, 90000, 1000, 72000, v => setWeight(v), v => v > 75177 ? 'red' : v > 72000 ? 'yellow' : 'none'],
             [slider, 'Elevation', 0, 8000, 1000, 1000, v => setAltitude(v)],
             [slider, 'Headwind', -15, 50, 1, 0, v => setHeadwind(v)],
-            [slider, 'Factor', 1, 2.7, 0.05, 1, v => setFactor(v)]];
+            [slider, 'Gust Factor', 0, 15, 1, 0, v => setGust(v)],
+            [slider, 'Distance Factor', 1, 2.7, 0.05, 1, v => setFactor(v)]];
 }
 ///////////////////////////////////////////////////////
 M(weightPicker, document.body);
