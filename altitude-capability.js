@@ -874,6 +874,7 @@ function speedButtons() {
                                          altitude > alt1_5 ? 'yellow' : 'lightgreen';
                                  } else {
                                      limitDiv.innerHTML = 'N/A';
+                                     limitDiv.parentNode.style.background = 'lightgray';
                                  }
                              });
                          }]],
