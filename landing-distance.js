@@ -567,7 +567,9 @@ var scenarios = extractScenarios(),
     showResult, showPickList;
 ////////////////////////////////////////////////////////////////////////////////
 function buildScenarioPicker() {
-    var rebuildVariationList, rebuildTableList, selectScenario;
+    var selectScenario, selectedScenario,
+        selectVariation, selectedVariation,
+        selectTable;
     M(['div',
        ['style',
         ['textAlign', 'center'],
@@ -579,58 +581,64 @@ function buildScenarioPicker() {
        ['div',
         ['with', nameDiv => {
             selectScenario = scenario => {
+                selectedScenario = scenario;
                 nameDiv.innerHTML = scenario.name;
-                rebuildTableList(scenario.tables);
-                rebuildVariationList(scenario.variations);
+                selectVariation(scenario.variations && scenario.variations[0]);
+                selectTable((selectedVariation || scenario).tables[0]);
             };
         }]],
        ['on',
         ['click', e => {
             showPickList(scenarios, selectScenario);
         }]]], document.body);
+    // Variations
     M(['div',
        ['style',
+        ['textAlign', 'center'],
         ['border', '2px solid gray']],
        ['div', 'variation',
         ['style',
          ['fontSize', '.6em'],
          ['borderBottom', '1px solid black']]],
-       ['with', variationListDiv => {
-           rebuildVariationList = variations => {
-               variationListDiv.innerHTML = '';
-               variations && variations.forEach(variation => {
-                   M(['div', variation.name,
-                      ['style',
-                       ['cursor', 'pointer'],
-                       ['margin', '8px 0']],
-                      ['on',
-                       ['click', e => {
-                           rebuildTableList(variation.tables);
-                       }]]], variationListDiv);
-               });
-           };
-       }]], document.body);
+       ['div',
+        ['with', nameDiv => {
+            selectVariation = variation => {
+                selectedVariation = variation;
+                if (variation) {
+                    nameDiv.parentNode.style.display = 'block';
+                    nameDiv.innerHTML = variation.name;
+                    selectTable(variation.tables[0]);
+                } else {
+                    nameDiv.parentNode.style.display = 'none';
+                }
+            };
+        }]],
+       ['on',
+        ['click', e => {
+            console.log({ selectedScenario, vars : selectScenario.variations, tabs : selectScenario.tables, nam : selectedScenario.name });
+            showPickList(selectedScenario.variations, selectVariation);
+        }]]], document.body);
+    // Tables
     M(['div',
        ['style',
+        ['textAlign', 'center'],
         ['border', '2px solid gray']],
        ['div', 'table',
         ['style',
          ['fontSize', '.6em'],
          ['borderBottom', '1px solid black']]],
-       ['with', tableListDiv => {
-           rebuildTableList = tables => {
-               tableListDiv.innerHTML = '';
-               tables && tables.forEach(table => {
-                   M(['div', table.name,
-                      ['style',
-                       ['cursor', 'pointer'],
-                       ['margin', '8px 0']],
-                      ['on', ['click', e => {
-                          console.log({ data : table.data, calculators : table.calculators });
-                      }]]], tableListDiv);
-               });
-           };
-       }]], document.body);
+       ['div',
+        ['with', nameDiv => {
+            selectTable = table => {
+                nameDiv.innerHTML = table ? table.name : '';
+                showResult(table.calculators[6]({ altitude : 1000 }));
+            };
+        }]],
+       ['on',
+        ['click', e => {
+            const tableList = (selectedVariation || selectedScenario).tables;
+            showPickList(tableList, selectTable);
+        }]]], document.body);
     selectScenario(scenarios[0]);
 }
 function buildPickList() {
@@ -656,7 +664,10 @@ function buildResultDisplay() {
     M(['div',
        ['with', n => {
            showResult = result => {
-               n.innerHTML = 'Landing Distance: ' + result;
+               n.innerHTML = 'Landing Distance: ----';
+               setTimeout(() => {
+                   n.innerHTML = 'Landing Distance: ' + result;
+               }, 300);
            };
        }]], document.body);
 }
