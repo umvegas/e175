@@ -468,47 +468,6 @@ DRY 2590 -20 30 90 150 80 370 640 -- --
 2 5750 -60 70 230 1170 180 1040 580 1190 2390
 1 7320 -50 60 210 3210 170 1060 480 640 1440
 `;
-var showBig;
-function dummy() { console.log("NOO!"); }
-function topButton(label, v0, options, reportUp = dummy) {
-    var redisplay;
-    return ['div',
-            ['with', div => {
-                div.rebuild = (v0New, optionsNew) => {
-                    var divNew = M([topButton, label, v0New, optionsNew, reportUp], div.parentNode, div);
-                    div.remove();
-                    return divNew;
-                };
-            }],
-            ['style',
-             ['fontSize', '10pt'],
-             ['cursor', 'pointer'],
-             ['display', 'inline-block'],
-             ['padding', '.5em'],
-             ['marginRight', '.5em'],
-             ['textAlign', 'center'],
-             ['minWidth', '30px'],
-             ['border', '2px solid gray'],
-             ['borderRadius', '10px']],
-            ['on',
-             ['click', e => {
-                 showBig(label, options, v => {
-                     redisplay(v);
-                     reportUp(v);
-                 });
-             }]],
-            ['div', label,
-             ['style',
-              ['fontSize', '.6em'],
-              ['borderBottom', '1px solid black'],
-              ['marginBottom', '.5em']]],
-            ['div', v0,
-             ['with', n => {
-                 redisplay = v => {
-                     n.innerHTML = v;
-                 };
-             }]]];
-}
 function checklistName(s) {
     return s.match(/^[A-Z0-9\s]+$/) && s;
 }
@@ -527,7 +486,44 @@ function findChecklistNames() { // TEST
 function findDataLines() { // TEST
     return raw.trim().split(/[\n\r]+/).map(dataLine).filter(v => !!v);
 }
-function extractTables() {
+function buildCalculator(line) {
+    const cells = line.split(/\s+/),
+          rwyCC = cells[0] === 'DRY' ? 6 : +cells[0],
+          ref = +cells[1],         // starting value
+          adjWeightLo = +cells[2], // per 1000 lbs below 72k
+          adjWeightHi = +cells[3], // per 1000 lbs above 72k
+          adjAlt = +cells[4],      // per 1000 ft MSL
+          adjSlope = +cells[5],    // per 1% down hill
+          adjTemp = +cells[6],     // per 5 C above ISA
+          adjWind = +cells[7],     // per 5kt tail wind
+          adjVapp = +cells[8],     // per 5kt above Vref-NEW
+          adj1Rev = +cells[9],     // 1 reverser INOP
+          adj2Rev = +cells[10];    // 2 reversers INOP
+    return function distance_calculator({ weight = 72, altitude = 1000, slope = 0, temp = 13, wind = 0, vapp = 0, rev = 0 }) {
+        const weightDif = weight - 72,
+              altDif = altitude / 1000,
+              stdTmp = 15 - 2 * altDif,
+              tempDif = (temp - stdTmp) / 5,
+              slopeDif = slope,
+              windDif = wind / 5,
+              vAppDif = vapp / 5,
+              weightFactor = weightDif * (weightDif > 0 ? adjWeightHi :
+                                          weightDif < 0 ? adjWeightLo : 0),
+              altFactor = altDif * adjAlt,
+              slopeFactor = slopeDif * adjSlope,
+              tempFactor = tempDif > 0 ? tempDif * adjTemp : 0,
+              windFactor = windDif * adjWind,
+              vAppFactor = vAppDif * adjVapp,
+              revFactor = rev === 1 ? adj1Rev :
+                          rev === 2 ? adj2Rev : 0,
+              result = ref + weightFactor + altFactor + slopeFactor +
+                       tempFactor + windFactor + vAppFactor + revFactor;
+        console.log({ result, ref, weightFactor, altFactor, slopeFactor,
+                      tempFactor, windFactor, vAppFactor, revFactor });
+        return result;
+    };
+}
+function extractScenarios() {
     var currentChecklist,
         currentVariation,
         currentTable,
@@ -536,107 +532,136 @@ function extractTables() {
         if (checklistName(line)) {
             currentChecklist = {
                 name : line,
-                variations : [],
-                tables : [],
             };
             list.push(currentChecklist);
             currentVariation = currentChecklist;
             return;
         }
         if (tableName(line)) {
-            currentTable = { name : line, data : [] };
+            currentTable = { name : line, data : [], calculators : [] };
+            if (!currentVariation.tables) {
+                currentVariation.tables = [];
+            }
             currentVariation.tables.push(currentTable);
             return;
         }
         if (dataLine(line)) {
+            let ndx = parseInt(line);
+            if (isNaN(ndx)) {
+                ndx = 6;
+            }
             currentTable.data.push(line);
+            currentTable.calculators[ndx] = buildCalculator(line);
             return;
         }
         currentVariation = { name : line, tables : [] };
+        if (!currentChecklist.variations) {
+            currentChecklist.variations = [];
+        }
         currentChecklist.variations.push(currentVariation);
     });
     return list;
 }
-var pickVariation, pickTable;
-function pickScenario(scenario) {
-    var pickedScenario, pickedVariation;
-    checklistTables.some(table => {
-        if (table.name !== scenario) { return; }
-        pickedScenario = table;
-        return true;
-    });
-    console.log({ scenario, pickedScenario });
-    if (pickedScenario.variations.length === 0) {
-        pickedVariation = pickedScenario;
-        variationButton.style.display = 'none';
-    } else {
-        let optionsNew = pickedScenario.variations.map(variation => variation.name),
-            v0New = optionsNew[0];
-        variationButton.style.display = 'inline-block';
-        variationButton = variationButton.rebuild(v0New, optionsNew);
-    }
-    pickVariation = variationName => {
-        pickedScenario.variations.some(variation => {
-            if (variation.name !== variationName) { return; }
-            pickedVariation = variation;
-            return true;
-        });
-        console.log({ pickedVariation });
-        pickTable = iceFlag => {
-            var ndx = iceFlag === 'No' ? 0 : 1;
-            pickedTable = pickedVariation.tables[ndx];
-            console.log({ pickedTable });
-        };
-    };
-}
-const ccList = [1, 2, 3, 4, 5, 6].reverse();
-const wgtList = [60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76].reverse();
-const altList = [0, 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000].reverse();
-const slopeList = [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.1, 1.2, 1.3];
-const tmpList = [0, 5, 10, 15, 20];
-const wndList = [0, 5, 10, 15, 20];
-const vapList = [0, 5, 10, 15, 20];
-const checklistTables = extractTables();
-const scenarioList = checklistTables.map(checklist => checklist.name);
 ////////////////////////////////////////////////////////////////////////////////
-M([topButton, 'scenario', 'Flap Fail', scenarioList, pickScenario], document.body);
-var variationButton = M([topButton, 'variation', '???', ['???'], v => pickVariation(v)], document.body);
-M([topButton, 'Ice', 'No', ['No', 'Yes']], document.body);
-M([topButton, 'RwyCC', 6, ccList], document.body);
-M([topButton, 'Wgt', 72, wgtList], document.body);
-M([topButton, 'Alt', 1000, altList], document.body);
-M([topButton, 'Slope', 0, slopeList], document.body);
-M([topButton, 'Temp', 0, tmpList], document.body);
-M([topButton, 'Wind', 0, wndList], document.body);
-M([topButton, 'Vapp', 0, vapList], document.body);
-M([topButton, 'Rev', 2, [0, 1, 2]], document.body);
-M(['div',
-   ['style',
-    ['margin', '5px 0'],
-    ['textAlign', 'center'],
-    ['border', '3px solid lightgray']],
-   ['with', n => {
-       function clear() {
-           n.innerHTML = '';
-       }
-       showBig = (label, options, reportNewValue) => {
-           clear();
-           M(['div',
-              ['div', label],
-              ['with', n => {
-                  options.forEach(option => {
-                      M(['div', option,
-                         ['style',
-                          ['cursor', 'pointer'],
-                          ['border', '2px solid gray'],
-                          ['borderRadius', '8px'],
-                          ['margin', '5px 0']],
-                        ['on',
-                         ['click', e => {
-                             reportNewValue(option);
-                             clear();
-                         }]]], n);
-                  });
-              }]], n);
-       };
-   }]], document.body);
+var scenarios = extractScenarios(),
+    showResult, showPickList;
+////////////////////////////////////////////////////////////////////////////////
+function buildScenarioPicker() {
+    var rebuildVariationList, rebuildTableList, selectScenario;
+    M(['div',
+       ['style',
+        ['textAlign', 'center'],
+        ['border', '2px solid gray']],
+       ['div', 'scenario',
+        ['style',
+         ['fontSize', '.6em'],
+         ['borderBottom', '1px solid black']]],
+       ['div',
+        ['with', nameDiv => {
+            selectScenario = scenario => {
+                nameDiv.innerHTML = scenario.name;
+                rebuildTableList(scenario.tables);
+                rebuildVariationList(scenario.variations);
+            };
+        }]],
+       ['on',
+        ['click', e => {
+            showPickList(scenarios, selectScenario);
+        }]]], document.body);
+    M(['div',
+       ['style',
+        ['border', '2px solid gray']],
+       ['div', 'variation',
+        ['style',
+         ['fontSize', '.6em'],
+         ['borderBottom', '1px solid black']]],
+       ['with', variationListDiv => {
+           rebuildVariationList = variations => {
+               variationListDiv.innerHTML = '';
+               variations && variations.forEach(variation => {
+                   M(['div', variation.name,
+                      ['style',
+                       ['cursor', 'pointer'],
+                       ['margin', '8px 0']],
+                      ['on',
+                       ['click', e => {
+                           rebuildTableList(variation.tables);
+                       }]]], variationListDiv);
+               });
+           };
+       }]], document.body);
+    M(['div',
+       ['style',
+        ['border', '2px solid gray']],
+       ['div', 'table',
+        ['style',
+         ['fontSize', '.6em'],
+         ['borderBottom', '1px solid black']]],
+       ['with', tableListDiv => {
+           rebuildTableList = tables => {
+               tableListDiv.innerHTML = '';
+               tables && tables.forEach(table => {
+                   M(['div', table.name,
+                      ['style',
+                       ['cursor', 'pointer'],
+                       ['margin', '8px 0']],
+                      ['on', ['click', e => {
+                          console.log({ data : table.data, calculators : table.calculators });
+                      }]]], tableListDiv);
+               });
+           };
+       }]], document.body);
+    selectScenario(scenarios[0]);
+}
+function buildPickList() {
+    M(['div',
+       ['with', n => {
+           function clear() { n.innerHTML = ''; }
+           showPickList = (list, reporter) => {
+               clear();
+               list.forEach(item => {
+                   M(['div', item.name,
+                      ['on', ['click', e => {
+                          reporter(item);
+                          clear();
+                      }]]], n);
+               });
+           };
+       }]], document.body);
+}
+function testCalc() {
+    showResult(scenarios[0].tables[0].calculators[6]({ altitude : 1000, vapp : 5 }));
+}
+function buildResultDisplay() {
+    M(['div',
+       ['with', n => {
+           showResult = result => {
+               n.innerHTML = 'Landing Distance: ' + result;
+           };
+       }]], document.body);
+}
+////////////////////////////////////////////////////////////////////////////////
+buildResultDisplay();
+buildScenarioPicker();
+buildPickList();
+testCalc();
