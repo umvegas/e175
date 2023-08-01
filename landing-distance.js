@@ -569,9 +569,14 @@ var scenarios = extractScenarios(),
 function buildScenarioPicker() {
     var selectScenario, selectedScenario,
         selectVariation, selectedVariation,
-        selectTable;
+        selectTable, selectedTable,
+        params = {}; // rwyCC, weight, altitude, slope, temp, wind, vapp, rev
+    function updateResult() {
+        showResult(selectedTable.calculators[params.rwyCC || 6](params));
+    }
     M(['div',
        ['style',
+        ['cursor', 'pointer'],
         ['textAlign', 'center'],
         ['border', '2px solid gray']],
        ['div', 'scenario',
@@ -589,11 +594,12 @@ function buildScenarioPicker() {
         }]],
        ['on',
         ['click', e => {
-            showPickList(scenarios, selectScenario);
+            showPickList('Pick a scenario', scenarios, selectScenario);
         }]]], document.body);
     // Variations
     M(['div',
        ['style',
+        ['cursor', 'pointer'],
         ['textAlign', 'center'],
         ['border', '2px solid gray']],
        ['div', 'variation',
@@ -616,11 +622,12 @@ function buildScenarioPicker() {
        ['on',
         ['click', e => {
             console.log({ selectedScenario, vars : selectScenario.variations, tabs : selectScenario.tables, nam : selectedScenario.name });
-            showPickList(selectedScenario.variations, selectVariation);
+            showPickList('Pick a variation', selectedScenario.variations, selectVariation);
         }]]], document.body);
     // Tables
     M(['div',
        ['style',
+        ['cursor', 'pointer'],
         ['textAlign', 'center'],
         ['border', '2px solid gray']],
        ['div', 'table',
@@ -630,28 +637,44 @@ function buildScenarioPicker() {
        ['div',
         ['with', nameDiv => {
             selectTable = table => {
+                selectedTable = table;
                 nameDiv.innerHTML = table ? table.name : '';
-                showResult(table.calculators[6]({ altitude : 1000 }));
+                updateResult();
             };
         }]],
        ['on',
         ['click', e => {
             const tableList = (selectedVariation || selectedScenario).tables;
-            showPickList(tableList, selectTable);
+            showPickList('Pick a table', tableList, selectTable);
         }]]], document.body);
     selectScenario(scenarios[0]);
 }
 function buildPickList() {
     M(['div',
+       ['style',
+        ['display', 'none'],
+        ['margin', '5px'],
+        ['padding', '5px'],
+        ['border', '2px solid gray'],
+        ['borderRadius', '10px']],
        ['with', n => {
            function clear() { n.innerHTML = ''; }
-           showPickList = (list, reporter) => {
+           function hide() { n.style.display = 'none'; }
+           function unhide() { n.style.display = 'block'; }
+           showPickList = (query, list, reporter) => {
                clear();
+               unhide();
+               M(['div', query,
+                  ['style',
+                   ['borderBottom', '1px solid black']]], n);
                list.forEach(item => {
                    M(['div', item.name,
+                      ['style',
+                       ['margin', '8px 0'],
+                       ['cursor', 'pointer']],
                       ['on', ['click', e => {
                           reporter(item);
-                          clear();
+                          hide();
                       }]]], n);
                });
            };
