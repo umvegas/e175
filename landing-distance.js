@@ -508,7 +508,7 @@ function buildCalculator(line) {
               windDif = wind / 5,
               vAppDif = vapp / 5,
               weightFactor = weightDif * (weightDif > 0 ? adjWeightHi :
-                                          weightDif < 0 ? adjWeightLo : 0),
+                                          weightDif < 0 ? -adjWeightLo : 0),
               altFactor = altDif * adjAlt,
               slopeFactor = slopeDif * adjSlope,
               tempFactor = tempDif > 0 ? tempDif * adjTemp : 0,
@@ -519,7 +519,7 @@ function buildCalculator(line) {
               result = ref + weightFactor + altFactor + slopeFactor +
                        tempFactor + windFactor + vAppFactor + revFactor;
         console.log({ result, ref, weightFactor, altFactor, slopeFactor,
-                      tempFactor, windFactor, vAppFactor, revFactor });
+                      tempFactor, windFactor, vAppFactor, revFactor, line });
         return result;
     };
 }
@@ -564,15 +564,70 @@ function extractScenarios() {
 }
 ////////////////////////////////////////////////////////////////////////////////
 var scenarios = extractScenarios(),
-    showResult, showPickList;
+    showResult, showPickList, showPickSlider;
 ////////////////////////////////////////////////////////////////////////////////
 function buildScenarioPicker() {
     var selectScenario, selectedScenario,
         selectVariation, selectedVariation,
         selectTable, selectedTable,
-        params = {}; // rwyCC, weight, altitude, slope, temp, wind, vapp, rev
+        params = { // rwyCC, weight, altitude, slope, temp, wind, vapp, rev
+            rwyCC : 6,
+            weight : 72,
+            altitude : 1000,
+            slope : 0,
+            temp : 13,
+            wind : 0,
+            vapp : 0,
+            rev : 0,
+        };
     function updateResult() {
         showResult(selectedTable.calculators[params.rwyCC || 6](params));
+    }
+    function buildParameterPickers() {
+        // rwyCC, weight, altitude, slope, temp, wind, vapp, rev
+        function button(fieldName, sliderParams) {
+            var showNewValue;
+            M(['div',
+               ['style',
+                ['display', 'inline-block'],
+                ['textAlign', 'center'],
+                ['cursor', 'pointer'],
+                ['padding', '.3em .5em'],
+                ['border', '2px solid lightgray'],
+                ['borderRadius', '8px']],
+               ['on', ['click', e => {
+                   //            (query, min, max, step, value, reporter)
+                   showPickSlider(fieldName, ...sliderParams, params[fieldName], v => {
+                       params[fieldName] = v;
+                       console.log({ fieldName, value : v });
+                       showNewValue();
+                       updateResult();
+                   });
+               }]],
+               ['div', fieldName,
+                ['style',
+                 ['fontSize', '.6em'],
+                 ['marginBottom', '8px'],
+                 ['borderBottom', '1px solid black']]],
+               ['div', params[fieldName],
+                ['with', n => {
+                    showNewValue = () => {
+                        n.innerHTML = params[fieldName];
+                    };
+                }]]], document.body);
+        }
+        Object.entries({
+            rwyCC : [1, 6, 1],
+            weight : [60, 80, 1],
+            altitude : [0, 8000, 1000],
+            slope : [0, 1.5, 0.1],
+            temp : [0, 40, 1],
+            wind : [0, 15, 1],
+            vapp : [0, 20, 1],
+            rev : [0, 2, 1],
+        }).forEach(([name, sliderParams]) => {
+            button(name, sliderParams);
+        });
     }
     M(['div',
        ['style',
@@ -648,6 +703,7 @@ function buildScenarioPicker() {
             showPickList('Pick a table', tableList, selectTable);
         }]]], document.body);
     selectScenario(scenarios[0]);
+    buildParameterPickers();
 }
 function buildPickList() {
     M(['div',
@@ -678,10 +734,35 @@ function buildPickList() {
                       }]]], n);
                });
            };
+           showPickSlider = (query, min, max, step, value, reporter) => {
+               var showNewValue;
+               console.log({query, min, max, step, value, reporter});
+               clear();
+               unhide();
+               M(['div',
+                  ['div', query + ': ' + value,
+                   ['style', ['cursor', 'pointer']],
+                   ['on', ['click', e => { hide(); }]],
+                   ['with', n => {
+                       showNewValue = v => {
+                           n.innerHTML = query + ': ' + v;
+                       };
+                   }]],
+                  ['input',
+                   ['style', ['width', '98%']],
+                   ['attr',
+                    ['type', 'range'],
+                    ['min', min],
+                    ['max', max],
+                    ['step', step],
+                    ['value', value]],
+                   ['on', ['input', e => {
+                       const v = e.target.value;
+                       reporter(v);
+                       showNewValue(v);
+                   }]]]], n);
+           };
        }]], document.body);
-}
-function testCalc() {
-    showResult(scenarios[0].tables[0].calculators[6]({ altitude : 1000, vapp : 5 }));
 }
 function buildResultDisplay() {
     M(['div',
@@ -698,4 +779,3 @@ function buildResultDisplay() {
 buildResultDisplay();
 buildScenarioPicker();
 buildPickList();
-testCalc();
