@@ -487,18 +487,22 @@ function findDataLines() { // TEST
     return raw.trim().split(/[\n\r]+/).map(dataLine).filter(v => !!v);
 }
 function buildCalculator(line) {
+    function num(v) {
+        var p = +v;
+        return isNaN(p) ? 0 : p;
+    }
     const cells = line.split(/\s+/),
           rwyCC = cells[0] === 'DRY' ? 6 : +cells[0],
-          ref = +cells[1],         // starting value
-          adjWeightLo = +cells[2], // per 1000 lbs below 72k
-          adjWeightHi = +cells[3], // per 1000 lbs above 72k
-          adjAlt = +cells[4],      // per 1000 ft MSL
-          adjSlope = +cells[5],    // per 1% down hill
-          adjTemp = +cells[6],     // per 5 C above ISA
-          adjWind = +cells[7],     // per 5kt tail wind
-          adjVapp = +cells[8],     // per 5kt above Vref-NEW
-          adj1Rev = +cells[9],     // 1 reverser INOP
-          adj2Rev = +cells[10];    // 2 reversers INOP
+          ref = num(cells[1]),         // starting value
+          adjWeightLo = num(cells[2]), // per 1000 lbs below 72k
+          adjWeightHi = num(cells[3]), // per 1000 lbs above 72k
+          adjAlt = num(cells[4]),      // per 1000 ft MSL
+          adjSlope = num(cells[5]),    // per 1% down hill
+          adjTemp = num(cells[6]),     // per 5 C above ISA
+          adjWind = num(cells[7]),     // per 5kt tail wind
+          adjVapp = num(cells[8]),     // per 5kt above Vref-NEW
+          adj1Rev = num(cells[9]),     // 1 reverser INOP
+          adj2Rev = num(cells[10]);    // 2 reversers INOP
     return function distance_calculator({ weight = 72, altitude = 1000, slope = 0, temp = 13, wind = 0, vapp = 0, rev = 0 }) {
         const weightDif = weight - 72,
               altDif = altitude / 1000,
@@ -518,8 +522,6 @@ function buildCalculator(line) {
                           rev === 2 ? adj2Rev : 0,
               result = ref + weightFactor + altFactor + slopeFactor +
                        tempFactor + windFactor + vAppFactor + revFactor;
-        console.log({ result, ref, weightFactor, altFactor, slopeFactor,
-                      tempFactor, windFactor, vAppFactor, revFactor, line });
         return result;
     };
 }
@@ -579,27 +581,68 @@ function buildScenarioPicker() {
             wind : 0,
             vapp : 0,
             rev : 0,
-        };
+        },
+        worstCase = {
+            rwyCC : 1,
+            weight : 80,
+            altitude : 8000,
+            slope : 1.3,
+            temp : 40,
+            wind : 15,
+            vapp : 20,
+            rev : 2,
+        },
+        fixedParams = {};
+    function constrainWorstCase() {
+        var o = {};
+        Object.keys(params).forEach(fieldName => {
+            o[fieldName] = fixedParams[fieldName] ?
+                           params[fieldName] :
+                           worstCase[fieldName];
+        });
+        return o;
+    }
     function updateResult() {
-        showResult(selectedTable.calculators[params.rwyCC || 6](params));
+        var selectedResult = selectedTable.calculators[params.rwyCC || 6](params),
+            constrainedWorstCase = constrainWorstCase(),
+            worstResult = selectedTable.calculators[constrainedWorstCase.rwyCC](constrainedWorstCase);
+        showResult(selectedResult, worstResult);
     }
     function buildParameterPickers() {
-        // rwyCC, weight, altitude, slope, temp, wind, vapp, rev
         function button(fieldName, sliderParams) {
-            var showNewValue;
+            var showNewValue, fixed, clickTimeID, updateColor, hideSlider;
             M(['div',
                ['style',
                 ['display', 'inline-block'],
                 ['textAlign', 'center'],
                 ['cursor', 'pointer'],
                 ['padding', '.3em .5em'],
-                ['border', '2px solid lightgray'],
+                ['margin', '5px 5px 0 0'],
+                ['background', 'magenta'],
                 ['borderRadius', '8px']],
+               ['with', n => {
+                   updateColor = () => {
+                       n.style.background = fixed ? 'lightgreen' : 'magenta';
+                   };
+               }],
                ['on', ['click', e => {
+                   if (clickTimeID) {
+                       clearTimeout(clickTimeID);
+                       clickTimeID = undefined;
+                       fixed = !fixed;
+                       fixedParams[fieldName] = fixed;
+                       updateColor();
+                       hideSlider();
+                       updateResult();
+                       return;
+                   } else {
+                       clickTimeID = setTimeout(() => {
+                           clickTimeID = undefined;
+                       }, 1000);
+                   }
                    //            (query, min, max, step, value, reporter)
-                   showPickSlider(fieldName, ...sliderParams, params[fieldName], v => {
+                   hideSlider = showPickSlider(fieldName, ...sliderParams, params[fieldName], v => {
                        params[fieldName] = v;
-                       console.log({ fieldName, value : v });
                        showNewValue();
                        updateResult();
                    });
@@ -607,9 +650,18 @@ function buildScenarioPicker() {
                ['div', fieldName,
                 ['style',
                  ['fontSize', '.6em'],
-                 ['marginBottom', '8px'],
+                 ['background', 'white'],
+                 ['minWidth', '50px'],
+                 ['paddingBottom', '2px'],
+                 ['borderTopLeftRadius', '4px'],
+                 ['borderTopRightRadius', '4px'],
                  ['borderBottom', '1px solid black']]],
                ['div', params[fieldName],
+                ['style',
+                 ['paddingTop', '6px'],
+                 ['borderBottomLeftRadius', '4px'],
+                 ['borderBottomRightRadius', '4px'],
+                 ['background', 'white']],
                 ['with', n => {
                     showNewValue = () => {
                         n.innerHTML = params[fieldName];
@@ -676,7 +728,6 @@ function buildScenarioPicker() {
         }]],
        ['on',
         ['click', e => {
-            console.log({ selectedScenario, vars : selectScenario.variations, tabs : selectScenario.tables, nam : selectedScenario.name });
             showPickList('Pick a variation', selectedScenario.variations, selectVariation);
         }]]], document.body);
     // Tables
@@ -736,7 +787,6 @@ function buildPickList() {
            };
            showPickSlider = (query, min, max, step, value, reporter) => {
                var showNewValue;
-               console.log({query, min, max, step, value, reporter});
                clear();
                unhide();
                M(['div',
@@ -761,16 +811,18 @@ function buildPickList() {
                        reporter(v);
                        showNewValue(v);
                    }]]]], n);
+               return hide;
            };
        }]], document.body);
 }
 function buildResultDisplay() {
     M(['div',
        ['with', n => {
-           showResult = result => {
+           showResult = (result, worst) => {
                n.innerHTML = 'Landing Distance: ----';
                setTimeout(() => {
-                   n.innerHTML = 'Landing Distance: ' + result;
+                   n.innerHTML = 'Landing Distance: ' + result +
+                                 (worst ? '/' + worst : '');
                }, 300);
            };
        }]], document.body);
