@@ -13,7 +13,7 @@
 	gzip -9 -vc $< > $@
 
 all: index.html.gz flashcards.html.gz flows.html.gz sv.html.gz \
-     flashcards.js.gz flows.js.gz sv.js.gz \
+     flashcards.js.gz flows.js.gz \
      altitude-capability.js.gz approach-climb.js.gz \
      ref-speeds.js.gz takeoff-bugs.js.gz \
      sv-bank.txt.gz
