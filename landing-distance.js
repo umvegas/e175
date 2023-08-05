@@ -790,16 +790,19 @@ function buildPickList() {
                clear();
                unhide();
                M(['div',
-                  ['div', query + ': ' + value,
-                   ['style', ['cursor', 'pointer']],
-                   ['on', ['click', e => { hide(); }]],
-                   ['with', n => {
-                       showNewValue = v => {
-                           n.innerHTML = query + ': ' + v;
-                       };
-                   }]],
+                  ['div',
+                   ['span', query + ': ' + value,
+                    ['style',
+                     ['cursor', 'pointer'],
+                     ['borderBottom', '1px solid black']],
+                    ['on', ['click', e => { hide(); }]],
+                    ['with', n => {
+                        showNewValue = v => {
+                            n.innerHTML = query + ': ' + v;
+                        };
+                    }]]],
                   ['input',
-                   ['style', ['width', '98%']],
+                   ['style', ['width', '98%'], ['marginTop', '2em']],
                    ['attr',
                     ['type', 'range'],
                     ['min', min],
