@@ -1,0 +1,3 @@
+#!/bin/sh
+egrep "^$" *.html *.js | wc -l
+egrep "^[^a-zA-Z]+$" *.html *.js | wc -l
