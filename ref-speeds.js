@@ -506,8 +506,8 @@ function weightPicker() {
                      function reportSpeeds(ref, ac) {
                          const halfHeadwind = getHeadwind ? Math.max(0, Math.round(getHeadwind() / 2)) : 0;
                          const vapp = Math.min(+ref + 20,
-                                               (ice ? +ref + +gust + halfHeadwind :
-                                                      +ref + +gust + halfHeadwind + 5));
+                                               +ref + (ice ? +gust + halfHeadwind :
+                                                       Math.max(5, +gust + halfHeadwind)));
                          M(['div', 'Vref: ' + ref], n);
                          M(['div', 'Vapp: ' + vapp], n);
                          M(['div', '&nbsp;Vac: ' + ac], n);
