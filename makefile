@@ -12,11 +12,20 @@
 %.txt.gz : %.txt
 	gzip -9 -vc $< > $@
 
-all: index.html.gz flashcards.html.gz flows.html.gz sv.html.gz \
-     flashcards.js.gz flows.js.gz \
-     altitude-capability.js.gz approach-climb.js.gz \
-     ref-speeds.js.gz takeoff-bugs.js.gz \
-     sv-bank.txt.gz
+all: altitude-capability.html.gz altitude-capability.js.gz \
+     approach-climb.html.gz approach-climb.js.gz \
+     ensureHTTPS.js.gz \
+     flashcards.html.gz flashcards.js.gz \
+     flows.html.gz flows.js.gz \
+     index.html.gz \
+     landing-distance.html.gz landing-distance.js.gz \
+     mcdu.html.gz mcdu.js.gz \
+     oral-a.html.gz oral-b.html.gz oral-base.js.gz oral-a.txt.gz oral-b.txt.gz \
+     ref-speeds.html.gz ref-speeds.js.gz \
+     stab-trim.html.gz stab-trim.js.gz \
+     sv.html.gz sv-bank.txt.gz \
+     takeoff-bugs.html.gz takeoff-bugs.js.gz \
+     yokenotes.html.gz yokenotes.js.gz
 
 clean:
 	rm -vf *.html.gz *.js.gz *_min.js *~
