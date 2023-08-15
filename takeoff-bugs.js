@@ -1,61 +1,3 @@
-/*
-const weightStr = `
-50000
-52000
-54000
-56000
-58000
-60000
-62000
-64000
-66000
-68000
-70000
-72000
-74000
-76000
-78000
-80000
-82000
-84000
-86000
-88000
-90000
-`;
-const vFSSpeedStr = `
-158
-161
-164
-167
-170
-173
-176
-179
-181
-184
-187
-190
-192
-195
-197
-200
-202
-205
-207
-210
-212
-`;
-(function mush() {
-    const weights = weightStr.trim().split(/\n/);
-    const speeds = vFSSpeedStr.trim().split(/\n/);
-    var vFSMap = {};
-    weights.forEach((weight, ndx) => {
-        vFSMap[weight] = +speeds[ndx];
-    });
-    console.log({ weights, speeds, vFSMap });
-    M(['pre', JSON.stringify(vFSMap, null, 4)], document.body);
-}());
- */
 // odd-thousands interpolated by hand
 const Vfs = {
     'QRH Page' : 15.8,
@@ -264,18 +206,6 @@ const to2flaps2 = (function () {
     return weightColumns;
 }());
 
-//M(['pre', JSON.stringify(to2flaps2, null, 4)], document.body);
-//M(['pre',
-//   ['with', pre => {
-//       Object.entries(to2flaps2).forEach(([weight, speeds]) => {
-//           M(['div',
-//              ['span', weight],
-//              ['span', ' : ['],
-//              ['span', speeds.map(set => '[' + set.join(', ') + ']').join(', ')],
-//              ['span', '],']], pre);
-//       });
-//   }]], document.body);
-
 function interpolate(flap2weight) {
     const keys = Object.keys(flap2weight),
           cols = Object.values(flap2weight),
@@ -415,9 +345,6 @@ const flapMap = {
 
 //////////////////////////////////////////
 var lookup;
-//M(['div', 'Takeoff Bugs',
-//   ['style', ['borderBottom', '1px solid black'],
-//    ['textAlign', 'center']]], document.body);
 M(['div',
    ['style', ['borderBottom', '1px solid black'],
     ['fontFamily', 'monospace']],
@@ -429,9 +356,6 @@ M(['div',
            if (o.temp !== undefined) { temp = o.temp; }
            if (o.alt !== undefined) { alt = o.alt; }
            if (o.power !== undefined) { power = o.power; }
-           //console.log({
-           //    flaps, weight, temp, alt, power,
-           //});
            if (alt === undefined) { return; }
            if (temp === undefined) { return; }
            if (weight === undefined) { return; }
@@ -444,7 +368,6 @@ M(['div',
                speedList = (col !== undefined) && powerFlapsWeight && powerFlapsWeight[col];
                [v1, vr, v2] = speedList || [null, null, null],
                vfs = v1 && Vfs[weight];
-           //console.log({ col, powerMap, powerFlaps, powerFlapsWeight });
            div.innerHTML = '';
            M(['table',
               ['attr', ['border', '0'], ['cellspacing', '0'], ['cellpadding', '0']],
@@ -577,9 +500,28 @@ function powerButtons() {
     }
     return ['div',
             ['style', ['textAlign', 'center'], ['marginTop', '10px']],
-            //['div', 'Power', ['style', ['margin', '10px 0']]],
             [btn, 1],
             [btn, 2, true]];
 }
+function conditionList() {
+    return ['div',
+            ['style',
+             ['fontSize', '.7em'],
+             ['marginTop', '.7em']],
+            ['div', 'Conditions'],
+            ['ul',
+             ['style',
+              ['fontSize', '.7em']],
+             ['li', 'Dry runway'],
+             ['li', 'Zero wind'],
+             ['li', 'Zero slope'],
+             ['li', 'Balanced V1'],
+             ['li', 'Minimum V2/Vs'],
+             ['li', 'Maximum manual braking'],
+             ['li', 'ATTCS ON'],
+             ['li', 'Anti-ice ON/OFF'],
+             ['li', 'ECS ON/OFF']]];
+}
 M([flapButtons], document.body);
 M([powerButtons], document.body);
+M(conditionList, document.body);
