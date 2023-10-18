@@ -470,7 +470,8 @@ function windCalcUI() {
     return ['div',
             ['style',
              ['borderTop', '1px solid black'],
-             ['marginTop', '1em']],
+             ['marginTop', '1em'],
+             ['paddingTop', '.5em']],
             ['div', 'Headwind:&nbsp; &nbsp;&nbsp;0',
              ['with', div => {
                  showHeadwind = hw => {
@@ -484,6 +485,7 @@ function windCalcUI() {
                  };
              }]],
             ['div',
+             ['style', ['marginTop', '.5em']],
              ['span', 'Angle: &nbsp;&nbsp;0',
               ['style', ['marginRight', '1em']],
               ['with', sp => {
@@ -492,7 +494,7 @@ function windCalcUI() {
                   };
               }]],
              ['input',
-              ['style', ['width', '300px']],
+              ['style', ['width', '500px']],
               ['attr',
                ['type', 'range'],
                ['min', '0'],
@@ -505,6 +507,7 @@ function windCalcUI() {
                   update({ angle : v });
               }]]]],
             ['div',
+             ['style', ['marginTop', '.5em']],
              ['span', 'Speed: &nbsp;&nbsp;0',
               ['style', ['marginRight', '1em']],
               ['with', sp => {
@@ -513,7 +516,7 @@ function windCalcUI() {
                   };
               }]],
              ['input',
-              ['style', ['width', '300px']],
+              ['style', ['width', '500px']],
               ['attr',
                ['type', 'range'],
                ['min', '0'],
