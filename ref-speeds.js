@@ -444,6 +444,88 @@ function getDistance({ weight, flaps, ice = false, altitude, wind = 0 }) {
     });
     return distance;
 }
+function threeWide(n) {
+    return n > 99 ? n :
+           n > 9 ? '&nbsp;' + n :
+           '&nbsp;&nbsp;' + n;
+}
+function deg2rad(deg) {
+    return deg * Math.PI / 180;
+}
+function windCalcUI() {
+    var showAngle, showSpeed, showHeadwind, showCrosswind;
+    var update = (function () {
+        var speed = 0, angle = 0;
+        return function do_update(o) {
+            if (o.speed !== undefined) {
+                speed = o.speed;
+            }
+            if (o.angle !== undefined) {
+                angle = o.angle;
+            }
+            showCrosswind(speed * Math.sin(deg2rad(angle)));
+            showHeadwind(speed * Math.cos(deg2rad(angle)));
+        };
+    }());
+    return ['div',
+            ['style',
+             ['borderTop', '1px solid black'],
+             ['marginTop', '1em']],
+            ['div', 'Headwind:&nbsp; &nbsp;&nbsp;0',
+             ['with', div => {
+                 showHeadwind = hw => {
+                     div.innerHTML = 'Headwind:&nbsp; ' + threeWide(Math.round(hw));
+                 };
+             }]],
+            ['div', 'Crosswind: &nbsp;&nbsp;0',
+             ['with', div => {
+                 showCrosswind = xw => {
+                     div.innerHTML = 'Crosswind: ' + threeWide(Math.round(xw));
+                 };
+             }]],
+            ['div',
+             ['span', 'Angle: &nbsp;&nbsp;0',
+              ['style', ['marginRight', '1em']],
+              ['with', sp => {
+                  showAngle = a => {
+                      sp.innerHTML = 'Angle: ' + threeWide(a);
+                  };
+              }]],
+             ['input',
+              ['style', ['width', '300px']],
+              ['attr',
+               ['type', 'range'],
+               ['min', '0'],
+               ['max', '180'],
+               ['step', '10'],
+               ['value', '0']],
+              ['on', ['input', e => {
+                  var v = e.target.value;
+                  showAngle(v);
+                  update({ angle : v });
+              }]]]],
+            ['div',
+             ['span', 'Speed: &nbsp;&nbsp;0',
+              ['style', ['marginRight', '1em']],
+              ['with', sp => {
+                  showSpeed = s => {
+                      sp.innerHTML = 'Speed: ' + threeWide(s);
+                  };
+              }]],
+             ['input',
+              ['style', ['width', '300px']],
+              ['attr',
+               ['type', 'range'],
+               ['min', '0'],
+               ['max', '50'],
+               ['step', '1'],
+               ['value', '0']],
+              ['on', ['input', e => {
+                  var s = e.target.value;
+                  showSpeed(s);
+                  update({ speed : s });
+              }]]]]];
+}
 function weightPicker() {
     const defaulWeight = 72000,
           defaultAltitude = 1000;
@@ -693,7 +775,8 @@ function weightPicker() {
             [slider, 'Elevation', 0, 8000, 1000, 1000, v => setAltitude(v)],
             [slider, 'Headwind', -15, 50, 1, 0, v => setHeadwind(v)],
             [slider, 'Gust Factor', 0, 15, 1, 0, v => setGust(v)],
-            [slider, 'Distance Factor', 1, 2.7, 0.05, 1, v => setFactor(v)]];
+            [slider, 'Distance Factor', 1, 2.7, 0.05, 1, v => setFactor(v)],
+            windCalcUI];
 }
 ///////////////////////////////////////////////////////
 M(weightPicker, document.body);
