@@ -1,0 +1,1031 @@
+E175 CQ Oral, Cycle A (even years)
+Rev 9/15/2021 
+LIMITATIONS 
+
+1. What is the airplane Maximum Landing Weight? 
+A: 75,177lbs 
+
+2. What is required in the event of a landing below -40&deg;C? 
+A: Maintenance inspection 
+
+3. What is the Minimum Battery Temperature? 
+A: -20&deg;C 
+
+4. What is the maximum operating altitude? 
+A: FL410 
+
+5. What is the maximum Altitude for Flap Extension? 
+A: 20,000' MSL 
+
+6. What is the maximum speed for Landing Gear Operation? 
+A: 250 KIAS 
+
+7. What is the maximum speed to open the Direct Vision Windows? 
+A: 160 KIAS 
+
+8. What are the Turbulent Air Penetration target speeds? 
+A: 250 KIAS below 10,000' MSL 
+
+270 KIAS or 0.76M above 10,000' MSL 
+
+9. What are the flap extended speeds? 
+A: Flaps 1 - 230 KIAS 
+Flaps 2 - 215 KIAS 
+Flaps 3 - 200 KIAS 
+Flaps 4 - 180 KIAS 
+Flaps 5 - 180 KIAS 
+Flaps Full - 165 KIAS 
+
+10.What is the Max Tire Groundspeed? 
+A: 195 KIAS 
+
+11.What is the maximum tailwind takeoff and landing component? 
+A: 15 knots 
+
+12.What is the max crosswind for a Rwy CC 6? 
+A: 38kts 
+
+13.What is the maximum N1 with brakes applied? 
+A: 60% with greater than 10kts tailwind 
+
+14.What is the max fuel imbalance? 
+A: 794 lbs. 
+
+15.What is the minimum fuel tank temperature? 
+A: -37&deg;C 
+
+16.Can we takeoff with the x-feed selector on? 
+A: No 
+
+17.Minimum oil temperature for engine start? 
+A: -40&deg;C 
+
+18.What is the maximum cabin differential pressure? 
+A: 8.4 psi 
+
+19.What is the maximum cabin overpressure? 
+A: 8.8 psi 
+
+20.What is the maximum negative cabin pressure? 
+A: -0.5 psi 
+
+21.What is the maximum differential cabin pressure for takeoff / landing? 
+A: 0.2 psi 
+
+22.When does engine anti-ice need to be selected on the T.O. data set menu? 
+A: 5&deg;C - 10&deg;C and: visible moisture, up to 1700' AFE 
+Ground operations with snow, ice, standing water/slush 
+
+23.When does T.O. data set menu need to be set to ALL? 
+A: Less than 5&deg;C: visible moisture, up to 1700 AFE 
+Ground operations with snow, ice, standing water/slush 
+
+24.What is the maximum airspeed for windshield wiper operation? 
+A: 250 KIAS 
+
+25.What is the minimum altitude for autopilot engagement after takeoff? 
+A: 400 AFE 
+
+26.What is the minimum autopilot engagement height on a missed approach? 
+A: 400 AFE 
+
+27.What is the minimum altitude for autopilot use? (not autoland) 
+A: 50' AFE 
+
+28.What are the Autoland wind limitations? 
+A: Headwind - 25 knots 
+Tailwind - 10 knots 
+Crosswind - 15 knots 
+
+29.What flap setting is required for Autoland? 
+A: Flaps 5
+
+MEMORY PROCEDURES 
+
+30.Engine Abnormal Start 
+A: Affected Engine start/stop selector ................................................................................................... Stop 
+
+31.Pitch Trim Runaway 
+A: A/P DISC button .............................................................................................................. Press and Hold 
+Pitch trims systems 1&2 cutout buttons ........................................................................................Push In 
+
+32.Roll/Yaw Trim Runaway 
+A: A/P DISC button .............................................................................................................. Press and Hold 
+
+33.Steering Runaway 
+A: Steering DISC Switch ......................................................................................................................Press 
+
+34.Dual Engine Failure 
+A: Airspeed..............................................................................................................................250 KIAS min 
+RAT MANUAL DEPLOY LEVER ........................................................................................................Pull 
+
+35.Jammed Control Column (Pitch) 
+A: ELEVATOR DISCONNECT Handle....................................................................................................Pull 
+
+36.Jammed Control Wheel (Roll) 
+A: AILERON DISCONNECT Handle .......................................................................................................Pull 
+
+37.Oxygen Mask Donning 
+A: Oxygen Mask..................................................................................................................................... Don 
+Crew Communications............................................................................................................... Establish 
+
+38.CABIN ALT HI 
+A: Crew Oxygen Masks ... Don 
+Crew communication ... Establish 
+Altitude ... 10,0000 ft, or MEA whichever is higher
+Thrust Levers ... IDLE 
+Speed Brake ... Full Open 
+Airspeed ... Max/Appropriate
+Transponder ... 7700 
+ATC ... Notify 
+
+39.Smoke Evacuation Memory Procedure 
+A: Crew Oxygen Masks ... Don, EMER 
+Crew Communication ... Establish 
+Pressurization DUMP button ... Push In 
+
+40.EGPWS Warning Response 
+A: Pilot Flying:
+Upon receiving EPGWS Warning:
+Disengage Autopilot. 
+Simultaneously advance thrust levers to MAX 
+and pitch to 20&deg; or PLI, whichever is lower. 
+Maintain the present airplane configuration 
+(gear/flaps) until terrain separation is achieved. 
+Climb to the MSA or MORA. 
+Clear of terrain, resume level flight. 
+Engage Autopilot. 
+Resume normal speed. 
+Communicate intensions to ATC. 
+Pilot Monitoring:
+Turn FSTN BELTS ON. 
+Scan for visual reference. 
+Call out the Radio Altimeter indication. 
+Read MFD Terrain indications to check the 
+obstacle height, guide PF for the best course of 
+action and indicate when obstacle(s) have been 
+cleared. 
+
+41.Windshear Escape Maneuver 
+A: Pilot First Recognizing Windshear Call Windshear
+Pilot Flying:
+Thrust Levers ... MAX 
+TOGA button ... Push 
+Flight Director Escape Guidance Cue ... Follow 
+until 1500 AGL and terrain clearance assured.
+(if no EGPWS Windshear announcement
+Pitch to 20 degrees or PLI whichever is lower) 
+Pilot Monitoring:
+Assure MAX Thrust set 
+Monitor Vertical Speed and radar altimeter 
+Advise ATC of windshear encounter 
+
+42.Stall Recovery 
+A: Announce: "Stall" (Pilot first noticing the stall situation/indication) 
+Pilot Flying:
+- Disengage Autothrottle. 
+- Apply nose down and level the wings until out of stall. 
+- Apply thrust as required. 
+- Accelerate the airplane to a safe speed. 
+- Retract speed brakes. 
+- After recovery, return to the normal flight path. 
+Pilot Monitoring:
+- Check Auto Throttle and Autopilot disengaged. 
+- Monitor altitude and speed. 
+- Perform any necessary callout(s). 
+- Reconfigure the airplane as commanded. 
+
+AIRCRAFT GENERAL
+
+43.What is the wing span? 
+A: A: 93' 11"
+
+44.What is the minimum pavement width to make a 180&deg;turn? 
+A: 59' 2"
+
+45.What is the maximum nosewheel steering angle when using the handwheel steering? 
+A: 76&deg; (below 10 knots) 
+
+46.How long will the Emergency Lights be powered? 
+A: 10 minutes 
+
+47.Can the Flight Attendants turn on the Emergency Lights? 
+A: Yes, from the FA control panel 
+
+48.If the electric rudder pedal adjustment is inoperative, can the rudder pedals be adjusted? 
+A: Yes, but it's a MTX procedure 
+
+49.When will the flight deck unlock button flash? 
+A: When the EMERG ENTRY push button on the passenger cabin control panel is pushed. 
+
+50.What happens when you press the inhibit button on the cockpit door control? 
+A: It inhibits the EMERG ENTRY command for 500 sec (8 min 20 sec) 
+
+51.Where are ARINC frequencies located? 
+A: Moble 365 and Jeppesen Enroute section 
+
+52.Is the Captain required to contact Dispatch if the takeoff is rejected after the takeoff clearance is received? 
+A: Yes (FOM)
+
+53.Where would you find a list of the events that require filing a PIR? 
+A: FOM 15.2 (FOM) 
+
+54.How is an Irregularity reported? 
+A: Report It App. 
+
+55.Can the Captain authorize the use of cell phones after the aircraft has left the gate? 
+A: Yes, provided the aircraft is parked. (FOM) 
+
+56.Under what conditions is the use of headset communication NOT mandatory between the Captain and Pushback Agent? 
+A: Aircraft ramp intercom system on MEL 
+Lightning within 5 miles of airport 
+
+57.Under what condition must the interphone system between the flight deck and ground have to be operative for pushback? 
+A: "Low Visibility Conditions"
+
+58.Which PA system has priority over the other, flight deck or cabin? 
+A: The Flight Deck has priority over the cabin. 
+
+59.Headsets and boom mics shall be used for all communications below what altitude? 
+A: FL 180 
+
+ELECTRICAL
+
+60.What does the IDG Amber LED indicate? 
+A: Indicates which IDG that must be disconnected. 
+
+61.What does turning the IDG switch to OFF do? 
+A: Opens the IDG contactor isolating the IDG from the AC BUS. 
+
+62.What does turning the IDG switch to DISC do? 
+A: Mechanically disconnects the IDG. (cannot be reconnected in flight) 
+
+63.How are the DC ESS Busses powered in the event of a complete AC power loss and prior to RAT deployment? 
+A: Aircraft batteries via the Hot BATT busses 1 and 2
+
+64.What is the minimum speed if the RAT is deployed? 
+A: 130 KIAS 
+
+65.Which busses will the RAT power? 
+A: Essential Busses 
+
+66.Can the RAT handle the same electrical load as the IDGs? 
+A: No 
+
+67.When does the RAT automatically deploy? 
+A: When AC Busses are not powered. 
+
+68.How long does it take the RAT to deploy? 
+A: 8 seconds 
+
+69.Can the RAT be manually deployed? 
+A: Yes 
+
+70.Can the RAT be stowed in flight? 
+A: No 
+
+71.Which HYD pump operates when the RAT is deployed? 
+A: Hyd Pump 3A 
+
+72.What powers the APU Start Bus? 
+A: Batt 2 
+
+73.What is the source priority for powering the airplane? 
+A: Respective IDG (onside) 
+APU (inside) 
+GPU (outside) 
+Opposite IDG (cross-side) 
+
+74.What do the TRUs do? 
+A: Converts AC power to DC 
+
+75.What do you expect to happen if the Parking Brake is released with the GPU connected? 
+A: EICAS caution message and a "GPU CONNECTED". 
+
+76.Can the aircraft be powered using the DC GPU? 
+A: No 
+
+77.How are the Batteries charged? 
+A: Through the TRUs? 
+
+78.What is the purpose of the AUTO function on BATT 2? 
+A: System logic allows it to control the APU Start Bus or the DC ESS Bus. 
+
+79.How long will the aircraft batteries last on emergency power if the RAT does not deploy? 
+A: 10 Minutes 
+
+ENGINE
+
+80.How are the engines controlled? 
+A: FADEC 
+
+81.What will happen if STOP is selected with the thrust lever not in the IDLE position? 
+A: FADEC will not shut the engine down. 
+
+82.What does the ignitor selector knob OFF position do? 
+A: Deactivates the ignition system and inhibits fuel flow on the ground. 
+
+83.What does OVRD on the ignition selector knob do? 
+A: Enables FADEC to continuously activate both exciters when the engine is running. 
+
+84.When is the cyan line displayed on the N1 gauge? 
+A: During icing conditions on final approach below 1200' with gear or flaps down. 
+
+85.What does the cyan line on the N1 gauge mean? 
+A: Minimum thrust level to meet bleed requirements for icing conditions. 
+
+86.What does the cyan V-shaped bug on the N1 gauge indicate? 
+A: N1 Target 
+
+87.What does the WML icon in the ignition channel indication mean? 
+A: FADEC has detected an engine flameout and the auto-relight system is actuating to restart the engine. 
+
+88.When does FADEC initiate ignition during a ground start? 
+A: 7% N2 
+
+89.When does FADEC introduce fuel during a ground start? 
+A: 20% N2 
+
+90.When will FADEC command a starter cutout during a ground start? 
+A: 50% N2 
+
+91.What indications require an engine start to be manually aborted? 
+A: No positive oil pressure within 10 seconds of N2 increase. 
+No ITT increase within 30 seconds of fuel application. 
+ITT exceeds start limit (hot start) 
+N1 and/or N2 fail to accelerate stable idle speed. (hung start) 
+Intermittent electrical pneumatic or starter malfunction prior to starter disengagement. 
+During tailwind, no positive increase of N1 before starter cutout (50% N2). 
+
+92.What is the difference between ATTCS in Green vs. White? 
+A: Green = System is engaged. (thrust levers in TO/GA) 
+White = System is armed. 
+
+93.When will the ATTCS command RSV thrust? 
+A: 15% difference between N1 values. 
+Engine failure during takeoff. 
+Engine failure on Go-Around. 
+Windshear. 
+
+94.Can ATTCS be activated manually? 
+A: Yes, by moving the thrust levers to the MAX position. 
+
+95.How does engine overspeed protection work? 
+A: When N2 reaches 102% FADEC shuts engine down. If overspeed is detected 3 times in 30 seconds 
+FADEC will not relight the engine. 
+
+96.What bus powers the A ignitors? 
+A: AC stby bus. (in case of dual engine failure) 
+
+97.What powers FADEC above/below 50% N2? 
+A: Above 50% - PMA (Permanent Magnetic Alternator) 
+Below 50% - Aircraft Electrical Source 
+
+98.What does the Green Bug on the N1 gauge mean? 
+A: Maximum possible power for current conditions. 
+
+FMS, NAV, COMM, FLIGHT INSTRUMENTS
+
+99.What does Green Dot display? 
+A: Driftdown speed with flaps up > FL200 (best lift over drag). 
+Ideal flap extension speed < FL200. 
+
+100. What does the Flight Path Vector Speed Error Tape display? 
+A: The difference between actual and selected airspeed. 
+
+101. How is Angle Of Attack calculated? 
+A: Using the Smart Probes and static pressure. 
+
+102. What does the Pitch Limit Indicator (PLI) display? 
+A: The margin between stick shaker AOA and the aircraft AOA. 
+
+103. What happens if ADS 1 fails? 
+A: Automatically reverts to ADS 3. If ADS 3 is inop pilot must manually revert to ADS 2. 
+
+104. How long does it take the IRS to align? 
+A: Up to 17 minutes. 
+
+105. What does OVRD on the FMA indicate? 
+A: The auto-throttles are being overridden. 
+
+106. What does the FPA acceleration pointer on the PFD indicate? 
+A: Acceleration and Deceleration rate along the flight path. 
+
+107. What is the indication of a successful DVDR test? 
+A: No indication, the only indication will be for a test failure. 
+
+108. What do high density red dots indicate on the EGPWS? 
+A: The terrain is more than 2000' above the aircraft altitude. 
+
+109. If IRS 1 fails does it automatically revert to IRS 2? 
+A: No, it must be manually selected. 
+
+110. How can the VHF be tuned without the MCDU? 
+A: PFD with the CCD, 
+
+111. What MCDU inputs must be accomplished to get Flight Director guidance to be displayed on the PFD?
+A: Perf Init and Speeds
+
+112. When will the EICAS automatically declutter? 
+A: 30 seconds after the landing gear, slat/flaps are retracted, and APU off. 
+
+113. When does airspeed automatically change from IAS to MACH? 
+A: FL290 if in manual speeds, FMS speeds in accordance with Perf Int. page 3/3. 
+
+114. What does the F-Bug indicate? 
+A: Ideal flap retraction speed for each flap setting. 
+
+115. When will a Vertical Track Alert appear? 
+A: 1 minute prior to starting a descent or climb. 
+
+FUEL
+
+116. What is the maximum fuel capacity? 
+A: 20,935 lbs 
+
+117. How much fuel is unusable? 
+A: 150 lbs 
+
+118. What happens when LOW 2 is selected on the XFEED selector knob? 
+A: The cross feed valve opens and automatically activates the left fuel pump (AC PUMP 1) supplying 
+fuel to both engines from the left wing tank. 
+
+119. Why is LOW 1 selected after a dual engine failure? 
+A: On RAT power, only AC PUMP 2 is operational. 
+Cross feed valve opens to prevent vapor lock. 
+
+120. What normally powers the refueling system? 
+A: DC BUS 1 and 2 
+
+121. What is the function of the collector tanks? 
+A: To keep the fuel pumps submerged, ensuring a constant flow of fuel to the engines. 
+
+122. What does the DC Fuel Pump do? 
+A: Provides pressurized fuel for normal APU operation and
+engine start when AC power or the AC fuel pump is not available. 
+
+123. Can fuel be transferred from one fuel tank to the other? 
+A: No, only from tank to engine. 
+
+124. What is the maximum fuel imbalance? 
+A: 794 lbs (Fuel Imbalance EICAS message at 800lbs) 
+
+125. What does an EICAS FUEL EQUAL - XFEED OPEN message mean? 
+A: Fuel imbalance <100lbs with the cross feed valve open. 
+
+HYDRAULICS
+
+126. Can Hydraulic fluid be transferred between systems? 
+A: No 
+
+127. What Bus powers ACMP 1? 
+A: AC BUS 2 (ACMP's are cross wired) 
+
+128. What happens when engine 1 is running and the parking brake is released? 
+A: ACMP 2B is activated 
+
+129. During the 8 seconds it takes the RAT to deploy are the Flight control actuators pressurized? 
+A: Yes via the HYD 3 accumulator. 
+
+LANDING GEAR AND BRAKES
+
+130. What does the Emergency/Parking brake light illuminated mean? 
+A: The Parking brake is actuated AND there is Hydraulic Pressure in the brake lines. 
+
+131. What conditions must exist to get a green towing light indication? 
+A: Steering disengaged through the external steering disengage switch 
+Parking brakes not applied 
+Main brakes not applied 
+
+132. How does the alternate gear extension work? 
+A: Releases residual hydraulic pressure from the landing gear and opens all of the uplocks. 
+
+133. What does the DN LOCK REL button do? 
+A: Mechanically bypasses the system protection logic. 
+
+134. What condition requires the DN LOCK REL button should be pushed? 
+A: Landing gear control lever failure 
+
+135. What is the purpose of Locked Wheel Protection and how does it function? 
+A: Allows wheel speed equalization during high speed turns.
+It does this by commanding zero brake pressure to the slower wheel. 
+
+136. When is the locked wheel protection active? 
+A: On the ground at wheel speeds above 30 knots when wheel speeds are 33% different. 
+
+137. At what speed is antiskid deactivated? 
+A: Below 10 knots 
+
+138. When is brake touchdown protection deactivated? 
+A: Three seconds after WOW or wheel speed above 50 knots. 
+
+139. How many brake applications can the parking brake accumulators provide? 
+A: 6
+
+140. What is the purpose of the fusible plugs in the tires? 
+A: Fusible plug melts relieving excess pressure caused by overheated tire. 
+
+141. How is auto braking deactivated? 
+A: Selector switch OFF 
+Brake pedal application 
+Either thrust reverser advanced beyond idle during auto brake application. 
+
+142. What is the fastest speed which max nosewheel deflection is available? 
+A: 10 knots (76&deg; of travel)
+
+143. At what speed is auto brake armed on takeoff with RTO selected? 
+A: 60 knots 
+
+144. Can the Nose Wheel Steering be turned off from the FO's side? 
+A: Yes via the steering disengage switch on the FO's yoke. 
+
+145. How do you get the green light on the nose wheel to illuminate? 
+A: Steering off 
+Parking brake released 
+Toe brakes not applied 
+Manual steering switch selected 
+
+OXYGEN
+
+146. What happens when you press the oxygen test/reset button with the mask stowed? 
+A: Tests the oxygen mask 
+Flow indicator star momentarily blinks 
+Oxygen flow is audible through audio system 
+
+147. How do you return to normal operation after oxygen mask use? 
+A: Ensure mask box door is closed 
+Press the test/reset button 
+(This stops oxygen flow and returns communication from cockpit speakers to the headsets) 
+
+148. What does the oxygen mask EMERG selection provide? 
+A: 100% oxygen under positive pressure. 
+
+149. Where is Crew O2 pressure displayed? 
+A: System status page on MFD. 
+
+150. What are minimum crew O2 values? 
+A: Green for three, blue for two, amber no dispatch. 
+(Values displayed are automatically temp compensated) 
+
+151. When do the passenger masks auto deploy? 
+A: Cabin altitude between 14,000 - 14,750 ft. 
+
+152. How long do the passenger masks provide oxygen? 
+A: 12 minutes. 
+
+153. What does the OVRD position of the MASK DEPLOY switch do? 
+A: Deploys the passenger oxygen masks regardless of cabin altitude. 
+
+WARNING SYSTEM
+
+154. What does the GND PROX TERR INHIB button do? 
+A: Inhibits the EGPWS and avoids unwanted terrain alerts. 
+
+155. When would you use the GND PROX TERR INHIB button? 
+A: When operating at airports not covered by the EGPWS database. 
+
+156. What does pressing the GND PROX G/S INHIB button do? 
+A: Manually cancels glideslope alerts. 
+
+157. What does pressing the GND PROX FLAP OVRD do? 
+A: Inhibits flap alerts when flap configuration is different from normal landing flap configuration. 
+
+158. What does high density red dots on the terrain map indicate? 
+A: Terrain is more than 2000 ft. above aircraft altitude. 
+
+159. What does it mean when an EICAS message has a > by it? 
+A: Root EICAS message. 
+
+160. When is windshear detection active? 
+A: 10 - 1500 ft. RA (takeoff, go-around and final approach)
+
+161. When is the windshear escape guidance mode activated? 
+A: Manually, with caution or warning condition is detected and TOGA pressed 
+Automatically, with warning condition and Thrust Lever set to TOGA or FD mode is in TO or GA 
+
+ADVERSE WX
+
+162. How close must lightning be to suspend refueling? Stop all ramp operations? 
+A: 5nm, 3nm (FOM) 
+
+163. How far shall thunderstorms be avoided in flight? 
+A: 5nm if below 23,000' and temp is &gt; 0&deg;C
+10nm if below 23,000' and temp is &lt; 0&deg;C
+20nm if above 23,000' 
+over: clear by 5,000' (FOM) 
+
+164. What is the maximum ground wind speed for operations? 
+A: 50kts (steady state), 65kts (gusts)
+
+165. When shall intersection departures not be used? 
+A: Windshear-use the longest runway (FOM) 
+Low-vis ops.-approach end of runway must be visible 
+
+166. When is a takeoff alternate required? 
+A: The weather at the departure airport is below the lowest available published landing minimums 
+(FOM) 
+
+FOM, NORMAL PROCEDURES
+
+167. When receiving an aircraft directly from another crew, must an originating checklist be completed?
+A: Yes
+
+168. What must the Captain's pre-departure briefing to FAs cover? 
+A: Aircraft assignment, projected passenger loads, originating or through flight, forecast turbulence, 
+related weather conditions, pertinent MEL items, Flight Plan estimated time enroute, and any additional 
+items Captain deems necessary. (FOM) 
+
+169. When do the emergency systems and equipment on the flight deck have to be visually checked? 
+A: When the aircraft has been left unattended by the flight crew for any period of time. 
+
+170. What is required to be checked during a review of the MTX Log? 
+A: (use this as a discussion item, FOM) 
+
+- Verify the correct Log is onboard (tail # matches). 
+- Verify number of pink pages in Log meets requirement (five). 
+- General review of all pages to understand the recent mechanical history of the aircraft. 
+- Determine whether the VOR Check within has been completed per AOM Vol 1, Normal Procedures. 
+- If there is an entry in the LOG ENTRY section, verify the following four fields are completed in the 
+CORRECTIVE ACTION section: 
+- CORRECTIVE ACTION text 
+- SIGNATURE (Corrective Action) 
+- EMP # or CERT # (NON-QX) 
+- DATE 
+
+- Verify all fields in the LOG ENTRY and CORRECTIVE ACTION sections are completed and boxes 
+are marked. If there are any Incomplete fields/boxes or there is a question about a field in these two 
+sections, the Captain shall contact Maintenance Control for resolution prior to departure. 
+NOTE: The PHASE OF FLIGHT and EVENT CATEGORY sections are not regulatory and are for 
+Horizon Air reliability data collection; therefore; resolution for unmarked boxes in these two sections is 
+not required prior to departure. 
+
+- The MAINTENANCE ONLY section is exempt from this review and resolution process. 
+- Confirm MEL/CDL items on the Dispatch Release matches the MEL/CDL items and effective dates in the Log. 
+- Comply with any MELs/CDLs operational restrictions or conditions. 
+(FOM) 
+
+171. Is it OK to complete a rudder check with nose wheel steering off, but with the tug still attached to the aircraft? 
+A: No 
+
+172. The aircraft must be configured for landing prior to what point? 
+A: 1,000 AFE 
+
+173. The aircraft must be stabilized at final approach airspeed prior to what point? 
+A: Crossing the FAF on approaches where the MAP is determined by time
+1000' AFE on approaches with anticipated windshear
+Otherwise, 500 AFE 
+
+174. What is our definition of a stabilized approach? 
+A: (FOM) 
+A stabilized approach consists of: 
+
+- The airplane in approach configuration for the applicable approach 
+profile IAW E175 AOM VOL 1. 
+NOTE: Momentarily exceeding these limits does not require a go-around as long as prompt, positive 
+correction is taken to return to a stabilized condition. 
+
+- Instrument approach with vertical guidance (ILS or FMS VNAV): 
+-Course deviation of one dot or less. 
+-Glidepath deviation up to one dot above or ½ dot below. 
+- Visual Approach: 
+-If electronic course or glidepath information is available, no more 
+than one dot deviation from course or glidepath. 
+
+- 1,000 feet AFE and below: 
+-Configured for landing as defined in the AOM Vol 1. 
+-Rate of descent as necessary to maintain the published glidepath, or if in none available, not in excess of 1,000 fpm. 
+-Bank angle 15&deg;or less. 
+-The airplane on profile speed within -5/+10 knots of target speed. 
+
+Above 500' AFE 
+
+-PF shall respond "Correcting" and shall correct the condition, in a timely manner, to establish or regain a stabilized approach. 
+Below 500' AFE 
+
+-If the approach is not stabilized or if a successful landing in the touchdown zone becomes 
+uncertain, either pilot shall call "Missed Approach" and the missed approach shall be executed. 
+
+175. When is a takeoff alternate required? 
+A: Reported departure weather is below landing minimums for that airport.  (FOM) 
+
+176. Are First Officers with less than 100 hours in type in company aircraft prohibited from making takeoffs and landings at special airports? 
+A: Yes. (FOM) 
+
+177. What other conditions restrict them from making the takeoff or landing? 
+A: Contaminated runway 
+Braking action less than "good" 
+Crosswind greater than 15 knots 
+Windshear reported at the airport 
+Visibility less than 4000 RVR or ¾ mile 
+any other condition the Captain deems appropriate. 
+
+Also landings only with runways less than 7000' with First Officers with less than 500 hours 
+
+178. What is a "Special airport" and how do you know if you are flying into one?
+A: FOM and Airport INFO charts. (FOM) 
+
+179. What does the term "lockdown" mean in association with the Threat Levels listed in the Ops Manual?
+A: Closure of the Flight Deck door and suspension of all entry and exit through it. (FOM) 
+
+180. If a liquid is found on board the aircraft that is considered suspicious where is the threat level guidance found? 
+A: In the FOM. 
+
+181. If a FRA is not specified, at what altitude AFE should flaps be retracted? 
+A: 1000 feet. 
+
+182. Under what weather conditions are Complex-Special turn procedures mandatory in the case of an engine failure on takeoff? 
+A: Both VMC & IMC. 
+
+183. What should the Captain do if a crew member is unable to perform His or Her duties? 
+A: Contact Duty Officer (FOM) 
+
+184. What is the Horizon Air "Use of Alcohol" policy?
+A: Not consume alcohol on the same calendar day or 10 hour period immediately before scheduled to fly, 
+stand reserve, or perform company related duties. (FOM) 
+
+185. What should you do if fellow crew member is too fatigued to fly but does not remove themselves from the trip? 
+A: Contact Flight Operations Duty Officer before proceeding. (FOM) 
+
+186. What do you do if you lose your Airman Certificate or Medical while on a trip? 
+A: FAA website. (FOM) 
+
+187. What is our policy regarding scuba diving before trip? 
+A: Pilots shall not participate in scuba diving within 24 hours of reporting for duty. (FOM) 
+
+188. What is our policy regarding Blood donation? 
+A: Pilots shall not donate blood within 72 hours of reporting for duty. 
+
+189. Who is responsible for ensuring checklists are properly complied with for all operations? 
+A: Captain (FOM) 
+
+190. Is it ok to read publications not related to the proper conduct of the flight on the flightdeck? 
+A: No (FOM) 
+
+191. What is the appropriate response to a TCAS TA? 
+A: Attempt to visually acquire traffic. (FOM) 
+
+192. What if any communication is required when changing nav sources? 
+A: State the change to other crewmember "number one nav on FMS". (FOM) 
+
+193. Define Critical Phase of Flight 
+A: Takeoff: Beginning with brake release and ending when:
+ - the A/C is brought to a full stop during a rejected T/O, or
+ - when the A/C is at acceleration height and clear of all obstacles in the takeoff path is assured, landing gear and flaps have been retracted, and airspeed is a least VSE.
+Landing: Beginning when landing gear is extended for landing and ending when:
+ - the A/C lands and is brought to a full stop, or
+ - taxied clear of the landing runway. (FOM) 
+
+194. What is the maximum difference between the two primary altimeters crossing the FAF on an approach? 
+A: 100' (FOM) 
+
+195. What is required if the difference between the two primary altimeters exceeds 100' crossing the FAF?
+A: Missed approach unless visual reference to the runway environment has been established and the 
+aircraft is in a position to allow safe continuation to a landing. (FOM) 
+
+196. Who is the PM on the ground? 
+A: The First Officer (FOM) 
+
+197. How does proper transfer of aircraft control take place? 
+A: Notification "My airplane" followed by:
+Acknowledgment "Your airplane" (FOM)
+
+198. When must shoulder harnesses be worn? 
+A: Takeoff and landing. (FOM) 
+
+199. What is the suggested operation of Pilot Controlled lighting? 
+A: Suggested use is to always click the mike seven times (within 5 seconds); this assures that all 
+controlled lights are turned on to the maximum available intensity. (FOM) 
+
+200. With regard to pilot controlled lighting, how many minutes of lighting is available from last keying event? 
+A: 15 minutes (FOM) 
+
+201. What is the Runway Verification Procedure for takeoff? 
+A: Prior to crossing ANY runway hold short line, the 
+Captain and First Officer shall verbally verify: 
+The aircraft is cleared onto the runway 
+The runway is correct 
+The runway is clear of conflicts 
+
+Example - CA: "Cleared for takeoff, Rwy 10R, clear"
+FO: "Rwy 10R, clear"
+(FOM) 
+
+202. What is the Runway Verification Procedure for landing? 
+A: Prior to landing: 
+The PF shall restate the landing clearance and runway 
+Both pilots observe the runway environment and verify (silently) correct runway, and runway clear of traffic
+After Landing Checklist is complete: state landing clearance or query ATC if not given
+
+203. What is the minimum clearance from objects while taxiing? 
+A: Aircraft shall be taxied no closer than ten feet to any object. With wing walker, no closer than five feet. 
+(FOM) 
+
+204. How does Captain certify that Special Airport Qualification has been accomplished?
+A: The Captain's signature on the Dispatch Release indicates compliance. (FOM)
+
+205. What are the iPad preflight requirements? 
+A: Prior to each flight day, each pilot shall determine their Company-issued IPAD is operable. The IPAD 
+should be sufficiently charged to meet the needs of the scheduled flight day. The minimum iPad battery 
+charge status to begin a flight segment is 30% and 75% to begin a duty day(FOM) 
+
+206. How should the Captain proceed when the FA advises of a conflict regarding a differentlyabled passenger? 
+A: The CRO shall be notified. 
+
+207. When flying into an uncontrolled airport, what position reports should be made on CTAF? 
+A: 10 miles out. Entering downwind, base, and final. Clearing the runway. (FOM) 
+
+208. When must FO update departure status to operations when flight departure is delayed? 
+A: If a flight is not anticipated to be airborne within 15 minutes of the OUT TIME, the First Officer shall 
+contact the station and give a best estimate OFF TIME. Update this estimate every 15 minutes. (FOM) 
+
+209. What restrictions are placed on an FO with less than 100 hours? 
+A: The Captain shall make all takeoffs and landings when: 
+-Flying to special airports 
+-Water, snow, slush, or other contaminates which affect aircraft performance are on the runway. 
+-The braking action is reported less than good. 
+-Crosswind component is greater than 15 knots. 
+-Windshear is reported in vicinity of the airport. 
+-The visibility is less than RVR 4000 or ¾ sm. 
+-Any other condition in which the Captain determines it would be prudent to exercise his prerogative. 
+(FOM) 
+
+210. What is the minimum runway width? 
+A: Minimum runway width is 100' take off, 60 for landing (FOM) 
+
+211. How much fuel reserve is required if no alternate is listed on release? 
+A: 55 minutes at normal cruising fuel consumption. (FOM) 
+
+212. When may standard CT be removed? 
+A: When the flight is planned at maximum zero fuel weight. (FOM) 
+
+213. Will BO, AF, RE and CT always equal MT? 
+A: Since BO, AF, RE, and CT are rounded to the nearest 100 pounds; they may not equal MT when 
+added together. (FOM) 
+
+214. What if actual takeoff wt exceeds METW? 
+A: Contact dispatch to run a new METW calculation based on the higher weight. (FOM) 
+
+215. "Terrain Clearance" provides what clearance from terrain?
+A: Clear terrain by 1000 (FOM) 
+
+216. "Mountain Drift down" provides what terrain clearance?
+A: Clear terrain by 2000' (FOM)
+
+217. When does a dispatch release expire? 
+A: Air Turnback-Requires re-release. 
+Intermediate Airport - after 60 minutes on ground 
+
+218. When is a takeoff alternate required? 
+A: When reported departure weather is below landing minimums. (FOM) 
+
+219. When is a destination alternate required? 
+A: 1, 2, 3 (FOM) 
+
+220. At check in, when shall CA call scheduling to locate a missing crewmember? 
+A: If a crewmember has not been accounted for by five minutes past check-in time, the Captain (or First 
+Officer if Captain not present) shall contact crew scheduling services. (FOM) 
+
+221. Minimum crew onboard for though flight? 
+A: The number of flight attendants on board is at least half the number required for CFR 14 Part 121.391 
+but never less than one. (FOM) 
+
+222. When must pilots be at the aircraft? 
+A: Pilots shall arrive at the aircraft 30 minutes (40 min for Star Flight) before scheduled departure time (FOM) 
+
+223. When must pilots be on the flightdeck? 
+A: Pilots shall be on the flightdeck 20 minutes prior to scheduled departure time. (FOM) 
+
+224. Can you take another airline pilot in the jump seat to Canada or Mexico? 
+A: No (FOMB) 
+
+225. What are two things that a Captain is required to do following a Takeoff Abort? 
+A: The Captain shall submit a PIR and contact dispatch. (FOM) 
+
+226. Must the Flight Director be used on an RNAV-1 SID? 
+A: Yes, RNAV-1 SIDs require the use of the Flight Director. (FOM) 
+
+227. What is the max rate of descent from 2000' AGL to 1000' AGL? 
+A: 2000 fpm (FOM) 
+
+228. What is max bank angle below 500' on approach? 
+A: 15 degrees (FOM) 
+
+229. Established on the final approach segment, you receive a report that the weather is now below landing minimums, can you continue? 
+A: Yes, except for Autoland you may continue, but cannot land unless you have landing minimums. 
+(FOM) 
+
+230. If planning a straight in visual approach at an uncontrolled airport, by what distance shall the aircraft be established on final? 
+A: 5 miles (FOM) 
+
+231. Can a visual approach be accepted 40nm out? 
+A: No, must within 35nm (FOM) 
+
+232. When flying an approach to an unfamiliar airport, what must you do? 
+A: Fly the entire approach. (FOM) 
+
+233. Can you accept a LAHSO clearance? 
+A: Not in US. (FOM) 
+
+234. Can you pickup passengers or bags at an alternate airport? 
+A: No (FOM) 
+
+235. How many maintenance discrepancies may be entered on one logbook page? 
+A: Only one. (FOM) 
+
+236. How does Captain determine the airworthiness of the aircraft? 
+A: Reviewing the Aircraft Maintenance log 
+Ensuring a preflight inspection has been accomplished (FOM) 
+
+237. On preflight, how can a pilot determine if an abnormality has been previously identified? 
+A: Previously identified damage is marked by maintenance with ¼ yellow dots. (FOM) 
+
+238. Define Block Out for maintenance purposes? 
+A: Aircraft movement under its own power. (FOM) 
+
+239. Does the Captain need to talk with maintenance before entering a discrepancy in the logbook?
+A: Nope (FOM)
+
+240. Who places the A/C out of service card over the power levers? 
+A: The Captain after entering a discrepancy in the logbook. (FOM) 
+
+241. Can you takeoff or land if the braking action is reported as Nil? 
+A: Takeoff or landings not authorized with braking action of Nil. (FOM) 
+
+242. When landing on a slippery runway, should you pump the brakes? 
+A: No.
+Apply brakes smoothly and symmetrically with moderate to firm pressure and hold until a safe taxi speed is assured. (FOM) 
+
+243. What is one step deicing? 
+A: The one-step procedure involves deicing and anti-icing the aircraft in one step using Type I fluid. (FOM) 
+
+244. What is two step deicing? 
+A: In the two-step procedure, deicing and anti-icing are accomplished in separate steps. In the first step 
+the aircraft in deiced with Type I fluid. In the second step, the aircraft is anti-iced with either Type I or 
+Type IV fluid. (FOM) 
+
+245. When does the holdover time start? 
+A: One-step - holdover time begins at the start of deicing and anti-icing the first critical surface. 
+Two-step - The holdover time begins at the start of the second step. (FOM) 
+
+246. How do you configure the aircraft for deicing? 
+A: Configuration Checklist (FOM) 
+
+247. What do you do if the holdover time expires before takeoff? 
+A: Return to gate for deicing. (FOM) 
+
+248. What does Captain's signature on ferry permit signify? 
+A: That a verbal briefing with the Maintenance Controller was accomplished and
+the Captain understands and concurs with Ferry Flight Permit restrictions and limitations. (FOM)
+
+249. What does the following PA statement signal to the FAs?
+A: "Ladies and Gentlemen, this is the Captain speaking, may I have your attention?"
+Indicates to the FAs that the PA is of an urgent nature. (FOM) 
+
+250. What does "land immediately at nearest suitable airport" mean?
+A: Land without delay at the nearest suitable airport with sufficient runway length and if required, 
+emergency services to support the emergency or abnormality. 
+If possible, contact dispatch. (FOM) 
+
+251. What does "land as soon as practical" mean?
+A: Proceed to the most appropriate Air Group-served airport at the discretion of the Captain 
+Considerations should be given to weather conditions, Maintenance services, and operational impact. 
+Should be coordinated through Dispatch (FOM) 
+
+252. What do you do if your fellow pilot becomes incapacitated? 
+A: Land as soon as possible. (FOM) 
+
+253. Where can you find a list of mandatory PIR reportable items? 
+A: FOM 
+
+254. When would you make a Min fuel declaration? 
+A: When less than 45 minutes fuel remaining at destination (FOM) 
+
+255. When would you declare a low fuel emergency? 
+A: Less than 45 minutes fuel to nearest suitable airport. (FOM) 
+
+256. In the case of a medical diversion, are you required to declare an emergency? 
+A: Yes. (FOM) 
+
+257. If pilot receives a Bomb threat, who should pilot notify? 
+A: The pilot shall immediately notify ATC and Dispatcher. (FOM) 
+
+258. What steps should be taken if an unexplained substance is found in the cabin during flight? 
+A: The Captain shall secure the flightdeck. (FOM) 
+
+259. What is the Hijacking transponder code? 
+A: 7500. (FOM) 
+
+260. What is the speed limit in Canada within 10 miles of the airport below 3000'? 
+A: 200 Knots (FOM) 
+
+261. Can you taxi across illuminated stop bars if you have a clearance? 
+A: No. (FOM) 
+
+262. After taxiing across extinguished stop bars, if the lead on lights extinguish, what should you do? 
+A: Stop, query ATC. (FOM) 
+
+263. What do you do if a prohibited item is discovered on the aircraft? 
+A: Captain and GSC shall jointly determine if the item is prohibited. 
+The Captain, the GSC, and ground personnel shall avoid disturbing the item, contaminating it with 
+fingerprints, etc. 
+If the item is prohibited, the Captain shall contact the Duty Officer through Dispatch. (FOM) 

@@ -210,20 +210,23 @@ function processRaw(text) {
         anAnswer(line) ||
         moreText(line);
     });
-    M(['div', questions.length + ' questions'], document.body);
-    M(['div', answerCount + ' answers',
-       ['style', ['cursor', 'pointer']],
-       ['on', ['click', e => {
-           quiz(shuffle(questions.filter(q => !!q.answer)));
-       }]]], document.body);
-    M(['div', 'Random 25',
-       ['style', ['cursor', 'pointer']],
-       ['on', ['click', e => {
-           quiz(shuffle(questions.filter(q => !!q.answer)).slice(0, 25));
-       }]]], document.body);
+    M(['div', questions.length + ' questions',
+       ['style', ['margin', '0 0 .5em .5em']]], document.body);
+    M(['div',
+       ['div', answerCount + ' answers',
+        ['style', ['cursor', 'pointer'], ['margin', '0 0 .5em .5em'], ['display', 'inline-block']],
+        ['on', ['click', e => {
+            quiz(shuffle(questions.filter(q => !!q.answer)));
+        }]]]], document.body);
+    M(['div',
+       ['div', 'Random 25',
+        ['style', ['cursor', 'pointer'], ['margin', '0 0 .5em .5em'], ['display', 'inline-block']],
+        ['on', ['click', e => {
+            quiz(shuffle(questions.filter(q => !!q.answer)).slice(0, 25));
+        }]]]], document.body);
     M(['div',
        ['div', topics.length + ' topics',
-        ['style', ['cursor', 'pointer'], ['marginBottom', '1em']],
+        ['style', ['cursor', 'pointer'], ['margin', '0 0 .5em .5em'], ['display', 'inline-block']],
         ['with', topicsHeadingDiv => {
             var subDivs;
             function clearSubdivs() {
@@ -361,6 +364,7 @@ function processRaw(text) {
             }
             M(['on', ['click', showTopics]], topicsHeadingDiv);
         }]]], document.body);
+    console.log({ unAnswered : questions.filter(question => !question.answer) });
     //M(['pre', JSON.stringify(questions, null, 2),
     //   ['style', ['cursor', 'pointer']],
     //   ['on', ['click', e => e.target.remove()]]], document.body);
