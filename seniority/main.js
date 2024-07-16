@@ -132,6 +132,7 @@ const pilots = rawLines.map(line => {
         birthday,
         hireDate : m[5],
         retireDate,
+        retireday : dt2str(retireDate),
         daysLeft,
         youngerAbove : 0,
         captain,
@@ -144,6 +145,9 @@ const pilotsByDaysLeft = pilots.concat().sort((a, b) => {
     return ad > bd ? 1 :
            ad < bd ? -1 : 0;
 });
+function dt2str(dt) {
+    return (dt.getMonth() + 1) + '/' + dt.getDate() + '/' + dt.getFullYear().toString().slice(-2);
+}
 function countYoungerAbove() {
     const lim = pilots.length;
     var i, j;
@@ -177,14 +181,85 @@ function countDaysAtTop() {
             if (+lra === 0) {
                 lra = new Date();
             }
+            pilots[i].willBe1 = true;
             pilots[i].daysAtTop = Math.floor((mrd - lra) / msPerDay);
         }
     }
 }
+function findBaseRanks() {
+    var lastRank = {};
+    pilots.forEach(pilot => {
+        if (!lastRank[pilot.base]) {
+            lastRank[pilot.base] = 0;
+        }
+        lastRank[pilot.base] += 1;
+        pilot.baseRank = lastRank[pilot.base];
+    });
+}
+function seniorAndOlder(a, b) {
+    return a.seniority < b.seniority && a.birthdayDate < b.birthdayDate;
+}
+function buildRankReports() {
+    // NB: assumes base rank has been calculated
+    // for each pilot, A
+    //     for each pilot, B
+    //         if B is senior to and older than A
+    //             record that A will move one rank up when B retires
+    pilots.forEach(a => {
+        var baseRank = a.baseRank,
+            reportNextDate = () => new Date();
+        a.rankMoves = [];
+        pilotsByDaysLeft.forEach(b => {
+            if (!seniorAndOlder(b, a)) { return; }
+            const sameBase = b.base === a.base;
+            var o = {
+                retiree : b,
+                date : b.retireday,
+                newRank : a.seniority - a.rankMoves.length - 1,
+                duration : Math.floor((b.retireDate - reportNextDate()) / msPerDay),
+                daysFromNow : Math.floor((b.retireDate - new Date()) / msPerDay),
+                sameBase,
+            };
+            if (sameBase) {
+                baseRank -= 1;
+                o.baseRank = baseRank;
+            }
+            a.rankMoves.push(o);
+            reportNextDate = () => b.retireDate;
+        });
+    });
+}
 function reportNumberOfPilots() {
     M(['div', pilots.length + ' pilots'], document.body);
 }
-function showPilotTable(list = pilots, lastSortField = undefined, fieldCount = 0) {
+function showPilotRankMoves(pilot) {
+    M(['dialog',
+       ['with', dialog => {
+           M(['on', ['click', e => {
+               dialog.remove();
+           }]], dialog);
+       }],
+       ['table',
+        ['attr', ['border', '1'], ['cellpadding', '5']],
+        ['tr',
+         ['th', 'New Rank'],
+         ['th', 'Base Rank'],
+         ['th', 'Retiree'],
+         ['th', 'Date'],
+         ['th', 'Days from Now']],
+        ['with', table => {
+            pilot.rankMoves.forEach(move => {
+                M(['tr',
+                   ['style', ['background', move.sameBase ? 'lightblue' : 'none']],
+                   ['td', move.newRank, ['style', ['textAlign', 'center']]],
+                   ['td', move.baseRank || "&nbsp;", ['style', ['textAlign', 'center']]],
+                   ['td', move.retiree.name],
+                   ['td', move.retiree.retireday, ['style', ['textAlign', 'right']]],
+                   ['td', move.daysFromNow, ['style', ['textAlign', 'right']]]], table);
+            });
+        }]]], document.body).showModal();
+}
+function showPilotTable(list = pilots, lastSortField = 'seniority', fieldCount = 0) {
     var bye;
     function th(label, field) {
         return ['th', label,
@@ -206,24 +281,34 @@ function showPilotTable(list = pilots, lastSortField = undefined, fieldCount = 0
     M(['table',
        ['attr', ['border', '1'], ['cellpadding', '5']],
        ['tr',
+        ['th', '&nbsp;'],
         [th, 'Seniority', 'seniority'],
+        [th, 'Base Seniority', 'baseRank'],
         [th, 'Name', 'name'],
         [th, 'Days Left', 'daysLeft'],
         [th, 'Younger Above', 'youngerAbove'],
         [th, 'Days at Top', 'daysAtTop'],
+        [th, 'Retireday', 'retireday'],
         [th, 'Birthday', 'birthdayDate']],
        ['with', table => {
            bye = () => table.remove();
-           list.forEach(pilot => {
+           list.forEach((pilot, px) => {
                M(['tr',
+                  ['on', ['click', e => {
+                      showPilotRankMoves(pilot);
+                  }]],
+                  ['td', 1 + px],
                   ['td', pilot.seniority, ['style', ['textAlign', 'right']]],
+                  ['td', pilot.base + ' : ' + pilot.baseRank,
+                   ['style', ['textAlign', 'right']]],
                   ['td', pilot.name],
                   ['td', pilot.daysLeft, ['style', ['textAlign', 'right']]],
                   ['td', pilot.youngerAbove, ['style', ['textAlign', 'right']]],
                   ['td', pilot.daysAtTop || '&nbsp;',
                    ['style',
                     ['textAlign', 'right'],
-                    ['background', pilot.daysAtTop ? 'lightgreen' : 'gray']]],
+                    ['background', pilot.willBe1 ? 'lightgreen' : 'gray']]],
+                  ['td', pilot.retireday, ['style', ['textAlign', 'right']]],
                   ['td', pilot.birthday, ['style', ['textAlign', 'right']]]], table);
            });
        }]], document.body);
@@ -231,5 +316,7 @@ function showPilotTable(list = pilots, lastSortField = undefined, fieldCount = 0
 ////////////////////////////////////////////////////////////////////////////////
 countYoungerAbove();
 countDaysAtTop();
+findBaseRanks();
+buildRankReports();
 reportNumberOfPilots();
 showPilotTable();
