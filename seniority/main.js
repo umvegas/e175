@@ -112,6 +112,47 @@ const raw = `
 111 O’Farrell, Ande 48491 SEA E175 CA 4/21/14 5/14/84 1 SEA
 112 Stossich, Alessio 49496 GEG Q400 CA 5/12/14 8/25/81 GEG
 `;
+const simInstructorsRaw = `
+Stover, Marv 08748
+Hunt, Rob 08621
+Wiltse, Phil 08673
+O'Brien, Daniel 16472
+Brosius, Scott 53702
+Pullen, Rob 65400
+Boyd, Sheila 78401
+Baumgarten, Robert 66720
+Reed, Scott 08373
+Sisk, Jonathan 91280
+Bauer, Curt 05426
+Vega, Matthew 16491
+Bossom, Steve 97860
+Murakawa, Keiko 50870
+Teclemariam, Gabriel 68802
+Beadle, John 08627
+Bayro, David 99981
+Nestoss, Michael 11398
+Rothschild, Jeffrey 60391
+Nelson, Eric 21401
+Chambers, Scott 10094
+`;
+const simInstructors = simInstructorsRaw.trim().split(/[\n\r]+/).map((line, lx) => {
+    const m = line.match(/(.*) (\d+)/);
+    if (!m) {
+        console.log({ line, m });
+    }
+    return {
+        name : m[1],
+        id : m[2],
+        rank : lx + 1,
+    };
+});
+const simInstructorMap = (function () {
+    let m = {};
+    simInstructors.forEach(i => {
+        m[i.id] = i;
+    });
+    return m;
+}());
 const trimmed = raw.trim();
 const rawLines = trimmed.split(/[\n\r]+/);
 const msPerDay = 1000 * 60 * 60 * 24;
@@ -119,6 +160,7 @@ const pilots = rawLines.map(line => {
     var re = /(\d+) (.*) (\d{5}) ([A-Z]{3}).* (\d+\/\d+\/\d+).* (\d+\/\d+\/\d+)/,
         m = line.match(re),
         birthday = m[6],
+        id = m[3],
         birthdayDate = new Date(m[6]),
         retireDate = new Date(birthday),
         daysLeft,
@@ -127,6 +169,7 @@ const pilots = rawLines.map(line => {
     daysLeft = Math.floor((retireDate - (new Date())) / msPerDay);
     return {
         name : m[2],
+        id,
         seniority : +m[1],
         base : m[4],
         birthday,
@@ -137,6 +180,7 @@ const pilots = rawLines.map(line => {
         youngerAbove : 0,
         captain,
         birthdayDate,
+        instructor : simInstructorMap[id],
     };
 });
 const pilotsByDaysLeft = pilots.concat().sort((a, b) => {
@@ -199,6 +243,11 @@ function findBaseRanks() {
 function seniorAndOlder(a, b) {
     return a.seniority < b.seniority && a.birthdayDate < b.birthdayDate;
 }
+function seniorTeacher(a, b) {
+    const bothTeach = a.instructor && b.instructor,
+          seniorTeach = bothTeach && a.instructor.rank < b.instructor.rank;
+    return seniorTeach;
+}
 function buildRankReports() {
     // NB: assumes base rank has been calculated
     // for each pilot, A
@@ -207,11 +256,13 @@ function buildRankReports() {
     //             record that A will move one rank up when B retires
     pilots.forEach(a => {
         var baseRank = a.baseRank,
+            teachRank = a.instructor && a.instructor.rank,
             reportNextDate = () => new Date();
         a.rankMoves = [];
         pilotsByDaysLeft.forEach(b => {
             if (!seniorAndOlder(b, a)) { return; }
             const sameBase = b.base === a.base;
+            const teachMove = seniorTeacher(b, a);
             var o = {
                 retiree : b,
                 date : b.retireday,
@@ -224,6 +275,10 @@ function buildRankReports() {
                 baseRank -= 1;
                 o.baseRank = baseRank;
             }
+            if (teachMove) {
+                teachRank -= 1;
+                o.teachRank = teachRank;
+            }
             a.rankMoves.push(o);
             reportNextDate = () => b.retireDate;
         });
@@ -233,6 +288,20 @@ function reportNumberOfPilots() {
     M(['div', pilots.length + ' pilots'], document.body);
 }
 function showPilotRankMoves(pilot) {
+    const header = pilot.instructor ?
+        ['tr',
+         ['th', 'New Rank'],
+         ['th', 'Base Rank'],
+         ['th', 'Teach Rank'],
+         ['th', 'Retiree'],
+         ['th', 'Date'],
+         ['th', 'Days from Now']] :
+        ['tr',
+         ['th', 'New Rank'],
+         ['th', 'Base Rank'],
+         ['th', 'Retiree'],
+         ['th', 'Date'],
+         ['th', 'Days from Now']];
     M(['dialog',
        ['with', dialog => {
            M(['on', ['click', e => {
@@ -241,18 +310,19 @@ function showPilotRankMoves(pilot) {
        }],
        ['table',
         ['attr', ['border', '1'], ['cellpadding', '5']],
-        ['tr',
-         ['th', 'New Rank'],
-         ['th', 'Base Rank'],
-         ['th', 'Retiree'],
-         ['th', 'Date'],
-         ['th', 'Days from Now']],
+        header,
         ['with', table => {
             pilot.rankMoves.forEach(move => {
                 M(['tr',
-                   ['style', ['background', move.sameBase ? 'lightblue' : 'none']],
                    ['td', move.newRank, ['style', ['textAlign', 'center']]],
-                   ['td', move.baseRank || "&nbsp;", ['style', ['textAlign', 'center']]],
+                   ['td', move.baseRank || "&nbsp;",
+                    ['style',
+                     ['textAlign', 'center'],
+                     ['background', move.sameBase ? 'lightblue' : 'none']]],
+                   pilot.instructor &&
+                   ['td', move.teachRank || '&nbsp;',
+                    ['style',
+                     ['background', move.teachRank ? 'lightgreen' : 'none']]],
                    ['td', move.retiree.name],
                    ['td', move.retiree.retireday, ['style', ['textAlign', 'right']]],
                    ['td', move.daysFromNow, ['style', ['textAlign', 'right']]]], table);
