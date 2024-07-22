@@ -43,9 +43,9 @@ diff:
 lint:
 	jshint *.js
 
-ftpscript: lastftpd *.html *.js *.txt *.gz *.ico .gitignore .jshintrc makefile empties
+ftpscript: lastftpd *.html *.js *.txt *.gz *.ico .gitignore .jshintrc makefile empties seniority/*
 	echo "cd e175\npwd" > ftpscript
-	ls -t lastftpd *.html *.js *.txt *.gz *.ico .gitignore .jshintrc makefile empties | grep lastftpd -B 1000 | grep -v "lastftpd\|ftpscript" | sed -re 's/(.*)/put \1 \1/' >> ftpscript
+	ls -t lastftpd *.html *.js *.txt *.gz *.ico .gitignore .jshintrc makefile empties seniority/* | grep lastftpd -B 1000 | grep -v "lastftpd\|ftpscript" | sed -re 's/(.*)/put \1 \1/' >> ftpscript
 	echo "bye" >> ftpscript
 
 push: all ftpscript
