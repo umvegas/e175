@@ -482,49 +482,43 @@ A: 12 minutes.
 
 136. What does the OVRD position of the MASK DEPLOY switch do?
 A: Deploys the passenger oxygen masks regardless of cabin altitude.
+
 FOM AND NORMAL PROCEDURES
 
 137. When receiving an aircraft directly from another crew, must an originating checklist be completed?
-
 A: Yes
 
 138. What must the Captain’s pre-departure briefing to FAs cover?
-
 A: Required items – Crew ID verification, Turbulence, Use of Anticipated Turbulence Procedure, Weather, pertinent MEL items, Delays.
-
 Additional suggested items – Sterile cockpit review, Trip details, Aircraft swaps/RON, other items as deemed appropriate. (FOM)
 
 139. When do the emergency systems and equipment on the flight deck have to be visually checked?
-
 A: When the aircraft has been left unattended by the flight crew for any period of time.
 
 140. Where are the ground reset procedures located?
-
 A: AOM Volume 1 Section 3
 
 141. Can a ground reset be accomplished without contacting maintenance control?
-
 A: No
 
 142. After successful completion of a ground reset, is a maintenance logbook entry required?
-
 A: Yes, with an “information only” placed in the corrective action.
 
 143. What is required to be checked during a review of the MTX Log?
 A: (use this as a discussion item, FOM)
-  1. Verify the correct Log is onboard (tail # matches).
-  2. Verify number of pink pages in Log meets requirement (five).
-  3. General review of all pages to understand the recent mechanical history of the aircraft.
-  4. VOR check has been completed/logged in the preceding 30 calendar days.
-  5. If there is an entry in the LOG ENTRY section, verify the following four fields are completed in the CORRECTIVE ACTION section:
+  1) Verify the correct Log is onboard (tail # matches).
+  2) Verify number of pink pages in Log meets requirement (five).
+  3) General review of all pages to understand the recent mechanical history of the aircraft.
+  4) VOR check has been completed/logged in the preceding 30 calendar days.
+  5) If there is an entry in the LOG ENTRY section, verify the following four fields are completed in the CORRECTIVE ACTION section:
   – CORRECTIVE ACTION text
   – SIGNATURE (Corrective Action)
   – DATE
-  6. Verify all fields in the LOG ENTRY and CORRECTIVE ACTION sections are completed and boxes are marked. If there are any Incomplete fields/boxes or there is a question about a field in these two sections, the Captain shall contact Maintenance Control for resolution prior to departure.
+  6) Verify all fields in the LOG ENTRY and CORRECTIVE ACTION sections are completed and boxes are marked. If there are any Incomplete fields/boxes or there is a question about a field in these two sections, the Captain shall contact Maintenance Control for resolution prior to departure.
   NOTE: The PHASE OF FLIGHT and EVENT CATEGORY sections are not regulatory and are for Horizon Air reliability data collection; therefore; resolution for unmarked boxes in these two sections is not required prior to departure.
   – The MAINTENANCE ONLY section is exempt from this review and resolution process
   – Confirm MEL/CDL items on the Dispatch Release matches the MEL/CDL items and effective dates in the Log.
-  8. Comply with any MELs/CDLs operational restrictions or conditions.
+  8) Comply with any MELs/CDLs operational restrictions or conditions.
   (FOM 11.3.5)
 
 144. Is it OK to complete a rudder check with nose wheel steering off, but with the tug still attached to the aircraft?
