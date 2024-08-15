@@ -365,9 +365,9 @@ function processRaw(text) {
             M(['on', ['click', showTopics]], topicsHeadingDiv);
         }]]], document.body);
     console.log({ unAnswered : questions.filter(question => !question.answer) });
-    //M(['pre', JSON.stringify(questions, null, 2),
-    //   ['style', ['cursor', 'pointer']],
-    //   ['on', ['click', e => e.target.remove()]]], document.body);
+    M(['pre', JSON.stringify(questions, null, 2),
+       ['style', ['cursor', 'pointer']],
+       ['on', ['click', e => e.target.remove()]]], document.body);
 }
 function getIt(questionFileName) {
     fetch(questionFileName)
