@@ -1,429 +1,442 @@
 E175 CQ Oral, Cycle B (odd years)
-Rev 9/1/2022
-LIMITATIONS 
+Rev 8/4/2024
+LIMITATIONS
 
-1. What is the airplane Maximum Landing Weight? 
-A: 75,177lbs 
+1. What is the airplane Maximum Landing Weight?
+A: 75,177lbs
 
-2. What is required in the event of a landing below -40&deg;C? 
-A: AML entry 
+2. What is required in the event of a landing below -40&deg;C?
+A: AML entry
 
-3. What is the Minimum Battery Temperature? 
-A: -20C 
+3. What is the Minimum Battery Temperature?
+A: -20C
 
-4. What is the maximum operating altitude? 
-A: FL410 
+4. What is the maximum operating altitude?
+A: FL410
 
-5. What is the maximum Altitude for Flap Extension? 
-A: 20,000 MSL 
+5. What is the maximum Altitude for Flap Extension?
+A: 20,000 MSL
 
-6. What is the maximum speed for Landing Gear Operation? 
-A: 250 KIAS 
+6. What is the maximum speed for Landing Gear Operation?
+A: 250 KIAS
 
-7. What is the maximum speed to open the Direct Vision Windows? 
-A: 160 KIAS 
+7. What is the maximum speed to open the Direct Vision Windows?
+A: 160 KIAS
 
-8. What are the Turbulent Air Penetration target speeds? 
-A: 250 KIAS below 10,000 MSL 
-270 KIAS or 0.76M above 10,000' MSL 
+8. What are the Turbulent Air Penetration target speeds?
+A: 250 KIAS below 10,000 MSL
+270 KIAS or 0.76M above 10,000' MSL
 
-9. What are the flap extended speeds? 
-A: Flaps 1 - 230 KIAS 
-Flaps 2 - 215 KIAS 
-Flaps 3 - 200 KIAS 
-Flaps 4 - 180 KIAS 
-Flaps 5 - 180 KIAS 
-Flaps Full - 165 KIAS 
+9. What are the flap extended speeds?
+A: Flaps 1 - 230 KIAS
+Flaps 2 - 215 KIAS
+Flaps 3 - 200 KIAS
+Flaps 4 - 180 KIAS
+Flaps 5 - 180 KIAS
+Flaps Full - 165 KIAS
 
-10. What is the Max Tire Groundspeed? 
-A: 195 KIAS 
+10. What is the Max Tire Groundspeed?
+A: 195 KIAS
 
-11. What is the maximum tailwind takeoff and landing component? 
-A: 15 knots 
+11. What is the maximum tailwind takeoff and landing component?
+A: 15 knots
 
-12. What is the max crosswind for Dry runway? 
-A: 38 knots 
+12. What is the max crosswind for Dry runway?
+A: 38 knots
 
-13. What is the maximum N1 with brakes applied? 
-A: 60% with greater than 10kts tailwind 
+13. What is the maximum N1 with brakes applied?
+A: 60% with greater than 10kts tailwind
 
-14. What is the max fuel imbalance? 
-A: 794 lbs. 
+14. What is the max fuel imbalance?
+A: 794 lbs.
 
-15. What is the minimum fuel tank temperature? 
-A: -37&deg;C 
+15. What is the minimum fuel tank temperature?
+A: -37&deg;C
 
-16. Can we takeoff with the x-feed selector on? 
-A: No 
+16. Can we takeoff with the x-feed selector on?
+A: No
 
-17. Minimum oil temperature for engine start? 
-A: -40&deg;C 
+17. Minimum oil temperature for engine start?
+A: -40&deg;C
 
-18. What is the maximum cabin differential pressure? 
-A: 8.4 psi 
+18. What is the maximum cabin differential pressure?
+A: 8.4 psi
 
-19. What is the maximum cabin overpressure? 
-A: 8.8 psi 
+19. What is the maximum cabin overpressure?
+A: 8.8 psi
 
-20. What is the maximum negative cabin pressure? 
-A: -0.5 psi 
+20. What is the maximum negative cabin pressure?
+A: -0.5 psi
 
-21. What is the maximum differential cabin pressure for takeoff / landing? 
-A: 0.2 psi 
+21. What is the maximum differential cabin pressure for takeoff / landing?
+A: 0.2 psi
 
-22. When does engine anti-ice need to be selected on the T.O. data set menu? 
-A: 5&deg;C -10&deg;C and: visible moisture, up to 1700 AFE 
-Ground operations with snow, ice, standing water/slush 
+22. When does engine anti-ice need to be selected on the T.O. data set menu?
+A: 5&deg;C -10&deg;C and: visible moisture, up to 1700 AFE
+Ground operations with snow, ice, standing water/slush
 
-23. What does T.O. data set menu need to be set to ALL? 
-A: Less than 5&deg;C: visible moisture, up to 1700 AFE 
-Ground operations with snow, ice, standing water/slush 
+23. When does T.O. data set menu need to be set to ALL?
+A: Less than 5&deg;C: visible moisture, up to 1700 AFE
+Ground operations with snow, ice, standing water/slush
 
-24. What is the maximum airspeed for windshield wiper operation? 
-A: 250 KIAS 
+24. What is the maximum airspeed for windshield wiper operation?
+A: 250 KIAS
 
-25. What is the minimum altitude for autopilot engagement after takeoff? 
-A: 400 AFE 
+25. What is the minimum altitude for autopilot engagement after takeoff?
+A: 400 AFE
 
-26. What is the minimum autopilot engagement height on a missed approach? 
-A: 400 AFE 
+26. What is the minimum autopilot engagement height on a missed approach?
+A: 400 AFE
 
-27. What is the minimum altitude for autopilot use on approach? (not autoland) 
-A: 50 AFE 
+27. What is the minimum altitude for autopilot use on approach? (not autoland)
+A: 50 AFE
 
-28. What are the Autoland wind limitations? 
-A: Headwind - 25 knots 
-Tailwind - 10 knots 
-Crosswind - 15 knots 
+28. What are the Autoland wind limitations?
+A: Headwind - 25 knots
+Tailwind - 10 knots
+Crosswind - 15 knots
 
-29. What flap setting is required for Cat II and Autoland? 
+29. What flap setting is required for Cat II and Autoland?
 A: Flaps 5
 
 MEMORY PROCEDURES
 
-30. Engine Abnormal Start 
-A: Affected Engine start/stop selector ... Stop 
+30. Engine Abnormal Start
+A: Affected Engine start/stop selector ... Stop
 
-31. Pitch Trim Runaway 
-A: A/P DISC button ... Press and Hold 
-Pitch trims systems 1&2 cutout buttons ... In 
+31. Pitch Trim Runaway
+A: A/P DISC button ... Press and Hold
+Pitch trims systems 1&2 cutout buttons ... In
 
-32. Roll/Yaw Trim Runaway 
-A: A/P DISC button ... Press and Hold 
+32. Roll/Yaw Trim Runaway
+A: A/P DISC button ... Press and Hold
 
-33. Steering Runaway 
-A: Steering DISC Switch ... Press 
+33. Steering Runaway
+A: Steering DISC Switch ... Press
 
-34. Dual Engine Failure 
-A: Airspeed ... 250 KIAS min 
-RAT MANUAL DEPLOY LEVER ... Pull 
+34. Dual Engine Failure
+A: Airspeed ... 250 KIAS min
+RAT MANUAL DEPLOY LEVER ... Pull
 
-35. Jammed Control Column (Pitch) 
-A: ELEVATOR DISCONNECT Handle ... Pull 
+35. Jammed Control Column (Pitch)
+A: ELEVATOR DISCONNECT Handle ... Pull
 
-36. Jammed Control Wheel (Roll) 
-A: AILERON DISCONNECT Handle ... Pull 
+36. Jammed Control Wheel (Roll)
+A: AILERON DISCONNECT Handle ... Pull
 
-37. Oxygen Mask Donning 
-A: Remove Headset 
-Oxygen Mask ... Don 
-Crew Communications ... Establish 
+37. Oxygen Mask Donning
+A: Remove Headset
+Oxygen Mask ... Don
+Crew Communications ... Establish
 
-38.CABIN ALT HI 
-A: Crew Oxygen Masks ... Don 
-Crew communication ... Establish 
+38.CABIN ALT HI
+A: Crew Oxygen Masks ... Don
+Crew communication ... Establish
 Altitude ... 10,0000 ft, or MEA whichever is higher
-Thrust Levers ... IDLE 
-Speed Brake ... Full Open 
+Thrust Levers ... IDLE
+Speed Brake ... Full Open
 Airspeed ... Max/Appropriate
-Transponder ... 7700 
-ATC ... Notify 
+Transponder ... 7700
+ATC ... Notify
 
-39.Smoke Evacuation Memory Procedure 
-A: Crew Oxygen Masks ... Don, EMER 
-Crew Communication ... Establish 
-Pressurization DUMP button ... Push In 
+39.Smoke Evacuation Memory Procedure
+A: Crew Oxygen Masks ... Don, EMER
+Crew Communication ... Establish
+Pressurization DUMP button ... Push In
 
-40. EGPWS Warning Response 
+40. EGPWS Warning Response
 A: Pilot Flying:
-Upon receiving EPGWS Warning:
-Disengage Autopilot. 
-Simultaneously advance thrust levers to MAX 
-and pitch to 20&deg; or PLI, whichever is lower. 
-Maintain the present airplane configuration 
-(gear/flaps) until terrain separation is achieved. 
-Climb to the MSA or MORA. 
-Clear of terrain, resume level flight. 
-Engage Autopilot. 
-Resume normal speed. 
-Communicate intensions to ATC. 
+- Disengage Autopilot.
+- Simultaneously advance thrust levers to MAX and pitch to 20&deg; or PLI, whichever is lower.
+- Maintain the present airplane configuration (gear/flaps) until terrain separation is achieved.
+- Climb to the MSA or MORA.
+- Clear of terrain, resume level flight.
+- Engage Autopilot.
+- Resume normal speed.
+- Communicate intensions to ATC.
 Pilot Monitoring:
-Turn FSTN BELTS ON. 
-Scan for visual reference. 
-Call out the Radio Altimeter indication. 
-Read MFD Terrain indications to check the 
-obstacle height, guide PF for the best course of 
-action and indicate when obstacle(s) have been 
-cleared. 
+- Turn FSTN BELTS ON
+- Scan for visual reference
+- Call out the Radio Altimeter indication
+- Read MFD Terrain indications to:
+-- check the obstacle height
+-- guide PF for the best course of action
+-- indicate when obstacle(s) have been cleared
 
-41. Windshear Escape Maneuver 
+41. Windshear Escape Maneuver
 A: Pilot First Recognizing Windshear, Call "Windshear"
 Pilot Flying:
-Thrust Levers ... MAX 
-TOGA button ... Push 
-Flight Director Escape Guidance Cue ... Follow 
-until 1500 AGL and terrain clearance assured.
-(if no EGPWS Windshear announcement
-Pitch to 20 degrees or PLI whichever is lower) 
+- Thrust Levers ... MAX
+- TOGA button ... Push
+- Flight Director Escape Guidance Cue ... Follow until 1500 AGL and terrain clearance assured.
+- (if no EGPWS Windshear announcement Pitch to 20 degrees or PLI whichever is lower)
 Pilot Monitoring:
-Assure MAX Thrust set 
-Monitor Vertical Speed and radar altimeter 
-Advise ATC of windshear encounter 
+- Assure MAX Thrust set
+- Monitor Vertical Speed and radar altimeter
+- Advise ATC of windshear encounter
 
-42. Stall Recovery 
-A: Announce: "Stall" (Pilot first noticing the stall situation/indication) 
+42. Stall Recovery
+A: Announce: "Stall" (Pilot first noticing the stall situation/indication)
 Pilot Flying:
-- Disengage Autothrottle. 
-- Apply nose down and level the wings until out of stall. 
-- Apply thrust as required. 
-- Accelerate the airplane to a safe speed. 
-- Retract speed brakes. 
-- After recovery, return to the normal flight path. 
+- Disengage Autothrottle.
+- Apply nose down and level the wings until out of stall.
+- Apply thrust as required.
+- Accelerate the airplane to a safe speed.
+- Retract speed brakes.
+- After recovery, return to the normal flight path.
 Pilot Monitoring:
-- Check Auto Throttle and Autopilot disengaged. 
-- Monitor altitude and speed. 
-- Perform any necessary callout(s). 
-- Reconfigure the airplane as commanded. 
+- Check Auto Throttle and Autopilot disengaged.
+- Monitor altitude and speed.
+- Perform any necessary callout(s).
+- Reconfigure the airplane as commanded.
 
 AIRCRAFT GENERAL
 
-43. What is the wing span? 
+43. What is the wing span?
 A: 93' 11"
 
-44. What is the minimum pavement width to make a 180&deg; turn? 
+44. What is the minimum pavement width to make a 180&deg; turn?
 A: 59' 2"
 
-45. What is the maximum nosewheel steering angle when using the handwheel steering? 
-A: 76&deg; (below 10 knots) 
+45. What is the maximum nosewheel steering angle when using the handwheel steering?
+A: 76&deg; (below 10 knots)
 
-46. How long will the Emergency Lights be powered? 
-A: 10 minutes 
+46. How long will the Emergency Lights be powered?
+A: 10 minutes
 
-47. Can the Flight Attendants turn on the Emergency Lights? 
-A: Yes, from the FA control panel 
+47. Can the Flight Attendants turn on the Emergency Lights?
+A: Yes, from the FA control panel
 
-48. If the electric rudder pedal adjustment is inoperative, can the rudder pedals be adjusted? 
-A: Yes, but it's a MTX procedure 
+48. If the electric rudder pedal adjustment is inoperative, can the rudder pedals be adjusted?
+A: Yes, but it's a MTX procedure
 
-49. When will the unlock button flash? 
-A: When the EMERG ENTRY push button on the passenger cabin control panel is pushed. 
+49. When will the unlock button flash?
+A: When the EMERG ENTRY push button on the passenger cabin control panel is pushed.
 
-50. What happens when you press the inhibit button on the cockpit door control? 
-A: It inhibits the EMERG ENTRY command for 500 sec (8 min 20 sec) 
+50. What happens when you press the inhibit button on the cockpit door control?
+A: It inhibits the EMERG ENTRY command for 500 sec (8 min 20 sec)
 
 51. Which PA system has priority over the other, flight deck or cabin?
 A: Flight Deck
 
 AMS PNEUMATIC, AIR CONDITIONING, PRESSURIZATION
 
-52. What is bleed air used for? 
-A: Environmental control system (ECS) 
-   Engine start 
-   Engine/wing anti-ice 
-   Water pressurization. 
+52. What is bleed air used for?
+A: Environmental control system (ECS)
+   Engine start
+   Engine/wing anti-ice
+   Water pressurization.
 
-53. Can the Engine Bleeds and the APU Bleed be used at the same time? 
-A: No 
+53. Can the Engine Bleeds and the APU Bleed be used at the same time?
+A: No
 
-54. When is the Emergency Ram Air Ventilation Valve open? 
-A: When both packs are commanded OFF or failed OFF and the altitude is less than 25,000’ 
+54. When is the Emergency Ram Air Ventilation Valve open?
+A: When both packs are commanded OFF or failed OFF and the altitude is less than 25,000’
 
-55. When is the Pressurization Dump function used? 
-A: Emergency Evacuation 
-   Smoke Evacuation 
-   Fast cabin depressurization 
+55. When is the Pressurization Dump function used?
+A: Emergency Evacuation
+   Smoke Evacuation
+   Fast cabin depressurization
 
-56. What is the Cabin Pressure Controller ABORT mode? 
-A: On Departure, if the aircraft stops climbing and immediately starts descending (no CRZ mode activated) 
-   and Pressure altitude is less than 10,000’ MSL or 5000’AFE. 
-   The cabin altitude is scheduled back to the takeoff altitude, and the climb mode is used in reverse 
-   direction. 
-57. What does the CPCS system do when the DUMP button is pressed? 
-A: Turns off the packs and recirculation fans. 
-Commands the outflow valve to raise the cabin at 2000’/min up to 12,400’  
+56. What is the Cabin Pressure Controller ABORT mode?
+A: Cabin pressurization mode that automatically detects and handles a return to the departure airport.
+- Actived when:
+-- On Departure, if the aircraft stops climbing and immediately starts descending (no CRZ mode activated), and
+-- Pressure altitude is less than 10,000’ MSL or 5000’AFE.
+- Operation:
+-- The cabin altitude is scheduled back to the takeoff altitude, and
+-- the climb mode is used in reverse direction.
+57. What does the CPCS system do when the DUMP button is pressed?
+A: Turns off the packs and recirculation fans.
+Commands the outflow valve to raise the cabin at 2000’/min up to 12,400’
 At 12,400’ the outflow valve is closed.
 
 AUTOMATIC FLIGHT
 
-58. What does pressing the BANK Button on the Guidance Panel do? 
-A: Enables and disables bank angle limit of 17 degrees used by the heading mode. 
-59. What does pressing the APP button on the Guidance Panel do? 
-A: Activates and deactivates the mode for interception of an ILS. FMA lateral mode displays LOC, FMA 
-vertical mode displays GS.  
-Also activates LNAV/GP on a FMS Approach. 
-60. What does FPA stand for? 
-A: Flight Path Angle 
-61. What does FPA do? 
-A: Creates a manually selected vertical angle.  
-62. How can you determine FPA selection? 
-A: Blue dashed reference line displayed on PFD. 
-63. Under what conditions will the Autopilot disengage? 
-A: AP button on the guidance panel or on the Yoke is pushed 
-Either manual pitch trim switch is actuated 
-Either stick shaker is actuated 
-Windshear guidance is activated 
-Direct Mode 
-Internal failure 
-64. When is the Yaw Damper automatically engaged? 
-A: After power up of either Hydraulic system 1 or 3 
-65. What do the different Flight Mode Annunciation colors signify? 
-A: Magenta = FMS commanded active/engaged mode 
-Green = Non-FMS commanded active/engaged mode 
-White = Armed mode 
-Amber = Alert condition 
-Red = Abnormal condition 
-66. What lateral mode is non-selectable by the pilot? 
-A: TRACK – track hold 
-67. When does the automatic transition from ROLL to TRACK occur on takeoff? 
+58. What does pressing the BANK Button on the Guidance Panel do?
+A: Enables and disables bank angle limit of 17 degrees used by the heading mode.
+59. What does pressing the APP button on the Guidance Panel do?
+A: Activates and deactivates the mode for interception of an ILS
+FMA lateral mode displays LOC
+FMA vertical mode displays GS.
+Also activates LNAV/GP on a FMS Approach.
+
+60. What does FPA stand for?
+A: Flight Path Angle
+61. What does FPA do?
+A: Creates a manually selected vertical angle.
+62. How can you determine FPA selection?
+A: Blue dashed reference line displayed on PFD.
+63. Under what conditions will the Autopilot disengage?
+A: AP button on the guidance panel or on the Yoke is pushed
+Either manual pitch trim switch is actuated
+Either stick shaker is actuated
+Windshear guidance is activated
+Direct Mode
+Internal failure
+64. When is the Yaw Damper automatically engaged?
+A: After power up of either Hydraulic system 1 or 3
+65. What do the different Flight Mode Annunciation colors signify?
+A: Magenta = FMS commanded active/engaged mode
+Green = Non-FMS commanded active/engaged mode
+White = Armed mode
+Amber = Alert condition
+Red = Abnormal condition
+66. What lateral mode is non-selectable by the pilot?
+A: TRACK – track hold
+67. When does the automatic transition from ROLL to TRACK occur on takeoff?
 A: When IAS is greater than 100 kts and bank angle less than 3° for more than 10 seconds.
-68. When is the Windshear system active? 
-A: Above 10’ and Below 1500’ AGL 
-69. How is a Windshear Caution different from a Windshear Warning? 
-A: Caution is associated with increasing headwinds and updrafts.  The Aural alert is “CAUTION 
-WINDSHEAR”. 
-Warning is associated with decreasing headwind (or increasing tailwind) and severe downdrafts.  The 
-Aural alert is “WINDSHEAR, WINDSHEAR, WINDSHEAR”. 
+68. When is the Windshear system active?
+A: Above 10’ and Below 1500’ AGL
+69. How is a Windshear Caution different from a Windshear Warning?
+A: Caution:
+- associated with increasing headwinds and updrafts
+- aural alert is “CAUTION WINDSHEAR”.
+- provides guidance cue only if TOGA button pushed
+Warning:
+- associated with decreasing headwind (or increasing tailwind) and severe downdrafts
+- aural alert is “WINDSHEAR, WINDSHEAR, WINDSHEAR”
+- provides guidance cue regardless of pushing TOGA
+
 70. How is the Windshear Guidance mode activated?
 A: Windshear warning or caution detected and TOGA switch is pressed.
 Windshear warning and thrust lever is set to TO/GA position.
 Automatically when windshear warning condition and FD mode is TO or GA.
-71. What does LIM annunciation on the FMA mean? 
-A: Vertical speed or Target speed are incompatible with thrust rating available. 
-72. Between what altitude is Autoland armed/engaged? 
-A: Both radio altimeters indicating less than 1500’ and more than 800’. 
-At 1500’ RA - System starts trying to engage highest capability available. 
-At 800’ RA – System “freezes” highest capability available, no longer allowing approach “upgrades”.
+71. What does LIM annunciation on the FMA mean?
+A: Vertical speed or Target speed are incompatible with thrust rating available.
+72. Between what altitudes is Autoland armed/engaged?
+A: Both radio altimeters indicating less than 1500’ and more than 800’.
+At 1500’ RA - System starts trying to engage highest capability available.
+At 800’ RA - System "freezes" highest capability available, no longer allowing approach "upgrades".
 
 APU
 
-73. What does the APU emergency stop button do? 
-A: Closes the APU shutoff valve, shutting off the APU with no cool down period. 
-74. What happens when the APU switch is selected to OFF? 
-A: Pneumatics are immediately removed and after a 1-minute cool down period the electrical power is 
-removed and the APU is shutdown. 
-75. The APU shall not be unattended for longer than how many minutes?  
-A: 5 minutes (M)  
-76. What is the normal fuel source for the APU? 
-A: The right wing tank. 
-77. Can the APU draw fuel from the left wing tank? 
-A: Yes, through the crossfeed valve. 
+73. What does the APU emergency stop button do?
+A: Closes the APU shutoff valve, shutting off the APU with no cool down period.
+74. What happens when the APU switch is selected to OFF?
+A: Pneumatics are immediately removed and after a 1-minute cool down period the electrical power is
+removed and the APU is shutdown.
+75. The APU shall not be unattended for longer than how many minutes?
+A: 5 minutes (M)
+76. What is the normal fuel source for the APU?
+A: The right wing tank.
+77. Can the APU draw fuel from the left wing tank?
+A: Yes, through the crossfeed valve.
 78. What is the minimum battery temperature for APU starting?
-A: -20°C 
-79.  If the battery temperature is less than -20°C, how can the APU be started? 
-A: DC GPU 
-80. What is the maximum altitude that the APU can supply electrical power? 
-A: 33,000’ (M) 
-81. What is the maximum altitude that the APU can supply bleed air for engine starting? 
-A: 21,000’ 
+A: -20°C
+79.  If the battery temperature is less than -20°C, how can the APU be started?
+A: DC GPU
+80. What is the maximum altitude that the APU can supply electrical power?
+A: 33,000’ (M)
+81. What is the maximum altitude that the APU can supply bleed air for engine starting?
+A: 21,000’
 82. What is the maximum altitude that the APU can provide bleed air for air conditioning and pressurization?
-A: 15,000’ 
-83. What is the maximum altitude for APU start? 
-A: 30,000’ (M) 
-84. What conditions will cause the APU auto-shutdown in flight? 
-A: Overspeed, Underspeed, FADEC Critical Fault 
-85. What conditions will cause the APU to auto-shutdown on the ground? 
-A: Overspeed, Underspeed, FADEC Critical Fault, APU Fire, APU EGT Over Temp, APU High Oil Pressure, 
-Sensor Fail. 
-86. What will happen with an APU fire indication in flight? 
-A: Aural Warning, Master Warning, Red stripped bar on APU Emergency Stop illuminates, APU Fire EICAS 
-message. 
-87. What will happen with an APU fire indication on the ground? 
-A: Aural Warning, Master Warning, Red stripped bar on APU emergency Stop illuminates, APU Fire EICAS 
-message, APU will auto-shutdown 10 seconds after fire condition. 
-88. Is the APU Fire extinguisher automatic or manual? 
-A: Manual 
-89. When will the APU generator come online? 
+A: 15,000’
+83. What is the maximum altitude for APU start?
+A: 30,000’ (M)
+84. What conditions will cause the APU auto-shutdown in flight?
+A: Overspeed, Underspeed, FADEC Critical Fault
+85. What conditions will cause the APU to auto-shutdown on the ground?
+A: Overspeed, Underspeed, FADEC Critical Fault, APU Fire, APU EGT Over Temp, APU High Oil Pressure,
+Sensor Fail.
+86. What will happen with an APU fire indication in flight?
+A: Aural Warning, Master Warning, Red stripped bar on APU Emergency Stop illuminates, APU Fire EICAS
+message.
+87. What will happen with an APU fire indication on the ground?
+A: Aural Warning, Master Warning, Red stripped bar on APU emergency Stop illuminates, APU Fire EICAS
+message, APU will auto-shutdown 10 seconds after fire condition.
+88. Is the APU Fire extinguisher automatic or manual?
+A: Manual
+89. When will the APU generator come online?
 A: 95% + 3 seconds
 
 FIRE PROTECTION
 
-90. What fire detection systems are checked when the Fire Detection Test Button is pressed? 
-A: Engines, APU and Cargo Compartment fire protection systems. 
-91. What does pulling the engine fire extinguisher handle do? 
-A: Closes the associated engine bleed air, fuel and hydraulic shutoff valves.  
-(Bonus – Crossbleed and Wing Anti-ice) 
-92. How many engine fire bottles are installed? 
-A: 2 (shared) 
-93. Can both engine fire bottles be discharged into one engine? 
-A: Yes 
-94. When are the Engine Fire Bottles armed? 
-A: Whenever the HOT BATT Busses 1&2 powered. 
-95. How does the APU FADEC respond to an APU fire on the ground? 
-A: Automatically shuts down the APU 10 seconds after fire is detected and arms the fire extinguisher bottle. 
-96. How is the APU fire extinguisher bottle discharged on the ground? 
-A: By manually pressing the APU FIRE EXTINGUISHING push button. 
-97. How many APU extinguisher bottles are installed? 
-A: 1 
-98. Will the APU shutdown if the Fire Detection Test Button is pressed? 
-A: Only if held for more than 10 seconds. 
-99. If a Cargo Compartment Smoke Warning message is displayed on the ground, how many times 
-must the Cargo Fire Extinguishing Button be pressed? 
-A: Twice, once for the High rate bottle and once for the low rate bottle. 
-100. Can fires in each of the cargo compartments be extinguished simultaneously? 
-A: No 
-101. How long will the low-rate bottle provide fire suppression? 
-A: 75 minutes 
-102. What happens when smoke is detected in a LAV? 
-A: Master Warning 
-LAV SMOKE EICAS message 
-Alarm sounds in the lavatory 
-Flashing amber light on the FA lights panel 
-103. How does the Lavatory fire extinguishing system work? 
+90. What fire detection systems are checked when the Fire Detection Test Button is pressed?
+A: Engines, APU and Cargo Compartment fire protection systems.
+91. What does pulling the engine fire extinguisher handle do?
+A: Closes these associated shutoff valves:
+- engine bleed air
+- fuel
+- hydraulic
+- Bonus:
+-- crossbleed
+-- wing anti-ice
+
+92. How many engine fire bottles are installed?
+A: 2 (shared)
+93. Can both engine fire bottles be discharged into one engine?
+A: Yes
+94. When are the Engine Fire Bottles armed?
+A: Whenever the HOT BATT Busses 1&2 powered.
+95. How does the APU FADEC respond to an APU fire on the ground?
+A: Automatically:
+- shuts down the APU 10 seconds after fire is detected
+- arms the fire extinguisher bottle
+96. How is the APU fire extinguisher bottle discharged on the ground?
+A: By manually pressing the APU FIRE EXTINGUISHING push button.
+97. How many APU extinguisher bottles are installed?
+A: 1
+98. Will the APU shutdown if the Fire Detection Test Button is pressed?
+A: Only if held for more than 10 seconds.
+99. If a Cargo Compartment Smoke Warning message is displayed on the ground, how many times
+must the Cargo Fire Extinguishing Button be pressed?
+A: Twice, once for the High rate bottle and once for the low rate bottle.
+100. Can fires in each of the cargo compartments be extinguished simultaneously?
+A: No
+101. How long will the low-rate bottle provide fire suppression?
+A: 75 minutes
+102. What happens when smoke is detected in a LAV?
+A: Master Warning
+LAV SMOKE EICAS message
+Alarm sounds in the lavatory
+Flashing amber light on the FA lights panel
+103. How does the Lavatory fire extinguishing system work?
 A: Automatically discharges when the temperature limit in the trash container is exceeded.
 
 FLIGHT CONTROLS
 
-104. What is the function of the PCUs? 
-A: Power Control Units are hydraulic actuators that control the respective flight control surfaces. 
-105. Which flight controls are not Fly-By Wire? 
-A: Ailerons. 
-106. How long are manual trim commands limited to? 
-A: 3 seconds 
-107. How are the Flaps powered? 
-A: AC Power 
-108. What does pushing the Flight Control Mode button do? 
-A: Places the associated flight system into Direct mode. 
-109. When is the Electrical PBIT performed? 
-A: Whenever AC power is applied. 
-110. How long does the Electrical PBIT take to complete? 
-A: 3 Minutes 
-111. Can the Electrical PBIT be interrupted? 
-A: Yes, by turning on a Hydraulic Pump 
-112. How is the Hydraulic PBIT initiated? 
-A: When all 3 Hydraulic systems are pressurized. 
-113. How long does the Hydraulic PBIT take to complete? 
-A: 1 Minute 
-114. What does the Fly-By Wire backup battery do? 
-A: Powers the Elevator and Rudder actuators for 15 minutes in case of complete loss of power to the FBW 
-system. 
-115. When will the ground spoilers retract after landing? 
-A: Wheel speed below 45 knots for 5 seconds. 
-116. Are the Ground Spoilers / Speed Brakes available in direct mode? 
+104. What is the function of the PCUs?
+A: Power Control Units are hydraulic actuators that control the respective flight control surfaces.
+105. Which flight controls are not Fly-By Wire?
+A: Ailerons.
+106. How long are manual trim commands limited to?
+A: 3 seconds
+107. How are the Flaps powered?
+A: AC Power
+108. What does pushing the Flight Control Mode button do?
+A: Places the associated flight system into Direct mode.
+109. When is the Electrical PBIT performed?
+A: Whenever AC power is applied.
+110. How long does the Electrical PBIT take to complete?
+A: 3 Minutes
+111. Can the Electrical PBIT be interrupted?
+A: Yes, by turning on a Hydraulic Pump
+112. How is the Hydraulic PBIT initiated?
+A: When all 3 Hydraulic systems are pressurized.
+113. How long does the Hydraulic PBIT take to complete?
+A: 1 Minute
+114. What does the Fly-By Wire backup battery do?
+A: Powers the Elevator and Rudder actuators for 15 minutes in case of complete loss of power to the FBW
+system.
+115. When will the ground spoilers retract after landing?
+A: Wheel speed below 45 knots for 5 seconds.
+116. Are the Ground Spoilers / Speed Brakes available in direct mode?
 A: No
-117. When will the speed brakes automatically retract in flight? 
-A: Flaps 2 or greater,  
-Airspeed below 180 KIAS, 
-TLA above 70 degrees. 
-118. What affect will a deployed RAT have on the slats and flaps? 
-A: They will operate at half speed. 
-Limited to flaps 3 for landing to ensure adequate airspeed for the RAT. 
-119. How are the flight controls powered during an electrical emergency while the RAT is being 
-deployed? 
-A: Hydraulic 3 accumulator 
-120. What does the Takeoff Configuration warning monitor? 
-A: Flaps 
-Parking Brake 
-Pitch Trim 
+117. When will the speed brakes automatically retract in flight?
+A: Flaps 2 or greater,
+Airspeed below 180 KIAS,
+TLA above 70 degrees.
+118. What effect will a deployed RAT have on the slats and flaps?
+A: They will operate at half speed.
+Limited to flaps 3 for landing to ensure adequate airspeed for the RAT.
+119. How are the flight controls powered during an electrical emergency while the RAT is being
+deployed?
+A: Hydraulic 3 accumulator
+120. What does the Takeoff Configuration warning monitor?
+A: Flaps
+Parking Brake
+Pitch Trim
 Spoilers
 
 ICE AND RAIN PROTECTION
@@ -509,16 +522,15 @@ A: (use this as a discussion item, FOM)
   1) Verify the correct Log is onboard (tail # matches).
   2) Verify number of pink pages in Log meets requirement (five).
   3) General review of all pages to understand the recent mechanical history of the aircraft.
-  4) VOR check has been completed/logged in the preceding 30 calendar days.
-  5) If there is an entry in the LOG ENTRY section, verify the following four fields are completed in the CORRECTIVE ACTION section:
-  – CORRECTIVE ACTION text
-  – SIGNATURE (Corrective Action)
-  – DATE
-  6) Verify all fields in the LOG ENTRY and CORRECTIVE ACTION sections are completed and boxes are marked. If there are any Incomplete fields/boxes or there is a question about a field in these two sections, the Captain shall contact Maintenance Control for resolution prior to departure.
+  4) If there is an entry in the LOG ENTRY section, verify the following four fields are completed in the CORRECTIVE ACTION section:
+  - CORRECTIVE ACTION text
+  - SIGNATURE (Corrective Action)
+  - DATE
+  5) Verify all fields in the LOG ENTRY and CORRECTIVE ACTION sections are completed and boxes are marked. If there are any Incomplete fields/boxes or there is a question about a field in these two sections, the Captain shall contact Maintenance Control for resolution prior to departure.
   NOTE: The PHASE OF FLIGHT and EVENT CATEGORY sections are not regulatory and are for Horizon Air reliability data collection; therefore; resolution for unmarked boxes in these two sections is not required prior to departure.
-  – The MAINTENANCE ONLY section is exempt from this review and resolution process
-  – Confirm MEL/CDL items on the Dispatch Release matches the MEL/CDL items and effective dates in the Log.
-  8) Comply with any MELs/CDLs operational restrictions or conditions.
+  - The MAINTENANCE ONLY section is exempt from this review and resolution process
+  - Confirm MEL/CDL items on the Dispatch Release matches the MEL/CDL items and effective dates in the Log.
+  6) Comply with any MELs/CDLs operational restrictions or conditions.
   (FOM 11.3.5)
 
 144. Is it OK to complete a rudder check with nose wheel steering off, but with the tug still attached to the aircraft?
@@ -526,6 +538,7 @@ A: No
 
 145. The aircraft must be configured for landing prior to what point?
 A: 1,000 AFE
+("Called for" and "selected", per Sep 15, 2024 TIRD notes, AOM 1, and FOM)
 
 146. The aircraft must be stabilized at final approach airspeed prior to what point?
 A: Crossing the FAF on approaches where the MAP is determined by time,
@@ -548,15 +561,15 @@ NOTE: Momentarily exceeding these limits above 500’ AFE does not require a go-
 • Deviation from stabilized approach:
 - PM shall call out any exceedance to those limits.
 - Above 500’ AFE
-· PF shall respond ‘Correcting” and shall correct the condition, in a timely manner, to establish or regain a stabilized approach.
-· If the approach is not stabilized or if a successful landing in the touchdown zone becomes uncertain, either pilot shall call “Missed Approach” and the missed approach shall be executed.
+-- PF shall respond ‘Correcting” and shall correct the condition, in a timely manner, to establish or regain a stabilized approach.
+-- If the approach is not stabilized or if a successful landing in the touchdown zone becomes uncertain, either pilot shall call “Missed Approach” and the missed approach shall be executed.
 - Below 500’ AFE:
-If the approach is not stabilized or if a successful landing in the touchdown zone becomes uncertain, either pilot shall call “Missed Approach” and the missed approach shall be executed.
+-- If the approach is not stabilized or if a successful landing in the touchdown zone becomes uncertain, either pilot shall call “Missed Approach” and the missed approach shall be executed.
 
 148. Are First Officers with less than 100 hours in type in company aircraft prohibited from making takeoffs and landings at special airports?
 A: Yes. (FOM)
 
-149. What other conditions restrict them from making the takeoff or landing?
+149. (Aside from special airports), what other conditions restrict [first officers with less than 100 hours in type] from making the takeoff or landing?
 A: Flying to special airports
 Contaminated runway
 Braking action less than “good”/RWY CC4 or less
@@ -632,8 +645,20 @@ It is the Captain’s decision as to when traffic shall be reported in sight. (F
 A: State the change to other crewmember “number one nav on FMS”. (FOM)
 
 171. Define Critical Phase of Flight
-A: Takeoff - Beginning with brake release and ending when the A/C is brought to a full stop during a rejected T/O, or when the A/C is at acceleration height and clearance of all obstacles in the takeoff path is assured, landing gear and flaps have been retracted, and airspeed is a least VSE.
-Landing - Beginning when landing gear is extended for landing and ending when the A/C lands and is brought to a full stop or taxied clear of the landing runway. (FOM)
+A: Takeoff:
+- beginning with brake release and
+- ending when the A/C is brought to a full stop during a rejected T/O, or
+- when the A/C is:
+-- at acceleration height and
+-- clearance of all obstacles in the takeoff path is assured,
+-- landing gear and flaps have been retracted, and
+-- airspeed is a least Vfs.
+Landing:
+- beginning when landing gear is extended for landing and
+- ending when the A/C lands and
+-- is brought to a full stop or
+-- taxied clear of the landing runway.
+(FOM)
 
 172. What is the maximum difference between the two primary altimeters crossing the FAF on an approach?
 A: 100’ (FOM)
@@ -645,8 +670,8 @@ A: Missed approach unless visual reference to the runway environment has been es
 A: Lateral - ± 1 dot. Momentary full-scale deviations are allowable under three conditions.
 Vertical - ± ½ dot during the final approach segment. Momentary vertical deviations up to 75’ above or below GP (3/4 dot) are allowable.
 Missed Approach shall be initiated if:
-– Lateral deviation is at full scale and the conditions stated above are not met, or
-– Vertical deviation during the final approach segment exceeds 75’ (3/4 dot).
+- Lateral deviation is at full scale and the conditions stated above are not met, or
+- Vertical deviation during the final approach segment exceeds 75’ (3/4 dot).
 Unless the visual references required to continue to the intended runway have been acquired. (FOM)
 
 175. Who is the PM on the ground?
@@ -709,15 +734,15 @@ A: No. ENR includes the planned fuel burn from takeoff to landing but does not i
 190. What if actual takeoff weight exceeds METW?
 A: Contact dispatch to run a new METW calculation based on the higher weight. (FOM)
 
-191. “Terrain Clearance” provides what clearance from terrain?
+191. "Terrain Clearance" provides what clearance from terrain?
 A: Clear terrain by 1000’ above all terrain along the planned route of flight. (FOM)
 
-192. “Mountain Drift down” provides what terrain clearance?
+192. "Mountain Driftdown" provides what terrain clearance?
 A: Clear terrain by 2000’ as if proceeds to the indicated airport. (FOM)
 
 193. When does a dispatch release expire?
-A: Air Turnback- Requires re-release.
-Intermediate Airport – after 60 minutes on ground. (FOM)
+A: Air Turnback requires re-release.
+Intermediate Airport after 60 minutes on ground. (FOM)
 
 194. Is the Captain required to contact Dispatch if the takeoff is rejected after the takeoff clearance is received?
 A: Yes. (FOM)
@@ -727,9 +752,12 @@ A: If reported departure weather is below landing minimums (Cat I minimums for E
 
 196. When is a destination alternate required?
 A: 1, 2, 3. + only one RWY in AK. (FOM)
+- 1 hour before and after ETA
+- 2000 foot ceiling or higher
+- 3 SM visibility or more
 
 197. How do you know if a pilot has less than 75 hours?
-A: “J’ qualification. (FOM)
+A: "J" qualification. (FOM)
 
 198. Minimum crew onboard for through flight?
 A: The number of flight attendants on board is at least half the number required for CFR 14 Part 121.391 but never less than one. (FOM)
@@ -758,8 +786,8 @@ A: 30 degrees (FOM)
 206. Established on the final approach segment, you receive a report that the weather is now below landing minimums, can you continue?
 A: Yes, except Cat III Autoland (FOM)
 
-207. Can you continue below DH?
-A: Yes, if the required conditions are met.
+207. Established on the final approach segment, you receive a report that the weather is now below landing minimums, can you continue below DH?
+A: Yes, if the required conditions are met:
 Descent below DH utilizing the approach light system as the only visual reference is NOT authorized unless a Captain Monitored or Autopilot coupled is being conducted. (FOM)
 
 208. If planning a straight in visual approach at an uncontrolled airport, by what distance shall the aircraft be established on final?
@@ -845,6 +873,11 @@ A: Via the Report it! App. (FOM)
 
 233. When would you declare a minimum fuel advisory?
 A: When the estimated fuel upon landing at the destination airport is less than 45 mins. (FOM)
+"If the Captain calculates that any change to existing clearance to the
+airport may result in landing with less than 45 minutes of reserve fuel, the
+Captain shall declare a minimum fuel advisory as described below..."
+"The Captain shall advise ATC of minimum fuel status when fuel supply is such
+that, upon reaching the destination, the flight cannot accept any undue delay."
 
 234. When would you declare emergency due to low fuel?
 A: When the estimated fuel upon landing at the nearest suitable airport will be less than 45 mins. (FOM)
@@ -878,8 +911,8 @@ A: Stop, query ATC. (FOM)
 
 244. What do you do if a prohibited item is discovered on the aircraft?
 A: Captain and GSC shall jointly determine if the item is prohibited.
-The Captain, the GSC, and ground personnel shall avoid disturbing the item, contaminating it with fingerprints, etc.
-If the item is prohibited, the Captain shall contact the Duty Officer through Dispatch. (FOM)
+- The Captain, the GSC, and ground personnel shall avoid disturbing the item, contaminating it with fingerprints, etc.
+- If the item is prohibited, the Captain shall contact the Duty Officer through Dispatch. (FOM)
 
 245. In the NTSBR briefing what does the (T) stand for.
 A: Type of cabin prep “ Prepare the cabin for a Normal Landing ( Emergency Landing) and how much time (minutes) to land.
