@@ -91,7 +91,14 @@ function quiz(questions) {
                            answerDiv.style.color = on ? 'black' : 'transparent';
                        }]], answerDiv);
                        question.answerLines.forEach(line => {
-                           M(['div', line], answerDiv);
+                           let a = ['div', line],
+                               m = line.match(/^-+/);
+                           if (m) {
+                               let n = m[0].length;
+                               a[1] = a[1].replace(/^-+/, '-');
+                               a.push(['style', ['marginLeft', n + 'em']]);
+                           }
+                           M(a, answerDiv);
                        });
                    }]]], questionDiv);
            }
