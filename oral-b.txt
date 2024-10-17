@@ -353,7 +353,11 @@ A: 95% + 3 seconds
 FIRE PROTECTION
 
 90. What fire detection systems are checked when the Fire Detection Test Button is pressed?
-A: Engines, APU and Cargo Compartment fire protection systems.
+A:  Fire detection systems:
+- Engines
+- APU
+- Cargo Compartment
+
 91. What does pulling the engine fire extinguisher handle do?
 A: Closes these associated shutoff valves:
 - engine bleed air
@@ -502,8 +506,18 @@ FOM AND NORMAL PROCEDURES
 A: Yes
 
 138. What must the Captain’s pre-departure briefing to FAs cover?
-A: Required items – Crew ID verification, Turbulence, Use of Anticipated Turbulence Procedure, Weather, pertinent MEL items, Delays.
-Additional suggested items – Sterile cockpit review, Trip details, Aircraft swaps/RON, other items as deemed appropriate. (FOM)
+A: Required items (FOM):
+- Crew ID verification
+- Turbulence
+- Use of Anticipated Turbulence Procedure
+- Weather
+- pertinent MEL items
+- Delays
+Additional suggested items
+- Sterile cockpit review
+- Trip details
+- Aircraft swaps/RON
+- other items as deemed appropriate
 
 139. When do the emergency systems and equipment on the flight deck have to be visually checked?
 A: When the aircraft has been left unattended by the flight crew for any period of time.
@@ -525,6 +539,7 @@ A: (use this as a discussion item, FOM)
   4) If there is an entry in the LOG ENTRY section, verify the following four fields are completed in the CORRECTIVE ACTION section:
   - CORRECTIVE ACTION text
   - SIGNATURE (Corrective Action)
+  - EMP # or CERT # (non-QX)
   - DATE
   5) Verify all fields in the LOG ENTRY and CORRECTIVE ACTION sections are completed and boxes are marked. If there are any Incomplete fields/boxes or there is a question about a field in these two sections, the Captain shall contact Maintenance Control for resolution prior to departure.
   NOTE: The PHASE OF FLIGHT and EVENT CATEGORY sections are not regulatory and are for Horizon Air reliability data collection; therefore; resolution for unmarked boxes in these two sections is not required prior to departure.
@@ -541,8 +556,9 @@ A: 1,000 AFE
 ("Called for" and "selected", per Sep 15, 2024 TIRD notes, AOM 1, and FOM)
 
 146. The aircraft must be stabilized at final approach airspeed prior to what point?
-A: Crossing the FAF on approaches where the MAP is determined by time,
-1000’ AFE on approaches with anticipated windshear. Otherwise, 500 AFE
+A: 500 AFE, unless:
+- 1000 AFE on approaches with anticipated windshear
+- Crossing the FAF on approaches where the MAP is determined by time
 
 147. What is our definition of a stabilized approach?
 A: (FOM)
@@ -570,8 +586,7 @@ NOTE: Momentarily exceeding these limits above 500’ AFE does not require a go-
 A: Yes. (FOM)
 
 149. (Aside from special airports), what other conditions restrict [first officers with less than 100 hours in type] from making the takeoff or landing?
-A: Flying to special airports
-Contaminated runway
+A: Contaminated runway
 Braking action less than “good”/RWY CC4 or less
 Crosswind greater than 15 knots
 Windshear reported in the vicinity of the airport
@@ -601,7 +616,9 @@ A: 1000’ AFE.
 A: Both VMC & IMC.
 
 157. What is the Horizon Air “Use of Alcohol” policy?
-A: Not consume alcohol on same calendar day or during the 10-hour period immediately before scheduled to fly, stand reserve, or perform company related duties. (FOM)
+A: Not consume alcohol:
+- on same calendar day, or
+- during the 10-hour period immediately before scheduled to fly, stand reserve, or perform company related duties. (FOM)
 
 158. What should you do if fellow pilot is too fatigued to fly but does not remove themselves from duty?
 A: Contact Flight Operations Duty Officer before proceeding. (FOM)
@@ -664,11 +681,15 @@ Landing:
 A: 100’ (FOM)
 
 173. What is required if the difference between the two primary altimeters exceeds 100’ crossing the FAF?
-A: Missed approach unless visual reference to the runway environment has been established and the aircraft is in a position to allow safe continuation to a landing. (FOM)
+A: Missed approach unless:
+- visual reference to the runway environment has been established, and
+- the aircraft is in a position to allow safe continuation to a landing. (FOM)
 
 174. What are the RNP Track Deviation Limits?
-A: Lateral - ± 1 dot. Momentary full-scale deviations are allowable under three conditions.
-Vertical - ± ½ dot during the final approach segment. Momentary vertical deviations up to 75’ above or below GP (3/4 dot) are allowable.
+A: Lateral - ± 1 dot
+- momentary ± 2 deviations are allowable during and immediately after turns
+Vertical - ± ½ dot during the final approach segment
+- momentary vertical deviations up to 75’ (3/4 dot) above or below GP are allowable
 Missed Approach shall be initiated if:
 - Lateral deviation is at full scale and the conditions stated above are not met, or
 - Vertical deviation during the final approach segment exceeds 75’ (3/4 dot).
@@ -688,8 +709,7 @@ A: Takeoff and landing. (FOM)
 A: Suggested use is to always click the mike seven times (within 5 seconds); this assures that all controlled lights are turned on to the maximum available intensity. (FOM)
 
 179. With regard to Pilot-controlled lighting, how many minutes of lighting is available from last keying event?
-A: 15minutes (FOM)
-
+A: 15 minutes (FOM)
 
 180. What is the Runway Verification Procedure for takeoff?
 A: Prior to crossing ANY runway hold short line, the
@@ -702,21 +722,38 @@ FO: "10R, clear"
 
 181. What is the Runway Verification Procedure for landing?
 A: Prior to landing:
-PF shall restate the landing clearance and runway after the PM acknowledges clearance from ATC.
-Both pilots observe the runway environment and verify (silently) correct runway, and runway clear of traffic. (FOM)
-After Landing Checklist is complete: PM states landing clearance or query ATC if not given. At uncontrolled fields or fields where the tower is closed, prior to stating “Cleared to land” ensure intention to land is communicated on CTAF/UNICOM and no landing or runway conflicts exist. (AOM1)
+- PF shall restate the landing clearance and runway after the PM acknowledges clearance from ATC.
+- Both pilots observe the runway environment and verify (silently):
+-- correct runway, and
+-- runway clear of traffic. (FOM)
+After Landing Checklist is complete:
+- PM states landing clearance or query ATC if not given
+At uncontrolled fields or fields where the tower is closed, prior to stating “Cleared to land”, ensure:
+- intention to land is communicated on CTAF/UNICOM, and
+- no landing or runway conflicts exist. (AOM1)
 
 182. What are the iPad preflight requirements?
-A: Prior to each flight day, each pilot shall determine their Company-issued IPAD is operable. The IPAD should be sufficiently charged to meet the needs of the scheduled flight day. The minimum iPad battery charge status to begin a flight segment is 30% and 75% to begin a duty day. (FOM)
+A: Prior to each flight day, each pilot shall determine:
+- Company-issued IPAD is operable
+- iPAD sufficiently charged to meet the needs of the scheduled flight day, at a minimum:
+-- 30% to begin a flight segment
+-- 75% to begin a duty day. (FOM)
 
 183. How should the Captain proceed when the FA advises of a conflict regarding a differently-abled passenger?
 A: The CRO shall be notified. (FOM)
 
 184. When flying into an uncontrolled airport, what position reports should be made on CTAF?
-A: 10 miles out. Entering downwind, base, and final. Clearing the runway. (FOM)
+A: Required reports:
+- 10 miles out
+- entering:
+-- downwind
+-- base
+-- final
+- Clearing the runway. (FOM)
 
 185. When must FO update departure status to operations when flight departure is delayed?
-A: If a flight is not anticipated to be airborne within 15 minutes of the OUT TIME, the First Officer shall contact the station and give a best estimate OFF TIME. Update this estimate every 15 minutes. (FOM)
+A: If a flight is not anticipated to be airborne within 15 minutes of the OUT TIME, the First Officer shall contact the station and give a best estimate OFF TIME.
+Update this estimate every 15 minutes. (FOM)
 
 186. What is the minimum runway width?
 A: Minimum runway width is 100’. 60’ clearing landing width in AK (CA landing only). (FOM)
@@ -725,8 +762,11 @@ A: Minimum runway width is 100’. 60’ clearing landing width in AK (CA landin
 A: 55 minutes at normal cruising fuel consumption. (FOM)
 
 188. What is Minimum Required Fuel (REQ)?
-A: REQ is the minimum fuel quantity to begin takeoff, which includes:
-ENR, AL, RE, and DL. (FOM)
+A: REQ is the minimum fuel quantity to begin takeoff, which includes (FOM):
+- ENR
+- AL
+- RE
+- DL
 
 189. Does Enroute Fuel (ENR) include taxi fuel?
 A: No. ENR includes the planned fuel burn from takeoff to landing but does not include taxi fuel or other fuel usage before takeoff. (FOM)
@@ -748,7 +788,9 @@ Intermediate Airport after 60 minutes on ground. (FOM)
 A: Yes. (FOM)
 
 195. When is a takeoff alternate required?
-A: If reported departure weather is below landing minimums (Cat I minimums for E175) or if any other operational conditions exist at the departure airport that would preclude a return to that airport. (FOM)
+A: If:
+- reported departure weather is below landing minimums (Cat I minimums for E175), or
+- if any other operational conditions exist at the departure airport that would preclude a return to that airport. (FOM)
 
 196. When is a destination alternate required?
 A: 1, 2, 3. + only one RWY in AK. (FOM)
@@ -831,7 +873,9 @@ A: No. Apply brakes smoothly and symmetrically with moderate to firm pressure an
 A: The one-step procedure involves deicing and anti-icing the aircraft in one step using Type I fluid. (FOM)
 
 221. What is two step deicing procedure?
-A: In the two-step procedure, deicing and anti-icing are accomplished in separate steps. In the first step the aircraft in deiced with Type I fluid. In the second step, the aircraft is anti-iced with either Type I or Type IV fluid. (FOM)
+A: In the two-step procedure, deicing and anti-icing are accomplished in separate steps.
+- first step: aircraft is deiced with Type I fluid
+- second step: aircraft is anti-iced with either Type I or Type IV fluid. (FOM)
 
 222. When does the holdover time start?
 A: One-step – holdover time begins at the start of deicing and anti-icing the first critical surface.
@@ -873,11 +917,8 @@ A: Via the Report it! App. (FOM)
 
 233. When would you declare a minimum fuel advisory?
 A: When the estimated fuel upon landing at the destination airport is less than 45 mins. (FOM)
-"If the Captain calculates that any change to existing clearance to the
-airport may result in landing with less than 45 minutes of reserve fuel, the
-Captain shall declare a minimum fuel advisory as described below..."
-"The Captain shall advise ATC of minimum fuel status when fuel supply is such
-that, upon reaching the destination, the flight cannot accept any undue delay."
+- "If the Captain calculates that any change to existing clearance to the airport may result in landing with less than 45 minutes of reserve fuel, the Captain shall declare a minimum fuel advisory as described below..."
+- "The Captain shall advise ATC of minimum fuel status when fuel supply is such that, upon reaching the destination, the flight cannot accept any undue delay."
 
 234. When would you declare emergency due to low fuel?
 A: When the estimated fuel upon landing at the nearest suitable airport will be less than 45 mins. (FOM)
@@ -910,8 +951,9 @@ A: No. (FOM)
 A: Stop, query ATC. (FOM)
 
 244. What do you do if a prohibited item is discovered on the aircraft?
-A: Captain and GSC shall jointly determine if the item is prohibited.
-- The Captain, the GSC, and ground personnel shall avoid disturbing the item, contaminating it with fingerprints, etc.
+A: Captain and GSC shall:
+- jointly determine if the item is prohibited
+- shall avoid disturbing the item, contaminating it with fingerprints, etc.
 - If the item is prohibited, the Captain shall contact the Duty Officer through Dispatch. (FOM)
 
 245. In the NTSBR briefing what does the (T) stand for.
