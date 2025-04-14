@@ -3,15 +3,8 @@
 //       - at maximum, picking a specific runway would set altitude
 //         and slope, as well as showing a comparison to the calculated
 //         distance based on current/worst-case parameters
-// TODO: maybe each button is magenta to start with to imply
-//       default value
-//       - if user enters a value (or manually confirms the default)
-//         then displayed as green
-//       - the idea is to mimic E175 magenta/green needles
-//       - show current landing distance based on all selected
-//         values, default or manual
-//       - show worst-case value taking green values as fixed and
-//         varying magenta values to worst available
+// TODO: show contribution of each factor to landing distance
+//       - for both current and worst-case distances
 var raw = `
 JAMMED CONTROL COLUMN
 Without Ice Accretion
@@ -647,6 +640,241 @@ DRY 5690 -50 60 190 320 160 810 780 -- --
 3 11000 -70 100 330 3340 250 1270 750 -- 2130
 2 12040 -100 130 470 3390 240 1620 620 -- 3290
 1 -- -- -- -- -- -- -- -- -- --`;
+const runwaySlopesRaw = `
+ABQ 21 -0.11
+ABQ 26 -0.31
+ABQ 30 -0.02
+AMA 04 -0.03
+AMA 13 -0.11
+EDF 16 -0.37
+EDF 24 -0.27
+ANC 07L -0.34
+ANC 07R -0.29
+ANC 15 -0.27
+AUS 18L -0.2
+AUS 18R -0.44
+BLI 34 -0.11
+BET 01L -0.39
+BIL 10L -0.91
+BOI 28L -0.35
+BOI 28R -0.41
+BZN 30 -0.42
+BUR 08 -0.52
+BUR 15 -1.21
+YYC 11 -0.06
+YYC 17L -0.26
+YYC 17R -0.1
+CYS 09 -0.55
+CYS 13 -0.53
+ORD 04L -0.11
+ORD 04R -0.09
+ORD 09C -0.19
+ORD 09L -0.06
+ORD 09R -0.16
+ORD 10C -0.18
+ORD 10L -0.16
+ORD 10R -0.29
+COS 13 -0.44
+COS 17L -0.62
+COS 17R -1.19
+CDV 27 -0.02
+DFW 13L -0.5
+DFW 13R -0.15
+DFW 17R -0.02
+DFW 18L -0.2
+DFW 18R -0.18
+DFW 35C -0.01
+DFW 35R -0.6
+DFW 31R -0.13
+SCC 06 -0.1
+DEN 08 -0.5
+DEN 25 -0.04
+DEN 34L -0.03
+DEN 34R -0.03
+DEN 35L -0.47
+DEN 35R -0.35
+DLG 01 -0.15
+DBQ 13 -0.22
+DBQ 18 -0.62
+DLH 09 -0.08
+DLH 21 -0.04
+EAU 22 -0.33
+EAU 32 -0.1
+YEG 20 -0.14
+YEG 30 -0.48
+ELP 08L -0.06
+ELP 22 -0.27
+ELP 26L -0.38
+EUG 34L -0.07
+EUG 34R -0.17
+PAE 34L -0.17
+EIL 32 -0.09
+FAI 20L -0.02
+FAI 20R -0.03
+FLL 28L -0.69
+FAT 11L -0.01
+GJT 29 -0.36
+GJT 22 -1.33
+GTF 03 -0.2
+GTF 35 -0.46
+SUN 13 -0.76
+HDN 28 -0.26
+HLN 09 -0.21
+IAH 08R -0.02
+IAH 09 -0.06
+IAH 15L -0.08
+IAH 15R -0.08
+IAH 26R -0.04
+IDA 03 -0.12
+IND 05R -0.01
+IND 14 -0.07
+IND 23R -0.4
+JNU 08 -0.02
+FCA 20 -0.16
+GPI 20 -0.16
+MCI 01L -0.32
+MCI 01R -0.41
+MCI 27 -0.12
+ENA 20R -0.1
+AKN 30 -0.15
+ADQ 01 -0.3
+ADQ 08 -0.76
+OTZ 27 -0.04
+LGB 08L -0.32
+LGB 12 -0.35
+LAS 01L -1.03
+LAS 01R -1.0
+LAS 08L -1.01
+LAS 08R -1.03
+LAX 07L -0.16
+LAX 07R -0.22
+LAX 24L -0.03
+LAX 24R -0.06
+LBB 08 -0.07
+LBB 17R -0.35
+MRY 28L -1.37
+MFR 32 -0.47
+MAF 10 -0.18
+MAF 16R -0.22
+MKE 07R -0.7
+MKE 13 -0.05
+MSP 04 -0.03
+MSP 12L -0.23
+MSP 12R -0.27
+MSP 17 -0.09
+MSO 30 -0.14
+BNA 02L -0.56
+BNA 02R -0.62
+BNA 20R -0.03
+BNA 31 -0.42
+OME 21 -0.4
+OME 28 -0.09
+OAK 28R -0.01
+OAK 30 -0.01
+OKC 17L -0.04
+OKC 17R -0.19
+OKC 31 -0.09
+OMA 14L -0.03
+OMA 14R -0.04
+OMA 18 -0.03
+ONT 08L -0.09
+ONT 08R -0.1
+PSP 13R -0.78
+PSC 03L -0.11
+PSC 30 -0.08
+PHX 25L -0.2
+PHX 25R -0.23
+PHX 26 -0.21
+HIO 13R -0.03
+PDX 21 -0.07
+PDX 28R -0.01
+PUB 08R -0.19
+PUB 17 -0.98
+PUW 05 -0.2
+RDD 12 -0.15
+RDD 16 -0.2
+RDM 05 -0.29
+RDM 29 -0.49
+RNO 08 -0.16
+RNO 17L -0.08
+SMF 17L -0.06
+SMF 17R -0.03
+SGU 19 -0.56
+STL 06 -0.23
+STL 11 -0.68
+STL 30L -0.4
+STL 30R -0.85
+SLC 16L -0.04
+SLC 34L -0.05
+SLC 35 -0.05
+SAT 04 -0.37
+SAT 13L -0.33
+SAT 13R -0.36
+SAN 27 -0.03
+SFO 01L -0.02
+SFO 01R -0.01
+SFO 28L -0.05
+SFO 28R -0.06
+SJC 30L -0.22
+SJC 30R -0.21
+SBP 29 -0.83
+SNA 02L -0.26
+SBA 25 -0.01
+STS 02 -0.29
+STS 32 -0.17
+YAM 12 -0.02
+YAM 22 -0.3
+BFI 32L -0.03
+SEA 16C -0.71
+SEA 16L -0.72
+SEA 16R -0.69
+SIT 29 -0.03
+GEG 03 -0.57
+GEG 08 -0.06
+FOE 03 -0.5
+FOE 13 -0.21
+TUS 22 -0.12
+TUS 30 -0.59
+TUL 08 -0.52
+TUL 36L -0.69
+TUL 36R -0.17
+BRW 08 -0.16
+YVR 08L -0.04
+YVR 08R -0.03
+YVR 13 -0.01
+YYJ 14 -0.38
+YYJ 21 -0.06
+YYJ 27 -0.04
+ALW 20 -0.62
+EAT 30 -0.2
+YXY 32L -0.42
+YXY 32R -0.35
+ICT 01R -0.02
+ICT 14 -0.17
+ICT 19R -0.17
+YKM 09 -0.66
+YAK 11 -0.09
+YAK 20 -0.24
+`;
+const runwaySlopes = (function build_runway_slopes() {
+    let map = {}, worstSlope = 0, worstAirport;
+    runwaySlopesRaw.trim().split(/[\n\r]+/).sort().forEach(line => {
+        const match = line.match(/(\w+) (\S+) (-\d\.\d+)/),
+              airport = match[1],
+              runway = match[2],
+              slope = +match[3];
+        if (!map[airport]) {
+            map[airport] = {};
+        }
+        map[airport][runway] = slope;
+        if (worstSlope > slope) {
+            worstSlope = slope;
+            worstAirport = airport;
+        }
+    });
+    console.log({ worstAirport, runways : map[worstAirport] }); // DEBUG
+    return map;
+}());
 function checklistName(s) {
     return s.match(/^[A-Z0-9\s()]+$/) && s;
 }
@@ -701,7 +929,8 @@ function buildCalculator(line) {
                           rev === 2 ? adj2Rev : 0,
               result = ref + weightFactor + altFactor + slopeFactor +
                        tempFactor + windFactor + vAppFactor + revFactor;
-        return result;
+        return { result, ref, weightFactor, altFactor, slopeFactor,
+                 tempFactor, windFactor, vAppFactor, revFactor };
     };
 }
 function extractScenarios() {
@@ -745,7 +974,7 @@ function extractScenarios() {
 }
 ////////////////////////////////////////////////////////////////////////////////
 var scenarios = extractScenarios(),
-    showResult, showPickList, showPickSlider;
+    showResult, showPickList, showPickSlider, showBreakdown;
 ////////////////////////////////////////////////////////////////////////////////
 function buildScenarioPicker() {
     var selectScenario, selectedScenario,
@@ -765,7 +994,7 @@ function buildScenarioPicker() {
             rwyCC : 1,
             weight : 80,
             altitude : 8000,
-            slope : 1.3,
+            slope : 1.37,
             temp : 40,
             wind : 15,
             vapp : 20,
@@ -855,7 +1084,7 @@ function buildScenarioPicker() {
             rwyCC : [1, 6, 1],
             weight : [60, 80, 1],
             altitude : [0, 8000, 1000],
-            slope : [0, 1.5, 0.1],
+            slope : [0, 1.5, 0.01],
             temp : [0, 40, 1],
             wind : [0, 15, 1],
             vapp : [0, 20, 1],
@@ -1001,19 +1230,84 @@ function buildPickList() {
            };
        }]], document.body);
 }
+function breakdownDisplay() {
+    M(['pre',
+       ['with', n => {
+           showBreakdown = breakdown => {
+               // result, ref, weightFactor, altFactor, slopeFactor,
+               // tempFactor, windFactor, vAppFactor, revFactor
+               //n.innerHTML = JSON.stringify(breakdown, null, 2);
+               function table(resultName) {
+                   const subResult = breakdown[resultName];
+                   function row(field, label) {
+                       const value = subResult[field];
+                       return ['tr',
+                               ['td', label, ['style', ['textAlign', 'left']]],
+                               ['td', Math.round(value), ['style', ['textAlign', 'right']]]];
+                   }
+                   M(['div',
+                      ['style', ['display', 'inline-block'], ['marginRight', '1em']],
+                      ['table',
+                       ['attr', ['border', '1'], ['cellpadding', '5'], ['cellspacing', '0']],
+                       ['tr',
+                        ['th', resultName,
+                         ['attr', ['colspan', 2]]]],
+                       [row, 'result', 'Total'],
+                       [row, 'ref', 'Reference'],
+                       [row, 'weightFactor', 'Weight'],
+                       [row, 'altFactor', 'Altitude'],
+                       [row, 'slopeFactor', 'Slope'],
+                       [row, 'tempFactor', 'Temperature'],
+                       [row, 'windFactor', 'Tail Wind'],
+                       [row, 'vAppFactor', 'Vapp Additive'],
+                       [row, 'revFactor', 'Reverser']]], n);
+               }
+               n.innerHTML = '';
+               table('selected');
+               table('worst');
+           };
+       }]], document.body);
+}
 function buildResultDisplay() {
     M(['div',
        ['with', n => {
-           showResult = (result, worst) => {
+           showResult = (selected, worst) => {
                n.innerHTML = 'Landing Distance: ----';
                setTimeout(() => {
-                   n.innerHTML = 'Landing Distance: ' + result +
-                                 (worst ? '/' + worst : '');
+                   n.innerHTML = 'Landing Distance: ' + selected.result +
+                                 (worst ? '/' + worst.result : '');
+                   showBreakdown({ selected, worst });
                }, 300);
            };
        }]], document.body);
+}
+function runwayPicker() {
+    let showSlope;
+    M(['div',
+       ['select',
+        ['style', ['margin', '1em 0']],
+        ['on', ['change', e => {
+            showSlope(e.target.value);
+        }]],
+        ['option', '(select a runway)'],
+        ['with', sel => {
+            Object.entries(runwaySlopes).forEach(([airport, runwayMap]) => {
+                Object.entries(runwayMap).forEach(([runway, slope]) => {
+                    M(['option', airport + ' ' + runway,
+                       ['attr', ['value', slope]]], sel);
+                });
+            });
+        }]],
+       ['div', '0&deg;',
+        ['with', div => {
+            showSlope = slope => {
+                div.innerHTML = slope + '&deg;';
+            };
+        }]]], document.body);
 }
 ////////////////////////////////////////////////////////////////////////////////
 buildResultDisplay();
 buildScenarioPicker();
 buildPickList();
+runwayPicker();
+breakdownDisplay();
