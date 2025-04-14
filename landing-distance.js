@@ -1236,7 +1236,6 @@ function breakdownDisplay() {
            showBreakdown = breakdown => {
                // result, ref, weightFactor, altFactor, slopeFactor,
                // tempFactor, windFactor, vAppFactor, revFactor
-               //n.innerHTML = JSON.stringify(breakdown, null, 2);
                function table(resultName) {
                    const subResult = breakdown[resultName];
                    function row(field, label) {
@@ -1245,6 +1244,41 @@ function breakdownDisplay() {
                                ['td', label, ['style', ['textAlign', 'left']]],
                                ['td', Math.round(value), ['style', ['textAlign', 'right']]]];
                    }
+                   function orderedContributions() {
+                       let list = [];
+                       const firstTwo = [['result', 'Total'],
+                                         ['ref', 'Reference']],
+                             rest = [['weightFactor', 'Weight'],
+                                     ['altFactor', 'Altitude'],
+                                     ['slopeFactor', 'Slope'],
+                                     ['tempFactor', 'Temperature'],
+                                     ['windFactor', 'Tail Wind'],
+                                     ['vAppFactor', 'Vapp Additive'],
+                                     ['revFactor', 'Reverser']];
+                       rest.map(([field, label]) => {
+                           const contribution = subResult[field];
+                           return { field, label, contribution };
+                       }).sort((a, b) => {
+                           const valA = a.contribution,
+                                 valB = b.contribution;
+                           return valA > valB ? -1 :
+                                  valA < valB ? 1 : 0;
+                       }).forEach(factor => {
+                           list.push(factor);
+                       });
+                       list.unshift({
+                           field : 'ref',
+                           label : 'Reference',
+                           contribution : subResult.ref
+                       });
+                       list.unshift({
+                           field : 'result',
+                           label : 'Total',
+                           contribution : subResult.result
+                       });
+                       return list;
+                   }
+                   console.log(orderedContributions()); // DEBUG
                    M(['div',
                       ['style', ['display', 'inline-block'], ['marginRight', '1em']],
                       ['table',
@@ -1252,15 +1286,15 @@ function breakdownDisplay() {
                        ['tr',
                         ['th', resultName,
                          ['attr', ['colspan', 2]]]],
-                       [row, 'result', 'Total'],
-                       [row, 'ref', 'Reference'],
-                       [row, 'weightFactor', 'Weight'],
-                       [row, 'altFactor', 'Altitude'],
-                       [row, 'slopeFactor', 'Slope'],
-                       [row, 'tempFactor', 'Temperature'],
-                       [row, 'windFactor', 'Tail Wind'],
-                       [row, 'vAppFactor', 'Vapp Additive'],
-                       [row, 'revFactor', 'Reverser']]], n);
+                       ['with', table => {
+                           orderedContributions().forEach(factor => {
+                               M(['tr',
+                                  ['td', factor.label,
+                                   ['style', ['textAlign', 'left']]],
+                                  ['td', Math.round(factor.contribution),
+                                   ['style', ['textAlign', 'right']]]], table);
+                           });
+                       }]]], n);
                }
                n.innerHTML = '';
                table('selected');
