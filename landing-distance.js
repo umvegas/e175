@@ -3,8 +3,7 @@
 //       - at maximum, picking a specific runway would set altitude
 //         and slope, as well as showing a comparison to the calculated
 //         distance based on current/worst-case parameters
-// TODO: show contribution of each factor to landing distance
-//       - for both current and worst-case distances
+// TODO: runway length database?
 var raw = `
 JAMMED CONTROL COLUMN
 Without Ice Accretion
@@ -1083,7 +1082,7 @@ function buildScenarioPicker() {
         Object.entries({
             rwyCC : [1, 6, 1],
             weight : [60, 80, 1],
-            altitude : [0, 8000, 1000],
+            altitude : [0, 8000, 10],
             slope : [0, 1.5, 0.01],
             temp : [0, 40, 1],
             wind : [0, 15, 1],
