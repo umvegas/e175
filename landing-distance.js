@@ -871,7 +871,7 @@ const runwaySlopes = (function build_runway_slopes() {
             worstAirport = airport;
         }
     });
-    console.log({ worstAirport, runways : map[worstAirport] }); // DEBUG
+    console.log({ worstAirport, worstSlope, runways : map[worstAirport] }); // DEBUG
     return map;
 }());
 function checklistName(s) {
@@ -971,9 +971,18 @@ function extractScenarios() {
     });
     return list;
 }
+function awaitThen(a, b) {
+    if (a()) {
+        b();
+        return true;
+    }
+    setTimeout(() => {
+        awaitThen(a, b);
+    }, 100);
+}
 ////////////////////////////////////////////////////////////////////////////////
 var scenarios = extractScenarios(),
-    showResult, showPickList, showPickSlider, showBreakdown;
+    showPickList, showPickSlider, showBreakdown;
 ////////////////////////////////////////////////////////////////////////////////
 function buildScenarioPicker() {
     var selectScenario, selectedScenario,
@@ -1010,14 +1019,14 @@ function buildScenarioPicker() {
         return o;
     }
     function updateResult() {
-        var selectedResult = selectedTable.calculators[params.rwyCC || 6](params),
+        var selected = selectedTable.calculators[params.rwyCC || 6](params),
             constrainedWorstCase = constrainWorstCase(),
-            worstResult = selectedTable.calculators[constrainedWorstCase.rwyCC](constrainedWorstCase);
-        while (worstResult === 0) { // this will be true if a whole row of dashes exists in the raw table
+            worst = selectedTable.calculators[constrainedWorstCase.rwyCC](constrainedWorstCase);
+        while (worst === 0) { // this will be true if a whole row of dashes exists in the raw table
             constrainedWorstCase.rwyCC += 1;
-            worstResult = selectedTable.calculators[constrainedWorstCase.rwyCC](constrainedWorstCase);
+            worst = selectedTable.calculators[constrainedWorstCase.rwyCC](constrainedWorstCase);
         }
-        showResult(selectedResult, worstResult);
+        awaitThen(() => !!showBreakdown, () => showBreakdown({ selected, worst }));
     }
     function buildParameterPickers() {
         function button(fieldName, sliderParams) {
@@ -1277,7 +1286,6 @@ function breakdownDisplay() {
                        });
                        return list;
                    }
-                   console.log(orderedContributions()); // DEBUG
                    M(['div',
                       ['style', ['display', 'inline-block'], ['marginRight', '1em']],
                       ['table',
@@ -1298,19 +1306,6 @@ function breakdownDisplay() {
                n.innerHTML = '';
                table('selected');
                table('worst');
-           };
-       }]], document.body);
-}
-function buildResultDisplay() {
-    M(['div',
-       ['with', n => {
-           showResult = (selected, worst) => {
-               n.innerHTML = 'Landing Distance: ----';
-               setTimeout(() => {
-                   n.innerHTML = 'Landing Distance: ' + selected.result +
-                                 (worst ? '/' + worst.result : '');
-                   showBreakdown({ selected, worst });
-               }, 300);
            };
        }]], document.body);
 }
@@ -1339,7 +1334,6 @@ function runwayPicker() {
         }]]], document.body);
 }
 ////////////////////////////////////////////////////////////////////////////////
-buildResultDisplay();
 buildScenarioPicker();
 buildPickList();
 runwayPicker();
