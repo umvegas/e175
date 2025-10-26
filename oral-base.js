@@ -170,7 +170,7 @@ function processRaw(text) {
         topic,
         lastQ;
     function aHeading(line) {
-        var m = line.match(/^[A-Z ,]+$/);
+        var m = line.match(/^[A-Z ,\/]+$/);
         if (!m) { return; }
         topic = line;
         topics.push(topic);
