@@ -1303,9 +1303,62 @@ function breakdownDisplay() {
                            });
                        }]]], n);
                }
+               function showResults() {
+                   const labels = {
+                       'result' : 'Total',
+                       'ref' : 'Reference',
+                       'weightFactor' : 'Weight',
+                       'altFactor' : 'Altitude',
+                       'slopeFactor' : 'Slope',
+                       'tempFactor' : 'Temperature',
+                       'windFactor' : 'Tail Wind',
+                       'vAppFactor' : 'Vapp Additive',
+                       'revFactor' : 'Reverser',
+                   };
+                   let combined = {},
+                       arrayed;
+                   Object.entries(breakdown).forEach(([resultType, resultData]) => {
+                       Object.entries(resultData).forEach(([factorName, factorValue]) => {
+                           if (!combined[factorName]) {
+                               combined[factorName] = {};
+                           }
+                           combined[factorName][resultType] = factorValue;
+                       });
+                   });
+                   arrayed = Object.entries(combined).map(([factorName, factorValues]) => {
+                       return [factorName, factorValues.selected, factorValues.worst];
+                   }).sort((a, b) => {
+                       const as = a[1],
+                             bs = b[1],
+                             aw = a[2],
+                             bw = b[2];
+                       return as < bs ? 1 :
+                              as > bs ? -1 :
+                              aw < bw ? 1 :
+                              aw > bw ? -1 : 0;
+                   });
+                   M(['table',
+                      ['attr',
+                       ['border', '1'],
+                       ['cellpadding', '5'],
+                       ['cellspacing', '0']],
+                      ['thead',
+                       ['th', 'Factor'],
+                       ['th', 'Selected'],
+                       ['th', 'Worst']],
+                      ['with', t => {
+                          arrayed.forEach(line => {
+                              M(['tr',
+                                 ['td', ['style', ['textAlign', 'left']], labels[line[0]]],
+                                 ['td', ['style', ['textAlign', 'right']], Math.round(line[1])],
+                                 ['td', ['style', ['textAlign', 'right']], Math.round(line[2])]], t);
+                          });
+                      }]], n);
+               }
                n.innerHTML = '';
-               table('selected');
-               table('worst');
+               //table('selected');
+               //table('worst');
+               showResults();
            };
        }]], document.body);
 }
