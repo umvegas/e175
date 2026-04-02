@@ -640,232 +640,233 @@ DRY 5690 -50 60 190 320 160 810 780 -- --
 2 12040 -100 130 470 3390 240 1620 620 -- 3290
 1 -- -- -- -- -- -- -- -- -- --`;
 const runwaySlopesRaw = `
-ABQ 21 -0.11
-ABQ 26 -0.31
-ABQ 30 -0.02
-AMA 04 -0.03
-AMA 13 -0.11
-EDF 16 -0.37
-EDF 24 -0.27
-ANC 07L -0.34
-ANC 07R -0.29
-ANC 15 -0.27
-AUS 18L -0.2
-AUS 18R -0.44
-BLI 34 -0.11
-BET 01L -0.39
-BIL 10L -0.91
-BOI 28L -0.35
-BOI 28R -0.41
-BZN 30 -0.42
-BUR 08 -0.52
-BUR 15 -1.21
-YYC 11 -0.06
-YYC 17L -0.26
-YYC 17R -0.1
-CYS 09 -0.55
-CYS 13 -0.53
-ORD 04L -0.11
-ORD 04R -0.09
-ORD 09C -0.19
-ORD 09L -0.06
-ORD 09R -0.16
-ORD 10C -0.18
-ORD 10L -0.16
-ORD 10R -0.29
-COS 13 -0.44
-COS 17L -0.62
-COS 17R -1.19
-CDV 27 -0.02
-DFW 13L -0.5
-DFW 13R -0.15
-DFW 17R -0.02
-DFW 18L -0.2
-DFW 18R -0.18
-DFW 35C -0.01
-DFW 35R -0.6
-DFW 31R -0.13
-SCC 06 -0.1
-DEN 08 -0.5
-DEN 25 -0.04
-DEN 34L -0.03
-DEN 34R -0.03
-DEN 35L -0.47
-DEN 35R -0.35
-DLG 01 -0.15
-DBQ 13 -0.22
-DBQ 18 -0.62
-DLH 09 -0.08
-DLH 21 -0.04
-EAU 22 -0.33
-EAU 32 -0.1
-YEG 20 -0.14
-YEG 30 -0.48
-ELP 08L -0.06
-ELP 22 -0.27
-ELP 26L -0.38
-EUG 34L -0.07
-EUG 34R -0.17
-PAE 34L -0.17
-EIL 32 -0.09
-FAI 20L -0.02
-FAI 20R -0.03
-FLL 28L -0.69
-FAT 11L -0.01
-GJT 29 -0.36
-GJT 22 -1.33
-GTF 03 -0.2
-GTF 35 -0.46
-SUN 13 -0.76
-HDN 28 -0.26
-HLN 09 -0.21
-IAH 08R -0.02
-IAH 09 -0.06
-IAH 15L -0.08
-IAH 15R -0.08
-IAH 26R -0.04
-IDA 03 -0.12
-IND 05R -0.01
-IND 14 -0.07
-IND 23R -0.4
-JNU 08 -0.02
-FCA 20 -0.16
-GPI 20 -0.16
-MCI 01L -0.32
-MCI 01R -0.41
-MCI 27 -0.12
-ENA 20R -0.1
-AKN 30 -0.15
-ADQ 01 -0.3
-ADQ 08 -0.76
-OTZ 27 -0.04
-LGB 08L -0.32
-LGB 12 -0.35
-LAS 01L -1.03
-LAS 01R -1.0
-LAS 08L -1.01
-LAS 08R -1.03
-LAX 07L -0.16
-LAX 07R -0.22
-LAX 24L -0.03
-LAX 24R -0.06
-LBB 08 -0.07
-LBB 17R -0.35
-MRY 28L -1.37
-MFR 32 -0.47
-MAF 10 -0.18
-MAF 16R -0.22
-MKE 07R -0.7
-MKE 13 -0.05
-MSP 04 -0.03
-MSP 12L -0.23
-MSP 12R -0.27
-MSP 17 -0.09
-MSO 30 -0.14
-BNA 02L -0.56
-BNA 02R -0.62
-BNA 20R -0.03
-BNA 31 -0.42
-OME 21 -0.4
-OME 28 -0.09
-OAK 28R -0.01
-OAK 30 -0.01
-OKC 17L -0.04
-OKC 17R -0.19
-OKC 31 -0.09
-OMA 14L -0.03
-OMA 14R -0.04
-OMA 18 -0.03
-ONT 08L -0.09
-ONT 08R -0.1
-PSP 13R -0.78
-PSC 03L -0.11
-PSC 30 -0.08
-PHX 25L -0.2
-PHX 25R -0.23
-PHX 26 -0.21
-HIO 13R -0.03
-PDX 21 -0.07
-PDX 28R -0.01
-PUB 08R -0.19
-PUB 17 -0.98
-PUW 05 -0.2
-RDD 12 -0.15
-RDD 16 -0.2
-RDM 05 -0.29
-RDM 29 -0.49
-RNO 08 -0.16
-RNO 17L -0.08
-SMF 17L -0.06
-SMF 17R -0.03
-SGU 19 -0.56
-STL 06 -0.23
-STL 11 -0.68
-STL 30L -0.4
-STL 30R -0.85
-SLC 16L -0.04
-SLC 34L -0.05
-SLC 35 -0.05
-SAT 04 -0.37
-SAT 13L -0.33
-SAT 13R -0.36
-SAN 27 -0.03
-SFO 01L -0.02
-SFO 01R -0.01
-SFO 28L -0.05
-SFO 28R -0.06
-SJC 30L -0.22
-SJC 30R -0.21
-SBP 29 -0.83
-SNA 02L -0.26
-SBA 25 -0.01
-STS 02 -0.29
-STS 32 -0.17
-YAM 12 -0.02
-YAM 22 -0.3
-BFI 32L -0.03
-SEA 16C -0.71
-SEA 16L -0.72
-SEA 16R -0.69
-SIT 29 -0.03
-GEG 03 -0.57
-GEG 08 -0.06
-FOE 03 -0.5
-FOE 13 -0.21
-TUS 22 -0.12
-TUS 30 -0.59
-TUL 08 -0.52
-TUL 36L -0.69
-TUL 36R -0.17
-BRW 08 -0.16
-YVR 08L -0.04
-YVR 08R -0.03
-YVR 13 -0.01
-YYJ 14 -0.38
-YYJ 21 -0.06
-YYJ 27 -0.04
-ALW 20 -0.62
-EAT 30 -0.2
+ABQ 21 -0.11 5306
+ABQ 26 -0.31 5355
+ABQ 30 -0.02 5314
+AMA 04 -0.03 3607
+AMA 13 -0.11 3604
+EDF 16 -0.37 213
+EDF 24 -0.27 202
+ANC 07L -0.34 128
+ANC 07R -0.29 133
+ANC 15 -0.27 152
+AUS 18L -0.2 492
+AUS 18R -0.44 542
+BLI 34 -0.11 171
+BET 01L -0.39 128
+BIL 10L -0.91 3585
+BOI 28L -0.35 2859
+BOI 28R -0.41 2872
+BZN 30 -0.42 4463
+BUR 08 -0.52 728
+BUR 15 -1.21 778
+YYC 11 -0.06 3547
+YYC 17L -0.26 3606
+YYC 17R -0.1 3555
+CYS 09 -0.55 6146
+CYS 13 -0.53 6160
+ORD 04L -0.11 656
+ORD 04R -0.09 662
+ORD 09C -0.19 674
+ORD 09L -0.06 668
+ORD 09R -0.16 668
+ORD 10C -0.18 670
+ORD 10L -0.16 673
+ORD 10R -0.29 680
+COS 13 -0.44 6174
+COS 17L -0.62 6187
+COS 17R -1.19 6177
+CDV 27 -0.02 43
+DFW 13L -0.5 554
+DFW 13R -0.15 591
+DFW 17R -0.02 567
+DFW 18L -0.2 602
+DFW 18R -0.18 607
+DFW 35C -0.01 564
+DFW 35R -0.6 576
+DFW 31R -0.13 509
+SCC 06 -0.1 67
+DEN 08 -0.5 5355
+DEN 25 -0.04 5355
+DEN 34L -0.03 5327
+DEN 34R -0.03 5354
+DEN 35L -0.47 5434
+DEN 35R -0.35 5370
+DLG 01 -0.15 75
+DBQ 13 -0.22 1077
+DBQ 18 -0.62 1073
+DLH 09 -0.08 1428
+DLH 21 -0.04 1416
+EAU 22 -0.33 914
+EAU 32 -0.1 888
+YEG 20 -0.14 2337
+YEG 30 -0.48 2732
+ELP 08L -0.06 3953
+ELP 22 -0.27 3950
+ELP 26L -0.38 3962
+EUG 34L -0.07 366
+EUG 34R -0.17 374
+PAE 34L -0.17 578
+EIL 32 -0.09 548
+FAI 20L -0.02 435
+FAI 20R -0.03 439
+FLL 28L -0.69 65
+FAT 11L -0.01 333
+GJT 29 -0.36 4862
+GJT 22 -1.33 4861
+GTF 03 -0.2 3680
+GTF 35 -0.46 3668
+SUN 13 -0.76 5320
+HDN 28 -0.26 6607
+HLN 09 -0.21 3864
+IAH 08R -0.02 95
+IAH 09 -0.06 90
+IAH 15L -0.08 95
+IAH 15R -0.08 95
+IAH 26R -0.04 95
+IDA 03 -0.12 4742
+IND 05R -0.01 789
+IND 14 -0.07 788
+IND 23R -0.4 783
+JNU 08 -0.02 25
+FCA 20 -0.16 2977
+GPI 20 -0.16 2977
+MCI 01L -0.32 1015
+MCI 01R -0.41 1018
+MCI 27 -0.12 1027
+ENA 20R -0.1 98
+AKN 30 -0.15 74
+ADQ 01 -0.3 37
+ADQ 08 -0.76 79
+OTZ 27 -0.04 16
+LGB 08L -0.32 59
+LGB 12 -0.35 61
+LAS 01L -1.03 2182
+LAS 01R -1.0 2176
+LAS 08L -1.01 2184
+LAS 08R -1.03 2157
+LAX 07L -0.16 115
+LAX 07R -0.22 122
+LAX 24L -0.03 113
+LAX 24R -0.06 119
+LBB 08 -0.07 3259
+LBB 17R -0.35 3283
+MRY 28L -1.37 257
+MFR 32 -0.47 1336
+MAF 10 -0.18 2870
+MAF 16R -0.22 2873
+MKE 07R -0.7 729
+MKE 13 -0.05 672
+MSP 04 -0.03 834
+MSP 12L -0.23 839
+MSP 12R -0.27 842
+MSP 17 -0.09 841
+MSO 30 -0.14 3206
+BNA 02L -0.56 599
+BNA 02R -0.62 590
+BNA 20R -0.03 556
+BNA 31 -0.42 583
+OME 21 -0.4 41
+OME 28 -0.09 25
+OAK 28R -0.01 6
+OAK 30 -0.01 9
+OKC 17L -0.04 1287
+OKC 17R -0.19 1282
+OKC 31 -0.09 1286
+OMA 14L -0.03 984
+OMA 14R -0.04 985
+OMA 18 -0.03 982
+ONT 08L -0.09 997
+ONT 08R -0.1 936
+PSP 13R -0.78 477
+PSC 03L -0.11 410
+PSC 30 -0.08 402
+PHX 25L -0.2 1127
+PHX 25R -0.23 1134
+PHX 26 -0.21 1135
+HIO 13R -0.03 200
+PDX 21 -0.07 27
+PDX 28R -0.01 31
+PUB 08R -0.19 4670
+PUB 17 -0.98 4730
+PUW 05 -0.2 2567
+RDD 12 -0.15 500
+RDD 16 -0.2 505
+RDM 05 -0.29 3075
+RDM 29 -0.49 3082
+RNO 08 -0.16 4410
+RNO 17L -0.08 4415
+SMF 17L -0.06 27
+SMF 17R -0.03 25
+SGU 19 -0.56 2884
+STL 06 -0.23 551
+STL 11 -0.68 617
+STL 30L -0.4 586
+STL 30R -0.85 605
+SLC 16L -0.04 4230
+SLC 34L -0.05 4229
+SLC 35 -0.05 4227
+SAT 04 -0.37 786
+SAT 13L -0.33 798
+SAT 13R -0.36 810
+SAN 27 -0.03 17
+SFO 01L -0.02 11
+SFO 01R -0.01 12
+SFO 28L -0.05 13
+SFO 28R -0.06 13
+SJC 30L -0.22 63
+SJC 30R -0.21 62
+SBP 29 -0.83 213
+SNA 02L -0.26 56
+SBA 25 -0.01 12
+STS 02 -0.29 129
+STS 32 -0.17 121
+YAM 12 -0.02 630
+YAM 22 -0.3 630
+BFI 32L -0.03 21
+SEA 16C -0.71 430
+SEA 16L -0.72 433
+SEA 16R -0.69 415
+SIT 29 -0.03 27
+GEG 03 -0.57 2385
+GEG 08 -0.06 2377
+FOE 03 -0.5 1078
+FOE 13 -0.21 1064
+TUS 22 -0.12 2569
+TUS 30 -0.59 2643
+TUL 08 -0.52 672
+TUL 36L -0.69 678
+TUL 36R -0.17 644
+BRW 08 -0.16 49
+YVR 08L -0.04 14
+YVR 08R -0.03 14
+YVR 13 -0.01 14
+YYJ 14 -0.38 58
+YYJ 21 -0.06 54
+YYJ 27 -0.04 56
+ALW 20 -0.62 1195
+EAT 30 -0.2 1231
 YXY 32L -0.42
 YXY 32R -0.35
-ICT 01R -0.02
-ICT 14 -0.17
-ICT 19R -0.17
-YKM 09 -0.66
-YAK 11 -0.09
-YAK 20 -0.24
+ICT 01R -0.02 1321
+ICT 14 -0.17 1332
+ICT 19R -0.17 1330
+YKM 09 -0.66 1099
+YAK 11 -0.09 40
+YAK 20 -0.24 37
 `;
 const runwaySlopes = (function build_runway_slopes() {
     let map = {}, worstSlope = 0, worstAirport;
     runwaySlopesRaw.trim().split(/[\n\r]+/).sort().forEach(line => {
-        const match = line.match(/(\w+) (\S+) (-\d\.\d+)/),
+        const match = line.match(/(\w+) (\S+) (-\d\.\d+)( \d+)?/),
               airport = match[1],
               runway = match[2],
-              slope = +match[3];
+              slope = +match[3],
+              elevation = +match[4];
         if (!map[airport]) {
             map[airport] = {};
         }
-        map[airport][runway] = slope;
+        map[airport][runway] = { slope, elevation };
         if (worstSlope > slope) {
             worstSlope = slope;
             worstAirport = airport;
@@ -1300,26 +1301,26 @@ function breakdownDisplay() {
        }]], document.body);
 }
 function runwayPicker() {
-    let showSlope;
+    let showStats;
     M(['div',
        ['select',
         ['style', ['margin', '1em 0']],
         ['on', ['change', e => {
-            showSlope(e.target.value);
+            showStats(e.target.value);
         }]],
         ['option', '(select a runway)'],
         ['with', sel => {
             Object.entries(runwaySlopes).forEach(([airport, runwayMap]) => {
-                Object.entries(runwayMap).forEach(([runway, slope]) => {
+                Object.entries(runwayMap).forEach(([runway, { slope, elevation }]) => {
                     M(['option', airport + ' ' + runway,
-                       ['attr', ['value', slope]]], sel);
+                       ['attr', ['value', slope + '&deg;, ' + elevation + ' MSL']]], sel);
                 });
             });
         }]],
        ['div', '0&deg;',
         ['with', div => {
-            showSlope = slope => {
-                div.innerHTML = slope + '&deg;';
+            showStats = stats => {
+                div.innerHTML = stats;
             };
         }]]], document.body);
 }
