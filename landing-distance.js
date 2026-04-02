@@ -915,7 +915,7 @@ function buildCalculator(line) {
               altDif = altitude / 1000,
               stdTmp = 15 - 2 * altDif,
               tempDif = (temp - stdTmp) / 5,
-              slopeDif = slope,
+              slopeDif = -slope,
               windDif = wind / 5,
               vAppDif = vapp / 5,
               weightFactor = weightDif * (weightDif > 0 ? adjWeightHi :
@@ -989,6 +989,7 @@ function buildScenarioPicker() {
     var selectScenario, selectedScenario,
         selectVariation, selectedVariation,
         selectTable, selectedTable,
+        reflectors = {},
         params = { // rwyCC, weight, altitude, slope, temp, wind, vapp, rev
             rwyCC : 6,
             weight : 72,
@@ -1003,7 +1004,7 @@ function buildScenarioPicker() {
             rwyCC : 1,
             weight : 80,
             altitude : 8000,
-            slope : 1.37,
+            slope : -1.37,
             temp : 40,
             wind : 15,
             vapp : 20,
@@ -1088,12 +1089,17 @@ function buildScenarioPicker() {
                         n.innerHTML = params[fieldName];
                     };
                 }]]], document.body);
+            reflectors[fieldName] = newValue => {
+                params[fieldName] = newValue;
+                showNewValue();
+                updateResult();
+            };
         }
         Object.entries({
             rwyCC : [1, 6, 1],
             weight : [60, 80, 1],
             altitude : [0, 8000, 10],
-            slope : [0, 1.5, 0.01],
+            slope : [-1.5, 0, 0.01],
             temp : [0, 40, 1],
             wind : [0, 15, 1],
             vapp : [0, 20, 1],
@@ -1101,6 +1107,35 @@ function buildScenarioPicker() {
         }).forEach(([name, sliderParams]) => {
             button(name, sliderParams);
         });
+    }
+    function runwayPicker() {
+        let showStats, reporters = [() => {}];
+        M(['div',
+           ['select',
+            ['style', ['margin', '1em 0']],
+            ['on', ['change', e => {
+                showStats(e.target.value);
+                reporters[e.target.selectedIndex]();
+            }]],
+            ['option', '(select a runway)'],
+            ['with', sel => {
+                Object.entries(runwaySlopes).forEach(([airport, runwayMap]) => {
+                    Object.entries(runwayMap).forEach(([runway, { slope, elevation }]) => {
+                        reporters.push(() => {
+                            reflectors.slope(slope);
+                            reflectors.altitude(elevation);
+                        });
+                        M(['option', airport + ' ' + runway,
+                           ['attr', ['value', slope + '&deg;, ' + elevation + ' MSL']]], sel);
+                    });
+                });
+            }]],
+           ['div', '0&deg;',
+            ['with', div => {
+                showStats = stats => {
+                    div.innerHTML = stats;
+                };
+            }]]], document.body);
     }
     M(['div',
        ['style',
@@ -1176,6 +1211,7 @@ function buildScenarioPicker() {
         }]]], document.body);
     selectScenario(scenarios[0]);
     buildParameterPickers();
+    runwayPicker();
 }
 function buildPickList() {
     M(['div',
@@ -1252,7 +1288,7 @@ function breakdownDisplay() {
                        'slopeFactor' : 'Slope',
                        'tempFactor' : 'Temperature',
                        'windFactor' : 'Tail Wind',
-                       'vAppFactor' : 'Vapp Additive',
+                       'vAppFactor' : 'Vapp',
                        'revFactor' : 'Reverser',
                    };
                    let combined = {},
@@ -1300,32 +1336,7 @@ function breakdownDisplay() {
            };
        }]], document.body);
 }
-function runwayPicker() {
-    let showStats;
-    M(['div',
-       ['select',
-        ['style', ['margin', '1em 0']],
-        ['on', ['change', e => {
-            showStats(e.target.value);
-        }]],
-        ['option', '(select a runway)'],
-        ['with', sel => {
-            Object.entries(runwaySlopes).forEach(([airport, runwayMap]) => {
-                Object.entries(runwayMap).forEach(([runway, { slope, elevation }]) => {
-                    M(['option', airport + ' ' + runway,
-                       ['attr', ['value', slope + '&deg;, ' + elevation + ' MSL']]], sel);
-                });
-            });
-        }]],
-       ['div', '0&deg;',
-        ['with', div => {
-            showStats = stats => {
-                div.innerHTML = stats;
-            };
-        }]]], document.body);
-}
 ////////////////////////////////////////////////////////////////////////////////
 buildScenarioPicker();
 buildPickList();
-runwayPicker();
 breakdownDisplay();
