@@ -1,9 +1,4 @@
-// TODO: maybe a list of runways with negative slope
-//       - or at minimum a list of runways with over 1% downslope
-//       - at maximum, picking a specific runway would set altitude
-//         and slope, as well as showing a comparison to the calculated
-//         distance based on current/worst-case parameters
-// TODO: runway length database?
+function nop () {}
 var raw = `
 DUAL ENGINE FAILURE
 Both Engines Auto-Relight
@@ -957,6 +952,7 @@ YYC 11 -0.06 3606 8000
 YYC 29 0.06 3606 8000
 YYC 17L -0.26 3606 14000
 YYC 17R -0.1 3606 12675
+YYC 29/F 0.06 3606 7840
 YYC 35L 0.1 3606 12675
 YYC 35R 0.26 3606 14000
 CYS 13 -0.53 6160 5530
@@ -992,6 +988,7 @@ DFW 17C 0.01 606 13400
 DFW 17L 0.6 606 8500
 DFW 17R -0.02 606 13400
 DFW 18L -0.2 606 13401
+DFW 18L-S4128F -0.2 606 9273
 DFW 18R -0.18 606 13400
 DFW 31L 0.15 606 9300
 DFW 31R 0.5 606 8373
@@ -1000,6 +997,7 @@ DFW 35L 0.02 606 13400
 DFW 35R -0.6 606 8500
 DFW 36L 0.18 606 13400
 DFW 36R 0.2 606 13401
+DFW 36R-S4128F 0.2 606 9273
 DAL 13L 0.13 487 7752
 DAL 13R 0 487 8800
 DAL 31L 0 487 8800
@@ -1036,6 +1034,8 @@ YEG 12 0.48 2373 10200
 YEG 20 -0.14 2373 10995
 YEG 30 -0.48 2373 10200
 YEG 02 0.14 2373 10995
+YEG 02/A 0.14 2373 10715
+YEG 30/A -0.48 2373 9865
 ELP 22 -0.27 3962 12020
 ELP 04 0.27 3962 12020
 ELP 08L -0.06 3962 5499
@@ -1048,8 +1048,12 @@ EUG 34L -0.07 374 8009
 EUG 34R -0.17 374 6000
 PAE 16R 0.16 607 6000
 PAE 34L -0.16 607 6000
+PAE 34L/A7 -0.16 607 4019
+PAE 34L/A9 -0.16 607 5517
 EIL 14 0.09 548 14530
 EIL 32 -0.09 548 14530
+EIL 14-SE3500F 0.09 548 11006
+EIL 32-SE3500F -0.09 548 11206
 FAI 02L 0.03 439 11800
 FAI 02R 0.02 439 4510
 FAI 20L -0.02 439 4510
@@ -1121,6 +1125,7 @@ LAS 19L 1 2183 9769
 LAS 19R 1.01 2183 9770
 LAS 26L 1.03 2183 10526
 LAS 26R 1.01 2183 14515
+LAS 26R/A2 1.01 2183 13065
 LGB 12 -0.35 60 10000
 LGB 30 0.35 60 10000
 LGB 08L -0.32 60 6192
@@ -1141,7 +1146,9 @@ MFR 14 0.47 1335 8800
 MFR 32 -0.47 1335 8800
 MAF 10 -0.18 2872 8302
 MAF 28 0.18 2872 8302
+MAF 10-E692F -0.18 2872 7610
 MAF 16R -0.22 2872 9501
+MAF 28-E692F 0.18 2872 7610
 MAF 34L 0.22 2872 9501
 MKE 13 -0.05 728 5537
 MKE 31 0.05 728 5537
@@ -1213,6 +1220,7 @@ PDX 21 -0.07 31 6000
 PDX 03 0.07 31 6000
 PDX 10L 0.01 31 9825
 PDX 10R 0 31 11000
+PDX 10R/E 0 31 6293
 PDX 28L 0 31 11000
 PDX 28R -0.01 31 9825
 PUB 17 -0.98 4729 8308
@@ -1272,6 +1280,7 @@ SFO 19R 0.02 13 7650
 SFO 28L -0.05 13 11381
 SFO 28R -0.06 13 11870
 SJC 12L 0.21 62 10139
+SJC 12L/M 0.21 62 9700
 SJC 12R 0.22 62 9883
 SJC 30L -0.22 62 10152
 SJC 30R -0.21 62 10134
@@ -1373,6 +1382,12 @@ const runwaySlopes = (function build_runway_slopes() {
     console.log({ worstAirport, worstSlope, runways : map[worstAirport] }); // DEBUG
     return map;
 }());
+function momentaryMessage(s) {
+    M(['div', s,
+       ['with', div => {
+           setTimeout(() => div.remove(), 5000);
+       }]], document.body);
+}
 function checklistName(s) {
     return s.match(/^[A-Z0-9\s()\/]+$/) && s;
 }
@@ -1636,25 +1651,46 @@ function buildScenarioPicker() {
         });
     }
     function runwayPicker() {
-        let showStats, reporters = [() => {}];
+        let showStats,
+            pushOption,
+            options = {},
+            reporters = {};
         M(['div',
+           ['input',
+            ['style', ['width', '5em']],
+            ['on', ['input', e => {
+                let terms = new RegExp(e.target.value, 'i');
+                Object.entries(options).forEach(([label, element], ndx) => {
+                    const show = !!label.match(terms);
+                    element.remove();
+                    if (show) {
+                        pushOption(element);
+                    }
+                });
+            }]]],
            ['select',
             ['style', ['margin', '1em 0']],
             ['on', ['change', e => {
+                console.log(e);
                 showStats(e.target.value);
-                reporters[e.target.selectedIndex]();
+                (reporters[e.target.selectedOptions[0].innerHTML] || nop)();
             }]],
             ['option', '(select a runway)'],
             ['with', sel => {
+                pushOption = option => M(option, sel);
                 Object.entries(runwaySlopes).forEach(([airport, runwayMap]) => {
                     Object.entries(runwayMap).forEach(([runway, { slope, elevation, length }]) => {
-                        reporters.push(() => {
+                        const fullRunwayName = airport + ' ' + runway;
+                        reporters[fullRunwayName] = () => {
                             runwayLength = length;
                             reflectors.slope(slope);
                             reflectors.altitude(elevation);
-                        });
-                        M(['option', airport + ' ' + runway,
-                           ['attr', ['value', slope + '&deg;, ' + elevation + ' MSL, ' + length + "'"]]], sel);
+                        };
+                        M(['option', fullRunwayName,
+                           ['attr', ['value', slope + '&deg;, ' + elevation + ' MSL, ' + length + "'"]],
+                           ['with', option => {
+                               options[fullRunwayName] = option;
+                           }]], sel);
                     });
                 });
             }]],
@@ -1858,19 +1894,26 @@ function breakdownDisplay() {
                       ['with', t => {
                           arrayed.forEach(([labelID, selectedLength, worstLength], ndx) => {
                               function pickColor(calculatedLength) {
-                                  return (ndx || runwayLength === 0) ? 'none' :
+                                  let color = (ndx || runwayLength === 0) ? 'none' :
                                       calculatedLength > runwayLength ? 'red' :
                                       calculatedLength > (runwayLength * .9) ? 'orangered' :
                                       calculatedLength > (runwayLength * .8) ? 'yellow' :
                                       'lightgreen';
+                                  return color;
                               }
                               M(['tr',
                                  ['td', ['style', ['textAlign', 'left']], labels[labelID]],
                                  ['td',
+                                  ['on', ['click', e => {
+                                      alert(selectedLength + ' vs ' + runwayLength);
+                                  }]],
                                   ['style',
                                    ['backgroundColor', pickColor(selectedLength)],
                                    ['textAlign', 'right']], Math.round(selectedLength)],
                                  ['td',
+                                  ['on', ['click', e => {
+                                      alert(worstLength + ' vs ' + runwayLength);
+                                  }]],
                                   ['style',
                                    ['backgroundColor', pickColor(worstLength)],
                                    ['textAlign', 'right']], Math.round(worstLength)]], t);
