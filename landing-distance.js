@@ -913,233 +913,458 @@ DRY 5690 -50 60 190 320 160 810 810 -- --
 2 12040 -100 130 470 3390 240 1620 620 -- 3290
 1 -- -- -- -- -- -- -- -- -- --`;
 const runwaySlopesRaw = `
-ABQ 21 -0.11 5306
-ABQ 26 -0.31 5355
-ABQ 30 -0.02 5314
-AMA 04 -0.03 3607
-AMA 13 -0.11 3604
-EDF 16 -0.37 213
-EDF 24 -0.27 202
-ANC 07L -0.34 128
-ANC 07R -0.29 133
-ANC 15 -0.27 152
-AUS 18L -0.2 492
-AUS 18R -0.44 542
-BLI 34 -0.11 171
-BET 01L -0.39 128
-BIL 10L -0.91 3585
-BOI 28L -0.35 2859
-BOI 28R -0.41 2872
-BZN 30 -0.42 4463
-BUR 08 -0.52 728
-BUR 15 -1.21 778
-YYC 11 -0.06 3547
-YYC 17L -0.26 3606
-YYC 17R -0.1 3555
-CYS 09 -0.55 6146
-CYS 13 -0.53 6160
-ORD 04L -0.11 656
-ORD 04R -0.09 662
-ORD 09C -0.19 674
-ORD 09L -0.06 668
-ORD 09R -0.16 668
-ORD 10C -0.18 670
-ORD 10L -0.16 673
-ORD 10R -0.29 680
-COS 13 -0.44 6174
-COS 17L -0.62 6187
-COS 17R -1.19 6177
-CDV 27 -0.02 43
-DFW 13L -0.5 554
-DFW 13R -0.15 591
-DFW 17R -0.02 567
-DFW 18L -0.2 602
-DFW 18R -0.18 607
-DFW 35C -0.01 564
-DFW 35R -0.6 576
-DAL 31R -0.13 509
-SCC 06 -0.1 67
-DEN 08 -0.5 5355
-DEN 25 -0.04 5355
-DEN 34L -0.03 5327
-DEN 34R -0.03 5354
-DEN 35L -0.47 5434
-DEN 35R -0.35 5370
-DLG 01 -0.15 82
-DBQ 13 -0.22 1077
-DBQ 18 -0.62 1073
-DLH 09 -0.08 1428
-DLH 21 -0.04 1416
-EAU 22 -0.33 914
-EAU 32 -0.1 888
-YEG 20 -0.14 2337
-YEG 30 -0.48 2732
-ELP 08L -0.06 3953
-ELP 22 -0.27 3950
-ELP 26L -0.38 3962
-EUG 34L -0.07 366
-EUG 34R -0.17 374
-PAE 34L -0.17 578
-EIL 32 -0.09 548
-FAI 20L -0.02 435
-FAI 20R -0.03 439
-FLL 28L -0.69 65
-FAT 11L -0.01 333
-GJT 29 -0.36 4862
-GJT 22 -1.33 4861
-GTF 03 -0.2 3680
-GTF 35 -0.46 3668
-SUN 13 -0.76 5320
-HDN 28 -0.26 6607
-HLN 09 -0.21 3864
-IAH 08R -0.02 95
-IAH 09 -0.06 90
-IAH 15L -0.08 95
-IAH 15R -0.08 95
-IAH 26R -0.04 95
-IDA 03 -0.12 4742
-IND 05R -0.01 789
-IND 14 -0.07 788
-IND 23R -0.4 783
-JNU 08 -0.02 25
-FCA 20 -0.16 2977
-GPI 20 -0.16 2977
-MCI 01L -0.32 1015
-MCI 01R -0.41 1018
-MCI 27 -0.12 1027
-ENA 20R -0.1 98
-AKN 30 -0.15 74
-ADQ 01 -0.3 37
-ADQ 08 -0.76 79
-OTZ 27 -0.04 16
-LAS 01L -1.03 2182
-LAS 01R -1.0 2176
-LAS 08L -1.01 2184
-LAS 08R -1.03 2157
-LGB 08L -0.32 59
-LGB 12 -0.35 61
-LAX 07L -0.16 115
-LAX 07R -0.22 122
-LAX 24L -0.03 113
-LAX 24R -0.06 119
-LBB 08 -0.07 3259
-LBB 17R -0.35 3283
-MFR 32 -0.47 1336
-MAF 10 -0.18 2870
-MAF 16R -0.22 2873
-MKE 07R -0.7 729
-MKE 13 -0.05 672
-MSP 04 -0.03 834
-MSP 12L -0.23 839
-MSP 12R -0.27 842
-MSP 17 -0.09 841
-MSO 30 -0.14 3206
-MRY 28L -1.37 257
-BNA 02L -0.56 599
-BNA 02R -0.62 590
-BNA 20R -0.03 556
-BNA 31 -0.42 583
-OME 21 -0.4 41
-OME 28 -0.09 25
-OAK 28R -0.01 6
-OAK 30 -0.01 9
-OKC 17L -0.04 1287
-OKC 17R -0.19 1282
-OKC 31 -0.09 1286
-OMA 14L -0.03 984
-OMA 14R -0.04 985
-OMA 18 -0.03 982
-ONT 08L -0.09 997
-ONT 08R -0.1 936
-PSP 13R -0.78 477
-PSC 03L -0.11 410
-PSC 30 -0.08 402
-PHX 25L -0.2 1127
-PHX 25R -0.23 1134
-PHX 26 -0.21 1135
-HIO 13R -0.03 200
-PDX 21 -0.07 27
-PDX 28R -0.01 31
-PUB 08R -0.19 4670
-PUB 17 -0.98 4730
-PUW 05 -0.2 2567
-RDD 12 -0.15 500
-RDD 16 -0.2 505
-RDM 05 -0.29 3075
-RDM 29 -0.49 3082
-RNO 08 -0.16 4410
-RNO 17L -0.08 4415
-SMF 17L -0.06 27
-SMF 17R -0.03 25
-SGU 19 -0.56 2884
-STL 06 -0.23 551
-STL 11 -0.68 617
-STL 30L -0.4 586
-STL 30R -0.85 605
-SLC 16L -0.04 4230
-SLC 34L -0.05 4229
-SLC 35 -0.05 4227
-SAT 04 -0.37 786
-SAT 13L -0.33 798
-SAT 13R -0.36 810
-SAN 27 -0.03 17
-SFO 01L -0.02 11
-SFO 01R -0.01 12
-SFO 28L -0.05 13
-SFO 28R -0.06 13
-SJC 30L -0.22 63
-SJC 30R -0.21 62
-SBP 29 -0.83 213
-SNA 02L -0.26 56
-SBA 25 -0.01 12
-STS 02 -0.29 129
-STS 32 -0.17 121
-YAM 12 -0.02 630
-YAM 22 -0.3 630
-BFI 32L -0.03 21
-SEA 16C -0.71 430
-SEA 16L -0.72 433
-SEA 16R -0.69 415
-SIT 29 -0.03 27
-GEG 03 -0.57 2385
-GEG 08 -0.06 2377
-FOE 03 -0.5 1078
-FOE 13 -0.21 1064
-TUS 22 -0.12 2569
-TUS 30 -0.59 2643
-TUL 08 -0.52 672
-TUL 36L -0.69 678
-TUL 36R -0.17 644
-BRW 08 -0.16 49
-YVR 08L -0.04 14
-YVR 08R -0.03 14
-YVR 13 -0.01 14
-YYJ 14 -0.38 58
-YYJ 21 -0.06 54
-YYJ 27 -0.04 56
-ALW 20 -0.62 1195
-EAT 30 -0.2 1231
-YXY 32L -0.42
-YXY 32R -0.35
-ICT 01R -0.02 1321
-ICT 14 -0.17 1332
-ICT 19R -0.17 1330
-YKM 09 -0.66 1099
-YAK 11 -0.09 40
-YAK 20 -0.24 37
+ABQ 12 0.02 5355 6000
+ABQ 21 -0.11 5355 10000
+ABQ 26 -0.31 5355 13793
+ABQ 30 -0.02 5355 6000
+ABQ 03 0.11 5355 10000
+ABQ 08 0.31 5355 13793
+AMA 13 -0.11 3607 7901
+AMA 22 0.03 3607 13502
+AMA 31 0.11 3607 7901
+AMA 04 -0.03 3607 13502
+EDF 16 -0.37 213 7493
+EDF 24 -0.27 213 10000
+EDF 34 0.37 213 7493
+EDF 06 0.27 213 10000
+ANC 15 -0.27 151 10865
+ANC 33 0.27 151 10865
+ANC 07L -0.34 151 10600
+ANC 07R -0.25 151 10600
+ANC 25L 0.25 151 12400
+ANC 25R 0.34 151 10600
+AUS 18L -0.2 542 9000
+AUS 18R -0.44 542 12250
+AUS 36L 0.44 542 12250
+AUS 36R 0.2 542 9000
+BLI 16 0.11 171 6700
+BLI 34 -0.11 171 6700
+BET 01L -0.39 129 6400
+BET 19R 0.39 129 6400
+BIL 10L -0.91 3662 10518
+BIL 28R 0.91 3662 10518
+BOI 10L 0.41 2872 10000
+BOI 10R 0.35 2872 9763
+BOI 28L -0.35 2872 9763
+BOI 28R -0.41 2872 10000
+BZN 12 0.42 4473 9322
+BZN 30 -0.42 4473 9322
+BUR 15 -1.21 778 6885
+BUR 26 0.52 778 5801
+BUR 33 1.21 778 6885
+BUR 08 -0.52 778 5801
+YYC 11 -0.06 3606 8000
+YYC 29 0.06 3606 8000
+YYC 17L -0.26 3606 14000
+YYC 17R -0.1 3606 12675
+YYC 35L 0.1 3606 12675
+YYC 35R 0.26 3606 14000
+CYS 13 -0.53 6160 5530
+CYS 27 0.55 6160 9270
+CYS 31 0.53 6160 6690
+CYS 09 -0.55 6160 9270
+ORD 04L -0.11 680 7500
+ORD 04R -0.09 680 8075
+ORD 09C -0.19 680 11245
+ORD 09L -0.06 680 7500
+ORD 09R -0.16 680 11260
+ORD 10C -0.18 680 10800
+ORD 10L -0.16 680 13000
+ORD 10R -0.29 680 7500
+ORD 22L 0.09 680 8075
+ORD 27C 0.19 680 11245
+ORD 27L 0.16 680 11260
+ORD 27R 0.06 680 7500
+ORD 28C 0.18 680 10800
+ORD 28L 0.29 680 7500
+ORD 28R 0.16 680 13000
+COS 13 -0.44 6187 8270
+COS 31 0.44 6187 8270
+COS 17L -0.62 6187 13501
+COS 17R -1.19 6187 11022
+COS 35L 1.19 6187 11022
+COS 35R 0.62 6187 13501
+CDV 27 -0.02 53 7500
+CDV 09 0.02 53 7500
+DFW 13L -0.5 606 9000
+DFW 13R -0.15 606 9300
+DFW 17C 0.01 606 13400
+DFW 17L 0.6 606 8500
+DFW 17R -0.02 606 13400
+DFW 18L -0.2 606 13401
+DFW 18R -0.18 606 13400
+DFW 31L 0.15 606 9300
+DFW 31R 0.5 606 8373
+DFW 35C -0.01 606 13400
+DFW 35L 0.02 606 13400
+DFW 35R -0.6 606 8500
+DFW 36L 0.18 606 13400
+DFW 36R 0.2 606 13401
+DAL 13L 0.13 487 7752
+DAL 13R 0 487 8800
+DAL 31L 0 487 8800
+DAL 31R -0.13 487 7752
+SCC 24 0.1 67 6500
+SCC 06 -0.1 67 6500
+DEN 25 -0.04 5434 12000
+DEN 26 0.5 5434 12000
+DEN 07 0.04 5434 12000
+DEN 08 -0.5 5434 12000
+DEN 16L 0.03 5434 12000
+DEN 16R 0.03 5434 16000
+DEN 17L 0.35 5434 12000
+DEN 17R 0.47 5434 12000
+DEN 34L -0.03 5434 16000
+DEN 34R -0.03 5434 12000
+DEN 35L -0.47 5434 12000
+DEN 35R -0.35 5434 12000
+DLG 19 0.15 82 6400
+DLG 01 -0.15 82 6400
+DBQ 13 -0.22 1076 6502
+DBQ 18 -0.62 1076 6327
+DBQ 31 0.22 1076 6502
+DBQ 36 0.62 1076 6327
+DLH 21 -0.04 1428 5719
+DLH 27 0.08 1428 10591
+DLH 03 0.04 1428 5719
+DLH 09 -0.08 1428 10591
+EAU 14 0.1 913 5000
+EAU 22 -0.33 913 8101
+EAU 32 -0.1 913 5000
+EAU 04 0.33 913 8101
+YEG 12 0.48 2373 10200
+YEG 20 -0.14 2373 10995
+YEG 30 -0.48 2373 10200
+YEG 02 0.14 2373 10995
+ELP 22 -0.27 3962 12020
+ELP 04 0.27 3962 12020
+ELP 08L -0.06 3962 5499
+ELP 08R 0.38 3962 9025
+ELP 26L -0.38 3962 9025
+ELP 26R 0.06 3962 5499
+EUG 16L 0.17 374 6000
+EUG 16R 0.07 374 8009
+EUG 34L -0.07 374 8009
+EUG 34R -0.17 374 6000
+PAE 16R 0.16 607 6000
+PAE 34L -0.16 607 6000
+EIL 14 0.09 548 14530
+EIL 32 -0.09 548 14530
+FAI 02L 0.03 439 11800
+FAI 02R 0.02 439 4510
+FAI 20L -0.02 439 4510
+FAI 20R -0.03 439 11800
+FLL 10L 0 65 9000
+FLL 10R 0.69 65 8000
+FLL 28L -0.69 65 8000
+FLL 28R 0 65 9000
+FAT 11L -0.01 336 9539
+FAT 11R 0 336 8008
+FAT 29L 0 336 8008
+FAT 29R 0.01 336 9539
+GJT 11 0.36 4861 9339
+GJT 29 -0.36 4861 9339
+GTF 17 0.46 3680 6030
+GTF 21 0.2 3680 10502
+GTF 35 -0.46 3680 5400
+GTF 03 -0.2 3680 10502
+SUN 13 -0.76 5320 7550
+HDN 10 0.26 6606 10000
+HDN 28 -0.26 6606 10000
+HLN 27 0.21 3877 9000
+HLN 09 -0.21 3877 9000
+IAH 27 0.06 96 10000
+IAH 08L 0.04 96 9000
+IAH 08R -0.02 96 9402
+IAH 09 -0.06 96 10000
+IAH 15L -0.08 96 12001
+IAH 15R -0.08 96 10000
+IAH 26L 0.02 96 9402
+IAH 26R -0.04 96 9000
+IAH 33L 0.08 96 10000
+IAH 33R 0.08 96 12001
+IDA 21 0.12 4744 9002
+IDA 03 -0.12 4744 9002
+IND 14 -0.07 796 7278
+IND 32 0.07 796 7278
+IND 05L 0.4 796 11200
+IND 05R -0.01 796 10000
+IND 23L 0.01 796 10000
+IND 23R -0.4 796 11200
+JNU 26 0.02 25 8857
+JNU 08 -0.02 25 8857
+FCA 20 -0.16 2977 9007
+FCA 02 0.16 2977 9007
+MCI 27 -0.12 1027 9501
+MCI 01L -0.32 1027 10801
+MCI 01R -0.41 1027 9500
+MCI 09 0.12 1027 9501
+MCI 19L 0.41 1027 9500
+MCI 19R 0.32 1027 10801
+ENA 21 -0.15 100 6025
+ENA 02L 0.1 100 7855
+ENA 03 0.15 100 6025
+ENA 20R -0.1 100 7855
+AKN 12 0.15 73 8901
+AKN 30 -0.15 73 8901
+ADQ 19 0.3 79 5010
+ADQ 26 0.76 79 7534
+ADQ 01 -0.3 79 5010
+ADQ 08 -0.76 79 7534
+OTZ 27 -0.04 15 5900
+OTZ 09 0.04 15 6300
+LAS 01L -1.01 2183 8988
+LAS 01R -1 2183 9769
+LAS 08L -1.01 2183 14835
+LAS 08R -1.03 2183 10526
+LAS 19L 1 2183 9769
+LAS 19R 1.01 2183 9770
+LAS 26L 1.03 2183 10526
+LAS 26R 1.01 2183 14515
+LGB 12 -0.35 60 10000
+LGB 30 0.35 60 10000
+LGB 08L -0.32 60 6192
+LGB 26R 0.32 60 6192
+LAX 06L 0.06 128 8926
+LAX 06R 0.03 128 10285
+LAX 07L -0.16 128 12091
+LAX 07R -0.22 128 11095
+LAX 24L -0.03 128 10285
+LAX 24R -0.06 128 8926
+LAX 25L 0.22 128 11095
+LAX 25R 0.16 128 12091
+LBB 26 0.07 3282 8003
+LBB 08 -0.07 3282 8003
+LBB 17R -0.35 3282 11500
+LBB 35L 0.35 3282 11500
+MFR 14 0.47 1335 8800
+MFR 32 -0.47 1335 8800
+MAF 10 -0.18 2872 8302
+MAF 28 0.18 2872 8302
+MAF 16R -0.22 2872 9501
+MAF 34L 0.22 2872 9501
+MKE 13 -0.05 728 5537
+MKE 31 0.05 728 5537
+MKE 01L -0.33 728 9990
+MKE 07R -0.7 728 8300
+MKE 19R 0.33 728 9990
+MKE 25L 0.7 728 8300
+MSP 17 -0.09 842 8000
+MSP 22 0.03 842 11006
+MSP 35 0.09 842 8000
+MSP 04 -0.03 842 11006
+MSP 12L -0.23 842 8200
+MSP 12R -0.27 842 10000
+MSP 30L 0.27 842 10000
+MSP 30R 0.23 842 8200
+MSO 12 0.14 3206 9501
+MSO 30 -0.14 3206 9501
+MRY 10R 1.37 257 7175
+MRY 28L -1.37 257 7175
+BNA 13 0.42 599 10288
+BNA 31 -0.42 599 10228
+BNA 02C 0.03 599 8001
+BNA 02L -0.56 599 7702
+BNA 02R -0.62 599 8000
+BNA 20C -0.03 599 8001
+BNA 20L 0.62 599 8000
+BNA 20R 0.56 599 7702
+OME 10 0.09 41 6009
+OME 21 -0.4 41 5576
+OME 28 -0.09 41 6009
+OME 03 0.4 41 6176
+OAK 12 0.01 9 10000
+OAK 30 -0.01 9 10000
+OAK 10L 0.01 9 5457
+OAK 10R 0 9 6213
+OAK 28L 0 9 6213
+OAK 28R -0.01 9 5457
+OKC 13 0.09 1296 7800
+OKC 31 -0.09 1296 7800
+OKC 17L -0.04 1296 9802
+OKC 17R -0.19 1296 9800
+OKC 35L 0.19 1296 9800
+OKC 35R 0.04 1296 9802
+OMA 18 -0.03 985 8153
+OMA 36 0.03 985 8153
+OMA 14L -0.03 985 8500
+OMA 14R -0.04 985 9502
+OMA 32L 0.04 985 9502
+OMA 32R 0.03 985 8500
+ONT 08L -0.09 944 12197
+ONT 08R -0.1 944 10200
+ONT 26L 0.1 944 10200
+ONT 26R 0.09 944 12197
+PSP 13R -0.78 477 10000
+PSP 31L 0.78 477 10000
+PSC 12 0.1 410 7704
+PSC 30 -0.1 410 7704
+PSC 03L -0.11 410 7707
+PSC 21R 0.11 410 7707
+PHX 26 -0.21 1135 11489
+PHX 07L 0.23 1135 10300
+PHX 07R 0.2 1135 7800
+PHX 08 0.21 1135 11489
+PHX 25L -0.2 1135 7800
+PHX 25R -0.23 1135 10300
+HIO 13R -0.03 208 6600
+HIO 31L 0.03 208 6600
+PDX 21 -0.07 31 6000
+PDX 03 0.07 31 6000
+PDX 10L 0.01 31 9825
+PDX 10R 0 31 11000
+PDX 28L 0 31 11000
+PDX 28R -0.01 31 9825
+PUB 17 -0.98 4729 8308
+PUB 35 0.98 4729 8308
+PUB 08R -0.2 4729 10496
+PUB 26L 0.2 4729 10496
+PUW 23 0.2 2567 7100
+PUW 05 -0.2 2567 7100
+RDD 13 -0.15 505 5067
+RDD 17 -0.2 505 7003
+RDD 31 0.15 505 5067
+RDD 35 0.2 505 7003
+RDM 11 0.49 3082 7006
+RDM 23 0.29 3082 7038
+RDM 29 -0.49 3082 7006
+RDM 05 -0.29 3082 7038
+RNO 26 0.16 4415 6102
+RNO 08 -0.16 4415 5854
+RNO 17L -0.08 4415 9000
+RNO 17R 0 4415 11001
+RNO 35L 0 4415 11001
+RNO 35R 0.07 4415 9000
+SMF 17L -0.06 27 8605
+SMF 17R -0.03 27 8598
+SMF 35L 0.03 27 8598
+SMF 35R 0.06 27 8605
+SGU 19 -0.56 2884 9300
+SGU 01 0.56 2884 9300
+STL 11 -0.68 617 9000
+STL 24 0.23 617 7603
+STL 29 0.68 617 9000
+STL 06 -0.23 617 7603
+STL 12L 0.85 617 9013
+STL 12R 0.4 617 11020
+STL 30L -0.4 617 11020
+STL 30R -0.85 617 9013
+SLC 17 0.05 4231 9596
+SLC 35 -0.05 4231 9596
+SLC 16L -0.04 4231 12002
+SLC 16R 0.05 4231 12000
+SLC 34L -0.05 4231 12000
+SLC 34R 0.04 4231 12002
+SAT 22 0.37 809 8505
+SAT 04 -0.37 809 8505
+SAT 13L -0.33 809 5519
+SAT 13R -0.36 809 8502
+SAT 31L 0.36 809 8502
+SAT 31R 0.33 809 5519
+SAN 27 -0.03 17 9401
+SAN 09 0.03 17 8280
+SFO 01L -0.02 13 7650
+SFO 01R -0.01 13 8650
+SFO 10L 0.06 13 11870
+SFO 10R 0.05 13 11381
+SFO 19L 0.01 13 8650
+SFO 19R 0.02 13 7650
+SFO 28L -0.05 13 11381
+SFO 28R -0.06 13 11870
+SJC 12L 0.21 62 10139
+SJC 12R 0.22 62 9883
+SJC 30L -0.22 62 10152
+SJC 30R -0.21 62 10134
+SBP 11 0.83 212 6100
+SBP 29 -0.83 212 6100
+SNA 02L -0.26 56 5700
+SNA 20R 0.26 56 5700
+SBA 25 -0.01 14 6052
+SBA 07 0.01 14 6052
+STS 14 0.17 129 6000
+STS 20 0.29 129 5202
+STS 32 -0.17 129 6000
+STS 02 -0.29 129 5202
+YAM 12 -0.02 629 6000
+YAM 22 -0.3 629 6000
+YAM 30 0.02 629 6000
+YAM 04 0.3 629 6000
+BFI 14R 0.03 22 10000
+BFI 32L -0.03 22 10000
+SEA 16C -0.71 432 9426
+SEA 16L -0.72 432 11901
+SEA 16R -0.69 432 8500
+SEA 34C 0.71 432 9426
+SEA 34L 0.69 432 8500
+SEA 34R 0.72 432 11901
+SIT 11 0.03 27 7200
+SIT 29 -0.03 27 7200
+GEG 21 0.57 2385 11002
+GEG 26 0.06 2385 8199
+GEG 03 -0.57 2385 11002
+GEG 08 -0.06 2385 8199
+FOE 13 -0.21 1078 12803
+FOE 21 0.5 1078 7001
+FOE 31 0.21 1078 12803
+FOE 03 -0.5 1078 7001
+TUS 12 0.59 2643 10996
+TUS 22 -0.12 2643 6000
+TUS 30 -0.59 2643 10996
+TUS 04 0.12 2643 7000
+TUL 26 0.52 678 7376
+TUL 08 -0.52 678 7376
+TUL 18L 0.17 678 10000
+TUL 18R 0.69 678 6101
+TUL 36L -0.69 678 6101
+TUL 36R -0.17 678 10000
+BRW 26 0.16 49 7100
+BRW 08 -0.16 49 7100
+YVR 13 -0.01 13 7300
+YVR 31 0.01 13 7300
+YVR 08L -0.04 13 9941
+YVR 08R -0.02 13 11500
+YVR 26L 0.02 13 11493
+YVR 26R 0.04 13 9941
+YYJ 14 -0.38 64 5001
+YYJ 21 -0.06 64 3622
+YYJ 27 -0.04 64 6998
+YYJ 32 0.38 64 4574
+YYJ 03 0.06 64 4141
+YYJ 09 0.04 64 6998
+ALW 20 -0.62 1194 6527
+ALW 02 0.62 1194 6527
+EAT 12 0.2 1249 7000
+EAT 30 -0.2 1249 7000
+YXY 14L 0.35 2317 6597
+YXY 14R 0.42 2317 9500
+YXY 32L -0.42 2317 9500
+YXY 32R -0.35 2317 6597
+ICT 14 -0.17 1333 6301
+ICT 32 0.17 1333 6301
+ICT 01L 0.17 1333 10301
+ICT 01R -0.02 1333 7302
+ICT 19L 0.02 1333 7302
+ICT 19R -0.17 1333 10301
+YKM 27 0.66 1099 7604
+YKM 09 -0.66 1099 7604
+YAK 11 -0.09 40 7732
+YAK 20 -0.24 40 5087
+YAK 29 0.09 40 7732
+YAK 02 0.24 40 6475
 `;
 const runwaySlopes = (function build_runway_slopes() {
     let map = {}, worstSlope = 0, worstAirport;
     runwaySlopesRaw.trim().split(/[\n\r]+/).sort().forEach(line => {
-        const match = line.match(/(\w+) (\S+) (-\d\.\d+)( \d+)?/),
+        const match = line.match(/(\w+) (\S+) (-?[0-9.]+)( \d+)( \d+)?/),
               airport = match[1],
               runway = match[2],
               slope = +match[3],
-              elevation = +match[4];
+              elevation = +match[4],
+              length = +match[5];
         if (!map[airport]) {
             map[airport] = {};
         }
-        map[airport][runway] = { slope, elevation };
+        map[airport][runway] = { slope, elevation, length };
         if (worstSlope > slope) {
             worstSlope = slope;
             worstAirport = airport;
@@ -1149,7 +1374,7 @@ const runwaySlopes = (function build_runway_slopes() {
     return map;
 }());
 function checklistName(s) {
-    return s.match(/^[A-Z0-9\s()]+$/) && s;
+    return s.match(/^[A-Z0-9\s()\/]+$/) && s;
 }
 function dataLine(s) {
     return s.match(/^(DRY|5|4|3|2|1) /) && s;
@@ -1165,6 +1390,29 @@ function findChecklistNames() { // TEST
 }
 function findDataLines() { // TEST
     return raw.trim().split(/[\n\r]+/).map(dataLine).filter(v => !!v);
+}
+function findMissingRunwayElevation() { // TEST
+    let list = [];
+    Object.entries(runwaySlopes).forEach(([airportID, runways], slopeNdx) => {
+        Object.entries(runways).forEach(([runwayName, { slope, elevation }], runwayNdx) => {
+            if (isNaN(elevation)) {
+                console.log({ missingElevation : [airportID, runwayName].join(': ') });
+                list.push([airportID, runwayName]);
+            }
+        });
+    });
+    return list;
+}
+function findMissingRunwayLength() { // TEST
+    let list = [];
+    Object.entries(runwaySlopes).forEach(([airportID, runways], slopeNdx) => {
+        Object.entries(runways).forEach(([runwayName, { slope, length }], runwayNdx) => {
+            if (isNaN(length)) {
+                list.push([airportID, runwayName]);
+            }
+        });
+    });
+    return list;
 }
 function buildCalculator(line) {
     function num(v) {
@@ -1194,7 +1442,7 @@ function buildCalculator(line) {
               weightFactor = weightDif * (weightDif > 0 ? adjWeightHi :
                                           weightDif < 0 ? -adjWeightLo : 0),
               altFactor = altDif * adjAlt,
-              slopeFactor = slopeDif * adjSlope,
+              slopeFactor = Math.max(0, slopeDif * adjSlope),
               tempFactor = tempDif > 0 ? tempDif * adjTemp : 0,
               windFactor = windDif * adjWind,
               vAppFactor = vAppDif * adjVapp,
@@ -1261,6 +1509,7 @@ function awaitThen(a, b) {
 }
 ////////////////////////////////////////////////////////////////////////////////
 var scenarios = extractScenarios(),
+    runwayLength = 0,
     showPickList, showPickSlider, showBreakdown;
 ////////////////////////////////////////////////////////////////////////////////
 function buildScenarioPicker() {
@@ -1398,13 +1647,14 @@ function buildScenarioPicker() {
             ['option', '(select a runway)'],
             ['with', sel => {
                 Object.entries(runwaySlopes).forEach(([airport, runwayMap]) => {
-                    Object.entries(runwayMap).forEach(([runway, { slope, elevation }]) => {
+                    Object.entries(runwayMap).forEach(([runway, { slope, elevation, length }]) => {
                         reporters.push(() => {
+                            runwayLength = length;
                             reflectors.slope(slope);
                             reflectors.altitude(elevation);
                         });
                         M(['option', airport + ' ' + runway,
-                           ['attr', ['value', slope + '&deg;, ' + elevation + ' MSL']]], sel);
+                           ['attr', ['value', slope + '&deg;, ' + elevation + ' MSL, ' + length + "'"]]], sel);
                     });
                 });
             }]],
@@ -1425,6 +1675,7 @@ function buildScenarioPicker() {
          ['fontSize', '.6em'],
          ['borderBottom', '1px solid black']]],
        ['div',
+        ['style', ['fontSize', '.8em']],
         ['with', nameDiv => {
             selectScenario = scenario => {
                 selectedScenario = scenario;
@@ -1448,6 +1699,7 @@ function buildScenarioPicker() {
          ['fontSize', '.6em'],
          ['borderBottom', '1px solid black']]],
        ['div',
+        ['style', ['fontSize', '.8em']],
         ['with', nameDiv => {
             selectVariation = variation => {
                 selectedVariation = variation;
@@ -1475,6 +1727,7 @@ function buildScenarioPicker() {
          ['fontSize', '.6em'],
          ['borderBottom', '1px solid black']]],
        ['div',
+        ['style', ['fontSize', '.8em']],
         ['with', nameDiv => {
             selectTable = table => {
                 selectedTable = table;
@@ -1603,11 +1856,24 @@ function breakdownDisplay() {
                        ['th', 'Selected'],
                        ['th', 'Worst']],
                       ['with', t => {
-                          arrayed.forEach(line => {
+                          arrayed.forEach(([labelID, selectedLength, worstLength], ndx) => {
+                              function pickColor(calculatedLength) {
+                                  return (ndx || runwayLength === 0) ? 'none' :
+                                      calculatedLength > runwayLength ? 'red' :
+                                      calculatedLength > (runwayLength * .9) ? 'orangered' :
+                                      calculatedLength > (runwayLength * .8) ? 'yellow' :
+                                      'lightgreen';
+                              }
                               M(['tr',
-                                 ['td', ['style', ['textAlign', 'left']], labels[line[0]]],
-                                 ['td', ['style', ['textAlign', 'right']], Math.round(line[1])],
-                                 ['td', ['style', ['textAlign', 'right']], Math.round(line[2])]], t);
+                                 ['td', ['style', ['textAlign', 'left']], labels[labelID]],
+                                 ['td',
+                                  ['style',
+                                   ['backgroundColor', pickColor(selectedLength)],
+                                   ['textAlign', 'right']], Math.round(selectedLength)],
+                                 ['td',
+                                  ['style',
+                                   ['backgroundColor', pickColor(worstLength)],
+                                   ['textAlign', 'right']], Math.round(worstLength)]], t);
                           });
                       }]], n);
                }
@@ -1620,3 +1886,5 @@ function breakdownDisplay() {
 buildScenarioPicker();
 buildPickList();
 breakdownDisplay();
+console.log({ missingElevation : findMissingRunwayElevation() }); // DEBUG
+console.log({ missingLength : findMissingRunwayLength() }); // DEBUG
