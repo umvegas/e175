@@ -40,6 +40,7 @@ zip landing-distance
 zip mcdu
 zip oral-base
 zip ref-speeds
+zip ref-roll
 zip stab-trim
 zip takeoff-bugs
 zip yokenotes

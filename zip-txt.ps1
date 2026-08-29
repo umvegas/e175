@@ -31,4 +31,5 @@ function zip {
 zip sv-bank
 zip oral-a
 zip oral-b
+zip EJ-operational-landing-distance-tables
 Read-Host -Prompt "Press Enter to finish"
