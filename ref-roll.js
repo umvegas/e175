@@ -503,7 +503,7 @@ function calculatorUI(conditions) {
                       ['height', '400px']],
                      ['with', img => {
                          let rot = 0, lastX, lastY, lastRadius, knobValue, knobMin, knobMax, knobStep, report2btn,
-                             degPerStep, unitsPerDeg, paramID;
+                             degPerStep, unitsPerDeg, paramID, cageRotation;
                          reflectors.knob = v => {
                              knobValue = v;
                              deg = knobValue * degPerStep;
@@ -520,20 +520,29 @@ function calculatorUI(conditions) {
                                  degPerHaf = 360,
                                  deg;
                              degPerStep = degPerHaf / haf;
-                             unitsPerDeg = haf / 180;
+                             unitsPerDeg = haf / degPerHaf;
                              deg = knobValue * degPerStep;
                              report2btn = reporter;
                              rotateKnob(deg, true);
+                             cageRotation = (rot) => {
+                                 const maxRot = max / unitsPerDeg,
+                                       minRot = min / unitsPerDeg,
+                                       caged = Math.max(minRot, Math.min(maxRot, rot));
+                                 return caged;
+                             };
                          };
                          rotateKnob = (deg, abs) => {
                              if (abs) {
                                  rot = deg;
                              } else {
                                  rot += deg;
+                                 if (cageRotation) {
+                                     rot = cageRotation(rot);
+                                 }
                              }
-                             img.style.rotate = rot + 'deg';
                              knobValue = rot / degPerStep;
                              params[paramID] = knobValue;
+                             img.style.rotate = rot + 'deg';
                              report2btn && report2btn(knobValue);
                              reflectors.slider(knobValue);
                              go();
