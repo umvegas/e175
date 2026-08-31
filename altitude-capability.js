@@ -1,4 +1,5 @@
-var tableData = {
+let showOptAlts = () => {};
+const tableData = {
     LRC : {
         88000 : {
             "-15" : [290, 290],
@@ -673,6 +674,84 @@ var tableData = {
         },
     },
 };
+const optAltRaw = `
+Long Range Cruise
+100 150 200 250 300 400 500 600 700 800 900 1000+
+85000  -   -   -   -   -   -   -   -   -   -   -  340
+83000  -   -   -   -   -   -   -   -   -  340 340 340
+81000  -   -   -   -   -   -   -  350 350 350 350 350
+79000  -   -   -   -   -  350 350 350 350 350 350 350
+77000  -  220 290 300 300 360 360 360 360 360 360 360
+75000 150 220 300 300 310 360 360 360 360 360 360 380
+73000 150 220 300 310 310 370 370 370 370 370 370 370
+71000 180 220 300 310 320 370 370 370 370 370 370 370
+69000 180 220 310 320 330 380 380 380 380 380 380 380
+67000 180 220 310 330 330 380 380 380 380 380 380 380
+65000 180 220 310 340 340 340 390 390 390 390 390 390
+63000 180 220 310 340 350 350 360 360 360  -   -   -
+61000 170 220 310 350 360 360 360  -   -   -   -   -
+Mach .78
+200 300 400 500 600 700 800 900 1000+
+85000  -   -   -   -   -   -   -   -  320
+83000  -   -   -   -   -   -  320 320 320
+81000  -   -   -   -  330 330 330 330 330
+79000  -   -  340 340 340 340 340 340 340
+77000 300 350 350 350 350 350 350 350 350
+75000 310 350 350 350 350 350 350 350 350
+73000 310 360 360 360 360 360 360 360 360
+71000 320 360 360 360 360 360 360 360 360
+69000 320 370 370 370 370 370 370 370 370
+67000 330 370 370 370 370 370 370 370 370
+65000 330 380 380 380 380 380 380 380  -
+63000 340 380 380 360 380 380  -   -   -
+61000 350 390 390  -   -   -   -   -   -
+`;
+const optAlt4Weight = (function () {
+    let currentTable,
+        tables = {},
+        lines = optAltRaw.trim().split(/[\n\r]+/);
+    function speedLine(line) {
+        tables[line] = currentTable = { weightMap : {} };
+    }
+    function distanceLine(line) {
+        if (line.match(/^\d\d\d /)) {
+            currentTable.distances = line.split(/\s+/);
+            return true;
+        }
+    }
+    function weightLine(line) {
+        if (line.match(/^\d\d\d\d\d /)) {
+            let columns = line.split(/\s+/);
+            currentTable.weightMap[columns[0]] = columns.slice(1);
+            return true;
+        }
+    }
+    function weightSearch(weight, speed) {
+        let matchedWeight, altitudes;
+        if (altitudes = tables[speed].weightMap[weight]) {
+            matchedWeight = weight;
+        } else if (altitudes = tables[speed].weightMap[weight + 1000]) {
+            matchedWeight = weight + 1000;
+        } else if (altitudes = tables[speed].weightMap[weight - 1000]) {
+            matchedWeight = weight - 1000;
+        }
+        return { matchedWeight, altitudes };
+    }
+    lines.forEach(line => {
+        weightLine(line) || distanceLine(line) || speedLine(line);
+    });
+    console.log({ tables }); // DEBUG
+    return weight => {
+        return {
+            'Long Range Cruise' : weightSearch(weight, 'Long Range Cruise'),
+            'Mach .78' : weightSearch(weight, 'Mach .78'),
+            distances : {
+                lrc : tables['Long Range Cruise'].distances,
+                m78 : tables['Mach .78'].distances,
+            },
+        };
+    };
+}());
 function printTable(speed) {
     var bye,
         data = tableData[speed],
@@ -838,6 +917,9 @@ var lookup = (function () {
                          tableData[speed][weight][temperature];
             let isOK = result && result.map(limit => limit - altitude);
             runLimitDivFuns({ temperature, weight, altitude, isOK });
+            // NEW: optimum altitudes
+            showOptAlts(optAlt4Weight(weight));
+            // END NEW: optimum altitudes
         } else {
             setTimeout(look_up, 1000);
             console.log('waiting @ ' + (+new Date()));
@@ -904,10 +986,58 @@ function speedButtons() {
                  });
              }]]];
 }
+function optAltUI() {
+    M(['div',
+       ['with', div => {
+           showOptAlts = (data) => {
+               console.log(data); // DEBUG
+               let lrc = data['Long Range Cruise'].altitudes,
+                   m78 = data['Mach .78'].altitudes,
+                   lrcWeight = data['Long Range Cruise'].matchedWeight,
+                   m78Weight = data['Mach .78'].matchedWeight,
+                   distances = data.distances;
+               div.innerHTML = '';
+               M(['table',
+                  ['style', ['fontSize', '.8em'], ['marginTop', '.5em']],
+                  ['attr', ['border', 1]],
+                  ['tr',
+                   ['th', 'Long Range Cruise: ' + lrcWeight + 'lbs',
+                    ['attr', ['colspan', lrc.length]]]],
+                  ['with', table => {
+                      [distances.lrc, lrc].forEach(rowData => {
+                          M(['tr',
+                             ['with', tr => {
+                                 rowData.forEach(datum => {
+                                     M(['td', datum], tr);
+                                 });
+                             }]], table);
+                      });
+                  }]], div);
+               M(['table',
+                  ['style', ['fontSize', '.8em'], ['marginTop', '.5em']],
+                  ['attr', ['border', 1]],
+                  ['tr',
+                   ['th', 'Mach .78: ' + m78Weight + 'lbs',
+                    ['attr', ['colspan', m78.length]]]],
+                  ['with', table => {
+                      [distances.m78, m78].forEach(rowData => {
+                          M(['tr',
+                             ['with', tr => {
+                                 rowData.forEach(datum => {
+                                     M(['td', datum], tr);
+                                 });
+                             }]], table);
+                      });
+                  }]], div);
+               console.log({ altitudes }); // DEBUG
+           };
+       }]], document.body);
+}
 //////////////////////////////////////////////////////////////////////////
 interpolate();
 M(speedButtons, document.body);
 slider(0, 5, temperatures, 'temperature', 'Temp: ');
 slider(350, 10, altitudes, 'altitude', 'FL');
 slider(76000, 2000, weights, 'weight', 'Weight: ');
+optAltUI();
 lookup();
