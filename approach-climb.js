@@ -656,6 +656,25 @@ const airports = {
             'ILS Z' : 280,
         },
     },
+    SFO : {
+        '19L' : {
+            'ILS' : 357,
+            'RNAV (GPS) L/VNAV' : 357,
+        },
+        '19R' : {
+            'RNAV Z' : 395,
+        },
+        '28L' : {
+            'ILS' : 330,
+            'ILS SA CAT II' : 330,
+        },
+        '28R' : {
+            'ILS' : 350,
+            'ILS CAT III' : 350,
+            'RNAV Y 0.11' : 250,
+            'RNAV Y 0.30' : 350,
+        },
+    },
     SUN : {
         31 : {
             'RNAV M' : 230,
@@ -709,6 +728,7 @@ const airportsAltitudes = {
     PUW : 3000,
     RNO : 5000,
     SAN : 1000,
+    SFO : 1000,
     SUN : 5000,
     YKM : 2000,
     YLW : 2000,
@@ -901,6 +921,16 @@ function flapButtons() {
     M([flapButton, 4], document.body);
     pick[2]();
 }
+function notes() {
+    return ['div',
+            ['style',
+             ['marginTop', '2em']],
+            ['b', 'Assumptions:'],
+            ['ul',
+             ['li', 'One engine inoperative'],
+             ['li', 'Gear UP'],
+             ['li', 'ECS off']]];
+}
 ////////////////////////////////////////////////////////////////////////////////
 M([slider, 'Weight', 55000, 75000, 2000, 69000, v => lookup({ weight : v })], document.body);
 M([slider, 'Temp', -8, 50, 2, 14, v => lookup({ temperature : v })], document.body);
@@ -924,3 +954,4 @@ M(['div', 'Icing',
        lookup({ icing : on });
    }]], document.body);
 M(approachPicker, document.body);
+M(notes, document.body);
