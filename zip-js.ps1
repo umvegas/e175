@@ -43,5 +43,6 @@ zip ref-speeds
 zip ref-roll
 zip stab-trim
 zip takeoff-bugs
+zip vy
 zip yokenotes
 Read-Host -Prompt "Press Enter to finish"
