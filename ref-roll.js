@@ -542,7 +542,7 @@ function calculatorUI(conditions) {
                              }
                              knobValue = rot / degPerStep;
                              params[paramID] = knobValue;
-                             img.style.rotate = rot + 'deg';
+                             img.style.rotate = (2 * rot) + 'deg';
                              report2btn && report2btn(knobValue);
                              reflectors.slider(knobValue);
                              go();
