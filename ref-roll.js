@@ -102,16 +102,36 @@ const weight2Speeds = (function () {
         }
     }
     initMap();
-    return ({ weight, flaps, autoland, ice, wind, gust }) => {
-        const wKey = (weight / 1000).toFixed(1),
-              wObj = map[wKey],
-              goAroundFlaps = flaps === 'Full' ? 4 : 2,
-              useIce = autoland || (ice === 'With Ice Accretion'),
-              vRef = useIce ? wObj.vRefIce[flaps] : wObj.vRef[flaps],
-              vAppAdd = Math.max(useIce ? 0 : 5, Math.min(20, (wind > 0 ? +wind : 0) + (+gust))),
-              vApp = vRef + vAppAdd,
-              vAC = wObj.vAC[goAroundFlaps],
-              vFS = wObj.vFS;
+    return ({ weight, flaps, autoland, ice, wind, gust, mods }) => {
+        let wKey = (weight / 1000).toFixed(1),
+            wObj = map[wKey],
+            goAroundFlaps = flaps === 'Full' ? 4 : 2,
+            useIce = autoland || (ice === 'With Ice Accretion'),
+            vRef = useIce ? wObj.vRefIce[flaps] : wObj.vRef[flaps],
+            vAppAdd = Math.max(useIce || mods ? 0 : 5, Math.min(20, (wind > 0 ? +wind : 0) + (+gust))),
+            vApp = vRef + vAppAdd,
+            vAC = wObj.vAC[goAroundFlaps],
+            vFS = wObj.vFS;
+        if (mods) {
+            let vRefFull = useIce ? wObj.vRefIce.Full : wObj.vRef.Full;
+            if (mods.vRef) {
+                vRef = vRefFull + mods.vRef.fullPlus;
+                if (mods.vRef.min) {
+                    vRef = Math.max(vRef, mods.vRef.min);
+                }
+                vApp = vRef + vAppAdd;
+            }
+            if (mods.vAC) {
+                if (mods.vAC.fullPlus) {
+                    vAC = vRefFull + mods.vAC.fullPlus;
+                } else {
+                    vAC = wObj.vAC[mods.vAC.flaps];
+                }
+                if (mods.vAC.min) {
+                    vAC = Math.max(vAC, mods.vAC.min);
+                }
+            }
+        }
         return {
             vRef,
             vApp,
@@ -283,30 +303,20 @@ function findCondition({ autoland, flaps, ice, rcc, conditions, brake }) {
     let matchedCondition, brakeFactors;
     conditions.some(condition => {
         if (neq(condition.autoland, undefined, autoland)) {
-            //console.log({ what : 'mismatch', candidateAutoland : condition.autoland, target : autoland });
             return;
         }
         if (neq(condition.flaps, NaN, flaps)) {
-            //console.log({ what : 'mismatch', candidateFlaps : condition.flaps, target : flaps });
             return;
         }
         if (neq(condition.ice, undefined, ice)) {
-            //console.log({ what : 'mismatch', candidateIce : condition.ice, target : ice });
             return;
         }
         if (neq(+condition.rcc, NaN, +rcc)) {
-            //console.log({ what : 'mismatch', candidateRCC : condition.rcc, target : rcc });
             return;
         }
         return matchedCondition = condition;
     });
     if (matchedCondition) {
-        /*
-        console.log("Condition matched!"); // DEBUG
-        console.log({
-            autoland, flaps, ice, rcc, brake, matchedCondition,
-        }); // DEBUG
-        */
         brakeFactors = matchedCondition.brakeSettings[brake].factors;
     } else {
         console.log({ error : 'Condition NOT matched', autoland, flaps, ice, rcc, brake }); // DEBUG
@@ -498,6 +508,8 @@ function calculatorUI(conditions) {
                     ['img',
                      ['attr', ['src', 'dial.jpg']],
                      ['style',
+                      ['position', 'relative'],
+                      ['top', '-4em'],
                       ['width', 'auto'],
                       ['zIndex', '0'],
                       ['height', '400px']],
@@ -727,6 +739,70 @@ function calculatorUI(conditions) {
                 }],
                 slider, knob];
     }
+    function qrhScenarioPicker() {
+        const modList = [undefined, {
+            name : 'Jammed Control Wheel/Column',
+            vRef : { fullPlus : 15, flaps : 5 },
+            vAC : { fullPlus : 15, flaps : 4 },
+        }, {
+            name : 'Loss of Hyd Sys 1 AND 2',
+            vRef : { fullPlus : 10, flaps : 5 },
+            vAC : { fullPlus : 10, flaps : 4 },
+        }, {
+            name : 'Loss of Hyd Sys 1 AND 3',
+            vRef : { fullPlus : 10, flaps : 5 },
+            vAC : { flaps : 2 },
+        }, {
+            name : 'Loss of Hyd Sys 2 AND 3',
+            vRef : { fullPlus : 10, flaps : 5 },
+            vAC : { fullPlus : 10, flaps : 4 },
+        }, {
+            name : 'One Eng Inop Desc and Ldg',
+            vRef : { fullPlus : 20, flaps : 5 },
+            vAC : { flaps : 2 },
+        }, {
+            name : 'Smoke/Fire/Fumes (RAT deployed)',
+            vRef : { fullPlus : 20, flaps : 3, min : 130 },
+            vAC : { fullPlus : 20, flaps : 3, min : 130 },
+        }, {
+            name : 'Smoke/Fire/Fumes (NO RAT)',
+            vRef : { fullPlus : 20, flaps : 3 },
+            vAC : { fullPlus : 20, flaps : 3 },
+        }, {
+            name : 'Electrical Emergency (RAT deployed)',
+            vRef : { fullPlus : 20, flaps : 3, min : 130 },
+            vAC : { fullPlus : 20, flaps : 3, min : 130 },
+        }, {
+            name : 'Electrical Emergency (NO RAT)',
+            vRef : { fullPlus : 15, flaps : 3 },
+            vAC : { fullPlus : 15, flaps : 3 },
+        }, {
+            name : 'Elevator LH (RH) Fail',
+            vRef : { fullPlus : 15, flaps : 5 },
+            vAC : { fullPlus : 15, flaps : 4 },
+        }, {
+            name : 'Pitch Trim Fail',
+            vRef : { fullPlus : 15, flaps : 5 },
+            vAC : { fullPlus : 15, flaps : 4 },
+        }, {
+            name : 'Hyd 1 or 2 Overheat',
+            vRef : { fullPlus : 20, flaps : 5 },
+            vAC : { flaps : 4 },
+        }];
+        return ['div',
+                ['select',
+                 ['option', 'Normal Conditions'],
+                 ['with', sel => {
+                     modList.slice(1).forEach(mod => {
+                         M(['option', mod.name], sel);
+                     });
+                     M(['on',
+                        ['change', e => {
+                            params.mods = modList[sel.selectedIndex];
+                            go();
+                        }]], sel);
+                 }]]];
+    }
     function go() {
         const distances = calculateLandingDistance(params);
         const speeds = weight2Speeds(params);
@@ -758,6 +834,7 @@ function calculatorUI(conditions) {
              };
              go(); // initialize the display
          }]]],
+       qrhScenarioPicker,
        ['div',
         [toggleButton, 'Autoland', 'autoland', newSetting => {
             params.autoland = newSetting;
@@ -806,10 +883,7 @@ fetch('EJ-operational-landing-distance-tables.txt').
     then(r => {
         r.text().then(raw => {
             let conditions = extract(raw);
-            console.log(conditions); // DEBUG
             checkFactorCounts(conditions);
             calculatorUI(conditions);
-            //printTables(conditions);
-            FOO = conditions; // DEBUG
         });
     });
